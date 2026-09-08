@@ -138,10 +138,8 @@ a{color:inherit;text-decoration:none;}
 }
 
 
-@media (min-width:900px){.burger{display:none;}}
 
 
-@media (min-width:900px){.mobile-menu{display:none;}}
 
 
 
@@ -821,7 +819,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 
 
 .mobile-menu{
-  position:fixed;inset:88px 0 0;z-index:55;background:#fff;padding:1.5rem var(--gut) 2.5rem;
+  position:fixed;inset:76px 0 0;z-index:55;background:var(--navy);color:#fff;padding:1.5rem var(--gut) 2.5rem;
   transform:translateY(-14px);opacity:0;visibility:hidden;
   transition:opacity .22s ease,transform .22s ease,visibility .22s;overflow-y:auto;
 }
@@ -830,7 +828,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .mobile-menu.open{opacity:1;transform:none;visibility:visible;}
 
 
-.mobile-menu a.m-link{display:flex;align-items:center;justify-content:space-between;min-height:52px;font-family:var(--display);font-weight:600;color:var(--ink);border-bottom:1px solid var(--line);}
+.mobile-menu a.m-link{display:flex;align-items:center;justify-content:space-between;min-height:52px;font-family:var(--display);font-weight:600;color:#fff;border-bottom:1px solid rgba(255,255,255,.14);}
 
 
 .mobile-menu .btn{margin-top:1.4rem;}
@@ -847,7 +845,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1px;background:#fff;transition:right .22s ease;}
   .nav-links a:hover::after,.nav-links a.active::after{right:0;}
   .nav-cta{display:inline-flex;}
-  .burger,.mobile-menu{display:none;}
+  .burger{display:none;}
   .nav-inner{min-height:108px;}
 }
 
@@ -1618,6 +1616,8 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   function setOpen(o){ if(!mm) return; mm.classList.toggle('open',o); if(burger){burger.classList.toggle('is-open',o);burger.setAttribute('aria-expanded',o);} document.body.style.overflow=o?'hidden':''; }
   if(burger){ burger.addEventListener('click',function(){ setOpen(!mm.classList.contains('open')); }); }
   if(mm){ mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ if(a.closest('.m-sub')||a.classList.contains('m-link')||a.closest('.m-cta')) setOpen(false); });}); }
+  document.addEventListener('click',function(e){ if(mm && mm.classList.contains('open') && !mm.contains(e.target) && burger && !burger.contains(e.target)) setOpen(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') setOpen(false); });
   window.addEventListener('resize',function(){ if(window.innerWidth>=1200) setOpen(false); });
   /* mobile accordion */
   document.querySelectorAll('.m-acc').forEach(function(btn){

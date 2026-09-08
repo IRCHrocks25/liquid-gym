@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portal Login &amp; Registration · LiquidGym / ATI</title>
+<meta name="description" content="Log in to your ATI 360, WEI, or ATI Education portal, or register for access.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1C47; --blue:#163474; --mid:#2E5EAC; --bright:#4288DD; --light:#ADD4F5;
+  --ink:#163474; --body:#5C6B88; --line:#E3EDF9; --soft:#F3F8FD;
+  --shadow-sm:0 2px 10px rgba(11,28,71,.06); --shadow-md:0 14px 40px rgba(11,28,71,.10); --shadow-lg:0 28px 70px rgba(11,28,71,.16);
+  --r:14px; --gut:clamp(1.15rem,5vw,4rem);
+  --display:'IBM Plex Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --text:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{margin:0;font-family:var(--text);color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+img,svg,video{max-width:100%;height:auto;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.01em;line-height:1.12;margin:0;}
+.wrap{width:100%;max-width:1360px;margin-inline:auto;padding-inline:var(--gut);}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+a:focus-visible,button:focus-visible{outline:2px solid var(--bright);outline-offset:3px;}
+
+/* ---- buttons (shared) ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-family:var(--display);font-weight:500;border-radius:10px;cursor:pointer;border:1px solid transparent;white-space:normal;line-height:1.35;text-align:center;transition:transform .18s ease,background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;}
+.btn-primary{background:var(--bright);color:#fff;}
+.btn-primary:hover{background:#2E6FC2;transform:translateY(-1px);box-shadow:0 8px 22px rgba(66,136,221,.34);}
+.btn-outline-nav{background:transparent;color:#fff;border-color:rgba(255,255,255,.5);}
+.btn-outline-nav:hover{background:#fff;color:var(--blue);}
+.btn-outline-mob{background:transparent;color:var(--blue);border:1px solid var(--line);}
+
+
+/* the header and hero run wider than the body, aligning with the track-record card */
+.siteheader .wrap,.hero .wrap{max-width:1400px;}
+
+
+/* ============================================================
+   TOP BAR + NAV
+   ============================================================ */
+/* header floats over the hero: no fill, no sticky */
+.site.topbar{display:none;background:transparent;color:rgba(255,255,255,.78);font-size:.8rem;}
+
+/* keep the platform names in the document for screen readers */
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+
+
+.nav{position:relative;z-index:60;background:transparent;border-bottom:1px solid rgba(255,255,255,.14);}
+
+.nav-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;gap:1rem;min-height:88px;}
+
+.logo{display:flex;align-items:center;gap:.75rem;font-family:var(--display);font-weight:500;font-size:1.05rem;color:#fff;letter-spacing:-.02em;}
+
+.logo .mark{width:34px;height:34px;flex:none;}
+
+/* remove the filter below if the supplied artwork is already white */
+.logo-img{height:40px;width:auto;display:block;filter:brightness(0) invert(1);}
+
+.logo-sub{
+  font-size:.6rem;letter-spacing:.22em;font-weight:400;text-transform:uppercase;
+  color:rgba(255,255,255,.7);padding-left:.75rem;border-left:1px solid rgba(255,255,255,.25);
+}
+
+@media (max-width:420px){.logo-img{height:30px;}.logo-sub{display:none;}}
+
+.nav-links,.nav-cta{display:none;}
+
+.burger{width:46px;height:46px;border-radius:10px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);display:grid;place-items:center;gap:5px;cursor:pointer;padding:0;}
+
+.burger span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:transform .25s ease,opacity .2s ease;}
+
+.burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+
+.burger.is-open span:nth-child(2){opacity:0;}
+
+.burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+
+.mobile-menu{
+  position:fixed;inset:88px 0 0;z-index:55;background:#fff;padding:1.5rem var(--gut) 2.5rem;
+  transform:translateY(-14px);opacity:0;visibility:hidden;
+  transition:opacity .22s ease,transform .22s ease,visibility .22s;overflow-y:auto;
+}
+
+.mobile-menu.open{opacity:1;transform:none;visibility:visible;}
+
+.mobile-menu a.m-link{display:flex;align-items:center;justify-content:space-between;min-height:52px;font-family:var(--display);font-weight:600;color:var(--ink);border-bottom:1px solid var(--line);}
+
+.mobile-menu .btn{margin-top:1.4rem;}
+
+.m-contact{margin-top:1.6rem;font-size:.88rem;line-height:2;}
+
+
+@media (min-width:1024px){
+  .nav-links{display:flex;align-items:center;gap:1.5rem;flex-wrap:nowrap;}
+  .nav-links a{font-family:var(--display);font-size:.86rem;font-weight:400;color:rgba(255,255,255,.86);position:relative;padding-block:.4rem;white-space:nowrap;}
+  .nav-links a:hover{color:#fff;}
+  .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1px;background:#fff;transition:right .22s ease;}
+  .nav-links a:hover::after,.nav-links a.active::after{right:0;}
+  .nav-cta{display:inline-flex;}
+  .burger,.mobile-menu{display:none;}
+  .nav-inner{min-height:108px;}
+}
+
+/* recognition rail — bare artwork, no chips, sitting close under the line above */
+.logo-rail{
+  grid-column:1/-1;
+  margin-top:0;padding-top:0;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:clamp(1.6rem,3.4vw,3rem);
+}
+
+.logo-chip{
+  background:transparent;border:0;border-radius:0;
+  height:auto;padding:0;display:grid;place-items:center;flex:0 1 auto;
+  transition:opacity .2s ease;
+}
+
+.logo-chip:hover{opacity:.75;transform:none;}
+
+.logo-chip img{max-height:54px;width:auto;max-width:170px;object-fit:contain;display:block;}
+
+.logo-chip.is-badge img{max-height:58px;max-width:58px;}
+
+.logo-chip.is-plain img{max-height:58px;max-width:190px;}
+
+@media (max-width:560px){
+  .logo-rail{gap:1.3rem;padding-top:.8rem;}
+  .logo-chip img{max-height:40px;max-width:124px;}
+  .logo-chip.is-badge img{max-height:44px;max-width:44px;}
+  .logo-chip.is-plain img{max-height:44px;max-width:140px;}
+}
+
+
+footer{background:var(--navy);color:rgba(255,255,255,.68);font-size:.88rem;}
+
+footer .wrap{padding-block:clamp(2.8rem,6vw,4.2rem) 0;}
+
+.foot-grid{display:grid;gap:2.2rem;}
+
+.foot-brand .logo{color:#fff;}
+
+.foot-brand p{margin-top:1rem;font-size:.86rem;max-width:38ch;}
+
+footer h4{font-family:var(--display);color:#fff;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem;font-weight:600;}
+
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem;}
+
+footer a:hover{color:var(--light);}
+
+.foot-soc{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem;}
+
+.foot-soc a{
+  width:42px;height:42px;padding:0;border-radius:10px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.10);
+  display:grid;place-items:center;color:rgba(255,255,255,.78);
+  transition:background .2s ease,color .2s ease,transform .2s ease,border-color .2s ease;
+}
+
+.foot-soc a:hover{background:#fff;border-color:#fff;color:var(--blue);transform:translateY(-2px);}
+
+.foot-soc a svg{display:block;}
+
+.foot-bottom{margin-top:2.6rem;border-top:1px solid rgba(255,255,255,.12);padding-block:1.3rem;display:flex;flex-direction:column;gap:.6rem;font-size:.8rem;}
+
+@media (min-width:768px){
+  .foot-grid{grid-template-columns:1.5fr 1fr 1.1fr;gap:2.4rem;}
+  .foot-bottom{flex-direction:row;align-items:center;justify-content:space-between;}
+}
+
+
+/* login/register nav button */
+.btn-outline-nav{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:500;font-size:.88rem;
+  padding:.55rem 1.1rem;border-radius:10px;min-height:42px;
+  background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;
+  transition:background .2s ease,border-color .2s ease,transform .18s ease;
+}
+
+.btn-outline-nav:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);transform:translateY(-1px);}
+
+.btn-outline-mob{
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:500;font-size:1.05rem;
+  padding:.85rem 1.4rem;border-radius:12px;min-height:52px;width:100%;
+  background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;
+  margin-top:1rem;
+}
+
+.btn-outline-mob:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);}
+
+
+
+/* NAV: pack everything into a single row cleanly */
+@media (min-width:1000px){
+  .nav-inner{gap:1rem;}
+  .nav-links{gap:1.5rem;}
+  .nav-cta{
+    font-size:.85rem;padding:.55rem 1.1rem;min-height:42px;
+    white-space:nowrap;border-radius:10px;
+  }
+  .btn-outline-nav{font-size:.82rem;padding:.5rem 1rem;min-height:40px;white-space:nowrap;}
+  .logo-sub{font-size:.58rem;letter-spacing:.2em;}
+  .logo-img{height:32px;}
+}
+
+@media (min-width:1000px) and (max-width:1200px){
+  /* mid-desktop: keep them on one line, tighter */
+  .nav-links{gap:1rem;}
+  .nav-links a{font-size:.8rem;}
+  .nav-cta,.btn-outline-nav{font-size:.76rem;padding:.5rem .85rem;min-height:38px;}
+  .logo-sub{display:none;}
+  .logo-img{height:28px;}
+  .nav-inner{gap:.8rem;min-height:76px;}
+}
+
+
+
+
+/* ============ NAV OVERLAY — sits ON TOP of the hero photo ============ */
+.siteheader{position:absolute;top:0;left:0;right:0;z-index:60;}
+
+header.nav,header{position:relative;background:transparent;border-bottom:1px solid rgba(255,255,255,.14);z-index:60;}
+
+/* ================= PORTAL ================= */
+.portal-hero{
+  position:relative;background:#fff;
+  color:var(--ink);padding-top:clamp(120px,15vw,160px);padding-bottom:clamp(2.2rem,5vw,3.4rem);
+}
+.portal-hero .wrap{position:relative;z-index:2;text-align:center;max-width:52rem;margin-inline:auto;}
+.portal-eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--display);font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--bright);margin-bottom:1rem;justify-content:center;}
+.portal-eyebrow::before{content:"";width:26px;height:1px;background:var(--bright);}
+.portal-hero h1{font-size:clamp(1.9rem,5vw,3.1rem);max-width:none;font-weight:300;color:var(--navy);margin-inline:auto;}
+.portal-hero h1 b{font-weight:600;}
+.portal-hero p{margin-top:1rem;max-width:56ch;color:var(--body);font-size:clamp(1rem,1.6vw,1.12rem);margin-inline:auto;}
+
+/* ---- panel showcase (URS-style) ---- */
+.showcase{
+  display:grid;grid-template-columns:1fr;gap:2px;background:rgba(11,28,71,.14);
+}
+@media (min-width:760px){ .showcase{grid-template-columns:repeat(3,1fr);} }
+.panel{
+  position:relative;isolation:isolate;min-height:clamp(420px,64vw,560px);
+  display:flex;overflow:hidden;background:var(--blue);
+}
+.panel::before{
+  content:"";position:absolute;inset:0;z-index:0;
+  background-image:var(--img);background-size:cover;background-position:center;
+  transform:scale(1.04);transition:transform 1.1s cubic-bezier(.22,1,.36,1);
+  filter:saturate(1.15) contrast(1.05);
+}
+.panel:hover::before{transform:scale(1.11);}
+.panel-scrim{
+  position:absolute;inset:0;z-index:1;
+  /* stronger bottom gradient so titles + buttons read clearly */
+  background:
+    linear-gradient(180deg,rgba(11,28,71,0) 0%,rgba(11,28,71,0) 32%,rgba(11,28,71,.35) 58%,rgba(11,28,71,.72) 80%,rgba(11,28,71,.92) 100%);
+}
+.panel-inner{
+  position:relative;z-index:2;width:100%;display:flex;flex-direction:column;
+  justify-content:flex-end;
+  padding:clamp(1.6rem,3vw,2.4rem);color:#fff;
+}
+.panel-top{margin-top:auto;}
+.panel-index{position:absolute;top:clamp(1.4rem,2.5vw,2rem);left:clamp(1.6rem,3vw,2.4rem);font-family:var(--display);font-size:.8rem;font-weight:400;letter-spacing:.14em;color:#fff;text-shadow:0 1px 3px rgba(11,28,71,.65),0 0 12px rgba(11,28,71,.5);}
+.panel-title{font-size:clamp(1.7rem,3vw,2.35rem);font-weight:400;margin-top:.55rem;text-shadow:0 2px 6px rgba(11,28,71,.55),0 1px 2px rgba(0,0,0,.4);max-width:14ch;}
+.panel-sub{margin-top:.8rem;font-size:.88rem;line-height:1.5;color:rgba(255,255,255,.94);white-space:nowrap;text-shadow:0 1px 4px rgba(11,28,71,.6),0 1px 2px rgba(0,0,0,.4);}
+.panel-actions{display:flex;flex-direction:column;gap:.6rem;padding-top:1.2rem;}
+@media (min-width:420px) and (max-width:759px){ .panel-actions{flex-direction:row;} }
+@media (min-width:980px){ .panel-actions{flex-direction:row;} }
+.p-btn{
+  display:inline-flex;align-items:center;justify-content:center;flex:1;
+  font-family:var(--display);font-weight:500;font-size:.92rem;
+  padding:.8rem 1.1rem;border-radius:10px;min-height:46px;white-space:normal;text-align:center;
+  transition:transform .18s ease,background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+.p-btn-solid{background:#fff;color:var(--blue);}
+.p-btn-solid:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(11,28,71,.35);background:var(--light);}
+.p-btn-ghost{background:rgba(11,28,71,.28);color:#fff;border:1px solid rgba(255,255,255,.65);backdrop-filter:blur(4px);}
+.p-btn-ghost:hover{background:#fff;color:var(--blue);border-color:#fff;}
+.panel-tag{
+  display:inline-flex;align-items:center;gap:.5rem;margin-top:1.4rem;
+  font-family:var(--display);font-size:.78rem;font-weight:500;letter-spacing:.02em;
+  color:#fff;border-top:1px solid rgba(255,255,255,.3);padding-top:1rem;
+  text-shadow:0 1px 3px rgba(11,28,71,.5);
+}
+.panel-tag svg{color:var(--light);}
+/* divider lines between panels on desktop (like the reference) */
+@media (min-width:760px){
+  .panel + .panel::after{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;z-index:3;background:rgba(255,255,255,.16);}
+}
+
+/* ---- helper strip under the showcase ---- */
+.portal-help{background:var(--soft);border-top:1px solid var(--line);}
+.portal-help .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;padding-block:clamp(1.4rem,3vw,2rem);}
+.portal-help p{margin:0;color:var(--body);font-size:.96rem;}
+.portal-help a.help-cta{font-family:var(--display);font-weight:500;color:var(--bright);display:inline-flex;align-items:center;gap:.4rem;}
+.portal-help a.help-cta:hover{color:var(--blue);}
+
+/* ================= MODAL (login / register) ================= */
+.modal-scrim{
+  position:fixed;inset:0;z-index:200;background:rgba(11,28,71,.55);backdrop-filter:blur(3px);
+  display:none;align-items:center;justify-content:center;padding:1.2rem;
+}
+.modal-scrim.open{display:flex;}
+.modal{
+  background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);width:100%;max-width:440px;
+  overflow:hidden;transform:translateY(8px);opacity:0;transition:transform .32s cubic-bezier(.22,1,.36,1),opacity .32s ease;
+}
+.modal-scrim.open .modal{transform:translateY(0);opacity:1;}
+.modal-head{position:relative;padding:1.6rem 1.7rem 1.2rem;background:linear-gradient(150deg,#0B1C47,#163474);color:#fff;}
+.modal-head .eyebrow{font-family:var(--display);font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--light);}
+.modal-head h3{font-size:1.4rem;margin-top:.35rem;font-weight:500;}
+.modal-head p{margin:.5rem 0 0;font-size:.88rem;color:rgba(255,255,255,.8);}
+.modal-close{position:absolute;top:1rem;right:1rem;width:34px;height:34px;border-radius:9px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);color:#fff;display:grid;place-items:center;cursor:pointer;transition:background .2s;}
+.modal-close:hover{background:rgba(255,255,255,.2);}
+.modal-body{padding:1.5rem 1.7rem 1.7rem;}
+.field{margin-bottom:1rem;}
+.field label{display:block;font-family:var(--display);font-size:.82rem;font-weight:500;color:var(--ink);margin-bottom:.4rem;}
+.field input{
+  width:100%;font-family:var(--text);font-size:.98rem;color:var(--ink);
+  padding:.75rem .9rem;border:1px solid var(--line);border-radius:10px;background:var(--soft);
+  transition:border-color .2s,box-shadow .2s,background .2s;min-height:46px;
+}
+.field input:focus{outline:none;border-color:var(--bright);background:#fff;box-shadow:0 0 0 3px rgba(66,136,221,.14);}
+.field-row{display:grid;grid-template-columns:1fr;gap:0;}
+@media (min-width:440px){ .register-only .field-row{grid-template-columns:1fr 1fr;gap:1rem;} }
+.modal .btn-primary{width:100%;padding:.85rem 1rem;font-size:.98rem;min-height:48px;margin-top:.3rem;}
+.modal-alt{margin-top:1.1rem;text-align:center;font-size:.9rem;color:var(--body);}
+.modal-alt button{background:none;border:0;color:var(--bright);font-family:var(--display);font-weight:500;cursor:pointer;font-size:.9rem;padding:0;}
+.modal-alt button:hover{color:var(--blue);text-decoration:underline;}
+.modal-forgot{display:block;margin-top:.2rem;text-align:right;font-size:.82rem;color:var(--bright);}
+.modal-forgot:hover{color:var(--blue);}
+.register-only{display:none;}
+.modal[data-mode="register"] .register-only{display:block;}
+.modal[data-mode="register"] .login-only{display:none;}
+.modal-portal-badge{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--display);font-size:.72rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--light);margin-bottom:.2rem;}
+@media (prefers-reduced-motion:reduce){
+  .panel::before,.panel:hover::before{transition:none;transform:none;}
+  .modal{transition:none;}
+}
+
+/* Portal: solid dark nav bar */
+.siteheader.portal-dark header.nav{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.10);}
+
+
+/* --- Text readability on photos: subtle shadows for headlines over lightened scrims --- */
+.hero h1,.hero p,.hero .eyebrow{text-shadow:0 2px 20px rgba(11,28,71,.55);}
+.path h3,.path .say,.path .path-tag,.path .btn{text-shadow:0 1px 12px rgba(11,28,71,.55);}
+.has-bg-img h2,.has-bg-img p,.has-bg-img blockquote,.has-bg-img .who{text-shadow:0 2px 18px rgba(11,28,71,.55);}
+.sec.band.final h2,.sec.band.final p,.sec.band.final .eyebrow,.sec.band.final .btn,.closing-video h2,.closing-video p,.closing-video .eyebrow{text-shadow:0 2px 18px rgba(11,28,71,.5);}
+.cine-chapter h2,.cine-chapter p,.cine-chapter .eyebrow{text-shadow:0 2px 20px rgba(11,28,71,.55);}
+.panel-title,.panel-sub,.panel-tag,.panel-index{text-shadow:0 2px 16px rgba(11,28,71,.55);}
+
+
+/* ============ MEGA NAV (sitemap-driven) ============ */
+.nav-inner{display:flex;align-items:center;gap:1rem;min-height:76px;flex-wrap:nowrap;}
+.nav-links{display:none;}
+.nav-actions{display:none;margin-left:auto;gap:.6rem;align-items:center;}
+.burger{display:inline-flex;}
+@media (min-width:1200px){
+  .nav-links{display:flex;align-items:center;gap:.35rem;margin-left:auto;}
+  .nav-actions{display:flex;}
+  .burger{display:none;}
+}
+.logo-img{height:34px;filter:brightness(0) invert(1);}
+
+.nav-item{position:relative;}
+.nav-top{
+  display:inline-flex;align-items:center;gap:.28rem;
+  font-family:var(--display);font-size:.86rem;font-weight:500;color:rgba(255,255,255,.9);
+  background:transparent;border:0;cursor:pointer;padding:.55rem .7rem;border-radius:8px;white-space:nowrap;
+  transition:color .18s ease,background .18s ease;
+}
+.nav-top:hover{color:#fff;background:rgba(255,255,255,.08);}
+.nav-item.is-active > .nav-top{color:#fff;}
+.nav-item.is-active > .nav-top::after{content:"";position:absolute;left:.7rem;right:.7rem;bottom:.28rem;height:1.5px;background:var(--light);}
+.caret{transition:transform .22s ease;opacity:.8;}
+.nav-item.has-drop:hover .caret,.nav-trigger[aria-expanded="true"] .caret{transform:rotate(180deg);}
+
+/* dropdown panel */
+.nav-panel{
+  position:absolute;top:calc(100% + 8px);left:0;z-index:80;
+  min-width:250px;background:#fff;border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 24px 60px rgba(11,28,71,.20);
+  padding:.6rem;display:grid;gap:.1rem;
+  opacity:0;visibility:hidden;transform:translateY(6px);
+  transition:opacity .2s ease,transform .2s ease,visibility .2s;
+}
+.nav-panel.is-mega{grid-template-columns:1fr 1fr;min-width:460px;gap:.1rem .4rem;}
+.nav-item.has-drop:hover .nav-panel,.nav-item.has-drop:focus-within .nav-panel{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-sub{
+  display:block;font-family:var(--display);font-size:.88rem;font-weight:400;color:var(--ink);
+  padding:.6rem .8rem;border-radius:9px;white-space:nowrap;
+  transition:background .16s ease,color .16s ease;
+}
+.nav-sub:hover{background:var(--soft);color:var(--bright);}
+/* keep last dropdowns from overflowing the right edge */
+.nav-item:nth-last-child(-n+2) .nav-panel{left:auto;right:0;}
+.nav-item:nth-last-child(-n+2) .nav-panel.is-mega{left:auto;right:0;}
+
+.nav-cta{font-size:.8rem;padding:.5rem .95rem;min-height:40px;white-space:nowrap;}
+.btn-outline-nav{font-size:.78rem;padding:.5rem .85rem;}
+@media (min-width:1200px) and (max-width:1360px){
+  .nav-top{font-size:.82rem;padding:.5rem .55rem;}
+  .nav-links{gap:.15rem;}
+  .nav-cta{font-size:.76rem;padding:.48rem .8rem;}
+}
+
+/* ---- mobile menu: accordion groups ---- */
+.mobile-menu .m-group{border-bottom:1px solid rgba(255,255,255,.10);}
+.m-acc{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  background:transparent;border:0;cursor:pointer;color:#fff;
+  font-family:var(--display);font-size:1.05rem;font-weight:500;padding:.85rem 0;
+}
+.m-acc svg{transition:transform .25s ease;}
+.m-acc[aria-expanded="true"] svg{transform:rotate(180deg);}
+.m-sub{max-height:0;overflow:hidden;transition:max-height .3s ease;display:flex;flex-direction:column;}
+.m-sub.open{max-height:600px;}
+.m-sub a{color:rgba(255,255,255,.8);font-size:.95rem;padding:.5rem 0 .5rem 1rem;text-decoration:none;}
+.m-sub a:hover{color:#fff;}
+.mobile-menu .m-link{border-bottom:1px solid rgba(255,255,255,.10);}
+.m-cta{display:flex;flex-direction:column;gap:.6rem;margin-top:1.2rem;}
+.nav-item.force-open .nav-panel{opacity:1;visibility:visible;transform:translateY(0);}
+
+/* ensure dropdown link text is dark on the white panel (override inherited white nav link color) */
+.nav-panel .nav-sub{color:var(--ink)!important;}
+.nav-panel .nav-sub:hover{color:var(--bright)!important;background:var(--soft)!important;}
+.nav-top{color:rgba(255,255,255,.9)!important;}
+.nav-item.is-active > .nav-top,.nav-top:hover{color:#fff!important;}
+
+/* Portal page: solid navy nav so all nav text is visible on the white hero */
+.siteheader.portal-dark header.nav{background:var(--navy)!important;border-bottom:1px solid rgba(255,255,255,.12)!important;}
+.siteheader.portal-dark .nav-top{color:#fff!important;}
+.siteheader.portal-dark .nav-cta{color:#fff;}
+
+</style>
+</head>
+<body>
+
+<div class="siteheader portal-dark">
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">
+      <img class="logo-img" src="https://cdn.katalyst-crm.com/t1/LiquidGym-Logo-80h.png" alt="LiquidGym">
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <div class="nav-item has-drop">
+        <button class="nav-top nav-trigger" aria-expanded="false">Therapies<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel">
+          <a class="nav-sub" href="physiotherapy.html">Physiotherapy</a>
+          <a class="nav-sub" href="massage-therapy.html">Massage Therapy</a>
+          <a class="nav-sub" href="kinesiology.html">Kinesiology</a>
+          <a class="nav-sub" href="index.html#">Why Aquatic Therapy</a>
+        </div>
+      </div>
+      <div class="nav-item has-drop">
+        <button class="nav-top nav-trigger" aria-expanded="false">Conditions<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel is-mega">
+          <a class="nav-sub" href="index.html#">Arthritis</a>
+          <a class="nav-sub" href="index.html#">Sprains, Strains & Fractures</a>
+          <a class="nav-sub" href="index.html#">Sports Injuries</a>
+          <a class="nav-sub" href="index.html#">Cardiovascular Impairments</a>
+          <a class="nav-sub" href="index.html#">Long COVID</a>
+          <a class="nav-sub" href="index.html#">Plantar Fasciitis</a>
+          <a class="nav-sub" href="index.html#">Neurological Conditions</a>
+          <a class="nav-sub" href="index.html#">Chronic Pain</a>
+          <a class="nav-sub" href="index.html#">Vestibular</a>
+        </div>
+      </div>
+      <div class="nav-item has-drop">
+        <button class="nav-top nav-trigger" aria-expanded="false">Services<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel">
+          <a class="nav-sub" href="index.html#">Pre-Op & Post-Op</a>
+          <a class="nav-sub" href="index.html#">Veterans Affairs — Physiotherapy</a>
+          <a class="nav-sub" href="index.html#">Veterans Affairs — Kinesiology</a>
+          <a class="nav-sub" href="index.html#">Personal Training</a>
+          <a class="nav-sub" href="index.html#">Virtual</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-top" href="wei-water-exercise-institute.html">WEI™</a></div>
+      <div class="nav-item has-drop">
+        <button class="nav-top nav-trigger" aria-expanded="false">ATI<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel">
+          <a class="nav-sub" href="ati-360.html">ATI 360</a>
+          <a class="nav-sub" href="ati-education-certification.html">Education & Certification</a>
+        </div>
+      </div>
+      <div class="nav-item has-drop">
+        <button class="nav-top nav-trigger" aria-expanded="false">Equipment<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel">
+          <a class="nav-sub" href="index.html#">Overview</a>
+          <a class="nav-sub" href="index.html#">Alinker</a>
+          <a class="nav-sub" href="index.html#">Game Ready System</a>
+          <a class="nav-sub" href="index.html#">Normatec Compression System</a>
+        </div>
+      </div>
+      <div class="nav-item has-drop">
+        <button class="nav-top nav-trigger" aria-expanded="false">About<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel">
+          <a class="nav-sub" href="about.html">About LiquidGym</a>
+          <a class="nav-sub" href="index.html#">Partners</a>
+          <a class="nav-sub" href="index.html#">Facility</a>
+          <a class="nav-sub" href="index.html#">Success Stories</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="portal-login.html" class="btn btn-outline-nav nav-cta">Login / Register</a>
+      <a href="index.html#invitation" class="btn btn-primary nav-cta">Book a Discovery Call</a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a class="m-link" href="index.html">Home</a>
+  <div class="m-group">
+    <button class="m-acc" aria-expanded="false">Therapies<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div class="m-sub">
+      <a href="physiotherapy.html">Physiotherapy</a>
+      <a href="massage-therapy.html">Massage Therapy</a>
+      <a href="kinesiology.html">Kinesiology</a>
+      <a href="index.html#">Why Aquatic Therapy</a>
+    </div>
+  </div>
+  <div class="m-group">
+    <button class="m-acc" aria-expanded="false">Conditions<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div class="m-sub">
+      <a href="index.html#">Arthritis</a>
+      <a href="index.html#">Sprains, Strains & Fractures</a>
+      <a href="index.html#">Sports Injuries</a>
+      <a href="index.html#">Cardiovascular Impairments</a>
+      <a href="index.html#">Long COVID</a>
+      <a href="index.html#">Plantar Fasciitis</a>
+      <a href="index.html#">Neurological Conditions</a>
+      <a href="index.html#">Chronic Pain</a>
+      <a href="index.html#">Vestibular</a>
+    </div>
+  </div>
+  <div class="m-group">
+    <button class="m-acc" aria-expanded="false">Services<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div class="m-sub">
+      <a href="index.html#">Pre-Op & Post-Op</a>
+      <a href="index.html#">Veterans Affairs — Physiotherapy</a>
+      <a href="index.html#">Veterans Affairs — Kinesiology</a>
+      <a href="index.html#">Personal Training</a>
+      <a href="index.html#">Virtual</a>
+    </div>
+  </div>
+  <a class="m-link" href="wei-water-exercise-institute.html">WEI™</a>
+  <div class="m-group">
+    <button class="m-acc" aria-expanded="false">ATI<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div class="m-sub">
+      <a href="ati-360.html">ATI 360</a>
+      <a href="ati-education-certification.html">Education & Certification</a>
+    </div>
+  </div>
+  <div class="m-group">
+    <button class="m-acc" aria-expanded="false">Equipment<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div class="m-sub">
+      <a href="index.html#">Overview</a>
+      <a href="index.html#">Alinker</a>
+      <a href="index.html#">Game Ready System</a>
+      <a href="index.html#">Normatec Compression System</a>
+    </div>
+  </div>
+  <div class="m-group">
+    <button class="m-acc" aria-expanded="false">About<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div class="m-sub">
+      <a href="about.html">About LiquidGym</a>
+      <a href="index.html#">Partners</a>
+      <a href="index.html#">Facility</a>
+      <a href="index.html#">Success Stories</a>
+    </div>
+  </div>
+  <div class="m-cta">
+    <a href="portal-login.html" class="btn btn-outline-mob">Login / Register</a>
+    <a href="index.html#invitation" class="btn btn-primary">Book a Discovery Call</a>
+  </div>
+  <div class="m-contact">
+    <a href="mailto:info@liquidgym.ca">info@liquidgym.ca</a><br>
+    <a href="tel:6138208228">613-820-8228</a>
+  </div>
+</div>
+
+<!-- ===================== PORTAL HERO ===================== -->
+<section class="portal-hero">
+  <div class="wrap">
+    <span class="portal-eyebrow">Secure Access</span>
+    <h1>The LiquidGym <b>Portal</b>.<br>One Door for Every Program.</h1>
+    <p>Choose your program to log in, or register for access. Members, clinicians, and clinic partners each have a dedicated portal.</p>
+  </div>
+</section>
+
+<!-- ===================== 3-PANEL SHOWCASE ===================== -->
+<section aria-label="Choose your portal">
+  <div class="showcase">
+
+      <article class="panel" style="--img:url('https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260821_104919_d37a2f8b-a137-4009-a6fd-4367a1b9e753.png')">
+        <div class="panel-scrim"></div>
+        <div class="panel-inner">
+          <div class="panel-top">
+            <span class="panel-index">01</span>
+            <h2 class="panel-title">ATI 360™</h2>
+            <p class="panel-sub">Clinic Partner Portal · Operations, Training &amp; Systems</p>
+          </div>
+          <div class="panel-actions">
+            <a class="p-btn p-btn-solid" href="#login-360" data-portal="360" data-mode="login">Login to Portal</a>
+            <a class="p-btn p-btn-ghost" href="#register-360" data-portal="360" data-mode="register">Register</a>
+          </div>
+          <div class="panel-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg><span>For Clinic Owners &amp; Operators</span></div>
+        </div>
+      </article>
+      <article class="panel" style="--img:url('https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260821_104907_84a75a52-d663-4a00-b0d6-067d3d8593e7.png')">
+        <div class="panel-scrim"></div>
+        <div class="panel-inner">
+          <div class="panel-top">
+            <span class="panel-index">02</span>
+            <h2 class="panel-title">WEI™</h2>
+            <p class="panel-sub">Water Exercise Institute · Member Program Access</p>
+          </div>
+          <div class="panel-actions">
+            <a class="p-btn p-btn-solid" href="#login-wei" data-portal="wei" data-mode="login">Login to Portal</a>
+            <a class="p-btn p-btn-ghost" href="#register-wei" data-portal="wei" data-mode="register">Register</a>
+          </div>
+          <div class="panel-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg><span>For Members &amp; Patients</span></div>
+        </div>
+      </article>
+      <article class="panel" style="--img:url('https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260821_104913_9279f3f0-e1b0-4fde-bf06-d9df11cd58c1.png')">
+        <div class="panel-scrim"></div>
+        <div class="panel-inner">
+          <div class="panel-top">
+            <span class="panel-index">03</span>
+            <h2 class="panel-title">Education &amp; Certification</h2>
+            <p class="panel-sub">ATI Clinician Training · Course &amp; Credential Portal</p>
+          </div>
+          <div class="panel-actions">
+            <a class="p-btn p-btn-solid" href="#login-edu" data-portal="edu" data-mode="login">Login to Portal</a>
+            <a class="p-btn p-btn-ghost" href="#register-edu" data-portal="edu" data-mode="register">Register</a>
+          </div>
+          <div class="panel-tag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg><span>For Clinicians &amp; Teams</span></div>
+        </div>
+      </article>
+  </div>
+</section>
+
+<!-- ===================== HELP STRIP ===================== -->
+<section class="portal-help">
+  <div class="wrap">
+    <p>Not sure which portal is yours? We will point you to the right one.</p>
+    <a class="help-cta" href="index.html#invitation">Book a Discovery Call <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="index.html">
+          <img class="logo-img" src="https://cdn.katalyst-crm.com/t1/LiquidGym-Logo-80h.png" alt="LiquidGym">
+          <span class="logo-sub">The Hub</span>
+        </a>
+        <p>Advancing aquatic therapy worldwide. Built from real patients. Proven in practice.</p>
+        <h4 style="margin-top:1.6rem">Follow LiquidGym</h4>
+        <div class="foot-soc">
+          <a href="https://www.instagram.com/liquidgymcanada/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.7 0 3.1 0 4.1.06 1.1.05 1.8.22 2.4.47.7.26 1.2.61 1.7 1.14.5.5.9 1 1.1 1.7.3.6.4 1.3.5 2.4.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c-.1 1.1-.2 1.8-.5 2.4-.2.7-.6 1.2-1.1 1.7-.5.5-1 .9-1.7 1.1-.6.3-1.3.4-2.4.5-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1.1-.1-1.8-.2-2.4-.5-.7-.2-1.2-.6-1.7-1.1-.5-.5-.9-1-1.1-1.7-.3-.6-.4-1.3-.5-2.4C2 15.1 2 14.7 2 12s0-3.1.1-4.1c.1-1.1.2-1.8.5-2.4.2-.7.6-1.2 1.1-1.7.5-.5 1-.9 1.7-1.1.6-.3 1.3-.4 2.4-.5C8.9 2 9.3 2 12 2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.8 5.8a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z"/></svg></a>
+          <a href="https://www.youtube.com/user/LiquidGym" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a3 3 0 0 0-2.1-2.1C18.9 4.8 12 4.8 12 4.8s-6.9 0-8.5.4a3 3 0 0 0-2.1 2.1C1 8.8 1 12 1 12s0 3.2.4 4.7a3 3 0 0 0 2.1 2.1c1.6.4 8.5.4 8.5.4s6.9 0 8.5-.4a3 3 0 0 0 2.1-2.1C23 15.2 23 12 23 12ZM9.8 15.2V8.8l5.6 3.2-5.6 3.2Z"/></svg></a>
+          <a href="https://www.facebook.com/LiquidGymCanada/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="https://www.linkedin.com/company/liquidgym-therapy-training/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 3H3.6C2.7 3 2 3.7 2 4.6v14.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V4.6c0-.9-.7-1.6-1.6-1.6ZM8.3 18.3H5.4V9.8h2.9v8.5ZM6.9 8.6a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Zm11.4 9.7h-2.9v-4.1c0-1 0-2.3-1.4-2.3s-1.6 1.1-1.6 2.2v4.2H9.5V9.8h2.8V11h.1c.4-.7 1.3-1.5 2.7-1.5 2.9 0 3.4 1.9 3.4 4.4v4.4Z"/></svg></a>
+          <a href="https://x.com/LiquidGymCanada" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.4L4.3 21H1l7.7-8.8L1.4 3h6.8l4.7 5.9L17.5 3Zm-1.2 16h1.8L7.8 4.9H5.9L16.3 19Z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Three Paths</h4>
+        <ul>
+          <li><a href="index.html#ati">Liquid Gym ATI — Overview</a></li>
+          <li><a href="index.html#paths">ATI 360™ — Build Your Program</a></li>
+          <li><a href="index.html#paths">ATI Certification — Get Certified</a></li>
+          <li><a href="index.html#paths">WEI™ — Start Moving</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+          <li><a href="index.html#voices">Success Stories</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@liquidgym.ca">info@liquidgym.ca</a></li>
+          <li><a href="tel:6138208228">613-820-8228</a></li>
+          <li>2039 Robertson Rd. Suite 501 Ottawa, Ontario, Canada</li>
+          <li><a href="index.html#invitation">Book a Discovery Call</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 LiquidGym. All Rights Reserved.</span>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===================== MODAL ===================== -->
+<div class="modal-scrim" id="modalScrim" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal" id="modal" data-mode="login">
+    <div class="modal-head">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <span class="modal-portal-badge" id="modalBadge">ATI 360</span>
+      <div class="eyebrow login-only">Portal Login</div>
+      <div class="eyebrow register-only">Create Account</div>
+      <h3 id="modalTitle"><span class="login-only">Welcome back</span><span class="register-only">Register for access</span></h3>
+      <p class="login-only">Enter your credentials to access your portal.</p>
+      <p class="register-only">Tell us a little about you and we will set up your access.</p>
+    </div>
+    <div class="modal-body">
+      <div class="register-only">
+        <div class="field-row">
+          <div class="field"><label for="fName">First name</label><input id="fName" type="text" autocomplete="given-name" placeholder="Jane"></div>
+          <div class="field"><label for="lName">Last name</label><input id="lName" type="text" autocomplete="family-name" placeholder="Doe"></div>
+        </div>
+      </div>
+      <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+      <div class="field register-only"><label for="org">Clinic / Organization <span style="color:var(--body);font-weight:400">(optional)</span></label><input id="org" type="text" autocomplete="organization" placeholder="Your clinic or organization"></div>
+      <div class="field">
+        <label for="pwd">Password</label>
+        <input id="pwd" type="password" autocomplete="current-password" placeholder="••••••••">
+        <a class="modal-forgot login-only" href="#">Forgot password?</a>
+      </div>
+      <button class="btn btn-primary"><span class="login-only">Log in</span><span class="register-only">Create account</span></button>
+      <p class="modal-alt login-only">New here? <button type="button" data-switch="register">Register for access</button></p>
+      <p class="modal-alt register-only">Already have an account? <button type="button" data-switch="login">Log in</button></p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ---- mobile menu ---- */
+  var burger=document.getElementById('burger'), mm=document.getElementById('mobileMenu');
+  function setOpen(o){ if(!mm) return; mm.classList.toggle('open',o); if(burger){burger.classList.toggle('is-open',o);burger.setAttribute('aria-expanded',o);} document.body.style.overflow=o?'hidden':''; }
+  if(burger){ burger.addEventListener('click',function(){ setOpen(!mm.classList.contains('open')); }); }
+  if(mm){ mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setOpen(false);});}); }
+  window.addEventListener('resize',function(){ if(window.innerWidth>=1000) setOpen(false); });
+
+  /* ---- portal modal ---- */
+  var scrim=document.getElementById('modalScrim'), modal=document.getElementById('modal'),
+      badge=document.getElementById('modalBadge'), closeBtn=document.getElementById('modalClose');
+  var LABELS={ '360':'ATI 360', 'wei':'WEI', 'edu':'Education & Certification' };
+  var lastFocus=null;
+  function openModal(portal,mode){
+    badge.textContent=LABELS[portal]||'Portal';
+    modal.setAttribute('data-mode',mode);
+    scrim.classList.add('open');
+    document.body.style.overflow='hidden';
+    lastFocus=document.activeElement;
+    var first=modal.querySelector(mode==='register'?'#fName':'#email'); if(first) setTimeout(function(){first.focus();},60);
+  }
+  function closeModal(){ scrim.classList.remove('open'); document.body.style.overflow=''; if(lastFocus) lastFocus.focus(); }
+  document.querySelectorAll('[data-portal]').forEach(function(el){
+    el.addEventListener('click',function(e){ e.preventDefault(); openModal(el.getAttribute('data-portal'), el.getAttribute('data-mode')); });
+  });
+  document.querySelectorAll('[data-switch]').forEach(function(b){
+    b.addEventListener('click',function(){ modal.setAttribute('data-mode', b.getAttribute('data-switch')); });
+  });
+  closeBtn.addEventListener('click',closeModal);
+  scrim.addEventListener('click',function(e){ if(e.target===scrim) closeModal(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape' && scrim.classList.contains('open')) closeModal(); });
+  /* prevent real submit (demo) */
+  modal.querySelector('.btn-primary').addEventListener('click',function(){ closeModal(); });
+})();
+</script>
+<script>
+(function(){
+  var burger=document.getElementById('burger'), mm=document.getElementById('mobileMenu');
+  function setOpen(o){ if(!mm) return; mm.classList.toggle('open',o); if(burger){burger.classList.toggle('is-open',o);burger.setAttribute('aria-expanded',o);} document.body.style.overflow=o?'hidden':''; }
+  if(burger){ burger.addEventListener('click',function(){ setOpen(!mm.classList.contains('open')); }); }
+  if(mm){ mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ if(a.closest('.m-sub')||a.classList.contains('m-link')||a.closest('.m-cta')) setOpen(false); });}); }
+  window.addEventListener('resize',function(){ if(window.innerWidth>=1200) setOpen(false); });
+  /* mobile accordion */
+  document.querySelectorAll('.m-acc').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var sub=btn.nextElementSibling, open=sub.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+    });
+  });
+  /* desktop dropdown: click to toggle on touch, aria on hover handled by CSS */
+  document.querySelectorAll('.nav-trigger').forEach(function(t){
+    t.addEventListener('click',function(e){
+      e.preventDefault();
+      var item=t.closest('.nav-item'), panel=item.querySelector('.nav-panel');
+      var isOpen=item.classList.toggle('force-open');
+      t.setAttribute('aria-expanded',isOpen);
+      document.querySelectorAll('.nav-item.force-open').forEach(function(o){ if(o!==item){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');} });
+    });
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.nav-item')){ document.querySelectorAll('.nav-item.force-open').forEach(function(o){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');}); }
+  });
+})();
+</script>
+</body>
+</html>

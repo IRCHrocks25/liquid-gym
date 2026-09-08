@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ATI Education & Certification — LiquidGym</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1C47; --blue:#163474; --mid:#2E5EAC; --bright:#4288DD; --light:#ADD4F5;
+  --ink:#163474; --body:#5C6B88; --line:#E3EDF9; --soft:#F3F8FD;
+  --shadow-sm:0 2px 10px rgba(11,28,71,.06);
+  --shadow-md:0 14px 40px rgba(11,28,71,.10);
+  --shadow-lg:0 28px 70px rgba(11,28,71,.16);
+  --r:14px;
+  --gut:clamp(1.15rem,5vw,4rem);
+  --sec:clamp(3.5rem,8vw,7rem);
+  --display:'IBM Plex Sans',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --text:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+
+
+*,*::before,*::after{box-sizing:border-box;}
+
+
+*{margin:0;padding:0;}
+
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+
+
+body{font-family:var(--text);color:var(--body);background:#fff;line-height:1.6;overflow-x:hidden;}
+
+
+img,video,svg{max-width:100%;height:auto;display:block;}
+
+
+h1,h2,h3,h4{font-family:var(--display);color:var(--ink);font-weight:400;letter-spacing:-.02em;text-wrap:pretty;}
+
+
+h1{font-size:clamp(2rem,4.8vw,3.5rem);line-height:1.08;letter-spacing:-.03em;}
+
+
+h2{font-size:clamp(1.7rem,4vw,2.7rem);line-height:1.12;}
+
+
+h3{font-size:clamp(1.15rem,2.2vw,1.4rem);font-weight:500;}
+
+
+a{color:inherit;text-decoration:none;}
+
+
+.wrap{width:100%;max-width:1180px;margin-inline:auto;padding-inline:var(--gut);}
+
+
+.sec{padding-block:var(--sec);}
+
+
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:1rem;}
+
+
+.eyebrow.on-dark{color:var(--light);}
+
+
+.lede{font-size:clamp(1.05rem,1.5vw,1.2rem);line-height:1.62;color:var(--body);}
+
+
+.band{background:linear-gradient(160deg,#0B1C47,#163474 60%,#2E5EAC);color:#fff;}
+
+
+.band h1,.band h2,.band h3{color:#fff;}
+
+
+.soft-bg{background:var(--soft);}
+
+
+
+/* buttons */
+.btn-row{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem;}
+
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.7rem;
+  white-space:normal;line-height:1.3;text-align:center;
+  font-family:var(--display);font-weight:500;font-size:1rem;
+  padding:1rem 1.6rem;border-radius:12px;min-height:56px;width:100%;
+  transition:transform .18s ease,box-shadow .18s ease,background .2s ease,color .2s ease;
+}
+
+
+@media (min-width:640px){.btn{width:auto;}}
+
+
+.btn svg{flex:none;}
+
+
+.btn-primary{background:var(--bright);color:#fff;box-shadow:0 12px 30px rgba(66,136,221,.32);}
+
+
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(66,136,221,.42);}
+
+
+.btn-dark{background:var(--navy);color:#fff;}
+
+
+.btn-dark:hover{transform:translateY(-2px);background:var(--blue);}
+
+
+.btn-light{background:#fff;color:var(--blue);}
+
+
+.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);}
+
+
+.btn-outline{background:transparent;border:1px solid var(--line);color:var(--blue);}
+
+
+.btn-outline:hover{border-color:var(--bright);color:var(--bright);}
+
+
+.btn-outline-light{background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff;}
+
+
+.btn-outline-light:hover{background:rgba(255,255,255,.12);}
+
+
+
+/* header */
+.site
+@media (min-width:900px){
+  .nav-inner{min-height:84px;}
+  .nav-links{display:flex;align-items:center;gap:2rem;}
+  .nav-links a{font-family:var(--display);font-size:.92rem;color:rgba(255,255,255,.86);padding-block:.4rem;}
+  .nav-links a:hover{color:#fff;}
+  .nav-links .btn{width:auto;min-height:44px;padding:.6rem 1.15rem;font-size:.9rem;margin-left:.4rem;}
+}
+
+
+@media (min-width:900px){.burger{display:none;}}
+
+
+@media (min-width:900px){.mobile-menu{display:none;}}
+
+
+
+/* footer */
+.foot{background:var(--navy);color:rgba(255,255,255,.7);padding-block:clamp(3rem,7vw,4.5rem) 2.5rem;}
+
+
+@media (min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr;gap:3rem;}}
+
+
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,.7,.2,1),transform .8s cubic-bezier(.22,.7,.2,1);}
+
+
+.rv.in{opacity:1;transform:none;}
+
+
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;}}
+
+
+
+
+.hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(150deg,#0B1C47 0%,#163474 52%,#2E5EAC 100%);}
+
+
+.hero .wrap{position:relative;z-index:2;padding-block:clamp(3.6rem,10vw,6.5rem);}
+
+
+.hero .inner{max-width:60ch;}
+
+
+.hero h1{color:#fff;max-width:18ch;}
+
+
+.hero .sub{color:rgba(255,255,255,.86);font-size:clamp(1.05rem,1.6vw,1.25rem);margin-top:1.3rem;max-width:46ch;}
+
+
+
+.split2{display:grid;gap:2.4rem;align-items:center;}
+
+
+@media (min-width:900px){.split2{grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,4.5rem);}}
+
+
+.narrow{max-width:60ch;}
+
+
+.closer{margin-top:1.6rem;font-family:var(--display);font-size:clamp(1.1rem,2vw,1.35rem);color:var(--blue);line-height:1.35;}
+
+
+
+/* FMAT six stages */
+.fmat{display:grid;gap:0;margin-top:2.6rem;counter-reset:stage;}
+
+
+.fmat-row{display:grid;gap:.4rem;padding:1.7rem 0;border-top:1px solid var(--line);grid-template-columns:auto 1fr;column-gap:1.4rem;align-items:start;}
+
+
+.fmat-row:first-child{border-top:0;}
+
+
+.fmat-row .no{font-family:var(--display);font-size:1.5rem;font-weight:300;color:var(--bright);line-height:1;grid-row:span 2;letter-spacing:-.03em;}
+
+
+.fmat-row .st{font-family:var(--display);font-weight:500;color:var(--blue);font-size:1.08rem;}
+
+
+.fmat-row p{font-size:.98rem;line-height:1.6;}
+
+
+.on-dark-note{margin-top:2rem;font-family:var(--display);font-size:clamp(1.05rem,2vw,1.3rem);color:#fff;max-width:34ch;line-height:1.35;}
+
+
+
+/* certification pathway */
+.levels{display:grid;gap:1.1rem;margin-top:2.4rem;}
+
+
+@media (min-width:820px){.levels{grid-template-columns:1fr 1fr;}}
+
+
+.level{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.8rem 1.6rem;box-shadow:var(--shadow-sm);}
+
+
+.level .k{font-family:var(--display);color:var(--bright);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;display:block;margin-bottom:.7rem;}
+
+
+.level h3{color:var(--blue);margin-bottom:.6rem;}
+
+
+.level p{font-size:.96rem;line-height:1.6;}
+
+
+.meta-strip{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem;}
+
+
+.meta-strip span{font-family:var(--display);font-size:.82rem;color:var(--blue);background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:.5rem .85rem;}
+
+
+.callout{margin-top:1.8rem;background:var(--soft);border-left:3px solid var(--bright);border-radius:0 var(--r) var(--r) 0;padding:1.3rem 1.5rem;}
+
+
+.callout p{color:var(--body);font-size:.96rem;line-height:1.6;}
+
+
+
+/* delivery advantage */
+.adv{display:grid;gap:1.1rem;margin-top:2.4rem;}
+
+
+@media (min-width:760px){.adv{grid-template-columns:repeat(3,1fr);}}
+
+
+
+/* authority */
+.auth p{font-size:1rem;line-height:1.72;color:var(--body);max-width:70ch;}
+
+
+.auth p + p{margin-top:1.1rem;}
+
+
+
+/* voices placeholder */
+.voices{display:grid;gap:1rem;margin-top:2.4rem;}
+
+
+@media (min-width:900px){.voices{grid-template-columns:repeat(3,1fr);}}
+
+
+.voice{background:#fff;border:1px dashed var(--line);border-radius:var(--r);padding:1.6rem;color:var(--body);}
+
+
+.voice .ph-quote{font-family:var(--display);color:var(--mid);font-size:.98rem;line-height:1.5;font-style:italic;}
+
+
+.voice .who{margin-top:1rem;font-family:var(--display);font-size:.86rem;color:var(--body);}
+
+
+.voices-note{margin-top:1.6rem;font-size:.82rem;color:var(--body);max-width:70ch;line-height:1.6;}
+
+
+
+/* faq */
+.faq{margin-top:2.4rem;display:grid;gap:.8rem;}
+
+
+.faq details{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .2s;}
+
+
+.faq details[open]{border-color:var(--bright);}
+
+
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:1rem;align-items:center;padding:1.3rem 1.5rem;font-family:var(--display);color:var(--blue);font-weight:500;font-size:1.02rem;min-height:60px;}
+
+
+.faq summary::-webkit-details-marker{display:none;}
+
+
+.faq .sign{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--line);color:var(--bright);display:grid;place-items:center;font-size:1rem;}
+
+
+.faq details[open] .sign{background:var(--bright);border-color:var(--bright);color:#fff;}
+
+
+.faq .fbody{padding:0 1.5rem 1.4rem;}
+
+
+.faq .fbody p{font-size:.96rem;line-height:1.62;color:var(--body);}
+
+
+
+/* dual cta */
+.dual{display:grid;gap:1.1rem;margin-top:2.4rem;align-items:stretch;}
+
+
+@media (min-width:820px){.dual{grid-template-columns:1fr 1fr;}}
+
+
+.dual-card{border-radius:var(--r);padding:1.9rem 1.7rem;display:flex;flex-direction:column;height:100%;}
+
+
+.dual-card.ind{background:#fff;border:1px solid var(--line);}
+
+
+.dual-card.team{background:linear-gradient(155deg,#163474,#0B1C47);border:1px solid rgba(255,255,255,.18);color:#fff;}
+
+
+.dual-card h3{margin-bottom:.7rem;}
+
+
+.dual-card.ind h3{color:var(--blue);}
+
+
+.dual-card.team h3{color:#fff;}
+
+
+.dual-card p{font-size:.96rem;line-height:1.6;flex:1;}
+
+      /* p grows so buttons sit at the same baseline */
+.dual-card.ind p{color:var(--body);}
+
+
+.dual-card.team p{color:rgba(255,255,255,.85);}
+
+
+.dual-card .btn{margin-top:1.4rem;align-self:flex-start;}
+
+
+
+/* dual-head — centered and wider than .narrow */
+.dual-head{max-width:none;margin-inline:auto;text-align:center;}
+
+
+.dual-head .eyebrow{justify-content:center;color:#fff;}
+.dual-head .eyebrow::before,.dual-head .eyebrow::after{background:#fff;}
+
+
+.dual-head h2{margin-inline:auto;white-space:nowrap;}
+@media (max-width:720px){.dual-head h2{white-space:normal;}}
+
+
+
+/* cross-sell */
+.cross{display:grid;gap:1rem;margin-top:2.2rem;}
+
+
+@media (min-width:760px){.cross{grid-template-columns:repeat(2,1fr);}}
+
+
+.cross-card{border:1px solid rgba(255,255,255,.18);border-radius:var(--r);padding:1.6rem;background:rgba(255,255,255,.05);}
+
+
+.cross-card h3{color:#fff;font-size:1.05rem;margin-bottom:.5rem;}
+
+
+.cross-card p{color:rgba(255,255,255,.82);font-size:.93rem;line-height:1.56;}
+
+
+.cross-card a{color:var(--light);font-family:var(--display);font-size:.92rem;display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;}
+
+
+.cross-links{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:2rem;font-family:var(--display);font-size:.92rem;}
+
+
+.cross-links a{color:var(--light);display:inline-flex;align-items:center;gap:.4rem;}
+
+
+
+
+/* ---------- shared visual enhancements ---------- */
+.hero{position:relative;}
+
+
+.wavebg{position:absolute;left:0;right:0;width:100%;height:auto;pointer-events:none;opacity:.18;color:var(--light);}
+
+
+.hero .wavebg{bottom:-2px;z-index:1;}
+
+
+.hero .wrap{position:relative;z-index:2;}
+
+
+
+/* section eyebrow gets a small leading tick */
+.eyebrow::before{content:"";width:20px;height:1px;background:currentColor;opacity:.5;display:inline-block;}
+
+
+
+/* soft floating orbs for dark bands */
+.band,.quote-band{position:relative;overflow:hidden;}
+
+
+.orb{position:absolute;border-radius:50%;filter:blur(2px);opacity:.5;pointer-events:none;background:radial-gradient(circle at 30% 30%,rgba(173,212,245,.5),transparent 70%);}
+
+
+
+/* numbered section index chip */
+.sec-index{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--display);font-size:.78rem;color:var(--mid);margin-bottom:1rem;}
+
+
+.sec-index b{font-weight:500;color:var(--bright);font-size:1rem;}
+
+
+.sec-index .bar{width:24px;height:1px;background:var(--line);}
+
+
+
+/* full-bleed image band */
+.imgband{position:relative;height:clamp(240px,38vw,420px);overflow:hidden;}
+
+
+.imgband img{width:100%;height:100%;object-fit:cover;}
+
+
+.imgband::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,28,71,.08),rgba(11,28,71,.28));}
+
+
+.imgband .cap{position:absolute;left:0;right:0;bottom:0;padding:clamp(1.4rem,4vw,2.6rem) var(--gut);color:#fff;z-index:2;max-width:900px;margin-inline:auto;}
+
+
+.imgband .cap p{font-family:var(--display);font-size:clamp(1.1rem,2.4vw,1.7rem);line-height:1.35;max-width:24ch;}
+
+
+
+/* icon chips in feature cards */
+.ico-chip{width:44px;height:44px;border-radius:12px;background:var(--soft);display:grid;place-items:center;color:var(--bright);margin-bottom:1.1rem;}
+
+
+.ico-chip svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;}
+
+
+.band .ico-chip{background:rgba(255,255,255,.1);color:var(--light);}
+
+
+
+
+/* ---------- cinematic full-width hero ---------- */
+.hero{position:relative;isolation:isolate;min-height:clamp(520px,74vh,760px);min-height:clamp(520px,74svh,760px);display:flex;align-items:center;}
+
+
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
+
+
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:heroDrift 22s ease-in-out infinite alternate;}
+
+
+@keyframes heroDrift{from{transform:scale(1.06) translate3d(0,0,0);}to{transform:scale(1.14) translate3d(-1.5%,-1.5%,0);}}
+
+
+@media (prefers-reduced-motion:reduce){.hero-bg img{animation:none;transform:scale(1.04);}}
+
+
+.hero-scrim{position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(105deg,rgba(11,28,71,.51) 0%,rgba(11,28,71,.43) 40%,rgba(11,28,71,.23) 72%,rgba(11,28,71,.17) 100%),
+    linear-gradient(180deg,rgba(11,28,71,.3) 0%,transparent 30%,transparent 60%,rgba(11,28,71,.4) 100%);
+}
+
+
+.hero .wrap{position:relative;z-index:2;width:100%;padding-block:clamp(3.5rem,9vw,6rem);}
+
+
+.hero .wavebg{z-index:2;}
+
+
+
+
+/* ---------- restrained polish layer ---------- */
+/* cards lift gently on hover — presence without noise */
+.sci,.lib,.offer-card,.level,.comp,.fit-card,.dual-card.ind,.cross-card{
+  transition:transform .22s cubic-bezier(.22,.7,.2,1),box-shadow .22s ease,border-color .22s ease;
+}
+
+
+.sci:hover,.lib:hover,.offer-card:hover,.level:hover,.comp:hover,.fit-card:hover{
+  transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--light);
+}
+
+
+.cross-card{transition:background .22s ease,border-color .22s ease,transform .22s ease;}
+
+
+.cross-card:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.32);transform:translateY(-3px);}
+
+
+
+/* section headings share one calm rhythm: eyebrow tick + measured lede */
+.narrow > h2, .center-head > h2{margin-top:.2rem;}
+
+
+.narrow .lede, .narrow .body-p:first-of-type{margin-top:1.1rem;}
+
+
+
+/* image bands get a hairline frame so they sit in the page, not float */
+.imgband{border-radius:var(--r);box-shadow:var(--shadow-md);}
+
+
+.imgband img{transition:transform 8s ease;}
+
+
+.imgband:hover img{transform:scale(1.04);}
+
+
+
+/* numbered/stepped lists breathe a touch more */
+.fmat-row,.phase,.belong-row{transition:none;}
+
+
+
+/* consistent focus ring for keyboard users */
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--bright);outline-offset:3px;border-radius:4px;}
+
+
+
+
+/* closing band — background video */
+.closing-video{position:relative;overflow:hidden;}
+
+
+.bg-video{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+
+
+.closing-video::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(118deg,rgba(11,28,71,.36) 0%,rgba(11,28,71,.26) 46%,rgba(11,28,71,.17) 100%),
+    radial-gradient(80% 120% at 12% 0%,rgba(66,136,221,.24),transparent 64%);
+}
+
+
+@media (prefers-reduced-motion:reduce){.bg-video{display:none;}}
+
+
+.closing-video .wrap{position:relative;z-index:2;}
+
+
+
+
+/* FMAT — two columns, six collapsible stages on the right */
+.fmat-split{display:grid;gap:2rem;align-items:start;}
+
+
+@media (min-width:900px){.fmat-split{grid-template-columns:.9fr 1.1fr;gap:clamp(2.4rem,4.5vw,4rem);}}
+
+
+.fmat-aside{position:sticky;top:90px;}
+
+
+@media (max-width:899px){.fmat-aside{position:static;}}
+
+
+
+.fmat-tabs{display:grid;gap:.7rem;}
+
+
+.fmat-tab{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);
+  border-radius:var(--r);overflow:hidden;
+  transition:background .22s ease,border-color .22s ease;
+}
+
+
+.fmat-tab:hover{border-color:rgba(255,255,255,.4);}
+
+
+.fmat-tab[open]{background:rgba(255,255,255,.12);border-color:var(--light);}
+
+
+.fmat-tab summary{
+  list-style:none;cursor:pointer;display:flex;align-items:center;gap:1rem;
+  padding:1.15rem 1.35rem;min-height:64px;
+}
+
+
+.fmat-tab summary::-webkit-details-marker{display:none;}
+
+
+.ft-no{
+  flex:none;font-family:var(--display);font-size:1.15rem;font-weight:300;
+  color:var(--light);letter-spacing:-.02em;min-width:2.2ch;
+}
+
+
+.fmat-tab summary h3{
+  flex:1;min-width:0;font-size:1.05rem;font-weight:500;color:#fff;line-height:1.3;margin:0;
+}
+
+
+.fmat-tab .sign{
+  flex:none;width:28px;height:28px;border-radius:50%;
+  background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff;
+  display:grid;place-items:center;font-size:1rem;line-height:1;
+  transition:background .22s,border-color .22s;
+}
+
+
+.fmat-tab[open] .sign{background:var(--bright);border-color:var(--bright);color:#fff;}
+
+
+.ft-body{padding:0 1.35rem 1.3rem;}
+
+
+@media (min-width:520px){.ft-body{padding-left:calc(1.35rem + 2.2ch + 1rem);}}
+
+
+.ft-body p{font-size:.96rem;line-height:1.62;color:rgba(255,255,255,.88);margin:0;}
+
+
+
+
+/* Uncertainty split: image left, copy right */
+.uncert-split{display:grid;gap:2rem;align-items:center;}
+
+
+@media (min-width:900px){.uncert-split{grid-template-columns:.9fr 1.1fr;gap:clamp(2.4rem,4.5vw,4rem);}}
+
+
+.uncert-media{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);}
+
+
+.uncert-media img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform 8s ease;}
+
+
+.uncert-media:hover img{transform:scale(1.04);}
+
+
+
+/* FMAT dark band: subtle atmospheric bg photo behind everything */
+.fmat-hasbg{isolation:isolate;}
+
+
+.fmat-bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
+
+
+.fmat-bg img{width:100%;height:100%;object-fit:cover;opacity:.55;filter:saturate(1) blur(0);}
+
+
+.fmat-hasbg::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(11,28,71,.19) 0%,rgba(11,28,71,.1) 40%,rgba(11,28,71,.25) 100%);}
+
+
+.fmat-hasbg > .wrap{position:relative;z-index:2;}
+
+
+.fmat-hasbg > .orb{z-index:1;}
+
+
+
+/* Clinical Leadership two-image gallery */
+.lead-gallery{display:grid;gap:1rem;margin-top:1.8rem;}
+
+
+@media (min-width:760px){.lead-gallery{grid-template-columns:1fr 1fr;gap:1.2rem;}}
+
+
+.lead-gallery{border-radius:var(--r);overflow:hidden;}
+
+
+.lead-gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow-sm);transition:transform 8s ease;}
+
+
+.lead-gallery img:hover{transform:scale(1.03);}
+
+
+
+
+/* Clinical Leadership — image left, copy right */
+.lead-split{display:grid;gap:2rem;align-items:start;}
+
+
+@media (min-width:900px){.lead-split{grid-template-columns:.9fr 1.1fr;gap:clamp(2.4rem,4.5vw,4rem);}}
+
+
+.lead-media{position:sticky;top:90px;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);}
+
+
+@media (max-width:899px){.lead-media{position:static;}}
+
+
+.lead-media img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform 8s ease;}
+
+
+.lead-media:hover img{transform:scale(1.04);}
+
+
+.lead-copy .lead-lede{margin-top:1.2rem;font-size:1rem;line-height:1.72;color:var(--body);}
+
+
+.lead-copy .more p{color:var(--body);font-size:1rem;line-height:1.72;}
+
+
+.lead-copy .more p + p{margin-top:1.1rem;}
+
+
+.lead-copy .btn-row{margin-top:1.8rem;}
+
+
+/* the collapsible needs a top margin only when open, feels natural */
+.lead-copy .more > p:first-child{margin-top:1.1rem;}
+
+
+
+
+/* collapsible body used by .read-more */
+.more{max-height:0;overflow:hidden;opacity:0;transition:max-height .5s cubic-bezier(.4,0,.2,1),opacity .3s ease .05s;}
+
+
+
+
+.more.open{max-height:1600px;opacity:1;}
+
+
+.read-more{margin-top:1.2rem;display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;background:transparent;border:0;padding:.5rem 0;color:var(--bright);font-family:var(--display);font-weight:500;font-size:.95rem;}
+
+
+.read-more svg{transition:transform .3s ease;}
+
+
+.read-more[aria-expanded="true"] svg{transform:rotate(180deg);}
+
+
+.read-more:hover{color:var(--blue);}
+
+
+
+
+/* centered head helper (overrides .narrow max-width when both are present) */
+.center-head{max-width:64ch;margin-inline:auto;text-align:center;}
+
+
+.center-head .eyebrow{justify-content:center;}
+
+
+.narrow.center-head{max-width:64ch;text-align:center;}
+
+
+/* ============ SHARED SITE CHROME (nav + footer) ============ */
+
+/* the header and hero run wider than the body, aligning with the track-record card */
+.siteheader .wrap,.hero .wrap{max-width:1400px;}
+
+
+
+/* ============================================================
+   TOP BAR + NAV
+   ============================================================ */
+/* header floats over the hero: no fill, no sticky */
+.site
+/* keep the platform names in the document for screen readers */
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}
+
+
+
+.nav{position:relative;z-index:60;background:transparent;border-bottom:1px solid rgba(255,255,255,.14);}
+
+
+.nav-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;gap:1rem;min-height:88px;}
+
+
+.logo{display:flex;align-items:center;gap:.75rem;font-family:var(--display);font-weight:500;font-size:1.05rem;color:#fff;letter-spacing:-.02em;}
+
+
+.logo .mark{width:34px;height:34px;flex:none;}
+
+
+/* remove the filter below if the supplied artwork is already white */
+.logo-img{height:40px;width:auto;display:block;filter:brightness(0) invert(1);}
+
+
+.logo-sub{
+  font-size:.6rem;letter-spacing:.22em;font-weight:400;text-transform:uppercase;
+  color:rgba(255,255,255,.7);padding-left:.75rem;border-left:1px solid rgba(255,255,255,.25);
+}
+
+
+@media (max-width:420px){.logo-img{height:30px;}.logo-sub{display:none;}}
+
+
+.nav-links,.nav-cta{display:none;}
+
+
+.burger{width:46px;height:46px;border-radius:10px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);display:grid;place-items:center;gap:5px;cursor:pointer;padding:0;}
+
+
+.burger span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:transform .25s ease,opacity .2s ease;}
+
+
+.burger.is-open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+
+
+.burger.is-open span:nth-child(2){opacity:0;}
+
+
+.burger.is-open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+
+
+.mobile-menu{
+  position:fixed;inset:88px 0 0;z-index:55;background:#fff;padding:1.5rem var(--gut) 2.5rem;
+  transform:translateY(-14px);opacity:0;visibility:hidden;
+  transition:opacity .22s ease,transform .22s ease,visibility .22s;overflow-y:auto;
+}
+
+
+.mobile-menu.open{opacity:1;transform:none;visibility:visible;}
+
+
+.mobile-menu a.m-link{display:flex;align-items:center;justify-content:space-between;min-height:52px;font-family:var(--display);font-weight:600;color:var(--ink);border-bottom:1px solid var(--line);}
+
+
+.mobile-menu .btn{margin-top:1.4rem;}
+
+
+.m-contact{margin-top:1.6rem;font-size:.88rem;line-height:2;}
+
+
+
+@media (min-width:1024px){
+  .nav-links{display:flex;align-items:center;gap:1.5rem;flex-wrap:nowrap;}
+  .nav-links a{font-family:var(--display);font-size:.86rem;font-weight:400;color:rgba(255,255,255,.86);position:relative;padding-block:.4rem;white-space:nowrap;}
+  .nav-links a:hover{color:#fff;}
+  .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1px;background:#fff;transition:right .22s ease;}
+  .nav-links a:hover::after,.nav-links a.active::after{right:0;}
+  .nav-cta{display:inline-flex;}
+  .burger,.mobile-menu{display:none;}
+  .nav-inner{min-height:108px;}
+}
+
+
+/* recognition rail — bare artwork, no chips, sitting close under the line above */
+.logo-rail{
+  grid-column:1/-1;
+  margin-top:0;padding-top:0;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:clamp(1.6rem,3.4vw,3rem);
+}
+
+
+.logo-chip{
+  background:transparent;border:0;border-radius:0;
+  height:auto;padding:0;display:grid;place-items:center;flex:0 1 auto;
+  transition:opacity .2s ease;
+}
+
+
+.logo-chip:hover{opacity:.75;transform:none;}
+
+
+.logo-chip img{max-height:54px;width:auto;max-width:170px;object-fit:contain;display:block;}
+
+
+.logo-chip.is-badge img{max-height:58px;max-width:58px;}
+
+
+.logo-chip.is-plain img{max-height:58px;max-width:190px;}
+
+
+@media (max-width:560px){
+  .logo-rail{gap:1.3rem;padding-top:.8rem;}
+  .logo-chip img{max-height:40px;max-width:124px;}
+  .logo-chip.is-badge img{max-height:44px;max-width:44px;}
+  .logo-chip.is-plain img{max-height:44px;max-width:140px;}
+}
+
+
+
+footer{background:var(--navy);color:rgba(255,255,255,.68);font-size:.88rem;}
+
+
+footer .wrap{padding-block:clamp(2.8rem,6vw,4.2rem) 0;}
+
+
+.foot-grid{display:grid;gap:2.2rem;}
+
+
+.foot-brand .logo{color:#fff;}
+
+
+.foot-brand p{margin-top:1rem;font-size:.86rem;max-width:38ch;}
+
+
+footer h4{font-family:var(--display);color:#fff;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:1rem;font-weight:600;}
+
+
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem;}
+
+
+footer a:hover{color:var(--light);}
+
+
+.foot-soc{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem;}
+
+
+.foot-soc a{
+  width:42px;height:42px;padding:0;border-radius:10px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.10);
+  display:grid;place-items:center;color:rgba(255,255,255,.78);
+  transition:background .2s ease,color .2s ease,transform .2s ease,border-color .2s ease;
+}
+
+
+.foot-soc a:hover{background:#fff;border-color:#fff;color:var(--blue);transform:translateY(-2px);}
+
+
+.foot-soc a svg{display:block;}
+
+
+.foot-bottom{margin-top:2.6rem;border-top:1px solid rgba(255,255,255,.12);padding-block:1.3rem;display:flex;flex-direction:column;gap:.6rem;font-size:.8rem;}
+
+
+@media (min-width:768px){
+  .foot-grid{grid-template-columns:1.5fr 1fr 1.1fr;gap:2.4rem;}
+  .foot-bottom{flex-direction:row;align-items:center;justify-content:space-between;}
+}
+
+
+
+/* login/register nav button */
+.btn-outline-nav{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:500;font-size:.88rem;
+  padding:.55rem 1.1rem;border-radius:10px;min-height:42px;
+  background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;
+  transition:background .2s ease,border-color .2s ease,transform .18s ease;
+}
+
+
+.btn-outline-nav:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6);transform:translateY(-1px);}
+
+
+
+
+/* NAV: pack everything into a single row cleanly */
+@media (min-width:1000px){
+  .nav-inner{gap:1rem;}
+  .nav-links{gap:1.5rem;}
+  .nav-cta{
+    font-size:.85rem;padding:.55rem 1.1rem;min-height:42px;
+    white-space:nowrap;border-radius:10px;
+  }
+  .btn-outline-nav{font-size:.82rem;padding:.5rem 1rem;min-height:40px;white-space:nowrap;}
+  .logo-sub{font-size:.58rem;letter-spacing:.2em;}
+  .logo-img{height:32px;}
+}
+
+
+@media (min-width:1000px) and (max-width:1200px){
+  /* mid-desktop: keep them on one line, tighter */
+  .nav-links{gap:1rem;}
+  .nav-links a{font-size:.8rem;}
+  .nav-cta,.btn-outline-nav{font-size:.76rem;padding:.5rem .85rem;min-height:38px;}
+  .logo-sub{display:none;}
+  .logo-img{height:28px;}
+  .nav-inner{gap:.8rem;min-height:76px;}
+}
+
+
+/* clearance for the overlaid nav */
+.hero .wrap{padding-block:clamp(3rem,7vw,5rem) clamp(3.5rem,9vw,6rem);}
+
+
+
+/* ============ NAV OVERLAY — sits ON TOP of the hero photo ============ */
+.siteheader{position:absolute;top:0;left:0;right:0;z-index:60;}
+
+header.nav,header{position:relative;background:transparent;border-bottom:1px solid rgba(255,255,255,.14);z-index:60;}
+
+/* the hero reserves top room so nav doesn't cover the headline */
+.hero{padding-top:clamp(88px,10vw,120px)!important;}
+
+
+/* --- Text readability on photos: subtle shadows for headlines over lightened scrims --- */
+.hero h1,.hero p,.hero .eyebrow{text-shadow:0 2px 20px rgba(11,28,71,.55);}
+
+.path h3,.path .say,.path .path-tag,.path .btn{text-shadow:0 1px 12px rgba(11,28,71,.55);}
+
+.has-bg-img h2,.has-bg-img p,.has-bg-img blockquote,.has-bg-img .who{text-shadow:0 2px 18px rgba(11,28,71,.55);}
+
+.sec.band.final h2,.sec.band.final p,.sec.band.final .eyebrow,.sec.band.final .btn,.closing-video h2,.closing-video p,.closing-video .eyebrow{text-shadow:0 2px 18px rgba(11,28,71,.5);}
+
+.cine-chapter h2,.cine-chapter p,.cine-chapter .eyebrow{text-shadow:0 2px 20px rgba(11,28,71,.55);}
+
+.panel-title,.panel-sub,.panel-tag,.panel-index{text-shadow:0 2px 16px rgba(11,28,71,.55);}
+
+
+
+/* --- Text readability on lightened photos --- */
+.hero h1,.hero p,.hero .eyebrow,.hero .lede,.hero .sub{text-shadow:0 2px 20px rgba(11,28,71,.65);}
+
+.path h3,.path .say,.path .path-tag,.path .btn{text-shadow:0 2px 14px rgba(11,28,71,.60);}
+
+.has-bg-img h2,.has-bg-img p,.has-bg-img blockquote,.has-bg-img .who,.has-bg-img .eyebrow{text-shadow:0 2px 18px rgba(11,28,71,.60);}
+
+.sec.band.final h2,.sec.band.final p,.sec.band.final .eyebrow,.closing-video h2,.closing-video p,.closing-video .eyebrow{text-shadow:0 2px 18px rgba(11,28,71,.55);}
+
+.cine-chapter h2,.cine-chapter p,.cine-chapter .eyebrow{text-shadow:0 2px 20px rgba(11,28,71,.60);}
+
+
+
+/* 1 & 2 & 4 — wider headings */
+.wide-2{max-width:26ch;margin-inline:auto;text-wrap:balance;}
+                                   /* Structured Syllabus — allow 2 wide lines */
+.center-head.wide-1{max-width:70ch;margin-inline:auto;text-align:center;}
+
+.center-head.wide-1 h2{max-width:none;white-space:nowrap;margin-inline:auto;}
+
+.center-head.wide-1 .eyebrow{justify-content:center;}
+
+@media (max-width:820px){.center-head.wide-1 h2{white-space:normal;}}
+
+
+/* 2 — delivery advantage cards: icons + hover */
+.adv-card{position:relative;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;border:1px solid var(--line);}
+
+
+/* 5 — glassmorphism dual CTA cards on the dark video band */
+.glass-dual{display:grid;gap:1.1rem;margin-top:2.4rem;}
+
+@media (min-width:760px){.glass-dual{grid-template-columns:1fr 1fr;}}
+
+.gcard{
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:16px;padding:1.9rem 1.7rem;
+  -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);
+  display:flex;flex-direction:column;gap:.8rem;
+  box-shadow:0 10px 40px rgba(11,28,71,.25);
+  transition:background .25s ease,transform .25s ease,border-color .25s ease;
+}
+
+.gcard:hover{background:rgba(255,255,255,.15);transform:translateY(-3px);border-color:rgba(255,255,255,.4);}
+
+.gcard h3{font-family:var(--display);font-size:1.2rem;font-weight:500;color:#fff;margin:0;}
+
+.gcard p{font-size:.96rem;line-height:1.6;color:rgba(255,255,255,.85);margin:0;flex:1;}
+
+.gbtn{align-self:flex-start;margin-top:.6rem;display:inline-flex;align-items:center;gap:.4rem;font-family:var(--display);font-weight:500;font-size:.92rem;padding:.72rem 1.3rem;border-radius:10px;transition:all .22s ease;}
+
+.gbtn span{transition:transform .3s ease;display:inline-block;}
+
+.gbtn:hover span{transform:translateX(4px);}
+
+.gbtn-solid{background:#fff;color:var(--navy);border:1px solid #fff;}
+
+.gbtn-solid:hover{background:var(--light);transform:translateY(-2px);}
+
+.gbtn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.55);}
+
+.gbtn-ghost:hover{background:#fff;color:var(--navy);border-color:#fff;}
+/* ============ Delivery Advantage — clean numbered cards ============ */
+.adv2{display:grid;gap:1.2rem;margin-top:2.4rem;}
+@media (min-width:820px){.adv2{grid-template-columns:repeat(3,1fr);}}
+.adv2-card{
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:1.8rem 1.6rem;display:flex;flex-direction:column;gap:.85rem;
+  box-shadow:var(--shadow-sm);
+  transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;
+}
+.adv2-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--light);}
+.adv2-top{display:flex;align-items:center;justify-content:space-between;}
+.adv2-ico{
+  display:inline-grid;place-items:center;width:54px;height:54px;border-radius:14px;
+  background:var(--soft);color:var(--bright);border:1px solid var(--line);
+  transition:background .24s ease,color .24s ease,transform .24s ease;
+}
+.adv2-card:hover .adv2-ico{background:var(--bright);color:#fff;transform:scale(1.06);}
+.adv2-n{
+  font-family:var(--display);font-size:1.7rem;font-weight:300;letter-spacing:-.03em;
+  color:var(--line);line-height:1;
+  transition:color .24s ease;
+}
+.adv2-card:hover .adv2-n{color:var(--light);}
+.adv2-card h3{
+  font-family:var(--display);font-size:1.18rem;font-weight:500;color:var(--navy);
+  margin:.2rem 0 0;letter-spacing:-.01em;
+}
+.adv2-card p{font-size:.95rem;line-height:1.62;color:var(--body);margin:0;}
+
+/* feature card (middle) — the payoff, subtly emphasized */
+.adv2-card.is-feature{
+  background:linear-gradient(155deg,#0B1C47,#163474);
+  border-color:transparent;
+}
+.adv2-card.is-feature h3{color:#fff;}
+.adv2-card.is-feature p{color:rgba(255,255,255,.85);}
+.adv2-card.is-feature .adv2-ico{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:#fff;}
+.adv2-card.is-feature:hover .adv2-ico{background:#fff;color:var(--blue);}
+.adv2-card.is-feature .adv2-n{color:rgba(255,255,255,.4);}
+.adv2-card.is-feature:hover .adv2-n{color:var(--light);}
+
+
+/* Structured Syllabus heading: wider container, 2 balanced lines */
+.syllabus-head{max-width:none;}
+.syllabus-head .wide-2{max-width:none;white-space:nowrap;line-height:1.15;}
+@media (max-width:1100px){.syllabus-head .wide-2{white-space:normal;text-wrap:balance;}}
+
+
+/* Structured Syllabus: full-width heading + wider lede */
+.syllabus-head{text-align:center;margin-inline:auto;}
+.syllabus-head .eyebrow{justify-content:center;}
+.syllabus-head .lede{margin-inline:auto;}
+.syllabus-head .lede{max-width:76ch;}
+
+
+/* center the video-submission callout + its CTA */
+#pathway .callout{max-width:64ch;margin-inline:auto;text-align:center;}
+#pathway .callout p{margin-inline:auto;}
+#pathway .btn-row{justify-content:center;}
+
+
+/* ============ MEGA NAV (sitemap-driven) ============ */
+.nav-inner{display:flex;align-items:center;gap:1rem;min-height:76px;flex-wrap:nowrap;}
+.nav-links{display:none;}
+.nav-actions{display:none;margin-left:auto;gap:.6rem;align-items:center;}
+.burger{display:inline-flex;}
+@media (min-width:1200px){
+  .nav-links{display:flex;align-items:center;gap:.35rem;margin-left:auto;}
+  .nav-actions{display:flex;}
+  .burger{display:none;}
+}
+.logo-img{height:34px;filter:brightness(0) invert(1);}
+
+.nav-item{position:relative;}
+.nav-top{
+  display:inline-flex;align-items:center;gap:.28rem;
+  font-family:var(--display);font-size:.86rem;font-weight:500;color:rgba(255,255,255,.9);
+  background:transparent;border:0;cursor:pointer;padding:.55rem .7rem;border-radius:8px;white-space:nowrap;
+  transition:color .18s ease,background .18s ease;
+}
+.nav-top:hover{color:#fff;background:rgba(255,255,255,.08);}
+.nav-item.is-active > .nav-top{color:#fff;}
+.nav-item.is-active > .nav-top::after{content:"";position:absolute;left:.7rem;right:.7rem;bottom:.28rem;height:1.5px;background:var(--light);}
+.caret{transition:transform .22s ease;opacity:.8;}
+.nav-item.has-drop:hover .caret,.nav-trigger[aria-expanded="true"] .caret{transform:rotate(180deg);}
+
+/* dropdown panel */
+.nav-panel{
+  position:absolute;top:calc(100% + 8px);left:0;z-index:80;
+  min-width:250px;background:#fff;border:1px solid var(--line);border-radius:14px;
+  box-shadow:0 24px 60px rgba(11,28,71,.20);
+  padding:.6rem;display:grid;gap:.1rem;
+  opacity:0;visibility:hidden;transform:translateY(6px);
+  transition:opacity .2s ease,transform .2s ease,visibility .2s;
+}
+.nav-panel.is-mega{grid-template-columns:1fr 1fr;min-width:460px;gap:.1rem .4rem;}
+.nav-item.has-drop:hover .nav-panel,.nav-item.has-drop:focus-within .nav-panel{opacity:1;visibility:visible;transform:translateY(0);}
+.nav-sub{
+  display:block;font-family:var(--display);font-size:.88rem;font-weight:400;color:var(--ink);
+  padding:.6rem .8rem;border-radius:9px;white-space:nowrap;
+  transition:background .16s ease,color .16s ease;
+}
+.nav-sub:hover{background:var(--soft);color:var(--bright);}
+/* keep last dropdowns from overflowing the right edge */
+.nav-item:nth-last-child(-n+2) .nav-panel{left:auto;right:0;}
+.nav-item:nth-last-child(-n+2) .nav-panel.is-mega{left:auto;right:0;}
+
+.nav-cta{font-size:.8rem;padding:.5rem .95rem;min-height:40px;white-space:nowrap;}
+.btn-outline-nav{font-size:.78rem;padding:.5rem .85rem;}
+@media (min-width:1200px) and (max-width:1360px){
+  .nav-top{font-size:.82rem;padding:.5rem .55rem;}
+  .nav-links{gap:.15rem;}
+  .nav-cta{font-size:.76rem;padding:.48rem .8rem;}
+}
+
+/* ---- mobile menu: accordion groups ---- */
+.mobile-menu .m-group{border-bottom:1px solid rgba(255,255,255,.10);}
+.m-acc{
+  width:100%;display:flex;align-items:center;justify-content:space-between;
+  background:transparent;border:0;cursor:pointer;color:#fff;
+  font-family:var(--display);font-size:1.05rem;font-weight:500;padding:.85rem 0;
+}
+.m-acc svg{transition:transform .25s ease;}
+.m-acc[aria-expanded="true"] svg{transform:rotate(180deg);}
+.m-sub{max-height:0;overflow:hidden;transition:max-height .3s ease;display:flex;flex-direction:column;}
+.m-sub.open{max-height:600px;}
+.m-sub a{color:rgba(255,255,255,.8);font-size:.95rem;padding:.5rem 0 .5rem 1rem;text-decoration:none;}
+.m-sub a:hover{color:#fff;}
+.mobile-menu .m-link{border-bottom:1px solid rgba(255,255,255,.10);}
+.m-cta{display:flex;flex-direction:column;gap:.6rem;margin-top:1.2rem;}
+.nav-item.force-open .nav-panel{opacity:1;visibility:visible;transform:translateY(0);}
+
+/* ensure dropdown link text is dark on the white panel (override inherited white nav link color) */
+.nav-panel .nav-sub{color:var(--ink)!important;}
+.nav-panel .nav-sub:hover{color:var(--bright)!important;background:var(--soft)!important;}
+.nav-top{color:rgba(255,255,255,.9)!important;}
+.nav-item.is-active > .nav-top,.nav-top:hover{color:#fff!important;}
+</style>
+</head>
+<body>
+<div class="siteheader">
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">
+      <img class="logo-img" src="https://cdn.katalyst-crm.com/t1/LiquidGym-Logo-80h.png" alt="LiquidGym">
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <div class="nav-item has-drop">
+        <button class="nav-top nav-trigger" aria-expanded="false">Therapies<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel">
+          <a class="nav-sub" href="physiotherapy.html">Physiotherapy</a>
+          <a class="nav-sub" href="massage-therapy.html">Massage Therapy</a>
+          <a class="nav-sub" href="kinesiology.html">Kinesiology</a>
+          <a class="nav-sub" href="index.html#">Why Aquatic Therapy</a>
+        </div>
+      </div>
+      <div class="nav-item has-drop">
+        <button class="nav-top nav-trigger" aria-expanded="false">Conditions<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel is-mega">
+          <a class="nav-sub" href="index.html#">Arthritis</a>
+          <a class="nav-sub" href="index.html#">Sprains, Strains & Fractures</a>
+          <a class="nav-sub" href="index.html#">Sports Injuries</a>
+          <a class="nav-sub" href="index.html#">Cardiovascular Impairments</a>
+          <a class="nav-sub" href="index.html#">Long COVID</a>
+          <a class="nav-sub" href="index.html#">Plantar Fasciitis</a>
+          <a class="nav-sub" href="index.html#">Neurological Conditions</a>
+          <a class="nav-sub" href="index.html#">Chronic Pain</a>
+          <a class="nav-sub" href="index.html#">Vestibular</a>
+        </div>
+      </div>
+      <div class="nav-item has-drop">
+        <button class="nav-top nav-trigger" aria-expanded="false">Services<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel">
+          <a class="nav-sub" href="index.html#">Pre-Op & Post-Op</a>
+          <a class="nav-sub" href="index.html#">Veterans Affairs — Physiotherapy</a>
+          <a class="nav-sub" href="index.html#">Veterans Affairs — Kinesiology</a>
+          <a class="nav-sub" href="index.html#">Personal Training</a>
+          <a class="nav-sub" href="index.html#">Virtual</a>
+        </div>
+      </div>
+      <div class="nav-item"><a class="nav-top" href="wei-water-exercise-institute.html">WEI™</a></div>
+      <div class="nav-item has-drop is-active">
+        <button class="nav-top nav-trigger" aria-expanded="false">ATI<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel">
+          <a class="nav-sub" href="ati-360.html">ATI 360</a>
+          <a class="nav-sub" href="ati-education-certification.html">Education & Certification</a>
+        </div>
+      </div>
+      <div class="nav-item has-drop">
+        <button class="nav-top nav-trigger" aria-expanded="false">Equipment<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel">
+          <a class="nav-sub" href="index.html#">Overview</a>
+          <a class="nav-sub" href="index.html#">Alinker</a>
+          <a class="nav-sub" href="index.html#">Game Ready System</a>
+          <a class="nav-sub" href="index.html#">Normatec Compression System</a>
+        </div>
+      </div>
+      <div class="nav-item has-drop">
+        <button class="nav-top nav-trigger" aria-expanded="false">About<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel">
+          <a class="nav-sub" href="about.html">About LiquidGym</a>
+          <a class="nav-sub" href="index.html#">Partners</a>
+          <a class="nav-sub" href="index.html#">Facility</a>
+          <a class="nav-sub" href="index.html#">Success Stories</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="portal-login.html" class="btn btn-outline-nav nav-cta">Login / Register</a>
+      <a href="index.html#invitation" class="btn btn-primary nav-cta">Book a Discovery Call</a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a class="m-link" href="index.html">Home</a>
+  <div class="m-group">
+    <button class="m-acc" aria-expanded="false">Therapies<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div class="m-sub">
+      <a href="physiotherapy.html">Physiotherapy</a>
+      <a href="massage-therapy.html">Massage Therapy</a>
+      <a href="kinesiology.html">Kinesiology</a>
+      <a href="index.html#">Why Aquatic Therapy</a>
+    </div>
+  </div>
+  <div class="m-group">
+    <button class="m-acc" aria-expanded="false">Conditions<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div class="m-sub">
+      <a href="index.html#">Arthritis</a>
+      <a href="index.html#">Sprains, Strains & Fractures</a>
+      <a href="index.html#">Sports Injuries</a>
+      <a href="index.html#">Cardiovascular Impairments</a>
+      <a href="index.html#">Long COVID</a>
+      <a href="index.html#">Plantar Fasciitis</a>
+      <a href="index.html#">Neurological Conditions</a>
+      <a href="index.html#">Chronic Pain</a>
+      <a href="index.html#">Vestibular</a>
+    </div>
+  </div>
+  <div class="m-group">
+    <button class="m-acc" aria-expanded="false">Services<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div class="m-sub">
+      <a href="index.html#">Pre-Op & Post-Op</a>
+      <a href="index.html#">Veterans Affairs — Physiotherapy</a>
+      <a href="index.html#">Veterans Affairs — Kinesiology</a>
+      <a href="index.html#">Personal Training</a>
+      <a href="index.html#">Virtual</a>
+    </div>
+  </div>
+  <a class="m-link" href="wei-water-exercise-institute.html">WEI™</a>
+  <div class="m-group">
+    <button class="m-acc" aria-expanded="false">ATI<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div class="m-sub">
+      <a href="ati-360.html">ATI 360</a>
+      <a href="ati-education-certification.html">Education & Certification</a>
+    </div>
+  </div>
+  <div class="m-group">
+    <button class="m-acc" aria-expanded="false">Equipment<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div class="m-sub">
+      <a href="index.html#">Overview</a>
+      <a href="index.html#">Alinker</a>
+      <a href="index.html#">Game Ready System</a>
+      <a href="index.html#">Normatec Compression System</a>
+    </div>
+  </div>
+  <div class="m-group">
+    <button class="m-acc" aria-expanded="false">About<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+    <div class="m-sub">
+      <a href="about.html">About LiquidGym</a>
+      <a href="index.html#">Partners</a>
+      <a href="index.html#">Facility</a>
+      <a href="index.html#">Success Stories</a>
+    </div>
+  </div>
+  <div class="m-cta">
+    <a href="portal-login.html" class="btn btn-outline-mob">Login / Register</a>
+    <a href="index.html#invitation" class="btn btn-primary">Book a Discovery Call</a>
+  </div>
+  <div class="m-contact">
+    <a href="mailto:info@liquidgym.ca">info@liquidgym.ca</a><br>
+    <a href="tel:6138208228">613-820-8228</a>
+  </div>
+</div>
+
+
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260824_085306_f3ba1f6d-d940-4e02-bc86-c3a299518bae.png" alt="A clinician working with a patient in a bright therapy pool"></div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="wrap"><div class="inner rv">
+    <span class="eyebrow on-dark">ATI Education &amp; Certification</span>
+    <h1>Wondering what to do in the Water.</h1>
+    <p class="sub">You trained on land. But now want to move into water, that is the entire reason this certification exists.</p>
+    <div class="btn-row"><a class="btn btn-light" href="#certify">Start Your Certification</a></div>
+  </div></div>
+  <svg class="wavebg" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 Q 240 20 480 60 T 960 60 T 1440 60" fill="none" stroke="currentColor" stroke-width="1"/><path d="M0 100 Q 240 60 480 100 T 960 100 T 1440 100" fill="none" stroke="currentColor" stroke-width="1"/><path d="M0 140 Q 240 100 480 140 T 960 140 T 1440 140" fill="none" stroke="currentColor" stroke-width="1"/></svg>
+</section>
+
+<section class="sec"><div class="wrap">
+  <div class="uncert-split">
+    <div class="uncert-media rv">
+      <img src="https://dashboard.katalyst-crm.com/files/t1/Maggie(1)_LE_upscale_gentle.jpg" alt="A patient in an aquatic therapy session" loading="lazy">
+    </div>
+    <div class="uncert-copy rv">
+      <span class="eyebrow">The Cost of Staying Uncertain</span>
+      <h2>Uncertainty Has a Cost. Your Patients Pay It.</h2>
+      <p class="lede" style="margin-top:1.1rem">Every year a clinician stays uncertain in the water, and a patient who could have benefited from aquatic therapy gets routed to land-based treatment instead, treatment that may simply take longer or never fully resolve what water could have addressed directly.</p>
+      <p style="margin-top:1.1rem;color:var(--body)">This was never about talent or interest. Many clinicians have wanted to deliver aquatic therapy for years. ATI now provides the training for a clinician to comfortably deliver aquatic therapy with confidence.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec band fmat-hasbg" id="fmat"><div class="fmat-bg" aria-hidden="true"><img src="https://dashboard.katalyst-crm.com/files/t1/althlete%20rehab%20in%20water%204%20(1)_LE_upscale_gentle.jpg" alt=""></div><span class="orb" style="width:280px;height:280px;top:-60px;right:-40px;"></span><span class="orb" style="width:320px;height:320px;bottom:-90px;left:-50px;"></span><div class="wrap">
+  <div class="fmat-split">
+    <aside class="fmat-aside rv">
+      <span class="eyebrow on-dark">The FMAT&trade; Methodology</span>
+      <h2 style="color:#fff">Function First. Environment Second.</h2>
+      <p style="margin-top:1.1rem;color:rgba(255,255,255,.85);font-size:1.08rem;line-height:1.62">Some clinicians approach water with hesitation, not because the science is unclear, but because of uncertainty: &ldquo;where do I start.&rdquo;</p>
+      <p style="margin-top:1rem;color:rgba(255,255,255,.85)">FMAT&trade; closes that gap. Six named stages, in order, so you always know exactly where a patient is and exactly what comes next.</p>
+      <p style="margin-top:1.6rem;font-family:var(--display);font-size:clamp(1.05rem,1.9vw,1.25rem);color:#fff;line-height:1.4;max-width:26ch">This is not a theory you adapt to each patient. It is a named, ordered system you apply with every one of them.</p>
+    </aside>
+    <div class="fmat-tabs rv">
+        <details class="fmat-tab" open>
+          <summary>
+            <span class="ft-no">01</span>
+            <h3>Assisted</h3>
+            <span class="sign" aria-hidden="true">−</span>
+          </summary>
+          <div class="ft-body"><p>The patient moves with full support, building trust in the water before building anything else.</p></div>
+        </details>
+        <details class="fmat-tab">
+          <summary>
+            <span class="ft-no">02</span>
+            <h3>Supported</h3>
+            <span class="sign" aria-hidden="true">+</span>
+          </summary>
+          <div class="ft-body"><p>Support reduces, function increases, and the patient starts doing more of the work.</p></div>
+        </details>
+        <details class="fmat-tab">
+          <summary>
+            <span class="ft-no">03</span>
+            <h3>Controlled</h3>
+            <span class="sign" aria-hidden="true">+</span>
+          </summary>
+          <div class="ft-body"><p>Movement becomes deliberate and precise, not just possible.</p></div>
+        </details>
+        <details class="fmat-tab">
+          <summary>
+            <span class="ft-no">04</span>
+            <h3>Resisted</h3>
+            <span class="sign" aria-hidden="true">+</span>
+          </summary>
+          <div class="ft-body"><p>Water's resistance becomes the training tool itself, not an obstacle to work around.</p></div>
+        </details>
+        <details class="fmat-tab">
+          <summary>
+            <span class="ft-no">05</span>
+            <h3>Independent</h3>
+            <span class="sign" aria-hidden="true">+</span>
+          </summary>
+          <div class="ft-body"><p>The patient moves through the water on their own, with no support, no assistance.</p></div>
+        </details>
+        <details class="fmat-tab">
+          <summary>
+            <span class="ft-no">06</span>
+            <h3>Transitional to Land</h3>
+            <span class="sign" aria-hidden="true">+</span>
+          </summary>
+          <div class="ft-body"><p>The final stage, carrying everything gained in water back into land-based function.</p></div>
+        </details>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" id="pathway"><div class="wrap">
+  <div class="narrow rv syllabus-head" style="max-width:none">
+    <span class="eyebrow">The Certification Pathway</span>
+    <h2 class="wide-2">Structured Syllabus &middot; On-Demand Training &middot; Learn on Your Schedule</h2>
+    <p class="lede" style="margin-top:1.1rem">The course runs just over nine hours, structured across seven chapters, each with its own objectives, deliverables, and a quiz before you move forward. Nothing is skimmed.</p>
+  </div>
+  <div class="levels rv">
+    <article class="level"><span class="k">Level 1 Certification</span><h3>Foundational</h3><p>Foundational principles, the therapeutic role of water, its physical properties, safety considerations, patient screening, and patient suitability, before a single technique is introduced.</p></article>
+    <article class="level"><span class="k">Level 2 Advanced Certification</span><h3>Advanced</h3><p>Aquatic assessment, clinical reasoning, and treatment progression for the complex cases Level 1 does not prepare you for.</p></article>
+  </div>
+  <div class="callout rv"><p>Before certification is issued, you submit video of yourself working with a real patient in the water. This is reviewed and credited individually.</p></div>
+  <div class="btn-row rv" id="certify"><a class="btn btn-primary" href="#">Start Your Certification</a></div>
+</div></section>
+
+
+<section class="sec soft-bg"><div class="wrap">
+  <div class="narrow rv center-head wide-1">
+    <span class="eyebrow">The Accessible Delivery Advantage</span>
+    <h2>No Flights. No Lost Clinical Hours.</h2>
+  </div>
+  <div class="adv2 rv">
+    <div class="adv2-card">
+      <div class="adv2-top">
+        <span class="adv2-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg></span>
+        <span class="adv2-n">01</span>
+      </div>
+      <h3>The barrier was logistics</h3>
+      <p>The single biggest barrier to aquatic therapy education was never the content. It was the logistics, flying somewhere, taking days off, finding coverage for your patients while you were on training.</p>
+    </div>
+    <div class="adv2-card is-feature">
+      <div class="adv2-top">
+        <span class="adv2-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3M7 9l3 3 4-5"/></svg></span>
+        <span class="adv2-n">02</span>
+      </div>
+      <h3>That barrier is gone</h3>
+      <p>The entire course is delivered online, on your own schedule, from wherever you already are.</p>
+    </div>
+    <div class="adv2-card">
+      <div class="adv2-top">
+        <span class="adv2-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21 8 14 2 9.4h7.6z"/></svg></span>
+        <span class="adv2-n">03</span>
+      </div>
+      <h3>CEU credit</h3>
+      <p>The program is approved for continuing education credit in several US states, with more being added as the work continues.</p>
+    </div>
+  </div>
+</div></section>
+
+
+<section class="sec"><div class="wrap">
+  <div class="lead-split">
+    <div class="lead-media rv">
+      <img src="https://dashboard.katalyst-crm.com/files/t1/Jane%20-%20Maggie%20narrative(12)_LE_upscale_gentle.jpg" alt="An aquatic therapy session at LiquidGym" loading="lazy">
+    </div>
+    <div class="lead-copy rv">
+      <span class="eyebrow">Clinical Leadership and Authority</span>
+      <h2>Built by the People Who Have Been Doing This for Forty Years.</h2>
+
+      <p class="lead-lede">The concept did not come from a textbook. It came from the combined forty years that Karen Snyder and Irene Hammerich spent working in the aquatic environment. Karen founded the Canadian Red Cross Adapted Aquatics Program in 1981. Irene's career began as a teenager teaching swimming, growing through her role as a Master Trainer for instructors and into senior aquatic leadership positions.</p>
+
+      <div class="more" id="authMore">
+        <p>That depth of hands-on experience did not stay in the past. It became the daily working framework LiquidGym Therapy and Training Centre's physical therapists used daily, refined session by session as patients responded, progressed, and revealed what actually worked in the water. Years of observation, adjustment, and outcomes shaped the curriculum long before it was ever formalized, and that same clinical foundation is what now underpins the ATI Clinician Training Program, translating 12 years of hands-on expertise into a structured, teachable framework for clinicians entering the field.</p>
+        <p>This curriculum is the result of more than 12 years of research, development, clinical refinement, and collaboration. It has been shaped by the collective expertise of multiple experienced therapists who have worked together to develop, evaluate, and continuously improve the program. The result is a comprehensive, evidence-informed training program designed to provide consistent, practical, and clinically relevant education for aquatic therapy professionals.</p>
+        <p>Every module in this certification is developed under senior clinical oversight. The team upholds the clinical standards across the entire ATI education and certification ecosystem.</p>
+      </div>
+
+      <button type="button" class="read-more" data-target="authMore" aria-expanded="false">
+        <span class="rm-label">Read more</span>
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6l4 4 4-4"/></svg>
+      </button>
+
+      <div class="btn-row"><a class="btn btn-primary" href="#">Start Your Certification</a></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec soft-bg" id="faq"><div class="wrap">
+  <div class="narrow rv center-head wide-1">
+    <span class="eyebrow">The Questions You Are Actually Asking</span>
+    <h2>The Questions You Are Actually Asking.</h2>
+  </div>
+  <div class="faq rv">
+    <details open><summary>What if I have zero aquatic therapy experience going in?<span class="sign" aria-hidden="true">&minus;</span></summary><div class="fbody"><p>Level 1 starts at the foundation, the role of water, its properties, safety, and screening, before a single technique is introduced. Nobody is expected to arrive already knowing this.</p></div></details>
+    <details><summary>What if my state has not approved CEU credit yet?<span class="sign" aria-hidden="true">+</span></summary><div class="fbody"><p>The certification, the methodology, and the credential are yours either way. Many states are approved now, more are being added weekly, and yours not being listed yet does not make the certification worth less.</p></div></details>
+    <details><summary>What if I do not pass the practical video submission on the first try?<span class="sign" aria-hidden="true">+</span></summary><div class="fbody"><p>A clinician reviews every submission individually, not against a pass or fail line. If something needs adjustment, you revise and resubmit, not get rejected outright.</p></div></details>
+  </div>
+</div></section>
+
+<section class="sec closing-video" style="background:linear-gradient(140deg,#0B1C47,#163474);color:#fff">
+  <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_194126_9fb469d4-80ac-41c1-a2db-f3ac0778025c.png" aria-hidden="true" tabindex="-1"><source src="https://cdn.katalyst-crm.com/t1/GettyImages-664999036%20(1).mp4" type="video/mp4"></video>
+  <div class="wrap">
+  <div class="rv dual-head">
+    <span class="eyebrow on-dark">For You, or for Your Team</span>
+    <h2 style="color:#fff">Certify Yourself. Or Certify Your Entire Team.</h2>
+  </div>
+  <div class="dual glass-dual rv">
+    <div class="gcard">
+      <h3>For individual clinicians</h3>
+      <p>Start practicing in the water with a structured method behind every session.</p>
+      <a class="btn gbtn gbtn-solid" href="#">Enroll as an Individual Clinician <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="gcard">
+      <h3>For clinic owners</h3>
+      <p>Train every clinician to one ATI standard, so every patient gets the same quality of care, and your clinic's reputation compounds.</p>
+      <a class="btn gbtn gbtn-ghost" href="#">Certify Your Entire Clinic Team <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="index.html#top">
+          <img class="logo-img" src="https://cdn.katalyst-crm.com/t1/LiquidGym-Logo-80h.png" alt="LiquidGym">
+          <span class="logo-sub">The Hub</span>
+        </a>
+        <p>Advancing aquatic therapy worldwide. Built from real patients. Proven in practice.</p>
+        <h4 style="margin-top:1.6rem">Follow LiquidGym</h4>
+        <div class="foot-soc">
+          <a href="https://www.instagram.com/liquidgymcanada/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c2.7 0 3.1 0 4.1.06 1.1.05 1.8.22 2.4.47.7.26 1.2.61 1.7 1.14.5.5.9 1 1.1 1.7.3.6.4 1.3.5 2.4.1 1 .1 1.4.1 4.1s0 3.1-.1 4.1c-.1 1.1-.2 1.8-.5 2.4-.2.7-.6 1.2-1.1 1.7-.5.5-1 .9-1.7 1.1-.6.3-1.3.4-2.4.5-1 .1-1.4.1-4.1.1s-3.1 0-4.1-.1c-1.1-.1-1.8-.2-2.4-.5-.7-.2-1.2-.6-1.7-1.1-.5-.5-.9-1-1.1-1.7-.3-.6-.4-1.3-.5-2.4C2 15.1 2 14.7 2 12s0-3.1.1-4.1c.1-1.1.2-1.8.5-2.4.2-.7.6-1.2 1.1-1.7.5-.5 1-.9 1.7-1.1.6-.3 1.3-.4 2.4-.5C8.9 2 9.3 2 12 2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.8 5.8a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z"/></svg></a>
+          <a href="https://www.youtube.com/user/LiquidGym" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a3 3 0 0 0-2.1-2.1C18.9 4.8 12 4.8 12 4.8s-6.9 0-8.5.4a3 3 0 0 0-2.1 2.1C1 8.8 1 12 1 12s0 3.2.4 4.7a3 3 0 0 0 2.1 2.1c1.6.4 8.5.4 8.5.4s6.9 0 8.5-.4a3 3 0 0 0 2.1-2.1C23 15.2 23 12 23 12ZM9.8 15.2V8.8l5.6 3.2-5.6 3.2Z"/></svg></a>
+          <a href="https://www.facebook.com/LiquidGymCanada/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="https://www.linkedin.com/company/liquidgym-therapy-training/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 3H3.6C2.7 3 2 3.7 2 4.6v14.8c0 .9.7 1.6 1.6 1.6h16.8c.9 0 1.6-.7 1.6-1.6V4.6c0-.9-.7-1.6-1.6-1.6ZM8.3 18.3H5.4V9.8h2.9v8.5ZM6.9 8.6a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Zm11.4 9.7h-2.9v-4.1c0-1 0-2.3-1.4-2.3s-1.6 1.1-1.6 2.2v4.2H9.5V9.8h2.8V11h.1c.4-.7 1.3-1.5 2.7-1.5 2.9 0 3.4 1.9 3.4 4.4v4.4Z"/></svg></a>
+          <a href="https://x.com/LiquidGymCanada" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 3h3.3l-7.2 8.2L22 21h-6.6l-5.2-6.4L4.3 21H1l7.7-8.8L1.4 3h6.8l4.7 5.9L17.5 3Zm-1.2 16h1.8L7.8 4.9H5.9L16.3 19Z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Three Paths</h4>
+        <ul>
+          <li><a href="index.html#ati">Liquid Gym ATI — Overview</a></li>
+          <li><a href="index.html#paths">ATI 360™ — Build Your Program</a></li>
+          <li><a href="index.html#paths">ATI Certification — Get Certified</a></li>
+          <li><a href="index.html#paths">WEI™ — Start Moving</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+          <li><a href="index.html#voices">Success Stories</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@liquidgym.ca">info@liquidgym.ca</a></li>
+          <li><a href="tel:6138208228">613-820-8228</a></li>
+          <li>2039 Robertson Rd. Suite 501 Ottawa, Ontario, Canada</li>
+          <li><a href="index.html#invitation">Book a Discovery Call</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 LiquidGym. All Rights Reserved.</span>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'), mm=document.getElementById('mobileMenu');
+  function setOpen(o){ if(!mm) return; mm.classList.toggle('open',o); if(burger){burger.classList.toggle('is-open',o);burger.setAttribute('aria-expanded',o);} document.body.style.overflow=o?'hidden':''; }
+  if(burger){ burger.addEventListener('click',function(){ setOpen(!mm.classList.contains('open')); }); }
+  if(mm){ mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ if(a.closest('.m-sub')||a.classList.contains('m-link')||a.closest('.m-cta')) setOpen(false); });}); }
+  window.addEventListener('resize',function(){ if(window.innerWidth>=1200) setOpen(false); });
+  /* mobile accordion */
+  document.querySelectorAll('.m-acc').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var sub=btn.nextElementSibling, open=sub.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+    });
+  });
+  /* desktop dropdown: click to toggle on touch, aria on hover handled by CSS */
+  document.querySelectorAll('.nav-trigger').forEach(function(t){
+    t.addEventListener('click',function(e){
+      e.preventDefault();
+      var item=t.closest('.nav-item'), panel=item.querySelector('.nav-panel');
+      var isOpen=item.classList.toggle('force-open');
+      t.setAttribute('aria-expanded',isOpen);
+      document.querySelectorAll('.nav-item.force-open').forEach(function(o){ if(o!==item){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');} });
+    });
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.nav-item')){ document.querySelectorAll('.nav-item.force-open').forEach(function(o){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');}); }
+  });
+})();
+</script>
+
+<script>
+(function(){
+  /* read-more collapsibles */
+  document.querySelectorAll('.read-more').forEach(function(btn){
+    var panel=document.getElementById(btn.dataset.target);
+    var label=btn.querySelector('.rm-label');
+    if(!panel) return;
+    btn.addEventListener('click',function(){
+      var open=panel.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+      if(label) label.textContent = open ? 'Read less' : 'Read more';
+    });
+  });
+
+  /* FMAT collapsible tabs (details) — sign toggle */
+  document.querySelectorAll('.fmat-tab').forEach(function(d){
+    var sign=d.querySelector('.sign');
+    d.addEventListener('toggle',function(){ if(sign) sign.textContent = d.open ? '−' : '+'; });
+  });
+
+  /* Roadmap accordion (rd-tab): one open at a time + fade toggle */
+  (function(){
+    var tabs=Array.prototype.slice.call(document.querySelectorAll('.rd-tab'));
+    tabs.forEach(function(d){
+      var sign=d.querySelector('.sign');
+      d.addEventListener('toggle',function(){
+        if(sign) sign.textContent = d.open ? '−' : '+';
+        if(d.open){ tabs.forEach(function(o){ if(o!==d && o.open){ o.open=false; } }); }
+      });
+    });
+    var sc=document.querySelector('.rd-tabs'), wrap=document.querySelector('.rd-scroll');
+    if(sc && wrap){
+      sc.addEventListener('scroll',function(){
+        var atEnd = sc.scrollTop + sc.clientHeight >= sc.scrollHeight - 4;
+        wrap.classList.toggle('at-end', atEnd);
+      });
+    }
+  })();
+
+  /* FAQ accordion: only one open at a time */
+  (function(){
+    var faq=document.querySelector('.faq');
+    if(!faq) return;
+    var items=faq.querySelectorAll('details');
+    items.forEach(function(d){
+      d.addEventListener('toggle',function(){
+        if(d.open){ items.forEach(function(o){ if(o!==d && o.open){ o.open=false; } }); }
+        var sign=d.querySelector('.sign'); if(sign) sign.textContent = d.open ? '−' : '+';
+      });
+    });
+  })();
+
+  /* generic <details> sign toggle for any remaining custom tabs (ati-tab, vd, belong-tab) */
+  document.querySelectorAll('details.ati-tab, details.vd, details.belong-tab').forEach(function(d){
+    var sign=d.querySelector('.sign'); if(!sign) return;
+    d.addEventListener('toggle',function(){ sign.textContent = d.open ? '−' : '+'; });
+  });
+
+  /* animated counters */
+  var nums=document.querySelectorAll('.num[data-count]');
+  if(nums.length){
+    var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var cio=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var el=e.target; cio.unobserve(el);
+        var target=parseFloat(el.dataset.count), pre=el.dataset.prefix||'', suf=el.dataset.suffix||'', comma=el.dataset.comma==='true';
+        if(reduce){ el.textContent=pre+(comma?target.toLocaleString():target)+suf; return; }
+        var start=null, dur=1500;
+        function fmt(v){ v=Math.round(v); return pre+(comma?v.toLocaleString():v)+suf; }
+        function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1); var eased=1-Math.pow(1-p,3); el.textContent=fmt(target*eased); if(p<1)requestAnimationFrame(step); }
+        requestAnimationFrame(step);
+      });
+    },{threshold:0.6});
+    nums.forEach(function(n){ cio.observe(n); });
+  }
+
+  /* background videos: pause when off-screen */
+  document.querySelectorAll('.bg-video').forEach(function(v){
+    var vio=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ v.play().catch(function(){}); } else { v.pause(); } });},{threshold:0.05});
+    vio.observe(v);
+  });
+
+  /* reveal-on-scroll */
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.12});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>

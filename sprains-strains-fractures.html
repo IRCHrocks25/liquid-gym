@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kinesiology · LiquidGym</title>
+<title>Sprains, Strains and Fractures · Conditions We Treat · LiquidGym</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -892,56 +892,6 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .nav-panel .nav-sub:hover{color:var(--bright)!important;background:var(--soft)!important;}
 .nav-top{color:rgba(255,255,255,.9)!important;}
 .nav-item.is-active > .nav-top,.nav-top:hover{color:#fff!important;}
-
-/* closing band background video (matches homepage invitation) */
-.final.has-video{position:relative;overflow:hidden;}
-.final.has-video .cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
-.final.has-video::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(118deg,rgba(11,28,71,.55) 0%,rgba(11,28,71,.45) 46%,rgba(11,28,71,.34) 100%);}
-.final.has-video .wrap{position:relative;z-index:2;}
-.final.has-video .orb{z-index:1;}
-@media (prefers-reduced-motion:reduce){.final.has-video .cta-bg{display:none;}}
-
-/* Veterans card — background image with scrim */
-.vet-card.has-bg{position:relative;overflow:hidden;background:linear-gradient(150deg,#0B1C47,#163474);}
-.vet-card.has-bg::before{content:"";position:absolute;inset:0;z-index:0;background-image:linear-gradient(120deg,rgba(11,28,71,.86) 0%,rgba(11,28,71,.66) 55%,rgba(11,28,71,.5) 100%),url('https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260908_134501_9cff5226-e4ce-4094-a181-feb485a133e8.png');background-size:cover;background-position:center;}
-.vet-card.has-bg > *{position:relative;z-index:1;}
-
-
-/* 2-column bullet list */
-.mt-list.two-col{max-width:none;}
-@media(min-width:620px){.mt-list.two-col{grid-template-columns:1fr 1fr;column-gap:2.4rem;}}
-
-
-/* Land/Water icon chips (replacing images) */
-.lw-ico{display:grid;place-items:center;height:120px;background:linear-gradient(150deg,var(--soft),#fff);color:var(--bright);border-bottom:1px solid var(--line);}
-.lw-card:hover .lw-ico{color:var(--blue);}
-.lw-ico svg{width:44px;height:44px;transition:transform .3s ease;}
-.lw-card:hover .lw-ico svg{transform:scale(1.08);}
-
-
-/* Compact Land/Water cards */
-.lw2{display:grid;gap:1.2rem;margin-top:1.8rem;}
-@media(min-width:860px){.lw2{grid-template-columns:1fr 1fr;}}
-.lw2-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.7rem 1.6rem;box-shadow:var(--shadow-sm);transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;}
-.lw2-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--light);}
-.lw2-head{display:flex;align-items:center;gap:.85rem;margin-bottom:1rem;}
-.lw2-ico{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--soft);color:var(--bright);border:1px solid var(--line);transition:background .24s,color .24s,transform .24s;}
-.lw2-card:hover .lw2-ico{background:var(--bright);color:#fff;transform:scale(1.06);}
-.lw2-head h3{font-family:var(--display);font-size:1.2rem;font-weight:500;color:var(--blue);margin:0;line-height:1.25;}
-.lw2-card p{color:var(--body);line-height:1.6;margin:0 0 .8rem;font-size:.95rem;}
-.lw2-card p:last-of-type{margin-bottom:0;}
-.lw2-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
-.lw2-chips span{font-family:var(--display);font-size:.8rem;font-weight:500;color:var(--blue);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:.4rem .85rem;transition:background .18s,color .18s,border-color .18s;}
-.lw2-card:hover .lw2-chips span{border-color:var(--light);}
-.lw2-chips span:hover{background:var(--bright);color:#fff;border-color:var(--bright);}
-
-
-/* Land & Water heading — wider */
-.lw-head{max-width:none!important;}
-.lw-head h2{max-width:26ch;margin-inline:auto;}
-.lw-head .lede{max-width:72ch;margin-inline:auto;}
-.lw-head > p{max-width:72ch;margin-inline:auto;}
-
 </style>
 <style>
 /* ===== Massage Therapy page ===== */
@@ -979,18 +929,29 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </style>
 
 <style>
-/* Kinesiology land+water dual */
-.lw-grid{display:grid;gap:1.4rem;margin-top:1.8rem;}
-@media(min-width:860px){.lw-grid{grid-template-columns:1fr 1fr;}}
-.lw-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform .24s ease,box-shadow .24s ease;}
-.lw-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
-.lw-media{height:210px;overflow:hidden;}
-.lw-media img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease;}
-.lw-card:hover .lw-media img{transform:scale(1.05);}
-.lw-body{padding:1.7rem 1.6rem;}
-.lw-body h3{font-family:var(--display);font-size:1.25rem;font-weight:500;color:var(--blue);margin:0 0 .7rem;}
-.lw-body p{color:var(--body);line-height:1.65;margin:0 0 .9rem;font-size:.96rem;}
-.lw-body .mt-list{margin-top:.8rem;}
+.breadcrumb{font-family:var(--display);font-size:.8rem;color:rgba(255,255,255,.75);display:flex;gap:.5rem;align-items:center;margin-bottom:1rem;}
+.breadcrumb a{color:rgba(255,255,255,.75);} .breadcrumb a:hover{color:#fff;}
+.routes{display:grid;gap:1.2rem;margin-top:2rem;}
+@media(min-width:820px){.routes{grid-template-columns:1fr 1fr;}}
+.route-card{border-radius:16px;padding:1.9rem 1.7rem;transition:transform .24s ease,box-shadow .24s ease;}
+.route-card.physio{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);}
+.route-card.kin{background:linear-gradient(155deg,#0B1C47,#163474);color:#fff;}
+.route-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.route-card h3{font-family:var(--display);font-size:1.3rem;font-weight:500;margin:0 0 .7rem;}
+.route-card.physio h3{color:var(--blue);} .route-card.kin h3{color:#fff;}
+.route-card p{line-height:1.65;margin:0 0 1rem;font-size:.96rem;}
+.route-card.physio p{color:var(--body);} .route-card.kin p{color:rgba(255,255,255,.86);}
+/* water benefits list as check items */
+.benef{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.8rem;}
+.benef li{position:relative;padding-left:2rem;color:var(--body);line-height:1.6;}
+.benef li::before{content:"";position:absolute;left:0;top:.35em;width:20px;height:20px;border-radius:50%;background:var(--soft);border:1px solid var(--light);}
+.benef li::after{content:"";position:absolute;left:6px;top:.62em;width:7px;height:4px;border-left:2px solid var(--bright);border-bottom:2px solid var(--bright);transform:rotate(-45deg);}
+/* closing band video sizing */
+.cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+.sec.band.final.has-video{position:relative;overflow:hidden;}
+.sec.band.final.has-video .wrap{position:relative;z-index:2;}
+.sec.band.final.has-video .orb{z-index:1;}
+@media (prefers-reduced-motion:reduce){.cta-bg{display:none;}}
 </style>
 
 </head>
@@ -1003,7 +964,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </a>
 
     <nav class="nav-links" aria-label="Primary">
-      <div class="nav-item has-drop is-active">
+      <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Therapies<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
           <a class="nav-sub" href="physiotherapy.html">Physiotherapy</a>
@@ -1012,7 +973,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <a class="nav-sub" href="index.html#">Why Aquatic Therapy</a>
         </div>
       </div>
-      <div class="nav-item has-drop">
+      <div class="nav-item has-drop is-active">
         <button class="nav-top nav-trigger" aria-expanded="false">Conditions<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel is-mega">
           <a class="nav-sub" href="arthritis.html">Arthritis</a>
@@ -1148,17 +1109,17 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </div>
 
 <section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260908_103017_5c53b1d7-1125-4577-8cc6-b6b4140c8cd4.png" alt="A kinesiologist guiding a patient through a movement exercise"></div>
+  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_120107_bf1fa438-c7d3-474f-b727-27afb403d7ff.png" alt="A person rehabilitating an injury in a therapy pool"></div>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-lede">
       <div class="rv">
-        <span class="eyebrow on-dark">Therapies · Kinesiology</span>
-        <h1>Helping You Move, Function and Feel Stronger</h1>
-        <p class="sub">Kinesiology is the science of human movement.</p>
-        <div class="btn-row">
-          <a class="btn btn-light" href="#book">Book a Kinesiology Assessment</a>
-        </div>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">The Hub</a><span>/</span><span>Conditions</span><span>/</span><b style="color:#fff">Sprains, Strains &amp; Fractures</b></nav>
+        <span class="eyebrow on-dark">Conditions We Treat · Sprains, Strains &amp; Fractures</span>
+        <h1>Back to Movement Without Risking the Injury Again</h1>
+        <p class="sub">For many people, a ligament sprain, a muscle strain or a bone fracture has a significant impact on their ability to pursue sport, an exercise programme, or ordinary day-to-day activity.</p>
+        <p class="sub" style="margin-top:.8rem">Proper rehabilitation of these orthopedic injuries is critical in preventing re-injury and in getting you back to pain-free movement.</p>
+        <div class="btn-row"><a class="btn btn-light" href="#book">Book an Assessment</a></div>
       </div>
     </div>
   </div>
@@ -1167,116 +1128,52 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 <section class="sec"><div class="wrap">
   <div class="mt-split">
     <div class="rv">
-      <span class="eyebrow">Kinesiology at LiquidGym</span>
-      <h2>The Science of Human Movement.</h2>
-      <p style="margin-top:1.1rem;color:var(--body)">At LiquidGym, our Registered Kinesiologists work one-on-one with you to understand how you move, identify areas that may be limiting your function, and develop an individualized exercise program based on your needs and goals.</p>
-      <p style="margin-top:1rem;color:var(--body)">Whether you are recovering from an injury, managing a chronic condition, rebuilding strength after surgery, or simply trying to improve your mobility and physical function, our goal is to help you move with greater strength, confidence and independence.</p>
+      <span class="eyebrow">Why Water May Be an Option</span>
+      <h2>What the Water Makes Possible Sooner.</h2>
+      <p style="margin-top:1.1rem;color:var(--body)">Aquatic Therapy alongside land-based training is a valuable tool in recovery from strains, sprains and fractures, whatever your activity level.</p>
+      <p style="margin-top:1rem;color:var(--body)">Rehabilitating these injuries in the water allows for:</p>
+      <ul class="benef">
+        <li>Improved swelling and pain control through immersion</li>
+        <li>Resistance against all directions of movement at once, allowing improved muscle activation around the injured area</li>
+        <li>Decreased weight bearing, allowing greater freedom of movement during the early phases of recovery</li>
+        <li>Improved joint control, spatial awareness and balance through greater pressure feedback around the injured area</li>
+        <li>A safe, controlled environment to engage in rehabilitation exercises and treatment with confidence</li>
+      </ul>
+      <p style="margin-top:1.2rem;color:var(--ink);font-family:var(--display);font-weight:500">Decreased weight bearing means movement can start earlier than land alone would allow.</p>
+      <div class="btn-row" style="margin-top:1.4rem"><a class="btn btn-primary" href="tel:6138208228">Talk to Our Team</a></div>
     </div>
-    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260908_103042_0a3eb425-7ea9-4459-adce-11b50f989d8f.png" alt="A kinesiologist guiding a functional movement session" loading="lazy"></div>
+    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_120121_769ea0e1-50b8-426a-8abc-92d57a616ec7.png" alt="Water-based rehabilitation of an injured limb"></div>
   </div>
 </div></section>
 
 <section class="sec soft-bg"><div class="wrap">
+  <div class="mt-split athletes-swap">
+    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_120128_4c5968e3-0020-4ee4-b535-f115fa0078e5.png" alt="Hands-on manual therapy combined with land-based rehab"></div>
+    <div class="rv">
+      <span class="eyebrow">More Than Water</span>
+      <h2>Water Is One Half of the Plan.</h2>
+      <p style="margin-top:1.1rem;color:var(--body)">Water work is combined with a land-based protocol and targeted hands-on manual therapy from your therapist. That combination is what makes the plan specific to your injury rather than generic to the diagnosis.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
   <div class="narrow rv">
-    <span class="eyebrow">What a Kinesiologist Does</span>
-    <h2>How Can a Kinesiologist Help?</h2>
-    <p class="lede" style="margin-top:1.1rem">Kinesiologists use their knowledge of human movement, anatomy, biomechanics and exercise science to develop safe and progressive exercise programs.</p>
-    <p style="margin-top:1rem;color:var(--body)">Kinesiology may help with:</p>
-    <ul class="mt-list two-col">
-        <li>Injury rehabilitation</li>
-        <li>Pre- and post-surgical conditioning</li>
-        <li>Strength and conditioning</li>
-        <li>Balance and stability</li>
-        <li>Mobility and flexibility</li>
-        <li>Chronic condition management</li>
-        <li>Return to activity</li>
-        <li>Fall prevention</li>
-        <li>Functional movement</li>
-        <li>Cardiovascular conditioning</li>
-        <li>Maintaining independence</li>
-        <li>General health and wellness</li>
-      </ul>
+    <span class="eyebrow">How These Injuries Are Treated Here</span>
+    <h2>Two Ways In, Depending on Where You Are Starting.</h2>
+    <p class="lede" style="margin-top:1.1rem">Sprains, strains and fractures are treated across two of our therapies. Which one is right for you depends on the injury, the stage of healing, and what you are working back toward.</p>
   </div>
-  <div class="btn-row rv" style="margin-top:2rem;justify-content:center"><a class="btn btn-primary" href="tel:6138208228">Talk to Our Team</a></div>
-</div></section>
-
-<section class="sec"><div class="wrap">
-  <div class="mt-split flip">
-    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260908_103024_33594455-fbb1-46be-830c-d0334e967cba.png" alt="An individualized kinesiology assessment in progress"></div>
-    <div class="rv">
-      <span class="eyebrow">Your Assessment</span>
-      <h2>Your Program Starts With You.</h2>
-      <p style="margin-top:1.1rem;color:var(--body)">No two people move exactly the same way, which is why your program begins with an individualized assessment.</p>
-      <p style="margin-top:1rem;color:var(--body)">Your Kinesiologist will take the time to understand your health history, current abilities, challenges and personal goals.</p>
-      <p style="margin-top:1rem;color:var(--body)">Your assessment may look at areas such as:</p>
-      <ul class="mt-list">
-        <li>Functional movement</li>
-        <li>Strength</li>
-        <li>Range of motion</li>
-        <li>Balance</li>
-        <li>Coordination</li>
-        <li>Mobility</li>
-        <li>Posture</li>
-        <li>Endurance</li>
-        <li>Your ability to perform everyday activities</li>
-      </ul>
-      <p style="margin-top:1.2rem;color:var(--body)">The information gathered during your assessment helps your Kinesiologist develop a program specifically for you.</p>
+  <div class="routes rv">
+    <div class="route-card physio">
+      <h3>Physiotherapy</h3>
+      <p>Assessment, hands-on treatment and a plan of care through the stages of healing, from early pain and swelling control to full return to movement.</p>
+      <a class="btn btn-outline" href="physiotherapy.html">Explore Physiotherapy &rarr;</a>
     </div>
-  </div>
-</div></section>
-
-<section class="sec soft-bg"><div class="wrap">
-  <div class="narrow rv center-head lw-head" style="text-align:center;margin-inline:auto">
-    <span class="eyebrow" style="justify-content:center">Land and Water</span>
-    <h2 style="margin-inline:auto">Land and Water: Using the Right Environment for You.</h2>
-    <p class="lede" style="margin:1.1rem auto 0">One of the things that makes LiquidGym different is our experience integrating land-based exercise and aquatic exercise.</p>
-    <p style="margin:1rem auto 0;color:var(--body);max-width:60ch">Depending on your needs and goals, your Kinesiologist may recommend land-based exercise, aquatic exercise, or a combination of both.</p>
-  </div>
-  <div class="lw2 rv">
-    <article class="lw2-card">
-      <div class="lw2-head">
-        <span class="lw2-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20l3-9 3 5 3-8 2 6 3-4"/></svg></span>
-        <h3>Land-Based Kinesiology</h3>
-      </div>
-      <p>Land-based sessions focus on functional movement, strength, balance, mobility and endurance that translate directly into everyday life.</p>
-      <p>No dependence on large specialized equipment. Your Kinesiologist uses functional movements, resistance, body weight and a variety of tools to progressively challenge you.</p>
-    </article>
-    <article class="lw2-card">
-      <div class="lw2-head">
-        <span class="lw2-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 15c1.8 0 1.8 1.5 3.6 1.5S7.4 15 9.2 15s1.8 1.5 3.6 1.5S14.6 15 16.4 15s1.8 1.5 3.6 1.5"/><path d="M2 19c1.8 0 1.8 1.5 3.6 1.5S7.4 19 9.2 19s1.8 1.5 3.6 1.5S14.6 19 16.4 19s1.8 1.5 3.6 1.5"/><circle cx="12" cy="7" r="2.3"/></svg></span>
-        <h3>Aquatic Therapy</h3>
-      </div>
-      <p>For some individuals, exercising in water is another valuable option. Water reduces the body weight placed through the joints while providing resistance in multiple directions, so movements that are difficult on land become possible.</p>
-      <div class="lw2-chips">
-        <span>Mobility</span><span>Strength</span><span>Balance</span><span>Walking &amp; gait</span><span>Endurance</span><span>Early return to movement</span><span>Confidence with exercise</span>
-      </div>
-    </article>
-  </div>
-  <p class="rv" style="margin:1.6rem auto 0;color:var(--body);max-width:64ch;text-align:center">Your Kinesiologist will determine whether land, water, or a combination of both is most appropriate for your program.</p>
-</div></section>
-
-<section class="sec"><div class="wrap">
-  <div class="mt-split">
-    <div class="rv">
-      <span class="eyebrow">How We Work With You</span>
-      <h2>One-on-One Care.</h2>
-      <p style="margin-top:1.1rem;color:var(--body)">At LiquidGym, kinesiology is about more than completing a workout.</p>
-      <p style="margin-top:1rem;color:var(--body)">Your Kinesiologist works directly with you to make sure your program is appropriate for your abilities and progresses as you improve.</p>
-      <p style="margin-top:1rem;color:var(--body)">Your program can be adjusted as your strength, mobility, endurance and confidence change.</p>
-      <p style="margin-top:1rem;color:var(--body)">We also want you to understand why you are doing each exercise and how it relates to the activities that are important to you.</p>
+    <div class="route-card kin">
+      <h3>Kinesiology</h3>
+      <p>A progressive exercise programme rebuilding strength, range of motion and confidence, in water, on land, or both.</p>
+      <a class="btn btn-light" href="kinesiology.html">Explore Kinesiology &rarr;</a>
     </div>
-    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260908_142818_0bfa5f2d-c508-4235-9825-bb178c11effc.png" alt="One-on-one kinesiology coaching" loading="lazy"></div>
-  </div>
-</div></section>
-
-<section class="sec soft-bg"><div class="wrap">
-  <div class="vet-card rv">
-    <span class="eyebrow">Where This Leads</span>
-    <h2>From Rehabilitation to Independence.</h2>
-    <p style="margin-top:1.1rem">Our goal is not to have you depend on us forever.</p>
-    <p style="margin-top:1rem">As you progress, your Kinesiologist can help you develop the knowledge, strength and confidence to become increasingly independent with your exercise.</p>
-    <p style="margin-top:1rem">For some people, kinesiology may be part of the rehabilitation process. For others, it may provide ongoing support for maintaining strength, mobility, function and an active lifestyle.</p>
-    <p style="margin-top:1rem">Whatever your starting point, we meet you where you are and help you work toward where you want to be.</p>
   </div>
 </div></section>
 
@@ -1287,9 +1184,8 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   <div class="wrap">
     <div class="narrow rv" style="text-align:center;margin-inline:auto">
       <span class="eyebrow on-dark" style="justify-content:center">Final Step</span>
-      <h2 style="color:#fff">Start With a Kinesiology Assessment.</h2>
-      <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85);margin-inline:auto;max-width:60ch">Your first step is an individualized assessment, built from data captured with multiple measurement tools, so we can better understand your movement, abilities and goals.</p>
-      <p style="margin-top:1rem;color:rgba(255,255,255,.85);margin-inline:auto;max-width:60ch">From there, your Kinesiologist will recommend a program designed specifically for you. Call LiquidGym at 613-820-8228 to speak with our team or book your Kinesiology assessment.</p>
+      <h2 style="color:#fff">Start With an Assessment.</h2>
+      <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85);margin-inline:auto;max-width:62ch">For an assessment and a detailed plan of care, call LiquidGym at 613-820-8228 to book an appointment with one of our therapists.</p>
       <div class="btn-row" style="justify-content:center;margin-top:1.6rem">
         <a class="btn btn-light" href="#book">Book Your Assessment</a>
         <a class="btn btn-outline-nav" href="tel:6138208228">Call 613-820-8228</a>
@@ -1377,16 +1273,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   });
 })();
 </script>
-<script>
-(function(){
-  var els=document.querySelectorAll('.rv');
-  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{threshold:0.12});
-  els.forEach(function(e){ io.observe(e); });
-})();
-</script>
-<script>(function(){document.querySelectorAll('.cta-bg').forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
+<script>(function(){var els=document.querySelectorAll(".rv");if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in");});return;}var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});els.forEach(function(e){io.observe(e);});})();</script>
+<script>(function(){document.querySelectorAll(".cta-bg").forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
 </body>
 </html>

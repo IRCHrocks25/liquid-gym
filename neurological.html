@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Plantar Fasciitis · Conditions We Treat · LiquidGym</title>
+<title>Neurological Conditions · Conditions We Treat · LiquidGym</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -893,28 +893,13 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .nav-top{color:rgba(255,255,255,.9)!important;}
 .nav-item.is-active > .nav-top,.nav-top:hover{color:#fff!important;}
 
-/* What Helps — collapsible list under the head */
-.helps-list{display:grid;gap:.6rem;margin-top:2rem;max-width:70ch;}
-.help-tab{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease,background .2s ease;}
-.help-tab:hover{border-color:var(--light);}
-.help-tab[open]{background:var(--soft);border-color:var(--bright);box-shadow:var(--shadow-sm);}
-.help-tab summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.9rem;padding:1rem 1.2rem;min-height:56px;}
-.help-tab summary::-webkit-details-marker{display:none;}
-.help-n{flex:none;font-family:var(--display);font-size:1rem;font-weight:300;color:var(--bright);min-width:2.2ch;letter-spacing:-.02em;}
-.help-tab summary h3{flex:1;min-width:0;font-size:1rem;font-weight:500;color:var(--blue);line-height:1.3;margin:0;}
-.help-tab .sign{flex:none;width:26px;height:26px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--bright);display:grid;place-items:center;font-size:1rem;line-height:1;transition:background .2s,color .2s,border-color .2s;}
-.help-tab[open] .sign{background:var(--bright);border-color:var(--bright);color:#fff;}
-.help-body{padding:0 1.2rem 1.1rem;}
-@media(min-width:520px){.help-body{padding-left:calc(1.2rem + 2.2ch + .9rem);}}
-.help-body p{font-size:.94rem;line-height:1.6;color:var(--body);margin:0;}
-
-
-/* What Helps — head left, collapsible list right */
-.wh-split{display:grid;gap:2rem;align-items:start;}
-@media(min-width:900px){.wh-split{grid-template-columns:.85fr 1.15fr;gap:clamp(2.4rem,4.5vw,4rem);}}
-.wh-aside{position:sticky;top:90px;}
-@media(max-width:899px){.wh-aside{position:static;}}
-.wh-split .helps-list{margin-top:0;max-width:none;}
+/* Treated Through Physiotherapy — two columns */
+.treat-split{display:grid;gap:2rem;align-items:center;}
+@media(min-width:900px){.treat-split{grid-template-columns:1.05fr .95fr;gap:clamp(2.4rem,4.5vw,4rem);}}
+.treat-media{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);}
+.treat-media img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform 8s ease;}
+.treat-media:hover img{transform:scale(1.04);}
+.treat-split .route-single{max-width:none;}
 
 </style>
 <style>
@@ -955,37 +940,25 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 <style>
 .breadcrumb{font-family:var(--display);font-size:.8rem;color:rgba(255,255,255,.75);display:flex;gap:.5rem;align-items:center;margin-bottom:1rem;}
 .breadcrumb a{color:rgba(255,255,255,.75);} .breadcrumb a:hover{color:#fff;}
-/* reuse comp2 grid look for 'why it develops' */
-.comp2-grid{display:grid;gap:1.1rem;margin-top:2.4rem;grid-template-columns:1fr;}
-@media(min-width:560px){.comp2-grid{grid-template-columns:1fr 1fr;}}
-.comp2{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem 1.5rem;display:flex;flex-direction:column;gap:.6rem;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;transition:transform .24s cubic-bezier(.22,.7,.2,1),box-shadow .24s ease,border-color .24s ease;}
-.comp2::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--bright);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.4,0,.2,1);}
-.comp2:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--light);}
-.comp2:hover::after{transform:scaleX(1);}
-.comp2-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.2rem;}
-.comp2-ico{display:inline-grid;place-items:center;width:52px;height:52px;border-radius:14px;background:var(--soft);color:var(--bright);border:1px solid var(--line);transition:background .24s ease,color .24s ease,transform .24s ease;}
-.comp2:hover .comp2-ico{background:var(--bright);color:#fff;transform:scale(1.08) rotate(-3deg);}
-.comp2-n{font-family:var(--display);font-size:1.6rem;font-weight:300;letter-spacing:-.03em;color:var(--line);line-height:1;transition:color .24s ease;}
-.comp2:hover .comp2-n{color:var(--light);}
-.comp2 h3{font-family:var(--display);font-size:1.15rem;font-weight:500;color:var(--blue);line-height:1.28;margin:0;}
-.comp2 p{font-size:.92rem;line-height:1.58;color:var(--body);margin:0;}
-/* what helps grid */
-.helps-grid{display:grid;gap:1.1rem;margin-top:2.4rem;grid-template-columns:1fr;}
-@media(min-width:640px){.helps-grid{grid-template-columns:1fr 1fr;}}
-@media(min-width:1000px){.helps-grid{grid-template-columns:1fr 1fr 1fr;}}
-.help-card{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.5rem;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;}
-.help-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--light);background:#fff;}
-.help-card h3{font-family:var(--display);font-size:1.1rem;font-weight:500;color:var(--blue);margin:0 0 .5rem;}
-.help-card p{font-size:.92rem;line-height:1.58;color:var(--body);margin:0;}
-/* recognition checklist (questions) */
-.recog{list-style:none;padding:0;margin:1.6rem 0 0;display:grid;gap:.7rem;}
-.recog li{display:flex;align-items:flex-start;gap:.8rem;color:var(--body);line-height:1.6;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:.9rem 1.1rem;}
-.recog li::before{content:"?";flex:none;width:26px;height:26px;border-radius:50%;background:var(--bright);color:#fff;font-family:var(--display);font-weight:600;display:grid;place-items:center;font-size:.9rem;}
-/* single route card */
+.cond-grid{columns:2;column-gap:2.4rem;list-style:none;padding:0;margin:2rem 0 0;}
+@media(min-width:760px){.cond-grid{columns:3;}}
+.cond-grid li{break-inside:avoid;padding:.6rem 0 .6rem 1.6rem;position:relative;color:var(--body);font-size:.96rem;line-height:1.4;border-bottom:1px solid var(--line);transition:color .18s,padding-left .18s,border-color .18s;}
+.cond-grid li::before{content:"";position:absolute;left:0;top:.95em;width:8px;height:8px;border-radius:50%;background:var(--light);transition:background .18s,transform .18s;}
+.cond-grid li:hover{color:var(--blue);padding-left:1.9rem;border-color:var(--bright);}
+.cond-grid li:hover::before{background:var(--bright);transform:scale(1.3);}
 .route-single{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.7rem 1.6rem;box-shadow:var(--shadow-sm);}
 .route-single h3{font-family:var(--display);font-size:1.3rem;font-weight:500;color:var(--blue);margin:0 0 .7rem;}
 .route-single p{color:var(--body);line-height:1.65;margin:0 0 1rem;font-size:.96rem;}
-/* closing video */
+.buoy2{display:grid;gap:1.1rem;margin-top:1.6rem;}
+@media(min-width:560px){.buoy2{grid-template-columns:1fr 1fr;}}
+.buoy2-card{background:linear-gradient(155deg,var(--soft),#fff);border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.6rem;transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;}
+.buoy2-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--light);}
+.buoy2-num{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:300;color:var(--body);line-height:1;letter-spacing:-.02em;display:flex;align-items:center;gap:.4rem;}
+.buoy2-num b{font-weight:500;color:var(--bright);font-size:clamp(2.1rem,4vw,3rem);}
+.buoy2-num .unit{font-size:1.1rem;color:var(--body);font-weight:400;align-self:flex-end;margin-bottom:.35rem;}
+.buoy2-bar{margin:1rem 0 .9rem;height:8px;border-radius:999px;background:var(--line);overflow:hidden;}
+.buoy2-bar span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--mid),var(--bright));}
+.buoy2-card p{font-size:.92rem;line-height:1.6;color:var(--body);margin:0;}
 .cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
 .sec.band.final.has-video{position:relative;overflow:hidden;}
 .sec.band.final.has-video .wrap{position:relative;z-index:2;}
@@ -1148,15 +1121,16 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </div>
 
 <section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_130748_f7eaddae-b21b-436f-8730-c3e4c05041ef.png" alt="A person feeling first-step heel discomfort in the morning"></div>
+  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_132319_52f96b9f-389b-4394-86c0-437b127690c9.png" alt="A person doing supported balance training in a therapy pool"></div>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-lede">
       <div class="rv">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">The Hub</a><span>/</span><span>Conditions</span><span>/</span><b style="color:#fff">Plantar Fasciitis</b></nav>
-        <span class="eyebrow on-dark">Conditions We Treat · Plantar Fasciitis</span>
-        <h1>That First Step in the Morning</h1>
-        <p class="sub">Plantar fasciitis is inflammation of the band of tissue, the plantar fascia, that runs from your heel to your toes. The tissue becomes overly tight, causing inflammation and irritation, often towards the inner side of the heel.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">The Hub</a><span>/</span><span>Conditions</span><span>/</span><b style="color:#fff">Neurological Conditions</b></nav>
+        <span class="eyebrow on-dark">Conditions We Treat · Neurological Conditions</span>
+        <h1>When Movement Has to Be Relearned</h1>
+        <p class="sub">At LiquidGym we treat a wide variety of neurological conditions, which can arise from problems with the brain, the spinal cord, or the peripheral nerves.</p>
+        <p class="sub" style="margin-top:.8rem">Because these conditions are complex, symptoms vary widely, muscle stiffness or spasm, muscle weakness, tremor, problems with sensation, poor balance, mobility difficulties and pain. Those symptoms can make everyday activities harder: working, walking, getting dressed, eating.</p>
         <div class="btn-row"><a class="btn btn-light" href="#book">Book an Assessment</a></div>
       </div>
     </div>
@@ -1164,139 +1138,73 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </section>
 
 <section class="sec"><div class="wrap">
-  <div class="mt-split">
-    <div class="rv">
-      <span class="eyebrow">Does This Sound Familiar</span>
-      <h2>If Any of This Sounds Familiar.</h2>
-      <ul class="recog">
-        <li>When you wake up in the morning, do you get a sharp pain in the heel of your foot?</li>
-        <li>Does the pain radiate down into the arch of your foot?</li>
-        <li>Do you feel better once you put shoes on?</li>
-        <li>Does the pain ease as the day goes on?</li>
-        <li>Does standing for long hours make it worse?</li>
-      </ul>
-      <p style="margin-top:1.2rem;color:var(--ink);font-family:var(--display);font-weight:500">If you answered yes to several of those, plantar fasciitis is a likely explanation.</p>
-      <div class="btn-row" style="margin-top:1.2rem"><a class="btn btn-primary" href="tel:6138208228">Talk to Our Team</a></div>
-    </div>
-    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_130753_a9edd0c9-84ad-4800-92b1-e9d048f4df9b.png" alt="A physiotherapist examining a patient's foot"></div>
+  <div class="narrow rv">
+    <span class="eyebrow">Conditions Treated</span>
+    <h2>Neurological Conditions Treated at LiquidGym.</h2>
   </div>
+  <ul class="cond-grid rv">
+        <li>Stroke</li>
+        <li>Multiple sclerosis</li>
+        <li>Parkinson’s disease</li>
+        <li>Spinal cord injury</li>
+        <li>Traumatic brain injury and concussion</li>
+        <li>Alzheimer’s disease</li>
+        <li>Cerebral palsy</li>
+        <li>Guillain-Barré syndrome</li>
+        <li>Myasthenia gravis</li>
+        <li>Functional neurologic disorder</li>
+  </ul>
 </div></section>
 
 <section class="sec soft-bg"><div class="wrap">
-  <div class="narrow rv">
-    <span class="eyebrow">Why It Develops</span>
-    <h2>Why Plantar Fasciitis Develops.</h2>
-    <p class="lede" style="margin-top:1.1rem">There are several reasons someone develops plantar fasciitis, and they are often related.</p>
-  </div>
-  <div class="comp2-grid rv">
-      <article class="comp2">
-        <div class="comp2-top">
-          <span class="comp2-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18c3-1 5-6 9-6 3 0 4 2 4 4 0 1.5-1 2-2 2H3z"/><path d="M16 16c2 0 5-.5 5-3 0-2-2-3-4-3"/></svg></span>
-          <span class="comp2-n">01</span>
+  <div class="mt-split">
+    <div class="rv">
+      <span class="eyebrow">Why Water May Be an Option</span>
+      <h2>What the Water Makes Possible.</h2>
+      <p style="margin-top:1.1rem;color:var(--body)">Water immersion allows patients to perform movements they may be unable to perform on land. Exercises can be performed with greater ease and less pain, because of the buoyancy the water creates.</p>
+      <p style="margin-top:1rem;color:var(--body)">The upward force of buoyancy counterbalances the downward effects of gravity and greatly decreases the impact forces your body is subjected to in traditional land therapy.</p>
+      <div class="buoy2">
+        <div class="buoy2-card">
+          <div class="buoy2-num">up to <b>80%</b></div>
+          <div class="buoy2-bar" aria-hidden="true"><span style="width:80%"></span></div>
+          <p>Standing chest-deep in water, your body weight can be reduced by up to 80 percent.</p>
         </div>
-        <h3>Flat or high arches</h3>
-        <p>The plantar fascia supports your arches and absorbs shock with every step. If your arches are not supported, the fascia takes more stress.</p>
-      </article>
-      <article class="comp2">
-        <div class="comp2-top">
-          <span class="comp2-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M7 21v-4a5 5 0 0 1 10 0v4"/></svg></span>
-          <span class="comp2-n">02</span>
+        <div class="buoy2-card">
+          <div class="buoy2-num"><b>200</b> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;opacity:.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg> <b>40</b> <span class="unit">lb</span></div>
+          <p>Someone weighing 200 pounds on land may weigh as little as 40 pounds in the water, which is what makes it possible to safely perform exercise therapy that land would not allow.</p>
         </div>
-        <h3>Weak glutes</h3>
-        <p>Glute strength affects the position of your foot with each step. If your glutes are not strong enough to externally rotate your hip, the lower leg rotates inwards, the arch collapses or flattens, and more stress lands on the plantar fascia.</p>
-      </article>
-      <article class="comp2">
-        <div class="comp2-top">
-          <span class="comp2-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v7a4 4 0 0 0 1 3l2 3v5"/><path d="M12 21h5"/></svg></span>
-          <span class="comp2-n">03</span>
-        </div>
-        <h3>Tight calf muscles</h3>
-        <p>Tightness in the gastrocnemius and soleus, and in the Achilles tendon, applies higher stress to the plantar fascia. This is often overused combined with a lack of recovery, stretching, and rest.</p>
-      </article>
-      <article class="comp2">
-        <div class="comp2-top">
-          <span class="comp2-ico" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12c0-4 3-7 7-7 4 0 6 2 6 5 0 2-1 3-3 3h-3c-2 0-3 1-3 3v2H5a1 1 0 0 1-1-1z"/><circle cx="18" cy="8" r="1"/></svg></span>
-          <span class="comp2-n">04</span>
-        </div>
-        <h3>Weak foot muscles</h3>
-        <p>The smaller intrinsic muscles of the foot help stabilise your arches. When they are weak, the arches struggle to support and absorb load, which increases tension on the plantar fascia.</p>
-      </article>
+      </div>
+      <p style="margin-top:1.2rem;color:var(--body)">For neurological conditions, this combination matters directly: reduced weight bearing and resistance in every direction together support balance and gait work that is often difficult or unsafe on land.</p>
+      <div class="btn-row" style="margin-top:1.4rem"><a class="btn btn-primary" href="tel:6138208228">Talk to Our Team</a></div>
+    </div>
+    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_132324_4e6fd279-0030-49b8-b312-f1d785be7af5.png" alt="A physiotherapist conducting a neurological assessment"></div>
   </div>
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="wh-split">
-    <aside class="wh-aside rv">
-      <span class="eyebrow">Treatment and Self-Management</span>
-      <h2>What Helps.</h2>
-      <p class="lede" style="margin-top:1.1rem">A combination of stretching, strengthening, support and rest addresses both the symptoms and the mechanics driving them.</p>
-    </aside>
-    <div class="helps-list rv">
-<details class="help-tab" open>
-        <summary>
-          <span class="help-n">01</span>
-          <h3>Stretching</h3>
-          <span class="sign" aria-hidden="true">−</span>
-        </summary>
-        <div class="help-body"><p>A daily practice of stretching your calves and plantar fascia may help decrease symptoms.</p></div>
-      </details>
-      <details class="help-tab">
-        <summary>
-          <span class="help-n">02</span>
-          <h3>Glute and foot strengthening</h3>
-          <span class="sign" aria-hidden="true">+</span>
-        </summary>
-        <div class="help-body"><p>Strengthening both areas provides the stability needed to maintain proper alignment and mechanics with activity.</p></div>
-      </details>
-      <details class="help-tab">
-        <summary>
-          <span class="help-n">03</span>
-          <h3>Night splinting</h3>
-          <span class="sign" aria-hidden="true">+</span>
-        </summary>
-        <div class="help-body"><p>A Strassburg sock is a form of night splint that holds the plantar fascia in a stretched position overnight.</p></div>
-      </details>
-      <details class="help-tab">
-        <summary>
-          <span class="help-n">04</span>
-          <h3>Supportive footwear</h3>
-          <span class="sign" aria-hidden="true">+</span>
-        </summary>
-        <div class="help-body"><p>Look for a thicker, well-cushioned midsole and longitudinal arch support that provides motion control. Every foot is different, so try a few styles to find the right fit.</p></div>
-      </details>
-      <details class="help-tab">
-        <summary>
-          <span class="help-n">05</span>
-          <h3>Rest</h3>
-          <span class="sign" aria-hidden="true">+</span>
-        </summary>
-        <div class="help-body"><p>Giving the area proper rest helps decrease inflammation and pain. Adjust daily activities toward sitting where you can.</p></div>
-      </details>
-      <details class="help-tab">
-        <summary>
-          <span class="help-n">06</span>
-          <h3>Orthotics</h3>
-          <span class="sign" aria-hidden="true">+</span>
-        </summary>
-        <div class="help-body"><p>Additional support in the form of orthotics may be needed if there is a structural or functional weakness in your arches. An assessment will help determine whether orthotics are right for you.</p></div>
-      </details>
+  <div class="mt-split athletes-swap">
+    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_133143_1bf377b5-9d5a-41b5-8c47-16f96baa118f.png" alt="Gait and balance training with support equipment"></div>
+    <div class="rv">
+      <span class="eyebrow">Equipment</span>
+      <h2>Equipment That Supports Treatment.</h2>
+      <p style="margin-top:1.1rem;color:var(--body)">Where appropriate, equipment is used alongside water and land-based work to support gait, strength and balance training.</p>
     </div>
   </div>
 </div></section>
 
 <section class="sec soft-bg"><div class="wrap">
-  <div class="mt-split">
+  <div class="treat-split">
     <div class="rv">
-      <span class="eyebrow">How Plantar Fasciitis Is Treated Here</span>
+      <span class="eyebrow">How Neurological Conditions Are Treated Here</span>
       <h2>Treated Through Physiotherapy.</h2>
-      <p style="margin-top:1.1rem;color:var(--body)">Plantar fasciitis is treated through physiotherapy at LiquidGym. Your therapist assesses why it developed in your case, arches, glutes, calves, foot mechanics, and builds treatment around the cause rather than the symptom alone.</p>
+      <p style="margin-top:1.1rem;color:var(--body)">Our therapists complete a thorough neurological assessment and design a treatment and management plan built around your symptoms and your goals, to help improve your overall quality of life.</p>
       <div class="route-single" style="margin-top:1.6rem">
         <h3>Physiotherapy</h3>
-        <p>Assessment of the underlying mechanics, hands-on treatment, and a stretching and strengthening programme targeted at what is actually driving the pain.</p>
+        <p>Neurological assessment, a tailored treatment and management plan, and progression through water and land work as your function changes.</p>
         <a class="btn btn-outline" href="physiotherapy.html">Explore Physiotherapy &rarr;</a>
       </div>
     </div>
-    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_131153_c20b8e8d-4cda-4882-b873-e01c9c4d2578.png" alt="A physiotherapist treating a patient's foot"></div>
+    <div class="treat-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_133149_fed1471c-0204-4357-9ba9-1048b7858f8e.png" alt="A physiotherapist working with a patient on a neurological rehabilitation plan"></div>
   </div>
 </div></section>
 
@@ -1306,8 +1214,8 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   <span class="orb" style="width:260px;height:260px;bottom:-90px;right:-40px;"></span>
   <div class="wrap">
     <div class="narrow rv" style="text-align:center;margin-inline:auto">
-      <h2 style="color:#fff">Find Out Why It Keeps Coming Back.</h2>
-      <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85);margin-inline:auto;max-width:64ch">For a thorough analysis of why you have developed plantar fasciitis, or why you have recurring bouts of it, call LiquidGym at 613-820-8228 to book an appointment with one of our therapists.</p>
+      <h2 style="color:#fff">Start With an Assessment.</h2>
+      <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85);margin-inline:auto;max-width:62ch">For an assessment and a detailed plan of care, call LiquidGym at 613-820-8228 to book an appointment with one of our therapists.</p>
       <div class="btn-row" style="justify-content:center;margin-top:1.6rem">
         <a class="btn btn-light" href="#book">Book Your Assessment</a>
         <a class="btn btn-outline-nav" href="tel:6138208228">Call 613-820-8228</a>
@@ -1397,11 +1305,5 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </script>
 <script>(function(){var els=document.querySelectorAll(".rv");if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in");});return;}var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});els.forEach(function(e){io.observe(e);});})();</script>
 <script>(function(){document.querySelectorAll(".cta-bg").forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
-<script>(function(){
-  document.querySelectorAll('.help-tab').forEach(function(d){
-    var sign=d.querySelector('.sign');
-    d.addEventListener('toggle',function(){ if(sign) sign.textContent=d.open?'−':'+'; });
-  });
-})();</script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Water Exercise Institute (WEI™) — LiquidGym</title>
+<title>Arthritis · Conditions We Treat · LiquidGym</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -892,7 +892,89 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .nav-panel .nav-sub:hover{color:var(--bright)!important;background:var(--soft)!important;}
 .nav-top{color:rgba(255,255,255,.9)!important;}
 .nav-item.is-active > .nav-top,.nav-top:hover{color:#fff!important;}
+
+/* closing band video sizing (was missing) */
+.cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+.sec.band.final.has-video{position:relative;overflow:hidden;}
+.sec.band.final.has-video .wrap{position:relative;z-index:2;}
+.sec.band.final.has-video .orb{z-index:1;}
+@media (prefers-reduced-motion:reduce){.cta-bg{display:none;}}
+
+
+/* wider buoyancy stat cards */
+.buoy-stat{gap:1rem;}
+.buoy-stat .s{flex:1 1 100%;padding:1.3rem 1.6rem;display:flex;align-items:baseline;gap:1rem;}
+@media(min-width:560px){.buoy-stat .s{flex:1 1 100%;}}
+.buoy-stat .s b{font-size:clamp(1.8rem,3.4vw,2.4rem);white-space:nowrap;flex:none;}
+.buoy-stat .s span{margin-top:0;font-size:.9rem;}
+
 </style>
+<style>
+/* ===== Massage Therapy page ===== */
+.mt-list{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.7rem;max-width:52ch;}
+.mt-list li{position:relative;padding-left:1.7rem;color:var(--body);line-height:1.6;}
+.mt-list li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--bright);}
+.mt-split{display:grid;gap:2rem;align-items:center;}
+@media(min-width:900px){.mt-split{grid-template-columns:1.05fr .95fr;gap:clamp(2.4rem,4.5vw,4rem);}}
+.mt-split.flip .mt-media{order:2;}
+.mt-media{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);}
+.mt-media img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform 8s ease;}
+.mt-media:hover img{transform:scale(1.04);}
+.mt-media.wide img{aspect-ratio:16/10;}
+
+/* veterans callout */
+.vet-card{background:linear-gradient(150deg,#0B1C47,#163474);color:#fff;border-radius:var(--r);padding:clamp(1.8rem,3.5vw,2.8rem);box-shadow:var(--shadow-lg);}
+.vet-card .eyebrow{color:var(--light);} .vet-card .eyebrow::before{background:var(--light);}
+.vet-card h2{color:#fff;} .vet-card p{color:rgba(255,255,255,.86);}
+
+/* conditions */
+.cond-grid{columns:2;column-gap:2.4rem;list-style:none;padding:0;margin:2rem 0 0;}
+@media(min-width:760px){.cond-grid{columns:3;}}
+.cond-grid li{break-inside:avoid;padding:.5rem 0 .5rem 1.5rem;position:relative;color:var(--body);font-size:.95rem;line-height:1.4;border-bottom:1px solid var(--line);}
+.cond-grid li::before{content:"";position:absolute;left:0;top:.85em;width:7px;height:7px;border-radius:50%;background:var(--light);}
+
+/* techniques */
+.tech-grid{display:grid;gap:1.1rem;margin-top:2.4rem;grid-template-columns:1fr;}
+@media(min-width:640px){.tech-grid{grid-template-columns:1fr 1fr;}}
+@media(min-width:1040px){.tech-grid{grid-template-columns:1fr 1fr 1fr;}}
+.tech-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.4rem;position:relative;box-shadow:var(--shadow-sm);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;}
+.tech-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--light);}
+.tech-n{font-family:var(--display);font-size:1.2rem;font-weight:300;color:var(--light);letter-spacing:-.02em;}
+.tech-card h3{font-family:var(--display);font-size:1.02rem;font-weight:500;color:var(--blue);margin:.3rem 0 .5rem;line-height:1.3;}
+.tech-card p{font-size:.9rem;line-height:1.55;color:var(--body);margin:0;}
+</style>
+
+<style>
+/* Arthritis page extras */
+.breadcrumb{font-family:var(--display);font-size:.8rem;color:rgba(255,255,255,.75);display:flex;gap:.5rem;align-items:center;margin-bottom:1rem;}
+.breadcrumb a{color:rgba(255,255,255,.75);} .breadcrumb a:hover{color:#fff;}
+.two-forms{display:grid;gap:1.2rem;margin-top:2rem;}
+@media(min-width:820px){.two-forms{grid-template-columns:1fr 1fr;}}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.9rem 1.7rem;box-shadow:var(--shadow-sm);transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;}
+.form-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--light);}
+.form-card .tag{font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bright);}
+.form-card h3{font-family:var(--display);font-size:1.35rem;font-weight:500;color:var(--navy);margin:.5rem 0 .8rem;}
+.form-card p{color:var(--body);line-height:1.65;margin:0 0 .8rem;font-size:.96rem;}
+.form-card p:last-child{margin-bottom:0;}
+/* buoyancy stat */
+.buoy-stat{display:flex;flex-wrap:wrap;gap:1.4rem;margin-top:1.6rem;}
+.buoy-stat .s{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.4rem;flex:1 1 160px;}
+.buoy-stat .s b{display:block;font-family:var(--display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:300;color:var(--bright);line-height:1;letter-spacing:-.03em;}
+.buoy-stat .s span{font-size:.85rem;color:var(--body);line-height:1.4;display:block;margin-top:.4rem;}
+/* two routes-in cards */
+.routes{display:grid;gap:1.2rem;margin-top:2rem;}
+@media(min-width:820px){.routes{grid-template-columns:1fr 1fr;}}
+.route-card{border-radius:16px;padding:1.9rem 1.7rem;transition:transform .24s ease,box-shadow .24s ease;}
+.route-card.physio{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);}
+.route-card.kin{background:linear-gradient(155deg,#0B1C47,#163474);color:#fff;}
+.route-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.route-card h3{font-family:var(--display);font-size:1.3rem;font-weight:500;margin:0 0 .7rem;}
+.route-card.physio h3{color:var(--blue);} .route-card.kin h3{color:#fff;}
+.route-card p{line-height:1.65;margin:0 0 1rem;font-size:.96rem;}
+.route-card.physio p{color:var(--body);} .route-card.kin p{color:rgba(255,255,255,.86);}
+.route-card .btn{margin-top:.2rem;}
+</style>
+
 </head>
 <body>
 <div class="siteheader">
@@ -912,7 +994,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <a class="nav-sub" href="index.html#">Why Aquatic Therapy</a>
         </div>
       </div>
-      <div class="nav-item has-drop">
+      <div class="nav-item has-drop is-active">
         <button class="nav-top nav-trigger" aria-expanded="false">Conditions<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel is-mega">
           <a class="nav-sub" href="arthritis.html">Arthritis</a>
@@ -936,7 +1018,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <a class="nav-sub" href="index.html#">Virtual</a>
         </div>
       </div>
-      <div class="nav-item is-active"><a class="nav-top" href="wei-water-exercise-institute.html">WEI™</a></div>
+      <div class="nav-item"><a class="nav-top" href="wei-water-exercise-institute.html">WEI™</a></div>
       <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">ATI<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
@@ -1047,189 +1129,126 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   </div>
 </div>
 
-
-<!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260907_111035_62bdf43d-1088-4198-8dcd-c7d4fae3160a.png" alt="Following a guided WEI session at the poolside"></div>
+  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_114304_8db01827-f658-4c1b-8d4f-636a493f3aa0.png" alt="An older adult moving gently in a therapy pool"></div>
   <div class="hero-scrim" aria-hidden="true"></div>
-
   <div class="wrap">
     <div class="hero-lede">
       <div class="rv">
-        <span class="eyebrow on-dark">Water Exercise Institute</span>
-        <h1>Move Better. Feel Stronger. Move with Confidence.</h1>
-        <p class="sub">Water works differently, and we can show you exactly why.</p>
-        <div class="btn-row">
-          <a class="btn btn-light" href="#trial">Start Your 7-Day Free Trial</a>
-        </div>
-        <div class="hero-trust">
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>100+ guided sessions</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>150+ educational videos</span>
-          <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 6L9 17l-5-5"/></svg>On your schedule</span>
-        </div>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">The Hub</a><span>/</span><span>Conditions</span><span>/</span><b style="color:#fff">Arthritis</b></nav>
+        <span class="eyebrow on-dark">Conditions We Treat · Arthritis</span>
+        <h1>Movement That Asks Less of Your Joints</h1>
+        <p class="sub">Arthritis is a chronic condition. It affects people on an ongoing, constant or recurring basis over months, years, even a lifetime.</p>
+        <p class="sub" style="margin-top:.8rem">At LiquidGym, arthritis is treated in water and on land, by physiotherapists and kinesiologists, depending on what your joints need and where you are starting from.</p>
+        <div class="btn-row"><a class="btn btn-light" href="#book">Book an Assessment</a></div>
       </div>
-      
-    </div>
-  </div>
-  <svg class="wavebg" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 Q 240 20 480 60 T 960 60 T 1440 60" fill="none" stroke="currentColor" stroke-width="1"/><path d="M0 100 Q 240 60 480 100 T 960 100 T 1440 100" fill="none" stroke="currentColor" stroke-width="1"/><path d="M0 140 Q 240 100 480 140 T 960 140 T 1440 140" fill="none" stroke="currentColor" stroke-width="1"/></svg>
-</section>
-
-<!-- WHY WATER -->
-<section class="sec" id="why">
-  <div class="wrap">
-    <div class="ww-head rv">
-      <span class="eyebrow">Why Water Works</span>
-      <h2>Why Water Matters. We Already Decoded How.</h2>
-      <p class="lede">Three things happen the moment you step into water, and none of them are guesswork.</p>
-    </div>
-
-    <div class="ww-grid">
-      <article class="ww-card rv" data-k="01">
-        <div class="ww-media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260907_111010_99df167c-600b-4f3b-a059-afe15aa72a2f.png" alt="Buoyancy: the body lifted by water" loading="lazy"></div>
-        <span class="ww-ico" aria-hidden="true">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 6c6 8 10 12 10 18a10 10 0 0 1-20 0c0-6 4-10 10-18z"/>
-            <path d="M14 20c2-2 4-2 6 0s4 2 6 0"/>
-          </svg>
-        </span>
-        <h3>Buoyancy</h3>
-        <p class="ww-stat"><b>up to 90%</b><span>of body weight removed</span></p>
-        <p>Buoyancy removes up to 90 percent of your body weight. Movement that hurts on land becomes possible again, not because the pain is gone, but because the load causing it finally is.</p>
-      </article>
-
-      <article class="ww-card rv" data-k="02">
-        <div class="ww-media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260907_111329_c7f2f692-f68b-4ac2-8370-83ad982c0973.png" alt="Viscosity: resistance from every direction" loading="lazy"></div>
-        <span class="ww-ico" aria-hidden="true">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 14c4-3 8-3 12 0s8 3 12 0"/>
-            <path d="M6 22c4-3 8-3 12 0s8 3 12 0"/>
-            <path d="M6 30c4-3 8-3 12 0s8 3 12 0"/>
-          </svg>
-        </span>
-        <h3>Viscosity</h3>
-        <p class="ww-stat"><b>360&deg;</b><span>resistance in every direction</span></p>
-        <p>Viscosity gives you resistance in every direction at once, gentle enough to control, and real enough to build strength.</p>
-      </article>
-
-      <article class="ww-card rv" data-k="03">
-        <div class="ww-media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260907_112630_9b89236a-b5d1-4a3a-b71a-bd58c1f66e6b.png" alt="Hydrostatic pressure: steady pressure of the water" loading="lazy"></div>
-        <span class="ww-ico" aria-hidden="true">
-          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="20" cy="20" r="8"/>
-            <path d="M20 4v3M20 33v3M4 20h3M33 20h3M8 8l2 2M30 30l2 2M32 8l-2 2M10 30l-2 2"/>
-          </svg>
-        </span>
-        <h3>Hydrostatic pressure</h3>
-        <p class="ww-stat"><b>eases swelling</b><span>where land-based exercise aggravates it</span></p>
-        <p>Hydrostatic pressure, the steady pressure water places on the body, is part of why submerged movement can ease swelling that land-based exercise tends to aggravate instead.</p>
-      </article>
-    </div>
-
-    <div class="ww-closer rv">
-      <p>This is not a softer version of exercise.<br><strong>It is an alternative version.</strong></p>
     </div>
   </div>
 </section>
 
-<!-- HOW THE PLATFORM WORKS -->
-<section class="sec soft-bg" id="how">
-  <div class="wrap">
-    <div class="split2">
-      <div class="rv">
-        <span class="eyebrow">How the Platform Works</span>
-        <h2>Sessions to Do. Videos to Learn From. Never Guessing Which.</h2>
-        <p class="lede" style="margin-top:1.1rem">WEI is organized into two complementary libraries, providing a structured approach to learning and exercise rather than simply offering a collection of workout videos.</p>
-        <p style="margin-top:1.1rem;color:var(--body)">You are never left wondering if a session is right for you. The platform already sorted that out before you opened it.</p>
+<section class="sec"><div class="wrap">
+  <div class="mt-split">
+    <div class="rv">
+      <span class="eyebrow">What Arthritis Is</span>
+      <h2>What Is Arthritis?</h2>
+      <p style="margin-top:1.1rem;color:var(--body)">Arthritis is a term used to describe a group of over 100 diseases characterized by inflammation in the joints or other areas of the body.</p>
+      <p style="margin-top:1rem;color:var(--body)">Inflammation is a medical term that describes redness and swelling which causes pain and, when in the joints, can also cause stiffness.</p>
+      <p style="margin-top:1rem;color:var(--body)">Arthritis, arthro meaning joint and itis meaning inflammation, can involve almost any part of the body. It most often affects the hip, knee, spine, or other weight-bearing joints, but is also found in the fingers and other non-weight-bearing joints. Some forms of arthritis can also affect other parts of the body.</p>
+      <p style="margin-top:1rem;color:var(--body)">Arthritis conditions are grouped into two broad categories: Osteoarthritis and Inflammatory Arthritis. Rheumatoid Arthritis sits under Inflammatory Arthritis.</p>
+    </div>
+    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_114311_efd94ea2-d218-430a-a521-8b1be7a5cb05.png" alt="A physiotherapist supporting a patient's knee joint"></div>
+  </div>
+</div></section>
+
+<section class="sec soft-bg"><div class="wrap">
+  <div class="narrow rv">
+    <span class="eyebrow">The Two Forms We Treat Most</span>
+    <h2>Two Forms, Treated Most Often Here.</h2>
+    <p class="lede" style="margin-top:1.1rem">We treat many forms of arthritis at LiquidGym. The two most common are below.</p>
+  </div>
+  <div class="two-forms rv">
+    <div class="form-card">
+      <span class="tag">Osteoarthritis (OA)</span>
+      <h3>The Most Common Type.</h3>
+      <p>Osteoarthritis is the most common type of arthritis. It affects more Canadians than all other forms of arthritis combined, more than 4 million Canadians, or 1 in 7 adults.</p>
+      <p>OA is a progressive disease of the whole joint that leads to breakdown of joint cartilage and the underlying bone.</p>
+      <p>The joints most commonly affected are the knees, hips, hands and spine.</p>
+    </div>
+    <div class="form-card">
+      <span class="tag">Rheumatoid Arthritis (RA)</span>
+      <h3>An Autoimmune Disease.</h3>
+      <p>Rheumatoid arthritis is an inflammatory disease that can affect multiple joints in the body. It is an autoimmune disease, where the body's immune system, which normally functions to protect us against infections, mistakenly attacks the lining of the joints.</p>
+      <p>Inflammation in the joints causes pain, stiffness and swelling. If this inflammation continues, it can lead to damage of the joint. The cause of this malfunctioning immune system is still unknown.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="mt-split athletes-swap">
+    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_114319_a3491edc-3dc7-467d-9875-d799fbfd1600.png" alt="A patient exercising chest-deep in a therapy pool"></div>
+    <div class="rv">
+      <span class="eyebrow">Why Water May Be an Option</span>
+      <h2>Why Water Changes What Your Joints Can Do.</h2>
+      <p style="margin-top:1.1rem;color:var(--body)">Water immersion allows patients to perform movements they may be unable to perform on land. Exercises can be performed with greater ease and less pain due to the buoyancy created by the water.</p>
+      <p style="margin-top:1rem;color:var(--body)">The upward force of buoyancy counterbalances the downward effects of gravity and greatly decreases the impact forces your body is subjected to in traditional land therapy sessions.</p>
+      <p style="margin-top:1rem;color:var(--body)">Standing chest deep in water, your body weight can be reduced by up to 80 percent. Someone weighing 200 pounds on land may weigh as little as 40 pounds in the water.</p>
+      <div class="buoy-stat">
+        <span class="s"><b>up to 80%</b><span>less body weight standing chest-deep in water</span></span>
+        <span class="s"><b>200 &rarr; 40 lb</b><span>a 200-pound person may weigh as little as 40 pounds in the water</span></span>
       </div>
-      <div class="libs rv">
-        <div class="lib">
-          <span class="big">100+</span>
-          <div>
-            <h3>Guided sessions</h3>
-            <p>100+ guided sessions, organized by difficulty and by condition, so you always know which one matches your body today, not someone else's body—yours.</p>
+      <p style="margin-top:1.2rem;color:var(--body)">That is what makes it possible to safely perform exercise therapy that land would not allow.</p>
+      <div class="btn-row" style="margin-top:1.4rem"><a class="btn btn-primary" href="tel:6138208228">Talk to Our Team</a></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec soft-bg"><div class="wrap">
+  <div class="mt-split">
+    <div class="rv">
+      <span class="eyebrow">Before and After Surgery</span>
+      <h2>Hip or Knee Replacement: Preparing and Recovering.</h2>
+      <p style="margin-top:1.1rem;color:var(--body)">Whether you are going in for orthopedic surgery, a prehab program may help with your recovery and post-surgical outcomes.</p>
+      <p style="margin-top:1rem;color:var(--body)">It is never too early to start pre-op therapy, also known as prehab, but starting at least 4 to 6 weeks prior to your scheduled surgery is recommended.</p>
+      <p style="margin-top:1rem;color:var(--body)">Post-op therapy, also known as rehab, when done through hydrotherapy, can generally begin once the incision has healed, which can be between 15 and 30 days depending on the surgery. Ask your doctor when they would like you to start.</p>
+    </div>
+    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_114327_a3b709e8-4b35-4740-ac1f-669cac733a50.png" alt="A patient recovering after joint replacement surgery"></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <div class="narrow rv">
+    <span class="eyebrow">How Arthritis Is Treated Here</span>
+    <h2>Two Ways In, Depending on Where You Are Starting.</h2>
+    <p class="lede" style="margin-top:1.1rem">Arthritis is treated across two of our therapies. Which one is right for you depends on your stage, your goals and what your joints will tolerate.</p>
+  </div>
+  <div class="routes rv">
+    <div class="route-card physio">
+      <h3>Physiotherapy</h3>
+      <p>Assessment, treatment and a plan of care for pain, stiffness and loss of function, including pre-op and post-op programs around joint replacement.</p>
+      <a class="btn btn-outline" href="physiotherapy.html">Explore Physiotherapy &rarr;</a>
+    </div>
+    <div class="route-card kin">
+      <h3>Kinesiology</h3>
+      <p>An individualized exercise program built around how you move, in water, on land, or both, progressing toward independence.</p>
+      <a class="btn btn-light" href="kinesiology.html">Explore Kinesiology &rarr;</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec band final has-video" id="book" style="background:linear-gradient(140deg,#0B1C47,#163474)">
+  <video class="cta-bg" autoplay muted loop playsinline preload="metadata" poster="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_194126_9fb469d4-80ac-41c1-a2db-f3ac0778025c.png" aria-hidden="true" tabindex="-1"><source src="https://cdn.katalyst-crm.com/t1/GettyImages-664999036%20(1).mp4" type="video/mp4"></video>
+  <span class="orb" style="width:300px;height:300px;top:-70px;left:-50px;"></span>
+  <span class="orb" style="width:260px;height:260px;bottom:-90px;right:-40px;"></span>
+  <div class="wrap">
+    <div class="narrow rv" style="text-align:center;margin-inline:auto">
+      <span class="eyebrow on-dark" style="justify-content:center">Final Step</span>
+      <h2 style="color:#fff">Start With an Assessment.</h2>
+      <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85);margin-inline:auto;max-width:62ch">For an assessment and a detailed plan of care, call LiquidGym at 613-820-8228 to book an appointment with one of our therapists.</p>
+      <div class="btn-row" style="justify-content:center;margin-top:1.6rem">
+        <a class="btn btn-light" href="#book">Book Your Assessment</a>
+        <a class="btn btn-outline-nav" href="tel:6138208228">Call 613-820-8228</a>
+      </div>
           </div>
-        </div>
-        <div class="lib">
-          <span class="big">150+</span>
-          <div>
-            <h3>Educational videos</h3>
-            <p>150+ educational videos, teaching the technique and the modifications behind every movement, so you understand the why, not just the what.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REAL PATIENT STORIES -->
-<section class="sec quote-band has-bg-img"><span class="orb" style="width:260px;height:260px;top:-60px;right:-40px;"></span><span class="orb" style="width:320px;height:320px;bottom:-80px;left:-60px;"></span>
-  <div class="wrap">
-    <div class="rv qb-body" style="max-width:none">
-      <span class="eyebrow on-dark">Real Patient Stories</span>
-      <h2 style="margin-bottom:2rem;color:#fff">One Member's Words Say What We Can't.</h2>
-      <blockquote class="quote-lg">&ldquo;It's not aquafit. Not at all. It's exactly the therapy I need to get me ready for my knee replacement. The videos are professionally made and easy to follow. Such a godsend.&rdquo;</blockquote>
-      <p class="who">&mdash; Angela S., WEI Member</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ONE SESSION AT A TIME -->
-<section class="sec soft-bg">
-  <div class="wrap">
-    <div class="split2">
-      <div class="rv">
-        <span class="eyebrow">One Session at a Time</span>
-        <h2>Designed by Therapists. Paced by You.</h2>
-        <p class="lede" style="margin-top:1.1rem">Every session developed by an ATI therapist.</p>
-        <p style="margin-top:1rem;color:var(--body)">You move at your own pace, in your own pool, and on your own schedule. The program is designed by rehabilitation professionals, and you choose when to begin.</p>
-      </div>
-      <div class="hiw rv" style="margin-top:0">
-        <div class="step"><span class="step-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></span><b>Warm-up</b><p>Every WEI session follows a clear, structured format, beginning with a warm-up so you know what to expect from the start.</p></div>
-        <div class="step"><span class="step-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 4 8-8M21 8v5M21 8h-5"/></svg></span><b>Guided progressions</b><p>Guided movement progressions with modification options, so the session meets the body you bring to it.</p></div>
-        <div class="step"><span class="step-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></span><b>Cool-down</b><p>Each session closes with a cool-down, so you know what to expect from start to finish.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OFFER -->
-<section class="sec" id="offer">
-  <div class="wrap">
-    <div class="rv center-head offer-head">
-      <span class="eyebrow">The Frictionless Offer</span>
-      <h2>Try It Free. Decide for Yourself.</h2>
-      <p class="lede" style="margin-top:1rem">Seven days, no pressure. Three things worth knowing before you start.</p>
-    </div>
-    <div class="offer">
-      <article class="offer-card rv"><span class="k">No feature-limited preview</span><h3>Real sessions from day one</h3><p>Real sessions, real videos, from day one, not a sample built to make you upgrade.</p></article>
-      <article class="offer-card rv"><span class="k">No contract</span><h3 class="price">$19.99 a month, only if you continue</h3><p>No contract waiting on the other side. $19.99 a month only if you decide to continue. Nothing locks you in.</p></article>
-      <article class="offer-card rv"><span class="k">Nothing lost either way</span><h3>Walk away owing nothing</h3><p>Walk away after seven days and you owe nothing. Stay, and you will already know why.</p></article>
-    </div>
-    <div class="btn-row rv center-btn" id="trial">
-      <a class="btn btn-primary" href="#">Start Your 7-Day Free Trial</a>
-    </div>
-  </div>
-</section>
-
-<!-- START YOUR JOURNEY -->
-<section class="sec band final has-video">
-  <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_194126_9fb469d4-80ac-41c1-a2db-f3ac0778025c.png" aria-hidden="true" tabindex="-1">
-    <source src="https://cdn.katalyst-crm.com/t1/GettyImages-664999036%20(1).mp4" type="video/mp4">
-  </video>
-
-  <div class="wrap">
-    <div class="rv" style="max-width:92ch;margin-inline:auto">
-      <span class="eyebrow on-dark">Start Your Journey</span>
-      <h2>Your First Step Does Not Have to Be a Big One.</h2>
-      <p class="lede" style="margin-top:1.2rem">It can just be the next one.</p>
-      <p style="margin-top:1.2rem;color:rgba(255,255,255,.82)">Most people who try WEI are not trying to transform their life in a week. They are trying to move today a little better than they moved yesterday and then do it again tomorrow.</p>
-      <p style="margin-top:1rem;color:rgba(255,255,255,.82)">That is the whole method, repeated. Not one dramatic before and after, a hundred small ones, stacked.</p>
-      <p style="margin-top:1.2rem;color:#fff;font-family:var(--display);font-size:1.1rem">Start your 7 day free trial, and let the first one be today.</p>
-      <div class="btn-row">
-        <a class="btn btn-light" href="#">Start Your 7-Day Free Trial</a>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -1281,7 +1300,6 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
 </footer>
-
 <script>
 (function(){
   var burger=document.getElementById('burger'), mm=document.getElementById('mobileMenu');
@@ -1313,98 +1331,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   });
 })();
 </script>
-
-<script>
-(function(){
-  /* read-more collapsibles */
-  document.querySelectorAll('.read-more').forEach(function(btn){
-    var panel=document.getElementById(btn.dataset.target);
-    var label=btn.querySelector('.rm-label');
-    if(!panel) return;
-    btn.addEventListener('click',function(){
-      var open=panel.classList.toggle('open');
-      btn.setAttribute('aria-expanded',open);
-      if(label) label.textContent = open ? 'Read less' : 'Read more';
-    });
-  });
-
-  /* FMAT collapsible tabs (details) — sign toggle */
-  document.querySelectorAll('.fmat-tab').forEach(function(d){
-    var sign=d.querySelector('.sign');
-    d.addEventListener('toggle',function(){ if(sign) sign.textContent = d.open ? '−' : '+'; });
-  });
-
-  /* Roadmap accordion (rd-tab): one open at a time + fade toggle */
-  (function(){
-    var tabs=Array.prototype.slice.call(document.querySelectorAll('.rd-tab'));
-    tabs.forEach(function(d){
-      var sign=d.querySelector('.sign');
-      d.addEventListener('toggle',function(){
-        if(sign) sign.textContent = d.open ? '−' : '+';
-        if(d.open){ tabs.forEach(function(o){ if(o!==d && o.open){ o.open=false; } }); }
-      });
-    });
-    var sc=document.querySelector('.rd-tabs'), wrap=document.querySelector('.rd-scroll');
-    if(sc && wrap){
-      sc.addEventListener('scroll',function(){
-        var atEnd = sc.scrollTop + sc.clientHeight >= sc.scrollHeight - 4;
-        wrap.classList.toggle('at-end', atEnd);
-      });
-    }
-  })();
-
-  /* FAQ accordion: only one open at a time */
-  (function(){
-    var faq=document.querySelector('.faq');
-    if(!faq) return;
-    var items=faq.querySelectorAll('details');
-    items.forEach(function(d){
-      d.addEventListener('toggle',function(){
-        if(d.open){ items.forEach(function(o){ if(o!==d && o.open){ o.open=false; } }); }
-        var sign=d.querySelector('.sign'); if(sign) sign.textContent = d.open ? '−' : '+';
-      });
-    });
-  })();
-
-  /* generic <details> sign toggle for any remaining custom tabs (ati-tab, vd, belong-tab) */
-  document.querySelectorAll('details.ati-tab, details.vd, details.belong-tab').forEach(function(d){
-    var sign=d.querySelector('.sign'); if(!sign) return;
-    d.addEventListener('toggle',function(){ sign.textContent = d.open ? '−' : '+'; });
-  });
-
-  /* animated counters */
-  var nums=document.querySelectorAll('.num[data-count]');
-  if(nums.length){
-    var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-    var cio=new IntersectionObserver(function(es){
-      es.forEach(function(e){
-        if(!e.isIntersecting) return;
-        var el=e.target; cio.unobserve(el);
-        var target=parseFloat(el.dataset.count), pre=el.dataset.prefix||'', suf=el.dataset.suffix||'', comma=el.dataset.comma==='true';
-        if(reduce){ el.textContent=pre+(comma?target.toLocaleString():target)+suf; return; }
-        var start=null, dur=1500;
-        function fmt(v){ v=Math.round(v); return pre+(comma?v.toLocaleString():v)+suf; }
-        function step(ts){ if(!start)start=ts; var p=Math.min((ts-start)/dur,1); var eased=1-Math.pow(1-p,3); el.textContent=fmt(target*eased); if(p<1)requestAnimationFrame(step); }
-        requestAnimationFrame(step);
-      });
-    },{threshold:0.6});
-    nums.forEach(function(n){ cio.observe(n); });
-  }
-
-  /* background videos: pause when off-screen */
-  document.querySelectorAll('.bg-video').forEach(function(v){
-    var vio=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ v.play().catch(function(){}); } else { v.pause(); } });},{threshold:0.05});
-    vio.observe(v);
-  });
-
-  /* reveal-on-scroll */
-  var els=document.querySelectorAll('.rv');
-  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{threshold:0.12});
-  els.forEach(function(e){ io.observe(e); });
-})();
-</script>
+<script>(function(){var els=document.querySelectorAll(".rv");if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in");});return;}var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});els.forEach(function(e){io.observe(e);});})();</script>
+<script>(function(){document.querySelectorAll(".cta-bg").forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
 </body>
 </html>

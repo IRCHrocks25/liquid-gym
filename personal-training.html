@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cardiovascular Impairments · Conditions We Treat · LiquidGym</title>
+<title>Personal Training · Services · LiquidGym</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -892,19 +892,6 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .nav-panel .nav-sub:hover{color:var(--bright)!important;background:var(--soft)!important;}
 .nav-top{color:rgba(255,255,255,.9)!important;}
 .nav-item.is-active > .nav-top,.nav-top:hover{color:#fff!important;}
-
-/* buoyancy stat cards — redesigned */
-.buoy2{display:grid;gap:1.1rem;margin-top:1.6rem;}
-@media(min-width:560px){.buoy2{grid-template-columns:1fr 1fr;}}
-.buoy2-card{background:linear-gradient(155deg,var(--soft),#fff);border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.6rem;transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;}
-.buoy2-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--light);}
-.buoy2-num{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:300;color:var(--body);line-height:1;letter-spacing:-.02em;display:flex;align-items:center;gap:.4rem;}
-.buoy2-num b{font-weight:500;color:var(--bright);font-size:clamp(2.1rem,4vw,3rem);}
-.buoy2-num .unit{font-size:1.1rem;color:var(--body);font-weight:400;align-self:flex-end;margin-bottom:.35rem;}
-.buoy2-bar{margin:1rem 0 .9rem;height:8px;border-radius:999px;background:var(--line);overflow:hidden;}
-.buoy2-bar span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--mid),var(--bright));}
-.buoy2-card p{font-size:.92rem;line-height:1.6;color:var(--body);margin:0;}
-
 </style>
 <style>
 /* ===== Massage Therapy page ===== */
@@ -944,30 +931,14 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 <style>
 .breadcrumb{font-family:var(--display);font-size:.8rem;color:rgba(255,255,255,.75);display:flex;gap:.5rem;align-items:center;margin-bottom:1rem;}
 .breadcrumb a{color:rgba(255,255,255,.75);} .breadcrumb a:hover{color:#fff;}
-.routes{display:grid;gap:1.2rem;margin-top:2rem;}
-@media(min-width:820px){.routes{grid-template-columns:1fr 1fr;}}
-.route-card{border-radius:16px;padding:1.9rem 1.7rem;transition:transform .24s ease,box-shadow .24s ease;}
-.route-card.physio{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);}
-.route-card.kin{background:linear-gradient(155deg,#0B1C47,#163474);color:#fff;}
-.route-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
-.route-card h3{font-family:var(--display);font-size:1.3rem;font-weight:500;margin:0 0 .7rem;}
-.route-card.physio h3{color:var(--blue);} .route-card.kin h3{color:#fff;}
-.route-card p{line-height:1.65;margin:0 0 1rem;font-size:.96rem;}
-.route-card.physio p{color:var(--body);} .route-card.kin p{color:rgba(255,255,255,.86);}
-/* checklist */
 .benef{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.75rem;}
 .benef li{display:flex;align-items:flex-start;gap:.8rem;color:var(--body);line-height:1.6;}
 .benef li::before{content:"";flex:none;margin-top:.2em;width:22px;height:22px;border-radius:50%;background:var(--bright);
   -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/14px no-repeat;
           mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/14px no-repeat;}
-/* Heart Wise badge card */
-.hw-card{background:linear-gradient(150deg,#0B1C47,#163474);color:#fff;border-radius:var(--r);padding:clamp(1.8rem,3.5vw,2.6rem);box-shadow:var(--shadow-lg);}
-.hw-card .eyebrow{color:var(--light);} .hw-card .eyebrow::before{background:var(--light);}
-.hw-card h2{color:#fff;} .hw-card > p{color:rgba(255,255,255,.86);}
-.hw-card .benef li{color:rgba(255,255,255,.9);}
-.hw-card .benef li::before{background:var(--light);}
-.hw-sub{font-family:var(--display);font-weight:500;color:#fff;margin:1.6rem 0 .2rem;font-size:1.02rem;}
-/* closing video */
+.route-single{background:linear-gradient(155deg,#0B1C47,#163474);color:#fff;border-radius:16px;padding:1.9rem 1.7rem;box-shadow:var(--shadow-lg);max-width:70ch;margin-top:1.6rem;}
+.route-single h3{font-family:var(--display);font-size:1.3rem;font-weight:500;color:#fff;margin:0 0 .7rem;}
+.route-single p{color:rgba(255,255,255,.86);line-height:1.65;margin:0 0 1rem;font-size:.96rem;}
 .cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
 .sec.band.final.has-video{position:relative;overflow:hidden;}
 .sec.band.final.has-video .wrap{position:relative;z-index:2;}
@@ -988,27 +959,27 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Therapies<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
-          <a class="nav-sub" href="physiotherapy.html">Physiotherapy</a>
-          <a class="nav-sub" href="massage-therapy.html">Massage Therapy</a>
-          <a class="nav-sub" href="kinesiology.html">Kinesiology</a>
-          <a class="nav-sub" href="why-aquatic-therapy.html">Why Aquatic Therapy</a>
-        </div>
-      </div>
-      <div class="nav-item has-drop is-active">
-        <button class="nav-top nav-trigger" aria-expanded="false">Conditions<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
-        <div class="nav-panel is-mega">
-          <a class="nav-sub" href="arthritis.html">Arthritis</a>
-          <a class="nav-sub" href="sprains-strains-fractures.html">Sprains, Strains & Fractures</a>
-          <a class="nav-sub" href="sports-injuries.html">Sports Injuries</a>
-          <a class="nav-sub" href="cardiovascular.html">Cardiovascular Impairments</a>
-          <a class="nav-sub" href="long-covid.html">Long COVID</a>
-          <a class="nav-sub" href="plantar-fasciitis.html">Plantar Fasciitis</a>
-          <a class="nav-sub" href="neurological.html">Neurological Conditions</a>
-          <a class="nav-sub" href="chronic-pain.html">Chronic Pain</a>
-          <a class="nav-sub" href="index.html#">Vestibular</a>
+          <a class="nav-sub" href="index.html#">Physiotherapy</a>
+          <a class="nav-sub" href="index.html#">Massage Therapy</a>
+          <a class="nav-sub" href="index.html#">Kinesiology</a>
+          <a class="nav-sub" href="index.html#">Why Aquatic Therapy</a>
         </div>
       </div>
       <div class="nav-item has-drop">
+        <button class="nav-top nav-trigger" aria-expanded="false">Conditions<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="nav-panel is-mega">
+          <a class="nav-sub" href="index.html#">Arthritis</a>
+          <a class="nav-sub" href="index.html#">Sprains, Strains & Fractures</a>
+          <a class="nav-sub" href="index.html#">Sports Injuries</a>
+          <a class="nav-sub" href="index.html#">Cardiovascular Impairments</a>
+          <a class="nav-sub" href="index.html#">Long COVID</a>
+          <a class="nav-sub" href="index.html#">Plantar Fasciitis</a>
+          <a class="nav-sub" href="index.html#">Neurological Conditions</a>
+          <a class="nav-sub" href="index.html#">Chronic Pain</a>
+          <a class="nav-sub" href="index.html#">Vestibular</a>
+        </div>
+      </div>
+      <div class="nav-item has-drop is-active">
         <button class="nav-top nav-trigger" aria-expanded="false">Services<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
           <a class="nav-sub" href="pre-op-post-op.html">Pre-Op & Post-Op</a>
@@ -1063,23 +1034,23 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">Therapies<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
-      <a href="physiotherapy.html">Physiotherapy</a>
-      <a href="massage-therapy.html">Massage Therapy</a>
-      <a href="kinesiology.html">Kinesiology</a>
-      <a href="why-aquatic-therapy.html">Why Aquatic Therapy</a>
+      <a href="index.html#">Physiotherapy</a>
+      <a href="index.html#">Massage Therapy</a>
+      <a href="index.html#">Kinesiology</a>
+      <a href="index.html#">Why Aquatic Therapy</a>
     </div>
   </div>
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">Conditions<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
-      <a href="arthritis.html">Arthritis</a>
-      <a href="sprains-strains-fractures.html">Sprains, Strains & Fractures</a>
-      <a href="sports-injuries.html">Sports Injuries</a>
-      <a href="cardiovascular.html">Cardiovascular Impairments</a>
-      <a href="long-covid.html">Long COVID</a>
-      <a href="plantar-fasciitis.html">Plantar Fasciitis</a>
-      <a href="neurological.html">Neurological Conditions</a>
-      <a href="chronic-pain.html">Chronic Pain</a>
+      <a href="index.html#">Arthritis</a>
+      <a href="index.html#">Sprains, Strains & Fractures</a>
+      <a href="index.html#">Sports Injuries</a>
+      <a href="index.html#">Cardiovascular Impairments</a>
+      <a href="index.html#">Long COVID</a>
+      <a href="index.html#">Plantar Fasciitis</a>
+      <a href="index.html#">Neurological Conditions</a>
+      <a href="index.html#">Chronic Pain</a>
       <a href="index.html#">Vestibular</a>
     </div>
   </div>
@@ -1130,16 +1101,16 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </div>
 
 <section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_125439_95ac3fde-21d8-4fa9-91f9-87628ff2eea4.png" alt="An older adult doing guided aerobic exercise in a therapy pool"></div>
+  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260910_132408_aafa55d8-25ec-4609-bc2f-e5b6bced1a42.png" alt="A person doing one-on-one personal training with a kinesiologist"></div>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-lede">
       <div class="rv">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">The Hub</a><span>/</span><span>Conditions</span><span>/</span><b style="color:#fff">Cardiovascular Impairments</b></nav>
-        <span class="eyebrow on-dark">Conditions We Treat · Cardiovascular Impairments</span>
-        <h1>After Cardiac Rehab, What Comes Next?</h1>
-        <p class="sub">Have you been diagnosed with heart disease, or been told you are at risk of it? Have you graduated from cardiac rehabilitation at the Heart Institute and are wondering what to do next?</p>
-        <p class="sub" style="margin-top:.8rem">One of our therapists can help.</p>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">The Hub</a><span>/</span><span>Services</span><span>/</span><b style="color:#fff">Personal Training</b></nav>
+        <span class="eyebrow on-dark">Services &amp; Delivery Modes · Personal Training</span>
+        <h1>Training Built Around How You Actually Move</h1>
+        <p class="sub">LiquidGym is open for one-to-one training with our kinesiologists. Sessions can be land-based, water-based, or a combination of the two.</p>
+        <p class="sub" style="margin-top:.8rem">This is training designed around an assessment of your movement, not a programme applied to you.</p>
         <div class="btn-row"><a class="btn btn-light" href="#book">Book an Assessment</a></div>
       </div>
     </div>
@@ -1147,76 +1118,46 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </section>
 
 <section class="sec"><div class="wrap">
-  <div class="hw-card rv">
-    <span class="eyebrow">Heart Wise Certification</span>
-    <h2>Heart Wise Exercise Certified.</h2>
-    <p style="margin-top:1.1rem">LiquidGym is a Heart Wise Exercise designated clinic. Our therapists are Heart Wise-certified, a programme run with the University of Ottawa Heart Institute.</p>
-    <p class="hw-sub">What a clinic has to do to hold Heart Wise certification</p>
-    <ul class="benef">
-      <li>Encourage regular aerobic exercise</li>
-      <li>Encourage and incorporate warm-up and cool-down, with self-monitoring through all exercise sessions</li>
-      <li>Allow participants to exercise at a safe level, with options to modify intensity</li>
-      <li>Include participants with chronic health conditions; approval from your physician may be needed</li>
-      <li>Offer health screening</li>
-      <li>Maintain a documented emergency plan known to all staff, including current CPR certification, phone access to local paramedic services, and a defibrillator on site</li>
-    </ul>
+  <div class="mt-split">
+    <div class="rv">
+      <span class="eyebrow">Your Assessment</span>
+      <h2>Where Training Starts.</h2>
+      <p style="margin-top:1.1rem;color:var(--body)">Your sessions begin with an assessment focused on functional movement, range of motion, strength and force.</p>
+      <p style="margin-top:1rem;color:var(--ink);font-family:var(--display);font-weight:500">What the assessment is for</p>
+      <ul class="benef">
+        <li>Identifying areas of weakness</li>
+        <li>Finding areas that could be at higher risk of injury</li>
+        <li>Designing a programme targeted at those areas, to improve mobility, alignment, strength and cardiovascular fitness</li>
+        <li>Helping you understand your own strengths and weaknesses, and how to work toward your goals when you are not training with us</li>
+      </ul>
+      <p style="margin-top:1.2rem;color:var(--body)">Your therapist builds a structured, client-centred exercise programme designed around your individual training goals.</p>
+      <div class="btn-row" style="margin-top:1.4rem"><a class="btn btn-primary" href="tel:6138208228">Talk to Our Team</a></div>
+    </div>
+    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260910_132414_6cc3007a-03de-48f6-ab87-e812c66a4db6.png" alt="A kinesiologist assessing a client's movement"></div>
   </div>
 </div></section>
 
 <section class="sec soft-bg"><div class="wrap">
-  <div class="mt-split">
+  <div class="mt-split athletes-swap">
+    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260910_132419_1b8cfe31-e059-499d-b765-846cc0829e37.png" alt="Strength and conditioning training in a therapy pool"></div>
     <div class="rv">
-      <span class="eyebrow">Why Water May Be an Option</span>
-      <h2>What the Water Makes Possible.</h2>
-      <p style="margin-top:1.1rem;color:var(--body)">Water immersion allows patients to perform movements they may be unable to perform on land. Exercises can be performed with greater ease and less pain because of the buoyancy the water creates.</p>
-      <p style="margin-top:1rem;color:var(--body)">The upward force of buoyancy counterbalances the downward effects of gravity and greatly decreases the impact forces your body is subjected to in traditional land therapy.</p>
-      <div class="buoy2">
-        <div class="buoy2-card">
-          <div class="buoy2-num">up to <b>80%</b></div>
-          <div class="buoy2-bar" aria-hidden="true"><span style="width:80%"></span></div>
-          <p>Standing chest-deep in water, your body weight can be reduced by up to 80 percent.</p>
-        </div>
-        <div class="buoy2-card">
-          <div class="buoy2-num"><b>200</b> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;opacity:.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg> <b>40</b> <span class="unit">lb</span></div>
-          <p>Someone weighing 200 pounds on land may weigh as little as 40 pounds in the water, which is what makes it possible to safely perform exercise therapy that land would not allow.</p>
-        </div>
-      </div>
-      <div class="btn-row" style="margin-top:1.4rem"><a class="btn btn-primary" href="tel:6138208228">Talk to Our Team</a></div>
+      <span class="eyebrow">Land and Water</span>
+      <h2>Training in the Water.</h2>
+      <p style="margin-top:1.1rem;color:var(--body)">Water gives resistance in every direction while reducing load through the joints, which makes it useful for building strength and conditioning without the impact that land training carries.</p>
     </div>
-    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_124654_df932cc7-6b78-44ab-b015-67898a11b029.png" alt="Gentle aerobic movement chest-deep in a therapy pool"></div>
   </div>
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="mt-split athletes-swap">
-    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_124647_26d74f0d-a5fb-49d3-bc17-8457d9bf4287.png" alt="A therapist monitoring exercise intensity safely"></div>
-    <div class="rv">
-      <span class="eyebrow">Before and After Surgery</span>
-      <h2>Preparing for Surgery, and Recovering From It.</h2>
-      <p style="margin-top:1.1rem;color:var(--body)">Whether you are going in for cardiovascular surgery, a prehab programme may help with your recovery and post-surgical outcomes.</p>
-      <p style="margin-top:1rem;color:var(--body)">It is never too early to start pre-op therapy, also known as prehab, but starting at least 4 to 6 weeks prior to your scheduled surgery is recommended.</p>
-      <p style="margin-top:1rem;color:var(--body)">Post-op therapy through hydrotherapy can generally begin once the incision has healed, which can be between 15 and 30 days depending on the surgery. Ask your doctor when they would like you to start.</p>
-    </div>
-  </div>
-</div></section>
-
-<section class="sec soft-bg"><div class="wrap">
   <div class="narrow rv">
-    <span class="eyebrow">How Cardiovascular Conditions Are Treated Here</span>
-    <h2>Two Ways In, Depending on Where You Are Starting.</h2>
-    <p class="lede" style="margin-top:1.1rem">Cardiovascular conditions are treated across two of our therapies. Which one is right for you depends on your diagnosis, your stage of recovery, and what your physician has advised.</p>
+    <span class="eyebrow">How Training Is Delivered</span>
+    <h2>Delivered Through Kinesiology.</h2>
+    <p class="lede" style="margin-top:1.1rem">Personal training at LiquidGym is delivered through kinesiology.</p>
   </div>
-  <div class="routes rv">
-    <div class="route-card physio">
-      <h3>Physiotherapy</h3>
-      <p>Assessment and a plan of care built around your diagnosis and your physician's guidance, with monitored progression.</p>
-      <a class="btn btn-outline" href="physiotherapy.html">Explore Physiotherapy &rarr;</a>
-    </div>
-    <div class="route-card kin">
-      <h3>Kinesiology</h3>
-      <p>A progressive exercise programme building aerobic capacity and confidence at a safe intensity, in water, on land, or both.</p>
-      <a class="btn btn-light" href="kinesiology.html">Explore Kinesiology &rarr;</a>
-    </div>
+  <div class="route-single rv">
+    <h3>Kinesiology</h3>
+    <p>An individualized programme built from your assessment, progressing as your strength, mobility and endurance change.</p>
+    <a class="btn btn-light" href="kinesiology.html">Explore Kinesiology &rarr;</a>
   </div>
 </div></section>
 
@@ -1227,9 +1168,9 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   <div class="wrap">
     <div class="narrow rv" style="text-align:center;margin-inline:auto">
       <h2 style="color:#fff">Start With an Assessment.</h2>
-      <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85);margin-inline:auto;max-width:62ch">For an assessment and a detailed plan of care, call LiquidGym at 613-820-8228 to book an appointment with one of our therapists.</p>
+      <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85);margin-inline:auto;max-width:56ch">Call LiquidGym at 613-820-8228 to book your appointment.</p>
       <div class="btn-row" style="justify-content:center;margin-top:1.6rem">
-        <a class="btn btn-light" href="#book">Book Your Assessment</a>
+        <a class="btn btn-light" href="#book">Book Your Appointment</a>
         <a class="btn btn-outline-nav" href="tel:6138208228">Call 613-820-8228</a>
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Registered Massage Therapy · LiquidGym</title>
+<title>Sport &amp; Sports Injuries · Conditions We Treat · LiquidGym</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -892,61 +892,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .nav-panel .nav-sub:hover{color:var(--bright)!important;background:var(--soft)!important;}
 .nav-top{color:rgba(255,255,255,.9)!important;}
 .nav-item.is-active > .nav-top,.nav-top:hover{color:#fff!important;}
-
-/* For Athletes: text left, image right */
-.athletes-swap .mt-media{order:1;}
-.athletes-swap > .rv:not(.mt-media){order:2;}
-@media(max-width:899px){.athletes-swap .mt-media{order:1;}.athletes-swap > .rv:not(.mt-media){order:2;}}
-
-
-/* Conditions list — hover */
-.cond-grid li{transition:color .18s ease,padding-left .18s ease,border-color .18s ease;cursor:default;}
-.cond-grid li:hover{color:var(--blue);padding-left:1.9rem;border-color:var(--bright);}
-.cond-grid li:hover::before{background:var(--bright);transform:scale(1.3);}
-.cond-grid li::before{transition:background .18s ease,transform .18s ease;}
-
-
-/* Techniques: sticky intro left, scrollable collapsible list right */
-.tq-split{display:grid;gap:2rem;align-items:start;}
-@media(min-width:900px){.tq-split{grid-template-columns:.85fr 1.15fr;gap:clamp(2.4rem,4.5vw,4rem);}}
-.tq-aside{position:sticky;top:90px;}
-@media(max-width:899px){.tq-aside{position:static;}}
-.tq-scroll{position:relative;}
-.tq-list{max-height:520px;overflow-y:auto;display:grid;gap:.55rem;padding:.2rem .4rem .4rem 0;scrollbar-width:thin;scrollbar-color:var(--light) transparent;}
-.tq-list::-webkit-scrollbar{width:7px;}
-.tq-list::-webkit-scrollbar-thumb{background:var(--light);border-radius:6px;}
-.tq-list::-webkit-scrollbar-track{background:transparent;}
-.tq-scroll::after{content:"";position:absolute;left:0;right:7px;bottom:0;height:56px;background:linear-gradient(to bottom,rgba(255,255,255,0),#fff 90%);pointer-events:none;border-radius:0 0 var(--r) var(--r);transition:opacity .25s ease;}
-.tq-scroll.at-end::after{opacity:0;}
-.tq-tab{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease,background .2s ease;}
-.tq-tab:hover{border-color:var(--light);}
-.tq-tab[open]{background:var(--soft);border-color:var(--bright);box-shadow:var(--shadow-sm);}
-.tq-tab summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.9rem;padding:.95rem 1.1rem;min-height:56px;}
-.tq-tab summary::-webkit-details-marker{display:none;}
-.tq-no{flex:none;font-family:var(--display);font-size:1rem;font-weight:300;color:var(--bright);min-width:2.2ch;letter-spacing:-.02em;}
-.tq-tab summary h3{flex:1;min-width:0;font-size:.98rem;font-weight:500;color:var(--blue);line-height:1.3;margin:0;}
-.tq-tab .sign{flex:none;width:26px;height:26px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--bright);display:grid;place-items:center;font-size:1rem;line-height:1;transition:background .2s,color .2s,border-color .2s;}
-.tq-tab[open] .sign{background:var(--bright);border-color:var(--bright);color:#fff;}
-.tq-body{padding:0 1.1rem 1.1rem;}
-@media(min-width:520px){.tq-body{padding-left:calc(1.1rem + 2.2ch + .9rem);}}
-.tq-body p{font-size:.93rem;line-height:1.6;color:var(--body);margin:0;}
-
-
-/* closing band background video (matches homepage invitation) */
-.final.has-video{position:relative;overflow:hidden;}
-.final.has-video .cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
-.final.has-video::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(118deg,rgba(11,28,71,.55) 0%,rgba(11,28,71,.45) 46%,rgba(11,28,71,.34) 100%);}
-.final.has-video .wrap{position:relative;z-index:2;}
-.final.has-video .orb{z-index:1;}
-@media (prefers-reduced-motion:reduce){.final.has-video .cta-bg{display:none;}}
-
-/* Veterans card — background image with scrim */
-.vet-card.has-bg{position:relative;overflow:hidden;background:linear-gradient(150deg,#0B1C47,#163474);}
-.vet-card.has-bg::before{content:"";position:absolute;inset:0;z-index:0;background-image:linear-gradient(120deg,rgba(11,28,71,.86) 0%,rgba(11,28,71,.66) 55%,rgba(11,28,71,.5) 100%),url('https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260908_134501_9cff5226-e4ce-4094-a181-feb485a133e8.png');background-size:cover;background-position:center;}
-.vet-card.has-bg > *{position:relative;z-index:1;}
-
 </style>
-
 <style>
 /* ===== Massage Therapy page ===== */
 .mt-list{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.7rem;max-width:52ch;}
@@ -982,6 +928,42 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .tech-card p{font-size:.9rem;line-height:1.55;color:var(--body);margin:0;}
 </style>
 
+<style>
+.breadcrumb{font-family:var(--display);font-size:.8rem;color:rgba(255,255,255,.75);display:flex;gap:.5rem;align-items:center;margin-bottom:1rem;}
+.breadcrumb a{color:rgba(255,255,255,.75);} .breadcrumb a:hover{color:#fff;}
+.routes{display:grid;gap:1.2rem;margin-top:2rem;}
+@media(min-width:820px){.routes{grid-template-columns:1fr 1fr;}}
+.route-card{border-radius:16px;padding:1.9rem 1.7rem;transition:transform .24s ease,box-shadow .24s ease;}
+.route-card.physio{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);}
+.route-card.kin{background:linear-gradient(155deg,#0B1C47,#163474);color:#fff;}
+.route-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.route-card h3{font-family:var(--display);font-size:1.3rem;font-weight:500;margin:0 0 .7rem;}
+.route-card.physio h3{color:var(--blue);} .route-card.kin h3{color:#fff;}
+.route-card p{line-height:1.65;margin:0 0 1rem;font-size:.96rem;}
+.route-card.physio p{color:var(--body);} .route-card.kin p{color:rgba(255,255,255,.86);}
+.benef{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.75rem;}
+.benef li{display:flex;align-items:flex-start;gap:.8rem;color:var(--body);line-height:1.6;}
+.benef li::before{content:"";flex:none;margin-top:.2em;width:22px;height:22px;border-radius:50%;background:var(--bright);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/14px no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/14px no-repeat;}
+/* first-steps two cards */
+.steps2{display:grid;gap:1.2rem;margin-top:1.8rem;}
+@media(min-width:760px){.steps2{grid-template-columns:1fr 1fr;}}
+.step2-card{background:var(--soft);border:1px solid var(--line);border-radius:14px;padding:1.6rem 1.5rem;}
+.step2-card h3{font-family:var(--display);font-size:1.1rem;font-weight:500;color:var(--blue);margin:0 0 .6rem;}
+.step2-card p{color:var(--body);line-height:1.6;margin:0 0 .7rem;font-size:.94rem;}
+.step2-card p:last-child{margin-bottom:0;}
+/* equipment chips */
+.equip-chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem;}
+.equip-chips span{font-family:var(--display);font-size:.85rem;font-weight:500;color:var(--blue);background:#fff;border:1px solid var(--line);border-radius:999px;padding:.5rem 1rem;}
+/* closing band video */
+.cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+.sec.band.final.has-video{position:relative;overflow:hidden;}
+.sec.band.final.has-video .wrap{position:relative;z-index:2;}
+.sec.band.final.has-video .orb{z-index:1;}
+@media (prefers-reduced-motion:reduce){.cta-bg{display:none;}}
+</style>
+
 </head>
 <body>
 <div class="siteheader">
@@ -992,7 +974,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </a>
 
     <nav class="nav-links" aria-label="Primary">
-      <div class="nav-item has-drop is-active">
+      <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Therapies<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
           <a class="nav-sub" href="physiotherapy.html">Physiotherapy</a>
@@ -1001,7 +983,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <a class="nav-sub" href="why-aquatic-therapy.html">Why Aquatic Therapy</a>
         </div>
       </div>
-      <div class="nav-item has-drop">
+      <div class="nav-item has-drop is-active">
         <button class="nav-top nav-trigger" aria-expanded="false">Conditions<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel is-mega">
           <a class="nav-sub" href="arthritis.html">Arthritis</a>
@@ -1137,17 +1119,17 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </div>
 
 <section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260908_102641_af3ff00c-3f55-4270-8c7e-e27f3cf057e2.png" alt="A registered massage therapist working with a patient"></div>
+  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_123915_6f4e9ea1-e648-48a6-abf6-9a03ed76a5a5.png" alt="An athlete rehabilitating a sports injury in a therapy pool"></div>
   <div class="hero-scrim" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-lede">
       <div class="rv">
-        <span class="eyebrow on-dark">Therapies · Registered Massage Therapy</span>
-        <h1>Registered Massage Therapy</h1>
-        <p class="sub">Massage Therapy is a manual manipulation of soft body tissues to enhance a person's health and well-being. Provided by Registered Massage Therapists, trained and examined under the College of Massage Therapists of Ontario.</p>
-        <div class="btn-row">
-          <a class="btn btn-light" href="#book">Book a Massage Therapy Appointment</a>
-        </div>
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">The Hub</a><span>/</span><span>Conditions</span><span>/</span><b style="color:#fff">Sport &amp; Sports Injuries</b></nav>
+        <span class="eyebrow on-dark">Conditions We Treat · Sport &amp; Sports Injuries</span>
+        <h1>Back to Your Sport, Without Rushing the Injury</h1>
+        <p class="sub">An injury sustained during athletic competition can take a number of forms: ligament sprains, muscular strains and tears, contusions, bone bruises, fractures, bursitis, tendonitis, and concussion.</p>
+        <p class="sub" style="margin-top:.8rem">These injuries are also sustained well outside athletic competition. The care you receive does not change.</p>
+        <div class="btn-row"><a class="btn btn-light" href="#book">Book an Assessment</a></div>
       </div>
     </div>
   </div>
@@ -1156,201 +1138,63 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 <section class="sec"><div class="wrap">
   <div class="mt-split">
     <div class="rv">
-      <span class="eyebrow">What Massage Therapy Can Do</span>
-      <h2>Care That Meets You Where You Are.</h2>
-      <p class="lede" style="margin-top:1.1rem">Massage Therapy can:</p>
-      <ul class="mt-list">
-        <li>support the relief of chronic problems</li>
-        <li>support the treatment of acute injuries</li>
-        <li>improve performance and overall health</li>
-      </ul>
-      <p style="margin-top:1.3rem;color:var(--body)">Massage Therapy supports the reduction in stress, promotes relaxation and increases your general well-being whether you live an active or sedentary lifestyle.</p>
+      <span class="eyebrow">What to Do First</span>
+      <h2>You Have a Sports Injury. What Now?</h2>
+      <p style="margin-top:1.1rem;color:var(--body)">After an injury, the important thing is to seek the most appropriate help for it. The sooner rehabilitation starts, the better your chances of recovering faster and returning to your activity.</p>
+      <p style="margin-top:1rem;color:var(--ink);font-family:var(--display);font-weight:500">The quicker you start rehab, the better your chances of returning to your activity.</p>
     </div>
-    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260908_102705_d671df66-9f94-4eff-91b6-4392044b0ee2.png" alt="A calm massage therapy treatment room"></div>
+    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_123931_0c61fb91-ee84-4184-8825-595e5491bbcd.png" alt="A physiotherapist assessing an athlete's injury"></div>
+  </div>
+  <div class="steps2 rv">
+    <div class="step2-card">
+      <h3>If surgery is part of the picture</h3>
+      <p>If you are going in for orthopedic surgery, a prehab programme may help with your recovery and post-surgical outcomes. It is never too early to start pre-op therapy.</p>
+      <p>Post-op therapy through hydrotherapy can generally begin once the incision has healed, which can be between 15 and 30 days depending on the surgery. Ask your doctor when they would like you to start.</p>
+    </div>
+    <div class="step2-card">
+      <h3>Equipment That Supports Recovery</h3>
+      <p>Alongside water and land-based work, equipment available to support your recovery includes the Game Ready ice-compression unit, and the Normatec recovery system.</p>
+      <div class="equip-chips"><span>Game Ready ice-compression</span><span>Normatec recovery system</span></div>
+    </div>
   </div>
 </div></section>
 
 <section class="sec soft-bg"><div class="wrap">
   <div class="mt-split athletes-swap">
-    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260908_102654_be875d4e-cff8-4326-aa29-be865ec1c87e.png" alt="An athlete receiving a sports recovery massage"></div>
+    <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_123938_60c792be-67c0-4cef-8302-03a638245941.png" alt="Athletic recovery equipment supporting rehabilitation"></div>
     <div class="rv">
-      <span class="eyebrow">For Athletes</span>
-      <h2>Recover Faster. Perform Better.</h2>
-      <p style="margin-top:1.1rem;color:var(--body)">Athletes can benefit from massage therapy in:</p>
-      <ul class="mt-list">
-        <li>improving performance and success based on perfecting biomechanics through improved movement patterns</li>
-        <li>improving performance through oxygen maximization</li>
-        <li>optimizing body metabolism</li>
-        <li>recovery so that you are ready for the next training session</li>
+      <span class="eyebrow">Why Water May Be an Option</span>
+      <h2>What the Water Makes Possible Sooner.</h2>
+      <p style="margin-top:1.1rem;color:var(--body)">Rehabilitating these injuries in the water allows for:</p>
+      <ul class="benef">
+        <li>Improved swelling and pain control through immersion</li>
+        <li>Resistance against all directions of movement at once, allowing improved muscle activation around the injured area</li>
+        <li>Decreased weight bearing, allowing greater freedom of movement during the early phases of recovery</li>
+        <li>Improved joint control, spatial awareness and balance through greater pressure feedback around the injured area</li>
+        <li>A safe, controlled environment to engage in rehabilitation exercises and treatment with confidence</li>
       </ul>
+      <p style="margin-top:1.2rem;color:var(--body)">Standing chest-deep in water, your body weight can be reduced by up to 80 percent. Someone weighing 200 pounds on land may weigh as little as 40 pounds in the water, which is what makes it possible to safely perform exercise therapy that land would not allow.</p>
+      <div class="btn-row" style="margin-top:1.4rem"><a class="btn btn-primary" href="tel:6138208228">Talk to Our Team</a></div>
     </div>
   </div>
 </div></section>
 
 <section class="sec"><div class="wrap">
-  <div class="vet-card has-bg rv">
-    <span class="eyebrow">Veterans</span>
-    <h2>Veterans and Massage Therapy</h2>
-    <p style="margin-top:1.1rem">Most Veterans are entitled to 15 massage therapy sessions per calendar year through Blue Cross. If additional sessions are needed, your therapist can request approval to extend your program with LiquidGym.</p>
-  </div>
-</div></section>
-
-<section class="sec soft-bg"><div class="wrap">
   <div class="narrow rv">
-    <span class="eyebrow">Conditions Treated</span>
-    <h2>Treatable Conditions.</h2>
-    <p class="lede" style="margin-top:1.1rem">There are many treatable conditions that can be supported by massage therapy.</p>
-    <p style="margin-top:1rem;color:var(--body)">If you are seeking treatment for a condition that you don't see listed below, please ask us, if we cannot treat your condition we will put you in contact with a qualified professional who can help you achieve your goals.</p>
+    <span class="eyebrow">How Sports Injuries Are Treated Here</span>
+    <h2>Two Ways In, Depending on Where You Are Starting.</h2>
+    <p class="lede" style="margin-top:1.1rem">Sports injuries are treated across two of our therapies. Which one is right for you depends on the injury, the stage of healing, and what you are working back toward.</p>
   </div>
-  <ul class="cond-grid rv">
-        <li>Sports injuries</li>
-        <li>Anxiety & depression</li>
-        <li>Asthma</li>
-        <li>Headaches & migraines</li>
-        <li>Arthritis symptoms</li>
-        <li>Burns & scars</li>
-        <li>Back pain and discomfort</li>
-        <li>Chronic pain</li>
-        <li>Low back pain</li>
-        <li>Scoliosis & Kyphosis</li>
-        <li>Sciatica</li>
-        <li>Carpal tunnel syndrome</li>
-        <li>Cancer Support</li>
-        <li>Edema</li>
-        <li>Emphysema</li>
-        <li>Fatigue and sleep disorders</li>
-        <li>Fibromyalgia</li>
-        <li>Frozen Shoulder</li>
-        <li>Joint injuries, pain & dysfunction</li>
-        <li>HIV/AIDS-related discomforts</li>
-        <li>Jaw pain & clicking</li>
-        <li>Lymphedema</li>
-        <li>Muscle spasms</li>
-        <li>Neck and shoulder pain</li>
-        <li>Neurological conditions: MS, Parkinson's, stroke, brain injury</li>
-        <li>Overuse injuries</li>
-        <li>Plantar fasciitis</li>
-        <li>Postural imbalances</li>
-        <li>Pregnancy (Pre- and post-natal care)</li>
-        <li>Raynaud's disease</li>
-        <li>Scar tissue release</li>
-        <li>Shin splints</li>
-        <li>Sinus congestion</li>
-        <li>Sprains & strains, muscle, tendons</li>
-        <li>Stress</li>
-        <li>Surgery (Pre- and post-operative care)</li>
-        <li>Teeth grinding</li>
-        <li>Thoracic Outlet Syndrome</li>
-  </ul>
-  <div class="btn-row rv" style="margin-top:2rem;justify-content:center"><a class="btn btn-primary" href="tel:6138208228">Talk to Our Team</a></div>
-</div></section>
-
-<section class="sec"><div class="wrap">
-  <div class="tq-split">
-    <aside class="tq-aside rv">
-      <span class="eyebrow">How We Work</span>
-      <h2>More About Massage Techniques.</h2>
-      <p class="lede" style="margin-top:1.1rem">Massage techniques are the tools used by the therapist to help you achieve your goals. Here is a summary of some of the techniques that can be used and its effects on your body.</p>
-    </aside>
-    <div class="tq-scroll rv">
-      <div class="tq-list">
-        <details class="tq-tab" open>
-          <summary>
-            <span class="tq-no">01</span>
-            <h3>Deep Muscle Stripping & Compression</h3>
-            <span class="sign" aria-hidden="true">−</span>
-          </summary>
-          <div class="tq-body"><p>Reduces and eliminates deep muscle pain</p></div>
-        </details>
-        <details class="tq-tab">
-          <summary>
-            <span class="tq-no">02</span>
-            <h3>Relaxing & Gentle Muscle Kneading</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="tq-body"><p>Soothes tired and aching muscles</p></div>
-        </details>
-        <details class="tq-tab">
-          <summary>
-            <span class="tq-no">03</span>
-            <h3>Percussion</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="tq-body"><p>Improves muscle perception and aids in congestion relief</p></div>
-        </details>
-        <details class="tq-tab">
-          <summary>
-            <span class="tq-no">04</span>
-            <h3>Fascial Release</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="tq-body"><p>Releases adhered or poorly moving structures to improve range of motion</p></div>
-        </details>
-        <details class="tq-tab">
-          <summary>
-            <span class="tq-no">05</span>
-            <h3>Myo-Fascial Release</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="tq-body"><p>Breaks down painful and restricting adhesions in muscles</p></div>
-        </details>
-        <details class="tq-tab">
-          <summary>
-            <span class="tq-no">06</span>
-            <h3>Trigger Point Release</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="tq-body"><p>Specific point compression used to eliminate troublesome trigger points aka “knots”</p></div>
-        </details>
-        <details class="tq-tab">
-          <summary>
-            <span class="tq-no">07</span>
-            <h3>Lymphatic Drainage</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="tq-body"><p>Aids in management of lymphedema and increases circulation</p></div>
-        </details>
-        <details class="tq-tab">
-          <summary>
-            <span class="tq-no">08</span>
-            <h3>Joint Mobilizations</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="tq-body"><p>Restores lost range of motion and enhances joint health</p></div>
-        </details>
-        <details class="tq-tab">
-          <summary>
-            <span class="tq-no">09</span>
-            <h3>Rhythmic Mobilizations</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="tq-body"><p>Alleviates holding patterns and restores posture</p></div>
-        </details>
-        <details class="tq-tab">
-          <summary>
-            <span class="tq-no">10</span>
-            <h3>Proprioceptive Neuromuscular Facilitation (PNF) Stretching</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="tq-body"><p>Increases muscle length and decreases muscle spasms</p></div>
-        </details>
-        <details class="tq-tab">
-          <summary>
-            <span class="tq-no">11</span>
-            <h3>Traction</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="tq-body"><p>Relieves pressure and enhances health in the joint</p></div>
-        </details>
-        <details class="tq-tab">
-          <summary>
-            <span class="tq-no">12</span>
-            <h3>Friction</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="tq-body"><p>Realigns scar tissue fibers</p></div>
-        </details>
-      </div>
+  <div class="routes rv">
+    <div class="route-card physio">
+      <h3>Physiotherapy</h3>
+      <p>Assessment, hands-on treatment and a plan of care through the stages of healing, including pre-op and post-op programmes around orthopedic surgery.</p>
+      <a class="btn btn-outline" href="physiotherapy.html">Explore Physiotherapy &rarr;</a>
+    </div>
+    <div class="route-card kin">
+      <h3>Kinesiology</h3>
+      <p>A progressive exercise programme rebuilding strength, range of motion and confidence, in water, on land, or both.</p>
+      <a class="btn btn-light" href="kinesiology.html">Explore Kinesiology &rarr;</a>
     </div>
   </div>
 </div></section>
@@ -1361,11 +1205,10 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   <span class="orb" style="width:260px;height:260px;bottom:-90px;right:-40px;"></span>
   <div class="wrap">
     <div class="narrow rv" style="text-align:center;margin-inline:auto">
-      <span class="eyebrow on-dark" style="justify-content:center">Book Your Session</span>
-      <h2 style="color:#fff">Your Massage Therapy at LiquidGym.</h2>
-      <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85);margin-inline:auto">Call LiquidGym at 613-820-8228 to speak with our team.</p>
+      <h2 style="color:#fff">Start With an Assessment.</h2>
+      <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85);margin-inline:auto;max-width:62ch">For an assessment and a detailed plan of care, call LiquidGym at 613-820-8228 to book an appointment with one of our therapists.</p>
       <div class="btn-row" style="justify-content:center;margin-top:1.6rem">
-        <a class="btn btn-light" href="#book">Book Your Massage Therapy Appointment</a>
+        <a class="btn btn-light" href="#book">Book Your Assessment</a>
         <a class="btn btn-outline-nav" href="tel:6138208228">Call 613-820-8228</a>
       </div>
     </div>
@@ -1451,26 +1294,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   });
 })();
 </script>
-<script>
-(function(){
-  var els=document.querySelectorAll('.rv');
-  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.classList.add('in');}); return; }
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{threshold:0.12});
-  els.forEach(function(e){ io.observe(e); });
-})();
-</script>
-<script>(function(){
-  document.querySelectorAll('.tq-tab').forEach(function(d){
-    var sign=d.querySelector('.sign');
-    d.addEventListener('toggle',function(){ if(sign) sign.textContent=d.open?'−':'+'; });
-  });
-  (function(){
-    var sc=document.querySelector('.tq-list'), wrap=document.querySelector('.tq-scroll');
-    if(sc&&wrap){ sc.addEventListener('scroll',function(){ var atEnd=sc.scrollTop+sc.clientHeight>=sc.scrollHeight-4; wrap.classList.toggle('at-end',atEnd); }); }
-  })();
-})();</script>
-<script>(function(){document.querySelectorAll('.cta-bg').forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
+<script>(function(){var els=document.querySelectorAll(".rv");if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in");});return;}var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});els.forEach(function(e){io.observe(e);});})();</script>
+<script>(function(){document.querySelectorAll(".cta-bg").forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
 </body>
 </html>

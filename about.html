@@ -891,6 +891,15 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   .nav-cta{font-size:.76rem;padding:.48rem .8rem;}
 }
 
+/* secondary logo in nav (right of buttons) */
+.logo-secondary{display:inline-flex;align-items:center;padding-left:.85rem;margin-left:.25rem;border-left:1px solid rgba(255,255,255,.18);}
+.logo-secondary img{height:27px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.92;transition:opacity .18s ease;}
+.logo-secondary:hover img{opacity:1;}
+@media (min-width:1200px) and (max-width:1360px){
+  .logo-secondary img{height:24px;}
+  .logo-secondary{padding-left:.7rem;}
+}
+
 /* ---- mobile menu: accordion groups ---- */
 .mobile-menu .m-group{border-bottom:1px solid rgba(255,255,255,.10);}
 .m-acc{
@@ -987,8 +996,10 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </nav>
 
     <div class="nav-actions">
-      <a href="portal-login.html" class="btn btn-outline-nav nav-cta">Login / Register</a>
-      <a href="index.html#invitation" class="btn btn-primary nav-cta">Book a Discovery Call</a>
+      <a href="portal-login.html" class="btn btn-outline-nav nav-cta">Patient Login</a>
+      <a class="logo-secondary" href="#" aria-label="Partner logo">
+        <img src="https://cdn.katalyst-crm.com/a/0b21ecf7-dca3-6429-59f6-3714263257b6" alt="">
+      </a>
     </div>
 
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -1060,8 +1071,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
   <div class="m-cta">
-    <a href="portal-login.html" class="btn btn-outline-mob">Login / Register</a>
-    <a href="index.html#invitation" class="btn btn-primary">Book a Discovery Call</a>
+    <a href="portal-login.html" class="btn btn-outline-mob">Patient Login</a>
   </div>
   <div class="m-contact">
     <a href="mailto:info@liquidgym.ca">info@liquidgym.ca</a><br>

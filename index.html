@@ -129,6 +129,10 @@ p:last-child{margin-bottom:0;}
 
 .btn-outline-light:hover{background:rgba(255,255,255,.12);}
 
+.btn-outline-blue{background:transparent;color:var(--ink);border-color:var(--ink);}
+
+.btn-outline-blue:hover{background:var(--bright);border-color:var(--bright);color:#fff;transform:translateY(-2px);box-shadow:0 10px 26px rgba(66,136,221,.34);}
+
 .btn-row{display:flex;flex-direction:column;gap:.7rem;}
 
 @media (min-width:640px){.btn{width:auto;}.btn-row{flex-direction:row;flex-wrap:wrap;align-items:center;}}
@@ -285,7 +289,7 @@ body.lock{overflow:hidden;}
 
 .hero-slides img{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
-  opacity:0;animation:heroShow 24s cubic-bezier(.4,0,.2,1) infinite;
+  opacity:0;animation:heroShow 32s cubic-bezier(.4,0,.2,1) infinite;
   will-change:opacity,transform;
 }
 
@@ -293,14 +297,15 @@ body.lock{overflow:hidden;}
 
 .hero-slides img:nth-child(2){animation-delay:8s;}
   .hero-slides img:nth-child(3){animation-delay:16s;}
+  .hero-slides img:nth-child(4){animation-delay:24s;}
 
 
 @keyframes heroShow{
-  0%   {opacity:0;transform:scale(1.08);}
-  5%   {opacity:1;}
-  29%  {opacity:1;transform:scale(1.0);}
-  36%  {opacity:0;transform:scale(1.0);}
-  100% {opacity:0;transform:scale(1.08);}
+  0%    {opacity:0;transform:scale(1.08);}
+  4%    {opacity:1;}
+  22%   {opacity:1;transform:scale(1.0);}
+  27%   {opacity:0;transform:scale(1.0);}
+  100%  {opacity:0;transform:scale(1.08);}
 }
 
 /* scrim for the type */
@@ -1401,7 +1406,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .logo-strip-section .logo-rail{padding-top:.2rem!important;}
 
 /* Hero intro paragraph: wider, ~3 lines */
-.hero p{max-width:64ch;}
+.hero p{max-width:80ch;}
 
 
 /* ============ Testimonial auto-slider (marquee) ============ */
@@ -1575,6 +1580,15 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   .nav-cta{font-size:.76rem;padding:.48rem .8rem;}
 }
 
+/* secondary logo in nav (right of buttons) */
+.logo-secondary{display:inline-flex;align-items:center;padding-left:.85rem;margin-left:.25rem;border-left:1px solid rgba(255,255,255,.18);}
+.logo-secondary img{height:27px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.92;transition:opacity .18s ease;}
+.logo-secondary:hover img{opacity:1;}
+@media (min-width:1200px) and (max-width:1360px){
+  .logo-secondary img{height:24px;}
+  .logo-secondary{padding-left:.7rem;}
+}
+
 /* ---- mobile menu: accordion groups ---- */
 .mobile-menu .m-group{border-bottom:1px solid rgba(255,255,255,.10);}
 .m-acc{
@@ -1679,8 +1693,10 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </nav>
 
     <div class="nav-actions">
-      <a href="portal-login.html" class="btn btn-outline-nav nav-cta">Login / Register</a>
-      <a href="#invitation" class="btn btn-primary nav-cta">Book a Discovery Call</a>
+      <a href="portal-login.html" class="btn btn-outline-nav nav-cta">Patient Login</a>
+      <a class="logo-secondary" href="#" aria-label="Partner logo">
+        <img src="https://cdn.katalyst-crm.com/a/0b21ecf7-dca3-6429-59f6-3714263257b6" alt="">
+      </a>
     </div>
 
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -1752,8 +1768,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
   <div class="m-cta">
-    <a href="portal-login.html" class="btn btn-outline-mob">Login / Register</a>
-    <a href="#invitation" class="btn btn-primary">Book a Discovery Call</a>
+    <a href="portal-login.html" class="btn btn-outline-mob">Patient Login</a>
   </div>
   <div class="m-contact">
     <a href="mailto:info@liquidgym.ca">info@liquidgym.ca</a><br>
@@ -1764,15 +1779,16 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 <!-- ======================= SECTION 1 — HERO ======================= -->
 <section class="hero" id="top">
   <div class="hero-slides" aria-hidden="true">
-    <img src="https://cdn.katalyst-crm.com/t1/ChatGPT%20Image%2023%20Tem%202026%2023_28_53.png" alt="">
     <img src="https://cdn.katalyst-crm.com/a/abafc854-657d-4aee-7257-7e1029ab4556" alt="">
     <img src="https://cdn.katalyst-crm.com/t1/ChatGPT%20Image%2023%20Tem%202026%2023_34_18.png" alt="">
+    <img src="https://cdn.katalyst-crm.com/a/648e3c97-e2cb-f5fa-11ee-f4ce46033450" alt="">
+    <img src="https://cdn.katalyst-crm.com/a/65448e7b-f88f-6c9e-42b7-f662d25e1988" alt="">
   </div>
 
   <div class="wrap hero-centered">
     <span class="eyebrow on-dark">Aquatic Physical Therapy · Ottawa</span>
     <h1 class="two-line"><span>Physical Therapy in Water.</span><span>Recovery Where Land Cannot Take You.</span></h1>
-    <p>LiquidGym is a clinician-led aquatic therapy clinic. For twelve years we have used the properties of water to help patients recover from injury, ease pain, and rebuild mobility &mdash; and now train clinicians and clinics worldwide.</p>
+    <p>LiquidGym is a clinician-led aquatic therapy clinic. For twelve years we have used the properties of water to help patients recover from injury, ease pain, and rebuild mobility.</p>
     <div class="btn-row hero-cta-row">
       <a href="wei-water-exercise-institute.html" class="btn btn-primary">Start Moving <span class="btn-sub">WEI&trade;</span></a>
       <a href="ati-education-certification.html" class="btn btn-outline-nav">Get Certified <span class="btn-sub">ATI Education</span></a>
@@ -1781,6 +1797,29 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   </div>
 
 </section>
+
+<section class="sec soft-bg" id="rebuild"><div class="wrap">
+  <div class="split">
+    <div class="rv">
+      <span class="eyebrow">LiquidGym: Flood and Rebuild</span>
+      <h2>Rebuilding the Clinic. Not the Focus.</h2>
+      <p style="margin-top:1.1rem;color:var(--body)">In November 2025, a flood forced LiquidGym to close its Bells Corners clinic. Ten months later, we're reopening on September 14, 2026 in a new space just down the road, with a rebuilt business model and a team carrying its work forward into this new chapter.</p>
+      <p style="margin-top:1rem;color:var(--body)">Physiotherapy, aquatic rehabilitation, and land-based training resume, and we look forward to welcoming our patients and community back.</p>
+
+      <div style="margin-top:2rem;padding-top:1.6rem;border-top:1px solid var(--line)">
+        <h3 style="font-family:var(--display);font-size:clamp(1.3rem,2.4vw,1.8rem);font-weight:500;color:var(--navy)">Patients remain at the centre of everything we do.</h3>
+        <p style="margin-top:1rem;color:var(--body)">LiquidGym began with a simple purpose: to help people move, function and participate more fully in everyday life.</p>
+        <p style="margin-top:1rem;color:var(--ink);font-family:var(--display);font-weight:500">That purpose has not changed.</p>
+        <div style="margin-top:1.8rem"><a href="#" class="btn btn-primary">Book an Assessment</a></div>
+      </div>
+    </div>
+
+    <div class="split-media rv">
+      <span class="accent" aria-hidden="true"></span>
+      <div class="ph ph-4x3 has-photo"><img src="https://cdn.katalyst-crm.com/a/e6c537c1-0b03-ef2f-2415-d39c7ed1ce11" alt="LiquidGym's new clinic space after the rebuild" loading="lazy"></div>
+    </div>
+  </div>
+</div></section>
 
 <section class="logo-strip-section" aria-label="Partners and press">
   <div class="wrap">
@@ -1797,7 +1836,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <span class="logo-chip is-plain"><img src="https://dashboard.katalyst-crm.com/files/t1/00d2c7_1634707f4f474fd298d5b999ec7fde7d~mv2.avif" alt="Partner organization" loading="lazy"></span>
           <span class="logo-chip"><img src="https://cdn.katalyst-crm.com/t1/Alinker_Logo_Partners.jpg" alt="Alinker" loading="lazy"></span>
           <span class="logo-chip is-badge"><img src="https://cdn.katalyst-crm.com/t1/Copy-of-PainHero-Badge-120-x-120.png" alt="PainHero" loading="lazy"></span>
-          <span class="logo-chip is-badge"><img src="https://cdn.katalyst-crm.com/t1/PainHero-Badge-Top-Rated-2022-127-v3.png" alt="PainHero Top Rated 2022" loading="lazy"></span>
+          <span class="logo-chip is-badge"><img src="https://cdn.katalyst-crm.com/a/0ac193f8-9811-b8ad-e642-9a26b515a22d" alt="Réseau Business Achievement Award — Innovation" loading="lazy"></span>
         </div>
         <div class="press">
           <h4>As featured in:</h4>
@@ -1826,19 +1865,19 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192919_f7f92138-83f5-41d3-bfea-5fcbf7fecf94.png" alt="Portrait of Angela S., WEI member" loading="lazy"></span><cite>— Angela S., WEI Member</cite></div>
         </article>
 <article class="quote-card">
-          <span class="cond">Recovering from a Brain Injury</span>
-          <p>“His physiotherapist gave him an exercise. He said, 'I can't do that.' She said, 'Let's try it, as opposed to talking about it.' That's how he learned the difference between 'I can't' and 'I won't.' Now he has taken on the mantra: 'I CAN.'”</p>
-          <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192924_58a7abfa-d16d-4a9a-81d6-7c4b2ac4afa1.png" alt="Portrait of Robert W., physiotherapy patient" loading="lazy"></span><cite>— Robert W., Physiotherapy Patient</cite></div>
+          <span class="cond">Regaining Strength After a Spinal Cord Injury</span>
+          <p>Ten sessions of strength, balance and gait training on the underwater treadmill quadrupled how long Keith could walk in it. “If you want to feel better about yourself and your life, come to LiquidGym.”</p>
+          <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192924_58a7abfa-d16d-4a9a-81d6-7c4b2ac4afa1.png" alt="Portrait of Keith, physiotherapy patient and gym member" loading="lazy"></span><cite>— Keith, Physiotherapy Patient and Gym Member</cite></div>
         </article>
 <article class="quote-card">
-              <span class="cond">Living with Multiple Sclerosis</span>
-              <p>“There are things you can do in the water that you would never attempt on land. It is not your typical rehab. Despite my disability, I keep coming back because they are my friends and help with my desire to keep moving the best I can.”</p>
-              <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192929_dcc848f7-fdd5-44b6-9d42-c2142858a4cb.png" alt="Portrait of Andrew, patient since 2013" loading="lazy"></span><cite>— Andrew, Patient Since 2013</cite></div>
+              <span class="cond">Rebuilding Strength, One Step at a Time</span>
+              <p>Treadmill classes rebuilt the strength and running form Judy needed in an emergency. “It didn't only help me save my dog's life — it's been helping me to save my own.”</p>
+              <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192929_dcc848f7-fdd5-44b6-9d42-c2142858a4cb.png" alt="Portrait of Judy, gym member" loading="lazy"></span><cite>— Judy, Gym Member</cite></div>
             </article>
 <article class="quote-card">
-              <span class="cond">Back on Skis, Fifteen Months Later</span>
-              <p>“I want to thank LiquidGym for being paramount in helping me to reach my very high goal. Having been an avid skier all my life, skiing is not only what I do in the winter, it's who I am.”</p>
-              <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192933_f452e259-87b7-4be8-8768-afa35d4c14af.png" alt="Portrait of Audrey, physiotherapy patient" loading="lazy"></span><cite>— Audrey, Physiotherapy Patient</cite></div>
+              <span class="cond">Managing Hip and Knee Osteoarthritis</span>
+              <p>Water-based physiotherapy sessions rebuilt Kathy's strength until she no longer needed a cane. “I haven't felt this amazing in the last seven years.”</p>
+              <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192933_f452e259-87b7-4be8-8768-afa35d4c14af.png" alt="Portrait of Kathy, physiotherapy patient" loading="lazy"></span><cite>— Kathy, Physiotherapy Patient</cite></div>
             </article>
       <article class="quote-card">
           <span class="cond">Preparing for a Knee Replacement</span>
@@ -1846,19 +1885,19 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192919_f7f92138-83f5-41d3-bfea-5fcbf7fecf94.png" alt="Portrait of Angela S., WEI member" loading="lazy"></span><cite>— Angela S., WEI Member</cite></div>
         </article>
 <article class="quote-card">
-          <span class="cond">Recovering from a Brain Injury</span>
-          <p>“His physiotherapist gave him an exercise. He said, 'I can't do that.' She said, 'Let's try it, as opposed to talking about it.' That's how he learned the difference between 'I can't' and 'I won't.' Now he has taken on the mantra: 'I CAN.'”</p>
-          <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192924_58a7abfa-d16d-4a9a-81d6-7c4b2ac4afa1.png" alt="Portrait of Robert W., physiotherapy patient" loading="lazy"></span><cite>— Robert W., Physiotherapy Patient</cite></div>
+          <span class="cond">Regaining Strength After a Spinal Cord Injury</span>
+          <p>Ten sessions of strength, balance and gait training on the underwater treadmill quadrupled how long Keith could walk in it. “If you want to feel better about yourself and your life, come to LiquidGym.”</p>
+          <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192924_58a7abfa-d16d-4a9a-81d6-7c4b2ac4afa1.png" alt="Portrait of Keith, physiotherapy patient and gym member" loading="lazy"></span><cite>— Keith, Physiotherapy Patient and Gym Member</cite></div>
         </article>
 <article class="quote-card">
-              <span class="cond">Living with Multiple Sclerosis</span>
-              <p>“There are things you can do in the water that you would never attempt on land. It is not your typical rehab. Despite my disability, I keep coming back because they are my friends and help with my desire to keep moving the best I can.”</p>
-              <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192929_dcc848f7-fdd5-44b6-9d42-c2142858a4cb.png" alt="Portrait of Andrew, patient since 2013" loading="lazy"></span><cite>— Andrew, Patient Since 2013</cite></div>
+              <span class="cond">Rebuilding Strength, One Step at a Time</span>
+              <p>Treadmill classes rebuilt the strength and running form Judy needed in an emergency. “It didn't only help me save my dog's life — it's been helping me to save my own.”</p>
+              <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192929_dcc848f7-fdd5-44b6-9d42-c2142858a4cb.png" alt="Portrait of Judy, gym member" loading="lazy"></span><cite>— Judy, Gym Member</cite></div>
             </article>
 <article class="quote-card">
-              <span class="cond">Back on Skis, Fifteen Months Later</span>
-              <p>“I want to thank LiquidGym for being paramount in helping me to reach my very high goal. Having been an avid skier all my life, skiing is not only what I do in the winter, it's who I am.”</p>
-              <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192933_f452e259-87b7-4be8-8768-afa35d4c14af.png" alt="Portrait of Audrey, physiotherapy patient" loading="lazy"></span><cite>— Audrey, Physiotherapy Patient</cite></div>
+              <span class="cond">Managing Hip and Knee Osteoarthritis</span>
+              <p>Water-based physiotherapy sessions rebuilt Kathy's strength until she no longer needed a cane. “I haven't felt this amazing in the last seven years.”</p>
+              <div class="who"><span class="av"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_192933_f452e259-87b7-4be8-8768-afa35d4c14af.png" alt="Portrait of Kathy, physiotherapy patient" loading="lazy"></span><cite>— Kathy, Physiotherapy Patient</cite></div>
             </article>
     </div>
   </div>
@@ -1890,7 +1929,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     <div class="split">
       <div class="split-media rv">
         <span class="accent" aria-hidden="true"></span>
-        <div class="ph ph-4x3 has-photo"><img src="https://cdn.katalyst-crm.com/t1/IMG_5836.jpg" alt="Karen Snyder and Irene Hammerich, LiquidGym co-founders" loading="lazy"></div>
+        <div class="ph ph-4x3 has-photo"><img src="https://cdn.katalyst-crm.com/t1/ChatGPT%20Image%2023%20Tem%202026%2023_28_53.png" alt="Aquatic therapy in progress at LiquidGym" loading="lazy"></div>
       </div>
 
       <div class="rv">
@@ -1978,7 +2017,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     <div class="split">
       <div class="split-media rv">
         <span class="accent" aria-hidden="true"></span>
-        <div class="ph ph-4x3 has-photo"><img src="https://cdn.katalyst-crm.com/t1/Ekran%20Resmi%202026-07-23%2023.10.52.png" alt="A community pool serving as a clinic's water" loading="lazy"></div>
+        <div class="ph ph-4x3 has-photo"><img src="https://cdn.katalyst-crm.com/a/6066d232-4549-947d-cc4d-73bfbda78601" alt="A community pool serving as a clinic's water" loading="lazy"></div>
       </div>
 
       <div class="rv">
@@ -1988,7 +2027,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
         <div class="story" id="story-paradigm" style="margin-top:1.4rem">
           <div class="fade-mask">
             <p>The biggest barrier to aquatic therapy was never the water. It was the assumption that you needed to own it.</p>
-            <p>Community pools. Retirement residence pools. Backyard pools. Any of them can become your clinic's water, while your brand stays exactly yours.</p>
+            <p>Community pools. Retirement residence pools. Hotel pools. Private pools. Backyard pools. Any of them can become your clinic's water, while your brand stays exactly yours.</p>
           </div>
 
           <div class="more">
@@ -2005,6 +2044,12 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
             </span>
           </button>
         </div>
+
+        <div class="btn-row" style="margin-top:2rem;flex-direction:row;flex-wrap:wrap;gap:.7rem">
+          <a href="wei-water-exercise-institute.html" class="btn btn-outline-blue">Start Moving <span class="btn-sub">WEI&trade;</span></a>
+          <a href="ati-education-certification.html" class="btn btn-outline-blue">Get Certified <span class="btn-sub">ATI Education</span></a>
+          <a href="ati-360.html" class="btn btn-outline-blue">Build Your Program <span class="btn-sub">ATI 360&trade;</span></a>
+        </div>
       </div>
     </div>
   </div>
@@ -2015,14 +2060,14 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   <div class="wrap">
     <div class="split ati-split">
       <div class="rv">
-        <span class="ati-lock">Liquid Gym <i>/</i> ATI</span>
-        <h2>Liquid Gym is now available to clinics worldwide.</h2>
-        <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85)">The Aquatic Therapy Institute for health care providers. Twelve years of decoded method, packaged so any clinic can run it.</p>
+        <span class="ati-lock">LiquidGym <i>/</i> ATI</span>
+        <h2>LiquidGym is now available to clinics worldwide.</h2>
+        <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85)">Aquatic Therapy Innovations for health care providers. Twelve years of decoded method, packaged so any clinic can run it.</p>
 
         <div class="ati-promise">
           <details class="ati-tab" open>
             <summary>
-              <h3>Better patient outcomes</h3>
+              <h3>From Aquatic Therapy to Everyday Function</h3>
               <span class="sign" aria-hidden="true">&minus;</span>
             </summary>
             <div class="body">
@@ -2031,19 +2076,19 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           </details>
           <details class="ati-tab">
             <summary>
-              <h3>Stronger clinic revenue</h3>
+              <h3>Additional Clinic Revenues</h3>
               <span class="sign" aria-hidden="true">+</span>
             </summary>
             <div class="body">
-              <p>A new service line built on water you already have access to, with the business tools and launch roadmap to run it properly.</p>
+              <p>A new service line built on water, with the business tools and launch roadmap to guide you through implementation.</p>
             </div>
           </details>
         </div>
 
         <div class="btn-row" style="margin-top:2.2rem">
-          <!-- point both at the Liquid Gym ATI landing page -->
-          <a href="#" class="btn btn-light">Explore Liquid Gym ATI</a>
-          <a href="#ati-framework" class="btn btn-outline-light">See the three pillars</a>
+          <!-- point both at the LiquidGym ATI landing page -->
+          <a href="ati-360.html" class="btn btn-light">Explore Aquatic Therapy Innovations</a>
+          <a href="#paths" class="btn btn-outline-light">See the three pillars</a>
         </div>
       </div>
 
@@ -2055,99 +2100,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   </div>
 </section>
 
-<!-- ======================= ATI — the framework ======================= -->
-<section class="sec" id="ati-framework">
-  <div class="wrap">
-    <div class="fw">
-      <div class="fw-aside rv">
-        <span class="eyebrow">The framework</span>
-        <h2 class="fw-title">Three pillars, one system.</h2>
-        <p class="lede">Train the clinicians. Carry the patient past discharge. Then run the whole thing as a service line.</p>
-
-        <div class="fw-method">
-          <details>
-            <summary>
-              <div>
-                <span class="tag">The method underneath</span>
-                <h3>FMAT&trade; &mdash; Functional Movement Aquatic Therapy Method&trade;</h3>
-              </div>
-              <span class="sign" aria-hidden="true">+</span>
-            </summary>
-            <div class="body">
-              <p>A structured clinical system for how aquatic therapy is evaluated, progressed, and transitioned back to land-based function. Rather than exercises that happen to take place in water, FMAT uses buoyancy, resistance and depth intentionally &mdash; to restore movement, reduce stress on the body, and improve functional performance. Sessions progress through clearly defined stages of movement and loading, built around functional goals and measurable progression.</p>
-              <p class="note">Covered in both Level 1 and Level 2 certification.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-
-      <div class="pcar rv">
-      <div class="pcar-view">
-        <div class="pcar-track" id="ptrack">
-        <article class="pcar-item">
-          <span class="pcar-ico" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 3h13l5 5v13"/>
-                <path d="M20 3v5h5"/>
-                <path d="M7 3v22"/>
-                <path d="M11 10h8M11 14h6"/>
-                <circle cx="21" cy="23" r="5"/>
-                <path d="M17.6 26.6L16 31l5-2.2 5 2.2-1.6-4.4"/>
-              </svg></span>
-          <span class="n">Pillar 01</span>
-          <h3>Education &amp; Certification</h3>
-          <p><b>Level 1</b> builds the foundation: the therapeutic role and properties of water, safety, patient screening and suitability, and clinical application.</p>
-          <p><b>Level 2</b> advances aquatic assessment, clinical reasoning, treatment progression and skilled application in more complex rehabilitation presentations.</p>
-          <div class="aside"><b>Module-based courses</b>Pediatric &mdash; Fall 2026</div>
-        </article>
-        <article class="pcar-item">
-          <span class="pcar-ico" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="6" width="26" height="17" rx="2.5"/>
-                <path d="M13.5 11.5l6 3-6 3z"/>
-                <path d="M16 23v4M11 27h10"/>
-              </svg></span>
-          <span class="n">Pillar 02</span>
-          <h3>Water Exercise Institute (WEI)</h3>
-          <p>The continuation layer of the ATI ecosystem: guided, video-based programs and an exercise library that support movement, confidence and independence beyond clinical supervision.</p>
-          <div class="aside"><b>Why it matters</b>A complete patient journey needs a clear next step after the formal episode of care. WEI carries patients past discharge.</div>
-        </article>
-        <article class="pcar-item is-full">
-          <span class="pcar-ico" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="16" cy="16" r="11.5" stroke-dasharray="48 13"/>
-                <circle cx="16" cy="4.5" r="2"/>
-                <circle cx="26" cy="21.5" r="2"/>
-                <circle cx="6" cy="21.5" r="2"/>
-                <path d="M11 17.5c1.7-1.8 3.3-1.8 5 0s3.3 1.8 5 0"/>
-              </svg></span>
-          <span class="n">Pillar 03 &mdash; includes all three</span>
-          <h3>The ATI 360 Model</h3>
-          <p>A structured aquatic therapy implementation system that moves a clinic from vision to execution &mdash; stronger clinical consistency, clearer infrastructure, and a confident path to launch and growth.</p>
-          <div class="ati-includes">
-            <span>Clinician Training &amp; Certification</span>
-            <span>Patient Education &amp; Engagement</span>
-            <span>Water Exercise Institute (WEI)</span>
-            <span>Business Tools</span>
-            <span>AI Readiness Tools</span>
-            <span>ATI Launch Roadmap</span>
-            <span>Clinic Ecosystems</span>
-            <span>Turnkey Marketing Support</span>
-          </div>
-        </article>
-        </div>
-      </div>
-      <div class="pcar-nav">
-        <button type="button" id="pprev" aria-label="Previous pillar">
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l5-5 5 5"/></svg>
-        </button>
-        <button type="button" id="pnext" aria-label="Next pillar">
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6l5 5 5-5"/></svg>
-        </button>
-        <span class="pcar-dots" id="pdots" aria-hidden="true"><i class="on"></i><i></i><i></i></span>
-        <span class="pcar-count"><b id="pnum">01</b> / 03</span>
-      </div>
-    </div>
-    </div>
-  </div>
-</section>
+<!-- ======================= ATI — the framework (removed per revision notes; content repeated in the Three Paths / Global Innovation Ecosystem section below) ======================= -->
 
 <!-- ======================= SECTION 6 — THREE PATHS ======================= -->
 <section class="sec soft-bg" id="paths" style="background:var(--soft)">
@@ -2169,7 +2122,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
           </span>
         </div>
-        <span class="epath-media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260821_104919_d37a2f8b-a137-4009-a6fd-4367a1b9e753.png" alt="An aquatic therapy session in a clinical setting" loading="lazy"></span>
+        <span class="epath-media"><img src="https://cdn.katalyst-crm.com/a/f05e51ec-8553-9e3b-2f3d-f10c8712b8db" alt="An aquatic therapy session in a clinical setting" loading="lazy"></span>
         <span class="epath-cta"><span class="epath-brand">ATI 360&trade;</span><span class="epath-go">Build Your Program <span aria-hidden="true">&rarr;</span></span></span>
       </a>
 
@@ -2227,7 +2180,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
             <div>
               <p>Innovation in the water was the core driver. Every protocol was built around what water could do that land never could.</p>
               <p>A multidisciplinary team of physiotherapists, kinesiologists, and athletic therapists worked side by side.</p>
-              <p>Everything this facility proved now lives on in every clinic running the ATI™ program, every certified clinician, and every WEI™ member who uses it.</p>
+              <p>What was developed and refined within this facility is now being carried forward through ATI&trade;, creating a framework that can support clinicians, clinics and WEI&trade; members well beyond LiquidGym's walls.</p>
             </div>
           </div>
 
@@ -2246,7 +2199,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 <!-- ======================= SECTION 8 — TRANSFORMATIONAL VOICES ======================= -->
 
 <!-- ============ SECTIONS 9 + 10 — LEADERSHIP & FUTURE (accordion) ============ -->
-<section class="sec" id="leadership">
+<section class="sec soft-bg" id="leadership">
   <div class="wrap">
     <div class="fw">
       <div class="fw-aside rv">
@@ -2270,7 +2223,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           </summary>
           <div class="vd-body">
             <p>Every protocol and certification in the ATI™ ecosystem is clinically reviewed before it reaches a clinician or a patient, not just clinically inspired.</p>
-          <p>That standard carries through every recognition behind it, from a recognized presence at the 2026 ICEBAT Conference to patient outcomes featured on CBC and CTV News.</p>
+          <p>That standard carries through every recognition behind it, from a recognized presence at the 2026 ICEBAT Conference to patient stories featured on CBC and CTV News.</p>
           </div>
         </details>
         <details class="vd">
@@ -2339,14 +2292,14 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       </div>
 
       <div>
-        <h4>Three Paths</h4>
+        <h4>Paths</h4>
         <ul>
-          <li><a href="#ati">Liquid Gym ATI — Overview</a></li>
-          <li><a href="#paths">ATI 360™ — Build Your Program</a></li>
-          <li><a href="#paths">ATI Certification — Get Certified</a></li>
-          <li><a href="#paths">WEI™ — Start Moving</a></li>
-          <li><a href="#story">Our Story</a></li>
-          <li><a href="#voices">Success Stories</a></li>
+          <li><a href="#rebuild">For Patients</a></li>
+          <li><a href="ati-360.html">Aquatic Therapy Innovations — Overview</a></li>
+          <li><a href="ati-360.html">ATI 360™ — Build Your Program</a></li>
+          <li><a href="ati-education-certification.html">ATI Certification — Get Certified</a></li>
+          <li><a href="wei-water-exercise-institute.html">WEI™ — Start Moving</a></li>
+          <li><a href="about.html">Our Story</a></li>
         </ul>
       </div>
 
@@ -2356,7 +2309,6 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <li><a href="mailto:info@liquidgym.ca">info@liquidgym.ca</a></li>
           <li><a href="tel:6138208228">613-820-8228</a></li>
           <li>2039 Robertson Rd. Suite 501 Ottawa, Ontario, Canada</li>
-          <li><a href="#invitation">Book a Discovery Call</a></li>
         </ul>
       </div>
     </div>

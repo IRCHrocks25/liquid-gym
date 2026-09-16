@@ -104,7 +104,9 @@ a{color:inherit;text-decoration:none;}
   .nav-links .btn{width:auto;min-height:44px;padding:.6rem 1.15rem;font-size:.9rem;margin-left:.4rem;}
 }
 
+@media (min-width:900px){.burger{display:none;}}
 
+@media (min-width:900px){.mobile-menu{display:none;}}
 
 
 /* footer */
@@ -632,14 +634,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 
 
 .mobile-menu{
-  position:fixed;inset:76px 0 0;z-index:55;background:var(--navy);color:#fff;padding:1.5rem var(--gut) 2.5rem;
+  position:fixed;inset:88px 0 0;z-index:55;background:#fff;padding:1.5rem var(--gut) 2.5rem;
   transform:translateY(-14px);opacity:0;visibility:hidden;
   transition:opacity .22s ease,transform .22s ease,visibility .22s;overflow-y:auto;
 }
 
 .mobile-menu.open{opacity:1;transform:none;visibility:visible;}
 
-.mobile-menu a.m-link{display:flex;align-items:center;justify-content:space-between;min-height:52px;font-family:var(--display);font-weight:600;color:#fff;border-bottom:1px solid rgba(255,255,255,.14);}
+.mobile-menu a.m-link{display:flex;align-items:center;justify-content:space-between;min-height:52px;font-family:var(--display);font-weight:600;color:var(--ink);border-bottom:1px solid var(--line);}
 
 .mobile-menu .btn{margin-top:1.4rem;}
 
@@ -653,7 +655,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1px;background:#fff;transition:right .22s ease;}
   .nav-links a:hover::after,.nav-links a.active::after{right:0;}
   .nav-cta{display:inline-flex;}
-  .burger{display:none;}
+  .burger,.mobile-menu{display:none;}
   .nav-inner{min-height:108px;}
 }
 
@@ -870,15 +872,6 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   .nav-cta{font-size:.76rem;padding:.48rem .8rem;}
 }
 
-/* secondary logo in nav (right of buttons) */
-.logo-secondary{display:inline-flex;align-items:center;padding-left:.85rem;margin-left:.25rem;border-left:1px solid rgba(255,255,255,.18);}
-.logo-secondary img{height:27px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.92;transition:opacity .18s ease;}
-.logo-secondary:hover img{opacity:1;}
-@media (min-width:1200px) and (max-width:1360px){
-  .logo-secondary img{height:24px;}
-  .logo-secondary{padding-left:.7rem;}
-}
-
 /* ---- mobile menu: accordion groups ---- */
 .mobile-menu .m-group{border-bottom:1px solid rgba(255,255,255,.10);}
 .m-acc{
@@ -973,7 +966,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 /* two routes-in cards */
 .routes{display:grid;gap:1.2rem;margin-top:2rem;}
 @media(min-width:820px){.routes{grid-template-columns:1fr 1fr;}}
-.route-card{border-radius:16px;padding:1.9rem 1.7rem;transition:transform .24s ease,box-shadow .24s ease;}
+.route-card{border-radius:16px;padding:1.9rem 1.7rem;transition:transform .24s ease,box-shadow .24s ease;display:flex;flex-direction:column;}
 .route-card.physio{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);}
 .route-card.kin{background:linear-gradient(155deg,#0B1C47,#163474);color:#fff;}
 .route-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
@@ -981,7 +974,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .route-card.physio h3{color:var(--blue);} .route-card.kin h3{color:#fff;}
 .route-card p{line-height:1.65;margin:0 0 1rem;font-size:.96rem;}
 .route-card.physio p{color:var(--body);} .route-card.kin p{color:rgba(255,255,255,.86);}
-.route-card .btn{margin-top:.2rem;}
+.route-card .btn{margin-top:auto;align-self:flex-start;}
 </style>
 
 </head>
@@ -1003,7 +996,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <a class="nav-sub" href="why-aquatic-therapy.html">Why Aquatic Therapy</a>
         </div>
       </div>
-      <div class="nav-item has-drop is-active">
+      <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Conditions<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel is-mega">
           <a class="nav-sub" href="arthritis.html">Arthritis</a>
@@ -1014,7 +1007,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <a class="nav-sub" href="plantar-fasciitis.html">Plantar Fasciitis</a>
           <a class="nav-sub" href="neurological.html">Neurological Conditions</a>
           <a class="nav-sub" href="chronic-pain.html">Chronic Pain</a>
-          <a class="nav-sub" href="index.html#">Vestibular</a>
+          <a class="nav-sub" href="#">Vestibular</a>
         </div>
       </div>
       <div class="nav-item has-drop">
@@ -1038,28 +1031,26 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Equipment<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
-          <a class="nav-sub" href="index.html#">Overview</a>
-          <a class="nav-sub" href="index.html#">Alinker</a>
-          <a class="nav-sub" href="index.html#">Game Ready System</a>
-          <a class="nav-sub" href="index.html#">Normatec Compression System</a>
+          <a class="nav-sub" href="#">Overview</a>
+          <a class="nav-sub" href="#">Alinker</a>
+          <a class="nav-sub" href="#">Game Ready System</a>
+          <a class="nav-sub" href="#">Normatec Compression System</a>
         </div>
       </div>
       <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">About<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
           <a class="nav-sub" href="about.html">About LiquidGym</a>
-          <a class="nav-sub" href="index.html#">Partners</a>
-          <a class="nav-sub" href="index.html#">Facility</a>
-          <a class="nav-sub" href="index.html#">Success Stories</a>
+          <a class="nav-sub" href="#">Partners</a>
+          <a class="nav-sub" href="#">Facility</a>
+          <a class="nav-sub" href="#">Success Stories</a>
         </div>
       </div>
     </nav>
 
     <div class="nav-actions">
-      <a href="portal-login.html" class="btn btn-outline-nav nav-cta">Patient Login</a>
-      <a class="logo-secondary" href="#" aria-label="Partner logo">
-        <img src="https://cdn.katalyst-crm.com/a/0b21ecf7-dca3-6429-59f6-3714263257b6" alt="">
-      </a>
+      <a href="portal-login.html" class="btn btn-outline-nav nav-cta">Login / Register</a>
+      <a href="index.html#invitation" class="btn btn-primary nav-cta">Book a Discovery Call</a>
     </div>
 
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -1091,7 +1082,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <a href="plantar-fasciitis.html">Plantar Fasciitis</a>
       <a href="neurological.html">Neurological Conditions</a>
       <a href="chronic-pain.html">Chronic Pain</a>
-      <a href="index.html#">Vestibular</a>
+      <a href="#">Vestibular</a>
     </div>
   </div>
   <div class="m-group">
@@ -1115,23 +1106,24 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">Equipment<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
-      <a href="index.html#">Overview</a>
-      <a href="index.html#">Alinker</a>
-      <a href="index.html#">Game Ready System</a>
-      <a href="index.html#">Normatec Compression System</a>
+      <a href="#">Overview</a>
+      <a href="#">Alinker</a>
+      <a href="#">Game Ready System</a>
+      <a href="#">Normatec Compression System</a>
     </div>
   </div>
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">About<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
       <a href="about.html">About LiquidGym</a>
-      <a href="index.html#">Partners</a>
-      <a href="index.html#">Facility</a>
-      <a href="index.html#">Success Stories</a>
+      <a href="#">Partners</a>
+      <a href="#">Facility</a>
+      <a href="#">Success Stories</a>
     </div>
   </div>
   <div class="m-cta">
-    <a href="portal-login.html" class="btn btn-outline-mob">Patient Login</a>
+    <a href="portal-login.html" class="btn btn-outline-mob">Login / Register</a>
+    <a href="index.html#invitation" class="btn btn-primary">Book a Discovery Call</a>
   </div>
   <div class="m-contact">
     <a href="mailto:info@liquidgym.ca">info@liquidgym.ca</a><br>
@@ -1163,7 +1155,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <h2>What Is Arthritis?</h2>
       <p style="margin-top:1.1rem;color:var(--body)">Arthritis is a term used to describe a group of over 100 diseases characterized by inflammation in the joints or other areas of the body.</p>
       <p style="margin-top:1rem;color:var(--body)">Inflammation is a medical term that describes redness and swelling which causes pain and, when in the joints, can also cause stiffness.</p>
-      <p style="margin-top:1rem;color:var(--body)">Arthritis, arthro meaning joint and itis meaning inflammation, can involve almost any part of the body. It most often affects the hip, knee, spine, or other weight-bearing joints, but is also found in the fingers and other non-weight-bearing joints. Some forms of arthritis can also affect other parts of the body.</p>
+      <p style="margin-top:1rem;color:var(--body)">Arthritis, <em style="font-style:normal;font-weight:600;color:var(--ink)">arthro</em> meaning joint and <em style="font-style:normal;font-weight:600;color:var(--ink)">itis</em> meaning inflammation, can involve almost any part of the body. It most often affects the hip, knee, spine, or other weight-bearing joints, but is also found in the fingers and other non-weight-bearing joints. Some forms of arthritis can also affect other parts of the body.</p>
       <p style="margin-top:1rem;color:var(--body)">Arthritis conditions are grouped into two broad categories: Osteoarthritis and Inflammatory Arthritis. Rheumatoid Arthritis sits under Inflammatory Arthritis.</p>
     </div>
     <div class="mt-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260909_114311_efd94ea2-d218-430a-a521-8b1be7a5cb05.png" alt="A physiotherapist supporting a patient's knee joint"></div>
@@ -1282,14 +1274,14 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       </div>
 
       <div>
-        <h4>Paths</h4>
+        <h4>Three Paths</h4>
         <ul>
-          <li><a href="index.html#rebuild">For Patients</a></li>
-          <li><a href="ati-360.html">Aquatic Therapy Innovations — Overview</a></li>
-          <li><a href="ati-360.html">ATI 360™ — Build Your Program</a></li>
-          <li><a href="ati-education-certification.html">ATI Certification — Get Certified</a></li>
-          <li><a href="wei-water-exercise-institute.html">WEI™ — Start Moving</a></li>
-          <li><a href="about.html">Our Story</a></li>
+          <li><a href="index.html#ati">LiquidGym ATI — Overview</a></li>
+          <li><a href="index.html#paths">ATI 360™ — Build Your Program</a></li>
+          <li><a href="index.html#paths">ATI Certification — Get Certified</a></li>
+          <li><a href="index.html#paths">WEI™ — Start Moving</a></li>
+          <li><a href="index.html#story">Our Story</a></li>
+          <li><a href="index.html#voices">Success Stories</a></li>
         </ul>
       </div>
 
@@ -1299,6 +1291,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <li><a href="mailto:info@liquidgym.ca">info@liquidgym.ca</a></li>
           <li><a href="tel:6138208228">613-820-8228</a></li>
           <li>2039 Robertson Rd. Suite 501 Ottawa, Ontario, Canada</li>
+          <li><a href="index.html#invitation">Book a Discovery Call</a></li>
         </ul>
       </div>
     </div>
@@ -1315,8 +1308,6 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   function setOpen(o){ if(!mm) return; mm.classList.toggle('open',o); if(burger){burger.classList.toggle('is-open',o);burger.setAttribute('aria-expanded',o);} document.body.style.overflow=o?'hidden':''; }
   if(burger){ burger.addEventListener('click',function(){ setOpen(!mm.classList.contains('open')); }); }
   if(mm){ mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ if(a.closest('.m-sub')||a.classList.contains('m-link')||a.closest('.m-cta')) setOpen(false); });}); }
-  document.addEventListener('click',function(e){ if(mm && mm.classList.contains('open') && !mm.contains(e.target) && burger && !burger.contains(e.target)) setOpen(false); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape') setOpen(false); });
   window.addEventListener('resize',function(){ if(window.innerWidth>=1200) setOpen(false); });
   /* mobile accordion */
   document.querySelectorAll('.m-acc').forEach(function(btn){

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Contact &mdash; LiquidGym | Aquatic Physical Therapy, Ottawa</title>
-<meta name="description" content="Call, message or book online. LiquidGym's clinic on Robertson Road and pool at Moodie Drive, Ottawa.">
+<title>Success Stories &mdash; LiquidGym | Aquatic Physical Therapy, Ottawa</title>
+<meta name="description" content="Real LiquidGym patients, in their own words and their therapists' notes. Different conditions, different starting points.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -1008,55 +1008,50 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 @media (prefers-reduced-motion:reduce){.hiring-band .cta-bg{display:none;}}
 .hiring-band h2{color:#fff;margin-bottom:.8rem;}
 .hiring-band p{color:rgba(255,255,255,.86);max-width:48ch;}
-.cta-band{background:var(--soft);text-align:center;padding-block:clamp(3rem,6vw,5rem);}
-.cta-band h2{color:var(--navy);margin-bottom:.6rem;}
-.cta-band p{color:var(--body);max-width:44ch;margin-inline:auto;}
+.cta-band{position:relative;isolation:isolate;overflow:hidden;background:var(--soft);text-align:center;padding-block:clamp(3.5rem,7vw,6rem);}
+.cta-band .cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+.cta-band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(120deg,rgba(11,28,71,.86) 0%,rgba(11,28,71,.66) 55%,rgba(22,52,116,.5) 100%);}
+.cta-band .wrap{position:relative;z-index:2;}
+.cta-band h2{color:#fff;margin-bottom:.6rem;}
+.cta-band p{color:rgba(255,255,255,.9);max-width:44ch;margin-inline:auto;}
+.cta-band .eyebrow{color:var(--light);}
+.cta-band p a{color:#fff!important;}
+.cta-band h2,.cta-band p,.cta-band .eyebrow,.cta-band .btn{text-shadow:0 2px 18px rgba(11,28,71,.5);}
+@media (prefers-reduced-motion:reduce){.cta-band .cta-bg{display:none;}}
 
 
 
-/* ===== CONTACT PAGE ===== */
-.contact-section{padding-block:var(--sec);}
-.contact-section.alt{background:var(--soft);}
-.loc-split{display:grid;gap:2rem;align-items:center;}
-@media(min-width:900px){.loc-split{grid-template-columns:1.05fr .95fr;gap:clamp(2.4rem,4.5vw,4rem);}.loc-split.flip .loc-media{order:2;}}
-.loc-media{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);}
-.loc-media img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform 8s ease;}
-.loc-media:hover img{transform:scale(1.04);}
-.loc-body .eyebrow{margin-bottom:.9rem;}
-.loc-body h2{color:var(--navy);margin:0 0 1rem;}
-.loc-body .addr{font-family:var(--display);font-size:1.05rem;font-weight:500;color:var(--ink);line-height:1.6;margin:0 0 .8rem;}
-.loc-body .meta{color:var(--body);line-height:1.7;margin:0 0 1rem;}
-.loc-body .meta a{color:var(--blue);text-decoration:none;font-weight:500;}
-.loc-body .meta a:hover{text-decoration:underline;}
-.loc-body .note{color:var(--body);line-height:1.7;margin:0;}
-/* hours + enquiries two-up */
-.info-duo{display:grid;gap:2.4rem;}
-@media(min-width:820px){.info-duo{grid-template-columns:1fr 1fr;gap:clamp(2.4rem,4vw,3.4rem);}}
-.info-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.8rem,3vw,2.6rem);box-shadow:var(--shadow-sm);}
-.info-card .eyebrow{margin-bottom:1rem;}
-.info-card h2{color:var(--navy);font-size:clamp(1.4rem,2.4vw,1.9rem);margin:0 0 1.2rem;}
-.hours-row{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 0;border-bottom:1px solid var(--line);font-size:.98rem;}
-.hours-row:last-child{border-bottom:none;}
-.hours-row .day{font-family:var(--display);font-weight:500;color:var(--ink);}
-.hours-row .time{color:var(--body);}
-.hours-row.closed .time{color:var(--mid);}
-.enq-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem;}
-.enq-list li{font-family:var(--display);font-size:.9rem;font-weight:500;color:var(--blue);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:.5rem 1rem;}
-.contact-section.alt .info-card{background:#fff;}
-.contact-section.alt .enq-list li{background:var(--soft);}
-.enq-intro{color:var(--body);line-height:1.7;margin:0 0 1.3rem;}
-/* patient login band */
-.portal-band{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(155deg,#0B1C47,#163474 60%,#2E5EAC);color:#fff;padding-block:clamp(3.5rem,7vw,6rem);text-align:center;}
-.portal-band .cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
-.portal-band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(120deg,rgba(11,28,71,.86) 0%,rgba(11,28,71,.66) 55%,rgba(22,52,116,.5) 100%);}
-.portal-band .wrap{position:relative;z-index:2;}
-.portal-band h2,.portal-band p,.portal-band .eyebrow,.portal-band .btn{text-shadow:0 2px 18px rgba(11,28,71,.5);}
-@media (prefers-reduced-motion:reduce){.portal-band .cta-bg{display:none;}}
-.portal-band h2{color:#fff;margin-bottom:.7rem;}
-.portal-band p{color:rgba(255,255,255,.86);max-width:46ch;margin-inline:auto;margin-bottom:1.6rem;}
+/* ===== SUCCESS STORIES ===== */
+.stories-section{padding-block:var(--sec);}
+.stories-grid{display:grid;gap:1.6rem;align-items:stretch;}
+@media(min-width:820px){.stories-grid{grid-template-columns:1fr 1fr;gap:1.8rem;}}
+.story{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.6rem,2.6vw,2.1rem);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;}
+.story-head{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.avatar{flex:0 0 auto;width:46px;height:46px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-family:var(--display);font-weight:600;font-size:1.15rem;box-shadow:var(--shadow-sm);}
+.story-head h3{font-family:var(--display);font-size:clamp(1.12rem,1.9vw,1.32rem);font-weight:600;color:var(--navy);margin:.25rem 0 0;line-height:1.25;}
+.story .teaser{color:var(--body);line-height:1.7;margin:0 0 1rem;font-size:.97rem;}
+.story-toggle{align-self:flex-start;background:none;border:none;cursor:pointer;font-family:var(--display);font-size:.84rem;font-weight:600;color:var(--blue);padding:.35rem 0;display:inline-flex;align-items:center;gap:.4rem;}
+.story-toggle svg{transition:transform .3s ease;}
+.story-toggle.open svg{transform:rotate(180deg);}
+.story-toggle:hover{color:var(--bright);}
+.story-full{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.22,.7,.2,1);}
+.story-full-inner{padding-top:.7rem;}
+.story-full-inner p{color:var(--body);line-height:1.72;margin:0 0 .9rem;font-size:.95rem;}
+.story-full-inner p:last-child{margin-bottom:0;}
+.story-full-inner blockquote{margin:0 0 .9rem;padding:.2rem 0 .2rem 1.1rem;border-left:3px solid var(--bright);color:var(--ink);font-style:italic;line-height:1.65;font-size:1rem;}
+.story-attr{margin:1.1rem 0 0;margin-top:auto;padding-top:1rem;border-top:1px solid var(--line);font-family:var(--display);font-size:.85rem;color:var(--body);}
+.story-attr strong{color:var(--navy);font-weight:600;}
+/* mid band */
+.stories-band{position:relative;isolation:isolate;overflow:hidden;padding-block:clamp(3.5rem,8vw,6.5rem);text-align:center;color:#fff;}
+.stories-band .band-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;}
+.stories-band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(120deg,rgba(11,28,71,.85),rgba(11,28,71,.6));}
+.stories-band .wrap{position:relative;z-index:2;}
+.stories-band h2{color:#fff;max-width:22ch;margin-inline:auto;}
+.stories-band p{color:rgba(255,255,255,.88);max-width:52ch;margin:1rem auto 0;}
+.stories-band h2,.stories-band p{text-shadow:0 2px 18px rgba(11,28,71,.5);}
 
 </style>
-<noscript><style>.rv{opacity:1!important;transform:none!important;}</style></noscript>
+<noscript><style>.rv{opacity:1!important;transform:none!important;}.story-full{max-height:none!important;}</style></noscript>
 </head>
 <body>
 <div class="siteheader">
@@ -1071,33 +1066,33 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
         <button class="nav-top nav-trigger" aria-expanded="false">Therapies<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
           <a class="nav-sub" href="physiotherapy.html">Physiotherapy</a>
-          <a class="nav-sub" href="index.html#">Massage Therapy</a>
+          <a class="nav-sub" href="massage-therapy.html">Massage Therapy</a>
           <a class="nav-sub" href="kinesiology.html">Kinesiology</a>
-          <a class="nav-sub" href="index.html#">Why Aquatic Therapy</a>
+          <a class="nav-sub" href="why-aquatic-therapy.html">Why Aquatic Therapy</a>
         </div>
       </div>
       <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Conditions<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel is-mega">
           <a class="nav-sub" href="arthritis.html">Arthritis</a>
-          <a class="nav-sub" href="index.html#">Sprains, Strains & Fractures</a>
-          <a class="nav-sub" href="index.html#">Sports Injuries</a>
-          <a class="nav-sub" href="index.html#">Cardiovascular Impairments</a>
-          <a class="nav-sub" href="index.html#">Long COVID</a>
-          <a class="nav-sub" href="index.html#">Plantar Fasciitis</a>
-          <a class="nav-sub" href="index.html#">Neurological Conditions</a>
-          <a class="nav-sub" href="index.html#">Chronic Pain</a>
+          <a class="nav-sub" href="sprains-strains-fractures.html">Sprains, Strains & Fractures</a>
+          <a class="nav-sub" href="sports-injuries.html">Sports Injuries</a>
+          <a class="nav-sub" href="cardiovascular.html">Cardiovascular Impairments</a>
+          <a class="nav-sub" href="long-covid.html">Long COVID</a>
+          <a class="nav-sub" href="plantar-fasciitis.html">Plantar Fasciitis</a>
+          <a class="nav-sub" href="neurological.html">Neurological Conditions</a>
+          <a class="nav-sub" href="chronic-pain.html">Chronic Pain</a>
           <a class="nav-sub" href="index.html#">Vestibular</a>
         </div>
       </div>
       <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Services<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
-          <a class="nav-sub" href="index.html#">Pre-Op & Post-Op</a>
-          <a class="nav-sub" href="index.html#">Veterans Affairs — Physiotherapy</a>
-          <a class="nav-sub" href="index.html#">Veterans Affairs — Kinesiology</a>
-          <a class="nav-sub" href="index.html#">Personal Training</a>
-          <a class="nav-sub" href="index.html#">Virtual</a>
+          <a class="nav-sub" href="pre-op-post-op.html">Pre-Op & Post-Op</a>
+          <a class="nav-sub" href="veterans-affairs-physiotherapy.html">Veterans Affairs — Physiotherapy</a>
+          <a class="nav-sub" href="veterans-affairs-kinesiology.html">Veterans Affairs — Kinesiology</a>
+          <a class="nav-sub" href="personal-training.html">Personal Training</a>
+          <a class="nav-sub" href="virtual.html">Virtual</a>
         </div>
       </div>
       <div class="nav-item"><a class="nav-top" href="wei-water-exercise-institute.html">WEI™</a></div>
@@ -1117,7 +1112,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <a class="nav-sub" href="index.html#">Normatec Compression System</a>
         </div>
       </div>
-      <div class="nav-item has-drop">
+      <div class="nav-item has-drop is-active">
         <button class="nav-top nav-trigger" aria-expanded="false">About<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
           <a class="nav-sub" href="about.html">About LiquidGym</a>
@@ -1151,33 +1146,33 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     <button class="m-acc" aria-expanded="false">Therapies<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
       <a href="physiotherapy.html">Physiotherapy</a>
-      <a href="index.html#">Massage Therapy</a>
+      <a href="massage-therapy.html">Massage Therapy</a>
       <a href="kinesiology.html">Kinesiology</a>
-      <a href="index.html#">Why Aquatic Therapy</a>
+      <a href="why-aquatic-therapy.html">Why Aquatic Therapy</a>
     </div>
   </div>
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">Conditions<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
       <a href="arthritis.html">Arthritis</a>
-      <a href="index.html#">Sprains, Strains & Fractures</a>
-      <a href="index.html#">Sports Injuries</a>
-      <a href="index.html#">Cardiovascular Impairments</a>
-      <a href="index.html#">Long COVID</a>
-      <a href="index.html#">Plantar Fasciitis</a>
-      <a href="index.html#">Neurological Conditions</a>
-      <a href="index.html#">Chronic Pain</a>
+      <a href="sprains-strains-fractures.html">Sprains, Strains & Fractures</a>
+      <a href="sports-injuries.html">Sports Injuries</a>
+      <a href="cardiovascular.html">Cardiovascular Impairments</a>
+      <a href="long-covid.html">Long COVID</a>
+      <a href="plantar-fasciitis.html">Plantar Fasciitis</a>
+      <a href="neurological.html">Neurological Conditions</a>
+      <a href="chronic-pain.html">Chronic Pain</a>
       <a href="index.html#">Vestibular</a>
     </div>
   </div>
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">Services<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
-      <a href="index.html#">Pre-Op & Post-Op</a>
-      <a href="index.html#">Veterans Affairs — Physiotherapy</a>
-      <a href="index.html#">Veterans Affairs — Kinesiology</a>
-      <a href="index.html#">Personal Training</a>
-      <a href="index.html#">Virtual</a>
+      <a href="pre-op-post-op.html">Pre-Op & Post-Op</a>
+      <a href="veterans-affairs-physiotherapy.html">Veterans Affairs — Physiotherapy</a>
+      <a href="veterans-affairs-kinesiology.html">Veterans Affairs — Kinesiology</a>
+      <a href="personal-training.html">Personal Training</a>
+      <a href="virtual.html">Virtual</a>
     </div>
   </div>
   <a class="m-link" href="wei-water-exercise-institute.html">WEI™</a>
@@ -1218,109 +1213,368 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   </div>
 </div>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero" style="min-height:clamp(420px,56vh,600px);">
-  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260918_125407_71ccb1a1-9e46-464e-8623-6a721b2ac9ec.png" alt="" loading="eager"></div>
+<section class="hero" style="min-height:clamp(440px,58vh,620px);">
+  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260918_140457_52a4643a-f31a-4bfd-a3db-73f9c5ab0857.png" alt="" loading="eager"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="wrap" style="position:relative;z-index:2;padding-block:clamp(3.4rem,9vw,6rem);">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="index.html">The Hub</a>
       <span class="sep" aria-hidden="true">/</span>
-      <strong>Contact</strong>
+      <a href="about.html">About</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <strong>Success Stories</strong>
     </nav>
-    <span class="eyebrow on-dark" style="margin-top:1.2rem;">Contact</span>
-    <h1>Get in Touch.</h1>
-    <p class="sub">Call us, send a message, or book online. If you are not sure which therapy you need, say so &mdash; that is what the assessment is for.</p>
-    <div class="btn-row">
-      <a href="index.html#invitation" class="btn btn-primary">Book an Appointment</a>
-    </div>
+    <span class="eyebrow on-dark" style="margin-top:1.2rem;">About &middot; Success Stories</span>
+    <h1>Someone Here Started Where You Are.</h1>
+    <p class="sub">These are our patients, in their own words and in their therapists&rsquo; notes. Different conditions, different starting points, different definitions of getting better.</p>
   </div>
 </section>
 
-<!-- ===================== THE CLINIC ===================== -->
-<section class="contact-section" id="clinic">
+<section class="stories-section">
   <div class="wrap">
-    <div class="loc-split">
-      <div class="loc-media rv"><img src="https://cdn.katalyst-crm.com/a/4e940d1d-1948-846f-3cf9-0715e90e3d70" alt="The LiquidGym clinic on Robertson Road, Ottawa" loading="lazy"></div>
-      <div class="loc-body rv">
-        <span class="eyebrow">The Clinic</span>
-        <h2>Robertson Road</h2>
-        <p class="addr">2039 Robertson Road, Suite 501<br>Bell Mews Plaza, Ottawa, Ontario</p>
-        <p class="meta">Telephone <a href="tel:6138208228">613-820-8228</a> &nbsp;&middot;&nbsp; Fax 613-726-1491</p>
-        <p class="note">All first appointments take place here. There is a large parking lot at the rear of the building, with a ramp, an accessible entry door, and a lift to the clinic floor.</p>
-      </div>
+    <div class="stories-grid">
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#0B1C47">R</span>
+          <h3>Pain Free in Five Weeks</h3>
+        </div>
+        <p class="teaser">Rana came to LiquidGym eight months after surgery for a herniated disc, still in 7–8 out of 10 pain and unable to sit for longer than fifteen minutes. Before the pain she had been hiking, kayaking, swimming and doing CrossFit. After five weeks of therapy twice a week, she was pain free and back outdoors with her husband.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Rana&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>Her job required her to sit, and the pain was affecting her concentration. She had gained nearly 40 pounds while inactive.</p>
+          <p>On initial examination she had reduced range of motion through her hips and low back, poor motor control of her left hip, low back and core, and increased tone and guarding through the low back, glutes and hamstrings. She could not perform a full squat or lunge.</p>
+          <p>The first goals were to reduce her pain and restore mobility. Once those were met, we could rebuild strength and function. Treatment combined hydrotherapy, gym-based exercise and manual therapy.</p>
+        </div></div>
+        <p class="story-attr"><strong>Rana</strong> &middot; Physiotherapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#163474">N</span>
+          <h3>Thirty Kilometres, and a Hedge Planted</h3>
+        </div>
+        <p class="teaser">Nancy shared her story in an email to Lindsay, her physiotherapist at LiquidGym. She had ridden 30 km on her bike and planted 23 boxwoods in a weekend. These were not things she had been able to do in many years.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Nancy&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <blockquote>Just thought I’d give you a wee update. Rode 30 km on my bike yesterday. Used the electric assist but still pedalled the entire thing. Did it without incident or pain or anything.</blockquote>
+          <p>I also did a lot of planting — we put in 23 boxwoods to start a hedge on Saturday. These are not things I have been able to do in many years. Everything just keeps getting better and better. Even that “ball”, that one spot in my right, surgery-side glute that I was using the tennis ball to help alleviate, it’s gone now. Cannot find it or feel it at all.</p>
+          <p>We are off to Mexico next week and I can’t wait to swim and snorkel and walk my butt off.</p>
+          <blockquote>Lindsay, thank you for everything you did. I know it’s technically your job, but it didn’t feel that way. For me personally motivation is a big hurdle and you nailed it. That is skill and an empathetic personality trait, not a paid service. You listened, challenged and pushed in perfect harmony. It is not an exaggeration to say I really couldn’t have done this without you.</blockquote>
+        </div></div>
+        <p class="story-attr"><strong>Nancy</strong> &middot; Physiotherapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#2E5EAC">B</span>
+          <h3>From a Walking Frame Toward Walking Poles</h3>
+        </div>
+        <p class="teaser">Bryna has attended water-based kinesiology once a week for six months, and has improved every week since her initial assessment. Her programme is centred on building strength and balance. She currently uses a four-wheel walking frame, and is working toward walking poles.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Bryna&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>Her sessions combine one-to-one work with her Kinesiologist at LiquidGym and a client-centred exercise programme at home. Her dedication and hard work have paid off.</p>
+        </div></div>
+        <p class="story-attr"><strong>Bryna</strong> &middot; Kinesiology client</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#4288DD">A</span>
+          <h3>He Showed Up for Opening Day and Never Left</h3>
+        </div>
+        <p class="teaser">Andrew completed his first triathlon in May 2008. A few weeks later he experienced sudden onset foot drop, and within four months was diagnosed with multiple sclerosis. He arrived for LiquidGym’s opening in November 2013 and is still here.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Andrew&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>Andrew has always been active outside a career spent planning and delivering large-scale fundraisers, conventions and trade shows. The sedentary nature of office work and work-life stress led to periods of inactivity, and in the mid-2000s he returned to the sports he loved — swimming, cycling and running.</p>
+          <p>He continued training and adapting until around 2013, as his disability progressed and his mobility declined. He has never been one to accept the status quo, and was delighted to meet Karen at a display introducing LiquidGym and aquatic therapy.</p>
+          <blockquote>There are many things you can do and try in the water that you’d never attempt on land. It’s not your typical rehab.</blockquote>
+          <p>LiquidGym is always thinking and open to new ideas, just like me. They embraced the Alinker walking bike that I discovered and now facilitate its use in the community.</p>
+          <p>Andrew took part in Ottawa Race Weekend alongside 50 other riders in 2018 and 2019.</p>
+          <blockquote>Despite a continual decline in my disability and mobility, I keep coming to LiquidGym because they are my friends and help with my desire to keep moving the best I can. The team are professional, innovative, and create an environment that is conducive to doing and being your best.</blockquote>
+        </div></div>
+        <p class="story-attr"><strong>Andrew</strong> &middot; Physiotherapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#0B1C47">P</span>
+          <h3>From a Wheelchair to Walking Outdoors</h3>
+        </div>
+        <p class="teaser">Patricia came to LiquidGym five months after radiotherapy and surgery to remove a malignant tumour on her thoracic spine. At her first assessment she managed about 300 steps a day and relied on a wheelchair. Within two months she was walking outdoors with a walker for up to fifteen minutes.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Patricia&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>She had spent three months at the rehabilitation centre at the Ottawa General Hospital and was recovering well. At her initial assessment she had reduced sensation and proprioception in her legs, significant weakness through her core and lower limbs, could not balance on one leg for more than a second on either side, and could not use stairs.</p>
+          <p>Her treatment was mainly water based. By her third session she was using the stairs in and out of the pool instead of the lift she had needed for her first two. After that there was no holding her back — she attended weekly 60-minute pool sessions for four months and progressed at every visit.</p>
+        </div></div>
+        <p class="story-attr"><strong>Patricia</strong> &middot; Physiotherapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#163474">K</span>
+          <h3>Three Minutes to Twelve</h3>
+        </div>
+        <p class="teaser">Keith first came to LiquidGym in 2016 following an incomplete cervical spinal cord injury, and improved substantially within his first year. After the COVID-19 lockdowns his mobility had reduced significantly — he could manage three minutes on the underwater treadmill. Ten sessions later he could manage more than twelve.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Keith&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <blockquote>If you want to feel better about yourself and your life, come to LiquidGym.</blockquote>
+          <p>On examination after lockdown he had markedly reduced balance, required bilateral crutches to walk, and had an unsteady gait. He set a goal to walk with more control and balance within ten sessions.</p>
+          <p>Each session combined strengthening, balance and mobility work with endurance and gait training. His balance has improved significantly, he can hold a single leg stance in the water for a minute, and he can walk on land without crutches for short distances. He reports feeling steadier and more confident moving around his home.</p>
+        </div></div>
+        <p class="story-attr"><strong>Keith</strong> &middot; Physiotherapy patient and gym member</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#2E5EAC">M</span>
+          <h3>A High Point of My Week</h3>
+        </div>
+        <p class="teaser">At age 14, I lost my right leg to cancer. Around 2005 I developed osteoarthritis in my knee and elbow, and life was beginning to feel like a process of giving up things I enjoy doing. Then I discovered LiquidGym.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Mary&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>The good news is I survived the cancer and now, many decades past my teens, I feel blessed. Because I have a high-level amputation, I chose to use crutches for mobility.</p>
+          <p>Outside of my work as a writer and editor in the federal government, I have pursued an active life — equestrian sport, swimming, walking and dragon boating. But wear and tear caught up with me. A long-time riding instructor, I gave up teaching, as the hours of standing and walking were putting too much strain on my knee and elbow. I gave up dragon boating. And I could no longer embark on long walks in the Gatineau Park.</p>
+          <p>Guided physiotherapy and exercise in the water and on dry land have helped me strengthen my leg and mitigate knee pain. While I am not hiking the hills like I used to, I rarely even take a Tylenol. My plan is to put off having a knee replacement as long as possible, and perhaps even avoid it altogether.</p>
+          <p>At present, I engage in weekly personal training sessions with Dan. He tells me, “We’re going to do…”, then describes and assigns the exercise, and stands back and watches. The “we” is “me”, of course, and I cheerfully do the assigned exercises under Dan’s watchful eye, fuelled by his jokes and stories. Dan seems to understand just how much to ask for; I never worry about getting injured or overdoing it. And I’m amazed by how great I feel afterward.</p>
+        </div></div>
+        <p class="story-attr"><strong>Mary</strong> &middot; Personal training client</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#4288DD">A</span>
+          <h3>Back on Skis Fifteen Months Later</h3>
+        </div>
+        <p class="teaser">Audrey sustained a tibial plateau fracture in a bike accident, requiring three plates and thirteen pins. Her surgeon anticipated a second operation if she could not reach 90 degrees of flexion — she reached 115 and avoided it. Fifteen months after the accident she was back on skis.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Audrey&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>She was immobilised for four weeks and non-weight-bearing for thirteen, and came to LiquidGym seven weeks after the injury with swelling, pain and a wheelchair for mobility. She was diligent with her home programme and consistent with hydrotherapy two to three times a week.</p>
+          <p>Once cleared for partial weight bearing, her mobility improved significantly. Because the water unloaded her to only 20 percent of her body weight, she could begin walking and standing exercises earlier than land would have allowed. She later added land training twice a week.</p>
+          <p>She wears an ACL brace for protection and reports no knee pain, and has a maintenance programme to keep up her strength and agility.</p>
+          <blockquote>I want to thank LiquidGym for being paramount in helping me reach my very high goal. Having been an avid skier all my life, skiing is not only what I do in the winter, it’s who I am.</blockquote>
+        </div></div>
+        <p class="story-attr"><strong>Audrey</strong> &middot; Physiotherapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#0B1C47">S</span>
+          <h3>Two Kilometres, No Aids</h3>
+        </div>
+        <p class="teaser">Susan fractured her hip after being thrown from a panicking horse, and two years later was still in daily pain and losing confidence in her ability to walk safely. When she came to LiquidGym she could balance on her right leg for two to three seconds. In just under three months she could manage fifteen, and was walking over two kilometres comfortably.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Susan&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>Following emergency surgery she attended physiotherapy elsewhere, but chronic daily hip and thigh pain sent her back to her surgeon. Her balance and strength were getting worse rather than better.</p>
+          <p>When she first attended LiquidGym her gait was unsteady with short, shuffled strides, she had reduced strength through her lower limbs, restricted right hip range of motion, and 6 out of 10 pain. Treatment combined manual mobilisations, hydrotherapy and a daily home programme.</p>
+          <p>Her pain is down to 1–2 out of 10, her hip range of motion is within normal limits, and she manages stairs fluidly with no aids. Susan continues at LiquidGym, and is looking forward to travelling again without worrying about her hip.</p>
+        </div></div>
+        <p class="story-attr"><strong>Susan</strong> &middot; Physiotherapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#163474">D</span>
+          <h3>She Got Her Driving Licence Back</h3>
+        </div>
+        <p class="teaser">Denise came to LiquidGym three months after a stroke, alongside a myopathy diagnosis, a heart attack and osteoarthritis in both knees. She needed a walker indoors and out, and could not reach forward more than five centimetres with her left arm. She is now completely self-sufficient.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Denise&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>She had spent nearly two months in hospital and a rehabilitation centre. On initial examination she had left-sided weakness in her arm and leg, significantly reduced balance, and could not climb stairs without support. Her own goal was to become more mobile and strengthen her arms and legs to be more self-sufficient.</p>
+          <p>Treatment focused on strength and balance through her core, hips and legs, and on regaining range of motion and function in her left arm and hand, mainly through hydrotherapy, a home programme and education.</p>
+          <p>Denise tends her back garden and shops independently. In June 2021 she got her driving licence back. She continues at LiquidGym to progress further, and says everyone has been extremely helpful and kind throughout her recovery.</p>
+        </div></div>
+        <p class="story-attr"><strong>Denise</strong> &middot; Physiotherapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#2E5EAC">F</span>
+          <h3>Five Stents, and a 105 lb Squat</h3>
+        </div>
+        <p class="teaser">Fatos arrived at LiquidGym in 2019 after a lifetime struggle with weight and heart health, having just received her fifth cardiac stent. A physiotherapy assessment and kinesiology worksheet decided her to begin with a therapist. Almost two years later, her endurance and strength have come a long way.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Fatos&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <blockquote>I landed in the LiquidGym lobby in 2019 after a lifetime struggle with weight and heart health issues. I had just received the fifth stent in my heart and needed to take action. It has been almost two years now, minus a few months lost to COVID, and I have gained momentum since August 2020. Thanks to customised care in my exercises, my physical endurance and strength have come a long way.</blockquote>
+          <p>I’m grateful to LiquidGym, to Karen, to my therapist and to all of the staff who helped make these results achievable for me. The squat bar is 105 lbs and the dead weight is now 75 lbs. And I weigh 145 lbs.</p>
+        </div></div>
+        <p class="story-attr"><strong>Fatos</strong> &middot; LiquidGym patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#4288DD">C</span>
+          <h3>She Avoided the Second Procedure</h3>
+        </div>
+        <p class="teaser">Carol came to LiquidGym three months after a patellar fracture that required surgical repair, with constant pain up to 10 out of 10 and only 75 degrees of knee flexion. After ten treatments she has over 90 degrees. She has avoided a manipulation by her surgeon.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Carol&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>She had swelling, a gait deviation and was limited in her daily function. Treatment combined hydrotherapy including range of motion and strengthening work, soft tissue mobilisation and scar massage, gait training on the underwater treadmill, water jets for soft tissue release and pain relief, and a home exercise programme.</p>
+          <p>Carol no longer reports knee pain, has significantly less swelling and improved walking, and continues to improve.</p>
+        </div></div>
+        <p class="story-attr"><strong>Carol</strong> &middot; Physiotherapy patient</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ===================== THE POOL ===================== -->
-<section class="contact-section alt" id="pool">
+<section class="stories-band">
+  <img class="band-bg" src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260918_140457_568480bd-0eea-4ebc-b947-cae2aa49d2d8.png" alt="" aria-hidden="true" loading="lazy">
   <div class="wrap">
-    <div class="loc-split flip">
-      <div class="loc-media rv"><img src="https://cdn.katalyst-crm.com/a/a002bf8f-2986-07f8-47eb-5afbd0cac30e" alt="The LiquidGym therapy pool at Moodie Drive, Ottawa" loading="lazy"></div>
-      <div class="loc-body rv">
-        <span class="eyebrow">The Pool</span>
-        <h2>Moodie Drive</h2>
-        <p class="addr">Hyatt Hotel, 300 Moodie Drive<br>About five minutes from the clinic</p>
-        <p class="meta">Parking close to the main entrance.</p>
-        <p class="note">Aquatic sessions take place here. Your therapist will confirm which of your appointments are at the pool.</p>
-      </div>
-    </div>
+    <h2>Every Story Started With One Assessment.</h2>
+    <p>Different conditions, different starting points &mdash; the same first step. What would yours look like?</p>
   </div>
 </section>
 
-<!-- ===================== HOURS + ENQUIRIES ===================== -->
-<section class="contact-section" id="hours">
+<section class="stories-section" style="padding-top:clamp(2.5rem,5vw,4rem);">
   <div class="wrap">
-    <div class="info-duo">
-      <div class="info-card rv">
-        <span class="eyebrow">Hours</span>
-        <h2>When We Are Open</h2>
-        <div class="hours-row"><span class="day">Monday &ndash; Thursday</span><span class="time">8.30am &ndash; 5.00pm</span></div>
-        <div class="hours-row"><span class="day">Friday</span><span class="time">8.30am &ndash; 3.00pm</span></div>
-        <div class="hours-row closed"><span class="day">Saturday &amp; Sunday</span><span class="time">Closed</span></div>
-        <div class="hours-row closed"><span class="day">Statutory holidays</span><span class="time">Closed</span></div>
-      </div>
-      <div class="info-card rv">
-        <span class="eyebrow">Enquiries</span>
-        <h2>What Can We Help With?</h2>
-        <p class="enq-intro">Tell us which service you are interested in and we will point you to the right therapist:</p>
-        <ul class="enq-list">
-          <li>Physiotherapy</li>
-          <li>Kinesiology</li>
-          <li>Massage therapy</li>
-          <li>Aquatic therapy</li>
-          <li>Equipment rental or purchase</li>
-          <li>Water Exercise Institute</li>
-          <li>Aquatic Therapy Innovations</li>
-          <li>Something else</li>
-        </ul>
-      </div>
+    <div class="stories-grid">
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#0B1C47">I</span>
+          <h3>The Co-Owner Who Became a Patient</h3>
+        </div>
+        <p class="teaser">Irene is co-owner of LiquidGym Canada, and has her own story about knee replacements. A total knee replacement in early 2017 was a great success for eleven months, then an infection set in and required four more surgeries. In March 2021 she had a full second knee replacement.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Irene&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>Following a basketball injury she had meniscus and ACL surgery twice, dating back to the late 1970s. Osteoarthritis took hold, and over the years joint pain and stiffness changed what she could do. From being an active volleyball player, cross-country skier, marathon walker and cyclist, Irene had to pull back as movement became more difficult.</p>
+          <p>Her recovery includes physiotherapy at LiquidGym — joint mobilisations, soft tissue work and proprioceptive neuromuscular facilitation to progress her range of motion, strength and balance — alongside massage therapy to release the spasms in the areas that tightened up through months of bracing and reduced movement.</p>
+          <p>Her surgeon also recommended the Game Ready ice and compression system to reduce inflammation and joint swelling, which has helped considerably as part of her post-surgical recovery. This combined approach has helped Irene regain range of motion and overall movement.</p>
+        </div></div>
+        <p class="story-attr"><strong>Irene</strong> &middot; Physiotherapy and massage therapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#163474">C</span>
+          <h3>Four Years of Pain, Traced to the Other Hip</h3>
+        </div>
+        <p class="teaser">Christine is an avid long-distance runner who had dealt with a chronic left hamstring injury on and off for four years. Her assessment found the cause was joint restriction in her right pelvis and glute weakness on the left — not the hamstring at all. Four weeks in, she ran her first pain-free 5 km.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Christine&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>She had tried other therapies with some success only to have the pain return. The first sessions focused on improving pelvic mobility, lengthening the hip flexors on the right, strengthening the glutes with a stronger focus on the left, improving core strength and correcting her running mechanics.</p>
+          <p>The difficulty was then increased with a goal of building the muscular endurance needed for longer runs. Six months after starting, Christine reported no pain running long distances or during any other activity. She continues to attend monthly for progression and reassessment.</p>
+        </div></div>
+        <p class="story-attr"><strong>Christine</strong> &middot; LiquidGym patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#2E5EAC">R</span>
+          <h3>I Can’t, or I Won’t</h3>
+        </div>
+        <p class="teaser">Robert was hit by a minivan while cycling in 2009, sustaining an acquired brain injury and spending nine weeks in a coma. The week before the crash he had completed his seventh triathlon. When he began at LiquidGym, he thought pretty much all was lost.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Robert&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>The month before the crash he had ridden the Rideau Lakes route from Ottawa to Kingston, and run four half-marathons.</p>
+          <p>His first physiotherapist gave him an exercise to do. He said “I can’t do that.” She said “Let’s try it, as opposed to talking about it.”</p>
+          <p>He learned that when he said “I can’t”, it was because he was thinking of his pre-crash self, thinking of his challenges, and assuming. His physiotherapist helped him understand the difference between “I can’t” and “I won’t”. Robert soon learned that whatever his physio asked him to do could improve his post-crash body. He has taken on the mantra “I can”.</p>
+        </div></div>
+        <p class="story-attr"><strong>Robert</strong> &middot; Physiotherapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#4288DD">&bull;</span>
+          <h3>For the First Time, It Feels Like a Normal Leg</h3>
+        </div>
+        <p class="teaser">A 19-year-old patient recovering from a gunshot wound to her left lower leg, sustained in October 2018. She has been through eight surgeries involving skin grafts, plates and screws, and extensive rehabilitation. She has since taken up cross-country skiing and completed her first run in two and a half years.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read the full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>Her final surgery, in August 2020, removed the plates and screws. In December 2020 she returned to LiquidGym to begin the final stage of her rehabilitation.</p>
+          <p>On examination she had a left-sided limp, reduced hip and knee range of motion, reduced strength through her left leg and poor balance on that side. The first goal was to restore her gait mechanics, through manual therapy, targeted exercise and the anti-gravity treadmill. Once her gait was restored, we progressed her mobility, strength and balance.</p>
+          <p>She continues to exceed expectations, and is aiming to get back to snowboarding.</p>
+          <blockquote>For the first time since before the accident, I feel like I have a normal leg.</blockquote>
+        </div></div>
+        <p class="story-attr"><strong>Name withheld</strong> &middot; Physiotherapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#0B1C47">E</span>
+          <h3>Back on the Tennis Court in Nine Months</h3>
+        </div>
+        <p class="teaser">Emeka came to LiquidGym fourteen weeks after surgery for a quadriceps tendon rupture sustained playing tennis. His assessment found reduced glute strength and balance, atrophied quadriceps, and strength imbalances between left and right. Nine months after surgery he played his first competitive game.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Emeka&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>His goals were to increase lower body strength, improve his balance and core strength, and return to sport.</p>
+          <p>His programme began by developing the smaller stabilising muscles around the hips and knees to create better stability and alignment through functional movement. It then focused on eccentric strength of the quadriceps to build tensile strength in the repaired tendon and muscle. Once a good base was established, we progressed into plyometric training for the explosive movements tennis demands.</p>
+          <p>Twelve weeks into the programme he returned to the tennis court to hit some balls, with success. We continue to work toward new goals.</p>
+        </div></div>
+        <p class="story-attr"><strong>Emeka</strong> &middot; LiquidGym patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#163474">K</span>
+          <h3>No Cane After Three Weeks</h3>
+        </div>
+        <p class="teaser">Kathy is 57 and has an active job in a long-term care centre. By April 2020 she was in so much pain that she was admitted to hospital with hip osteoarthritis, and afterwards used a cane to walk and often slept on the couch to avoid the stairs. Within three weeks of starting at LiquidGym she no longer needed the cane.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Kathy&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>Her pain affected her work, much of which required walking while carrying objects — difficult with a cane. Her initial assessment found her hip osteoarthritis had flared up, and that she had developed poor movement patterns as a result, which worsened her knee pain.</p>
+          <p>Most activity on land caused Kathy pain, so her physiotherapist started with weekly sessions in the water, strengthening her legs and core using the therapeutic properties of water to reduce the chance of pain, alongside a home programme of pain-free strengthening and stretching on land.</p>
+          <p>By the sixth week she was going on regular walks with her family. After eight weeks she was pain free on those walks, at work, and going up and down stairs. She is now strong enough to consider a five-kilometre obstacle-course event.</p>
+          <blockquote>I haven’t felt this amazing in the last seven years.</blockquote>
+        </div></div>
+        <p class="story-attr"><strong>Kathy</strong> &middot; Physiotherapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#2E5EAC">H</span>
+          <h3>Rarely Ever in Pain Now</h3>
+        </div>
+        <p class="teaser">When I started at the end of December, I had regular pain and was not very mobile. Today I rarely ever have pain, I walk outdoors, and I gain strength with each physio session. In a month and a half, Gavin’s professionalism has helped me improve step by step.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Halia&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>LiquidGym has helped me with my knee issues tremendously. Gavin, the physiotherapist who works with me, gently guides me through various strengthening exercises.</p>
+          <p>Due to the buoyancy of the warm water, I can run on the treadmill and move freely. I highly recommend LiquidGym to anyone suffering from mobility and pain issues. I am very grateful that we have such a facility here in Ottawa.</p>
+        </div></div>
+        <p class="story-attr"><strong>Halia</strong> &middot; Physiotherapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#4288DD">R</span>
+          <h3>Pain Free by the Second Follow-Up</h3>
+        </div>
+        <p class="teaser">Rima came to LiquidGym with constant low back pain at 6–7 out of 10, walking with a limp and on modified duties at work. At her first follow-up her pain had dropped to an intermittent 0–4 and the limp was gone. At her second, she reported no pain at all.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Rima&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>She is 28, and also had intermittent pain through both thighs. The pain was worse in the mornings, with bending, lifting and twisting, and with prolonged sitting. She had significant loss of spinal range of motion.</p>
+          <p>Rima was given a home exercise programme at her assessment, which she performed daily, along with education on posture. She continues weekly appointments to build her core strength and develop a home programme to reduce the chance of recurrence.</p>
+        </div></div>
+        <p class="story-attr"><strong>Rima</strong> &middot; Physiotherapy patient</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#0B1C47">J</span>
+          <h3>She Ran a Hundred Feet to Save Her Dog</h3>
+        </div>
+        <p class="teaser">My son gave me a LiquidGym gift card for Christmas, so I started in January using the underwater treadmills. Having struggled with weight issues and arthritis for several years, I had been moving less and less but was in more and more pain. By March I was running again — underwater, yes, but running.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Judy&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>In February I started a weekly treadmill basics class, and by March I was taking two classes a week and had progressed from basics to the conditioning class. I was running, and hopping, and jumping.</p>
+          <p>Fast forward a few more months, to mid-July, when I was walking my dog in the greenbelt. I had parked on the side of a four-lane road to access the trails. On the walk back to the car my Chihuahua trotted ahead of me toward the highway, putting more and more distance between us. The faster I moved the more she sped up, and no amount of shouting or coaxing could make her stop.</p>
+          <p>When she was almost at the road I broke into a full run for over 100 feet, traversed a ditch just in time, and scooped her off the right lane as several vehicles were bearing down on her. How I was able to do that without falling is attributable to my classes at LiquidGym, where I was encouraged to run and was taught the proper form. It didn’t only help me save my dog’s life — it’s been helping me to save my own.</p>
+        </div></div>
+        <p class="story-attr"><strong>Judy</strong> &middot; Gym member</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#163474">M</span>
+          <h3>I Tell Everyone I Meet About LiquidGym</h3>
+        </div>
+        <p class="teaser">LiquidGym therapy has helped me so much in the short time I have been using it. My legs are moving so much better. I know it can’t clear my back because of the damage in it, but I sure know I move better.</p>
+        <button class="story-toggle" aria-expanded="false" onclick="toggleStory(this)">Read Mollie&rsquo;s full story <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
+        <div class="story-full"><div class="story-full-inner">
+          <p>Thanks also to the wonderful people who work there — they are so caring and help in every way they can. I tell everyone I meet about LiquidGym.</p>
+        </div></div>
+        <p class="story-attr"><strong>Mollie</strong> &middot; Gym member</p>
+      </article>
+      <article class="story rv">
+        <div class="story-head">
+          <span class="avatar" style="background:#2E5EAC">P</span>
+          <h3>Keeping My Fitness Up While I Can’t Run</h3>
+        </div>
+        <p class="teaser">LiquidGym has given me the opportunity to keep my fitness levels up while I am unable to run due to an injury. I am so grateful for this facility and the friendly, knowledgeable people who work there.</p>
+
+        <p class="story-attr"><strong>Pam</strong> &middot; Gym member</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ===================== PATIENT LOGIN ===================== -->
-<section class="portal-band" id="patients">
+<section class="cta-band">
   <video class="cta-bg" autoplay muted loop playsinline preload="metadata" poster="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_194126_9fb469d4-80ac-41c1-a2db-f3ac0778025c.png" aria-hidden="true" tabindex="-1"><source src="https://cdn.katalyst-crm.com/t1/GettyImages-664999036%20(1).mp4" type="video/mp4"></video>
   <div class="wrap">
-    <span class="eyebrow on-dark" style="justify-content:center;">Existing Patients</span>
-    <h2>Patient Login</h2>
-    <p>Existing patients can access appointments and records through the patient portal.</p>
+    <span class="eyebrow">Start Your Own</span>
+    <h2>Start Your Own.</h2>
+    <p>Every one of these started with an assessment. Call LiquidGym at <a href="tel:6138208228" style="color:var(--blue);font-weight:500;">613-820-8228</a> to book yours.</p>
     <div class="btn-row" style="justify-content:center;">
-      <a href="https://liquidgym-portal-clients.vercel.app/" target="_blank" rel="noopener" class="btn btn-outline-light">Patient Login</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FINAL CTA ===================== -->
-<section class="cta-band">
-  <div class="wrap">
-    <span class="eyebrow">Ready When You Are</span>
-    <h2>Book Your First Appointment.</h2>
-    <p>Call <a href="tel:6138208228" style="color:var(--blue);font-weight:500;">613-820-8228</a>, or book online.</p>
-    <div class="btn-row" style="justify-content:center;">
-      <a href="index.html#invitation" class="btn btn-primary">Book an Appointment</a>
+      <a href="index.html#invitation" class="btn btn-primary">Book an Assessment</a>
     </div>
   </div>
 </section>
@@ -1352,7 +1606,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <li><a href="index.html#paths">ATI Certification — Get Certified</a></li>
           <li><a href="index.html#paths">WEI™ — Start Moving</a></li>
           <li><a href="index.html#story">Our Story</a></li>
-          <li><a href="index.html#voices">Success Stories</a></li>
+          <li><a href="success-stories.html">Success Stories</a></li>
         </ul>
       </div>
 
@@ -1375,6 +1629,11 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </footer>
 
 <script>
+function toggleStory(btn){
+  var full=btn.nextElementSibling, open=btn.getAttribute('aria-expanded')==='true';
+  if(open){full.style.maxHeight='0';btn.setAttribute('aria-expanded','false');btn.classList.remove('open');}
+  else{full.style.maxHeight=full.scrollHeight+'px';btn.setAttribute('aria-expanded','true');btn.classList.add('open');}
+}
 (function(){
   var els=document.querySelectorAll('.rv');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}

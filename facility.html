@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Virtual Appointments · Services · LiquidGym</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Facility &mdash; LiquidGym | Aquatic Physical Therapy, Ottawa</title>
+<meta name="description" content="Two locations, five minutes apart: the LiquidGym clinic on Robertson Road and the therapy pool at Moodie Drive, Ottawa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
+
 :root{
   --navy:#0B1C47; --blue:#163474; --mid:#2E5EAC; --bright:#4288DD; --light:#ADD4F5;
   --ink:#163474; --body:#5C6B88; --line:#E3EDF9; --soft:#F3F8FD;
@@ -131,7 +134,8 @@ a{color:inherit;text-decoration:none;}
 
 @media (min-width:940px){}
 
-.hero h1{color:#fff;max-width:22ch;}
+.hero h1{color:#fff;max-width:none;white-space:nowrap;font-size:clamp(1.6rem,4.6vw,3.4rem);}
+@media(max-width:600px){.hero h1{white-space:normal;}}
 
 .hero .sub{color:rgba(255,255,255,.86);font-size:clamp(1.05rem,1.6vw,1.25rem);margin-top:1.3rem;max-width:44ch;}
 
@@ -326,6 +330,7 @@ a{color:inherit;text-decoration:none;}
 .hero{position:relative;isolation:isolate;min-height:clamp(520px,74vh,760px);min-height:clamp(520px,74svh,760px);display:flex;align-items:center;}
 
 .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(120deg,rgba(11,28,71,.82) 0%,rgba(11,28,71,.6) 55%,rgba(22,52,116,.42) 100%);}
 
 .hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:heroDrift 22s ease-in-out infinite alternate;}
 
@@ -903,59 +908,153 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .nav-panel .nav-sub:hover{color:var(--bright)!important;background:var(--soft)!important;}
 .nav-top{color:rgba(255,255,255,.9)!important;}
 .nav-item.is-active > .nav-top,.nav-top:hover{color:#fff!important;}
+
+/* closing band background video (matches homepage invitation) */
+.final.has-video{position:relative;overflow:hidden;}
+.final.has-video .cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+.final.has-video::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(118deg,rgba(11,28,71,.55) 0%,rgba(11,28,71,.45) 46%,rgba(11,28,71,.34) 100%);}
+.final.has-video .wrap{position:relative;z-index:2;}
+.final.has-video .orb{z-index:1;}
+@media (prefers-reduced-motion:reduce){.final.has-video .cta-bg{display:none;}}
+
+/* Veterans card — background image with scrim */
+.vet-card.has-bg{position:relative;overflow:hidden;background:linear-gradient(150deg,#0B1C47,#163474);}
+.vet-card.has-bg::before{content:"";position:absolute;inset:0;z-index:0;background-image:linear-gradient(120deg,rgba(11,28,71,.86) 0%,rgba(11,28,71,.66) 55%,rgba(11,28,71,.5) 100%),url('https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260908_134501_9cff5226-e4ce-4094-a181-feb485a133e8.png');background-size:cover;background-position:center;}
+.vet-card.has-bg > *{position:relative;z-index:1;}
+
+
+/* 2-column bullet list */
+.mt-list.two-col{max-width:none;}
+@media(min-width:620px){.mt-list.two-col{grid-template-columns:1fr 1fr;column-gap:2.4rem;}}
+
+
+/* Land/Water icon chips (replacing images) */
+.lw-ico{display:grid;place-items:center;height:120px;background:linear-gradient(150deg,var(--soft),#fff);color:var(--bright);border-bottom:1px solid var(--line);}
+.lw-card:hover .lw-ico{color:var(--blue);}
+.lw-ico svg{width:44px;height:44px;transition:transform .3s ease;}
+.lw-card:hover .lw-ico svg{transform:scale(1.08);}
+
+
+/* Compact Land/Water cards */
+.lw2{display:grid;gap:1.2rem;margin-top:1.8rem;}
+@media(min-width:860px){.lw2{grid-template-columns:1fr 1fr;}}
+.lw2-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.7rem 1.6rem;box-shadow:var(--shadow-sm);transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;}
+.lw2-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--light);}
+.lw2-head{display:flex;align-items:center;gap:.85rem;margin-bottom:1rem;}
+.lw2-ico{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--soft);color:var(--bright);border:1px solid var(--line);transition:background .24s,color .24s,transform .24s;}
+.lw2-card:hover .lw2-ico{background:var(--bright);color:#fff;transform:scale(1.06);}
+.lw2-head h3{font-family:var(--display);font-size:1.2rem;font-weight:500;color:var(--blue);margin:0;line-height:1.25;}
+.lw2-card p{color:var(--body);line-height:1.6;margin:0 0 .8rem;font-size:.95rem;}
+.lw2-card p:last-of-type{margin-bottom:0;}
+.lw2-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
+.lw2-chips span{font-family:var(--display);font-size:.8rem;font-weight:500;color:var(--blue);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:.4rem .85rem;transition:background .18s,color .18s,border-color .18s;}
+.lw2-card:hover .lw2-chips span{border-color:var(--light);}
+.lw2-chips span:hover{background:var(--bright);color:#fff;border-color:var(--bright);}
+
+
+/* Land & Water heading — wider */
+.lw-head{max-width:none!important;}
+.lw-head h2{max-width:26ch;margin-inline:auto;}
+.lw-head .lede{max-width:72ch;margin-inline:auto;}
+.lw-head > p{max-width:72ch;margin-inline:auto;}
+
+
+
+/* ===== TEAM PAGE ===== */
+.team-section{padding-block:var(--sec);}
+.team-section + .team-section{border-top:1px solid var(--line);}
+.dept-label{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:2rem;}
+.dept-label::before{content:"";width:22px;height:2px;background:var(--bright);}
+.team-grid{display:grid;gap:0;}
+@media(min-width:760px){.team-grid{grid-template-columns:1fr;gap:0;}}
+.member{display:flex;flex-direction:column;gap:0;padding-block:2.6rem;border-bottom:1px solid var(--line);}
+.team-grid .member:last-child{border-bottom:none;}
+@media(min-width:680px){.member{flex-direction:row;align-items:flex-start;gap:2.4rem;}}
+@media(min-width:680px){.member.flip{flex-direction:row-reverse;}}
+.member-photo{width:100%;max-width:420px;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);margin-bottom:1.4rem;}
+@media(min-width:680px){.member-photo{flex:0 0 360px;width:360px;margin-bottom:0;}}
+.member-body{flex:1;min-width:0;}
+.member-media{width:100%;max-width:420px;}
+@media(min-width:680px){.member-media{flex:0 0 360px;width:360px;}}
+.dog-snaps{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:.7rem;margin-top:1.2rem;}
+.snap{margin:0;width:46%;background:#fff;padding:.4rem .4rem .55rem;border-radius:10px;box-shadow:var(--shadow-md);transition:transform .35s cubic-bezier(.22,.7,.2,1);}
+.snap img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;display:block;}
+.snap-a{transform:rotate(-4deg);}
+.snap-b{transform:rotate(4deg);margin-top:.6rem;}
+.snap:hover{transform:rotate(0) scale(1.06);position:relative;z-index:3;box-shadow:var(--shadow-lg);}
+.snap-cap{flex:0 0 100%;text-align:center;margin:.4rem 0 0;font-family:var(--display);font-size:.82rem;font-weight:500;color:var(--mid);}
+.snap-cap span{font-size:1rem;}
+
+.member-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%);transition:filter .6s ease,transform 6s ease;}
+.member-photo:hover img{filter:grayscale(0);transform:scale(1.03);}
+.member h3{font-family:var(--display);font-size:clamp(1.5rem,2.4vw,2rem);font-weight:600;color:var(--navy);margin:0 0 .25rem;line-height:1.15;}
+.member .creds{font-family:var(--display);font-size:.88rem;font-weight:400;color:var(--body);margin:0 0 .25rem;}
+.member .role{font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--bright);margin:0 0 1rem;}
+.member .intro{font-size:.95rem;line-height:1.65;color:var(--body);margin:0 0 .6rem;}
+.bio-detail{max-height:none;overflow:visible;opacity:1;}
+.bio-detail-inner{padding-top:.2rem;font-size:.93rem;line-height:1.65;color:var(--body);}
+.bio-gallery{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.3rem;}
+.bio-gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow-sm);display:block;}
+@media(max-width:520px){.bio-gallery{grid-template-columns:1fr;}}
+.bio-detail-inner p{margin:0 0 .8rem;}
+.bio-detail-inner p:last-child{margin-bottom:0;}
+.bio-detail-inner strong{color:var(--ink);font-weight:600;}
+.owners-grid{display:grid;gap:2.8rem;}
+@media(min-width:760px){.owners-grid{grid-template-columns:1fr;gap:0;}}
+.hiring-band{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(155deg,#0B1C47,#163474 60%,#2E5EAC);color:#fff;padding-block:clamp(3.5rem,7vw,6rem);}
+.hiring-band .cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+.hiring-band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(120deg,rgba(11,28,71,.86) 0%,rgba(11,28,71,.66) 55%,rgba(22,52,116,.5) 100%);}
+.hiring-band .wrap{position:relative;z-index:2;}
+.hiring-band h2,.hiring-band p,.hiring-band .eyebrow,.hiring-band .btn{text-shadow:0 2px 18px rgba(11,28,71,.5);}
+@media (prefers-reduced-motion:reduce){.hiring-band .cta-bg{display:none;}}
+.hiring-band h2{color:#fff;margin-bottom:.8rem;}
+.hiring-band p{color:rgba(255,255,255,.86);max-width:48ch;}
+.cta-band{position:relative;isolation:isolate;overflow:hidden;background:var(--soft);text-align:center;padding-block:clamp(3.5rem,7vw,6rem);}
+.cta-band .cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+.cta-band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(120deg,rgba(11,28,71,.86) 0%,rgba(11,28,71,.66) 55%,rgba(22,52,116,.5) 100%);}
+.cta-band .wrap{position:relative;z-index:2;}
+.cta-band h2{color:#fff;margin-bottom:.6rem;}
+.cta-band p{color:rgba(255,255,255,.9);max-width:44ch;margin-inline:auto;}
+.cta-band .eyebrow{color:var(--light);}
+.cta-band p a{color:#fff!important;}
+.cta-band h2,.cta-band p,.cta-band .eyebrow,.cta-band .btn{text-shadow:0 2px 18px rgba(11,28,71,.5);}
+@media (prefers-reduced-motion:reduce){.cta-band .cta-bg{display:none;}}
+
+
+
+/* ===== FACILITY PAGE ===== */
+.fac-section{padding-block:var(--sec);}
+.fac-section.alt{background:var(--soft);}
+.fac-split{display:grid;gap:2rem;align-items:center;}
+@media(min-width:900px){.fac-split{grid-template-columns:1fr 1fr;gap:clamp(2.4rem,4.5vw,4rem);}.fac-split.flip .fac-media{order:2;}}
+.fac-media{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);}
+.fac-media img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform 8s ease;}
+.fac-media:hover img{transform:scale(1.04);}
+.fac-body .eyebrow{margin-bottom:.9rem;}
+.fac-body h2{color:var(--navy);margin:0 0 .6rem;}
+.fac-body .addr{font-family:var(--display);font-size:1.05rem;font-weight:500;color:var(--ink);line-height:1.6;margin:0 0 1.5rem;}
+.fac-sub{margin-top:1.4rem;}
+.fac-sub h3{font-family:var(--display);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bright);margin:0 0 .6rem;}
+.fac-sub p{color:var(--body);line-height:1.7;margin:0;}
+.fac-list{list-style:none;margin:.2rem 0 0;padding:0;}
+.fac-list li{position:relative;padding-left:1.4rem;color:var(--body);line-height:1.6;margin-bottom:.5rem;}
+.fac-list li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--bright);}
+/* water stat highlight */
+.water-stats{display:flex;flex-wrap:wrap;gap:1rem;margin:1.3rem 0;}
+.stat-chip{flex:1 1 140px;background:var(--soft);border:1px solid var(--line);border-radius:var(--r);padding:1.1rem 1.2rem;text-align:center;}
+.fac-section.alt .stat-chip{background:#fff;}
+.stat-chip .num{font-family:var(--display);font-size:clamp(1.6rem,3vw,2.1rem);font-weight:600;color:var(--navy);line-height:1;}
+.stat-chip .lab{font-family:var(--display);font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-top:.5rem;}
+/* what to expect */
+.expect-grid{display:grid;gap:2rem;align-items:center;}
+@media(min-width:900px){.expect-grid{grid-template-columns:1fr 1fr;gap:clamp(2.4rem,4.5vw,4rem);}}
+.expect-media{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);}
+.expect-media img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block;}
+.expect-body p{color:var(--body);line-height:1.75;margin:0 0 1rem;}
+.expect-body p:last-child{margin-bottom:0;}
+
 </style>
-<style>
-/* ===== Massage Therapy page ===== */
-.mt-list{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.7rem;max-width:52ch;}
-.mt-list li{position:relative;padding-left:1.7rem;color:var(--body);line-height:1.6;}
-.mt-list li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--bright);}
-.mt-split{display:grid;gap:2rem;align-items:center;}
-@media(min-width:900px){.mt-split{grid-template-columns:1.05fr .95fr;gap:clamp(2.4rem,4.5vw,4rem);}}
-.mt-split.flip .mt-media{order:2;}
-.mt-media{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);}
-.mt-media img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform 8s ease;}
-.mt-media:hover img{transform:scale(1.04);}
-.mt-media.wide img{aspect-ratio:16/10;}
-
-/* veterans callout */
-.vet-card{background:linear-gradient(150deg,#0B1C47,#163474);color:#fff;border-radius:var(--r);padding:clamp(1.8rem,3.5vw,2.8rem);box-shadow:var(--shadow-lg);}
-.vet-card .eyebrow{color:var(--light);} .vet-card .eyebrow::before{background:var(--light);}
-.vet-card h2{color:#fff;} .vet-card p{color:rgba(255,255,255,.86);}
-
-/* conditions */
-.cond-grid{columns:2;column-gap:2.4rem;list-style:none;padding:0;margin:2rem 0 0;}
-@media(min-width:760px){.cond-grid{columns:3;}}
-.cond-grid li{break-inside:avoid;padding:.5rem 0 .5rem 1.5rem;position:relative;color:var(--body);font-size:.95rem;line-height:1.4;border-bottom:1px solid var(--line);}
-.cond-grid li::before{content:"";position:absolute;left:0;top:.85em;width:7px;height:7px;border-radius:50%;background:var(--light);}
-
-/* techniques */
-.tech-grid{display:grid;gap:1.1rem;margin-top:2.4rem;grid-template-columns:1fr;}
-@media(min-width:640px){.tech-grid{grid-template-columns:1fr 1fr;}}
-@media(min-width:1040px){.tech-grid{grid-template-columns:1fr 1fr 1fr;}}
-.tech-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.4rem;position:relative;box-shadow:var(--shadow-sm);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;}
-.tech-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--light);}
-.tech-n{font-family:var(--display);font-size:1.2rem;font-weight:300;color:var(--light);letter-spacing:-.02em;}
-.tech-card h3{font-family:var(--display);font-size:1.02rem;font-weight:500;color:var(--blue);margin:.3rem 0 .5rem;line-height:1.3;}
-.tech-card p{font-size:.9rem;line-height:1.55;color:var(--body);margin:0;}
-</style>
-
-<style>
-.breadcrumb{font-family:var(--display);font-size:.8rem;color:rgba(255,255,255,.75);display:flex;gap:.5rem;align-items:center;margin-bottom:1rem;}
-.breadcrumb a{color:rgba(255,255,255,.75);} .breadcrumb a:hover{color:#fff;}
-/* numbered steps */
-.vsteps{display:grid;gap:1rem;margin-top:1.4rem;counter-reset:v;}
-.vstep{display:flex;gap:1.1rem;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.4rem;counter-increment:v;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;}
-.vstep:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--light);}
-.vstep::before{content:counter(v);flex:none;width:36px;height:36px;border-radius:50%;background:var(--soft);color:var(--bright);font-family:var(--display);font-weight:600;display:grid;place-items:center;font-size:.95rem;border:1px solid var(--line);}
-.vstep p{margin:0;color:var(--body);line-height:1.6;font-size:.98rem;padding-top:.35rem;}
-.vstep p strong{color:var(--blue);}
-.cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
-.sec.band.final.has-video{position:relative;overflow:hidden;}
-.sec.band.final.has-video .wrap{position:relative;z-index:2;}
-.sec.band.final.has-video .orb{z-index:1;}
-@media (prefers-reduced-motion:reduce){.cta-bg{display:none;}}
-</style>
-
+<noscript><style>.rv{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body>
 <div class="siteheader">
@@ -970,33 +1069,33 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
         <button class="nav-top nav-trigger" aria-expanded="false">Therapies<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
           <a class="nav-sub" href="physiotherapy.html">Physiotherapy</a>
-          <a class="nav-sub" href="massage-therapy.html">Massage Therapy</a>
+          <a class="nav-sub" href="index.html#">Massage Therapy</a>
           <a class="nav-sub" href="kinesiology.html">Kinesiology</a>
-          <a class="nav-sub" href="why-aquatic-therapy.html">Why Aquatic Therapy</a>
+          <a class="nav-sub" href="index.html#">Why Aquatic Therapy</a>
         </div>
       </div>
       <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Conditions<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel is-mega">
           <a class="nav-sub" href="arthritis.html">Arthritis</a>
-          <a class="nav-sub" href="sprains-strains-fractures.html">Sprains, Strains & Fractures</a>
-          <a class="nav-sub" href="sports-injuries.html">Sports Injuries</a>
-          <a class="nav-sub" href="cardiovascular.html">Cardiovascular Impairments</a>
-          <a class="nav-sub" href="long-covid.html">Long COVID</a>
-          <a class="nav-sub" href="plantar-fasciitis.html">Plantar Fasciitis</a>
-          <a class="nav-sub" href="neurological.html">Neurological Conditions</a>
-          <a class="nav-sub" href="chronic-pain.html">Chronic Pain</a>
-          <a class="nav-sub" href="#">Vestibular</a>
+          <a class="nav-sub" href="index.html#">Sprains, Strains & Fractures</a>
+          <a class="nav-sub" href="index.html#">Sports Injuries</a>
+          <a class="nav-sub" href="index.html#">Cardiovascular Impairments</a>
+          <a class="nav-sub" href="index.html#">Long COVID</a>
+          <a class="nav-sub" href="index.html#">Plantar Fasciitis</a>
+          <a class="nav-sub" href="index.html#">Neurological Conditions</a>
+          <a class="nav-sub" href="index.html#">Chronic Pain</a>
+          <a class="nav-sub" href="index.html#">Vestibular</a>
         </div>
       </div>
       <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Services<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
-          <a class="nav-sub" href="pre-op-post-op.html">Pre-Op & Post-Op</a>
-          <a class="nav-sub" href="veterans-affairs-physiotherapy.html">Veterans Affairs — Physiotherapy</a>
-          <a class="nav-sub" href="veterans-affairs-kinesiology.html">Veterans Affairs — Kinesiology</a>
-          <a class="nav-sub" href="personal-training.html">Personal Training</a>
-          <a class="nav-sub" href="virtual.html">Virtual</a>
+          <a class="nav-sub" href="index.html#">Pre-Op & Post-Op</a>
+          <a class="nav-sub" href="index.html#">Veterans Affairs — Physiotherapy</a>
+          <a class="nav-sub" href="index.html#">Veterans Affairs — Kinesiology</a>
+          <a class="nav-sub" href="index.html#">Personal Training</a>
+          <a class="nav-sub" href="index.html#">Virtual</a>
         </div>
       </div>
       <div class="nav-item"><a class="nav-top" href="wei-water-exercise-institute.html">WEI™</a></div>
@@ -1010,10 +1109,10 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Equipment<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
-          <a class="nav-sub" href="#">Overview</a>
-          <a class="nav-sub" href="#">Alinker</a>
-          <a class="nav-sub" href="#">Game Ready System</a>
-          <a class="nav-sub" href="#">Normatec Compression System</a>
+          <a class="nav-sub" href="index.html#">Overview</a>
+          <a class="nav-sub" href="index.html#">Alinker</a>
+          <a class="nav-sub" href="index.html#">Game Ready System</a>
+          <a class="nav-sub" href="index.html#">Normatec Compression System</a>
         </div>
       </div>
       <div class="nav-item has-drop">
@@ -1023,8 +1122,8 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <a class="nav-sub" href="faq.html">FAQ</a>
           <a class="nav-sub" href="team.html">Team</a>
           <a class="nav-sub" href="facility.html">Facility</a>
-          <a class="nav-sub" href="#">Partners</a>
-          <a class="nav-sub" href="#">Success Stories</a>
+          <a class="nav-sub" href="index.html#">Partners</a>
+          <a class="nav-sub" href="index.html#">Success Stories</a>
         </div>
       </div>
       <div class="nav-item"><a class="nav-top" href="contact.html">Contact</a></div>
@@ -1050,33 +1149,33 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     <button class="m-acc" aria-expanded="false">Therapies<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
       <a href="physiotherapy.html">Physiotherapy</a>
-      <a href="massage-therapy.html">Massage Therapy</a>
+      <a href="index.html#">Massage Therapy</a>
       <a href="kinesiology.html">Kinesiology</a>
-      <a href="why-aquatic-therapy.html">Why Aquatic Therapy</a>
+      <a href="index.html#">Why Aquatic Therapy</a>
     </div>
   </div>
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">Conditions<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
       <a href="arthritis.html">Arthritis</a>
-      <a href="sprains-strains-fractures.html">Sprains, Strains & Fractures</a>
-      <a href="sports-injuries.html">Sports Injuries</a>
-      <a href="cardiovascular.html">Cardiovascular Impairments</a>
-      <a href="long-covid.html">Long COVID</a>
-      <a href="plantar-fasciitis.html">Plantar Fasciitis</a>
-      <a href="neurological.html">Neurological Conditions</a>
-      <a href="chronic-pain.html">Chronic Pain</a>
-      <a href="#">Vestibular</a>
+      <a href="index.html#">Sprains, Strains & Fractures</a>
+      <a href="index.html#">Sports Injuries</a>
+      <a href="index.html#">Cardiovascular Impairments</a>
+      <a href="index.html#">Long COVID</a>
+      <a href="index.html#">Plantar Fasciitis</a>
+      <a href="index.html#">Neurological Conditions</a>
+      <a href="index.html#">Chronic Pain</a>
+      <a href="index.html#">Vestibular</a>
     </div>
   </div>
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">Services<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
-      <a href="pre-op-post-op.html">Pre-Op & Post-Op</a>
-      <a href="veterans-affairs-physiotherapy.html">Veterans Affairs — Physiotherapy</a>
-      <a href="veterans-affairs-kinesiology.html">Veterans Affairs — Kinesiology</a>
-      <a href="personal-training.html">Personal Training</a>
-      <a href="virtual.html">Virtual</a>
+      <a href="index.html#">Pre-Op & Post-Op</a>
+      <a href="index.html#">Veterans Affairs — Physiotherapy</a>
+      <a href="index.html#">Veterans Affairs — Kinesiology</a>
+      <a href="index.html#">Personal Training</a>
+      <a href="index.html#">Virtual</a>
     </div>
   </div>
   <a class="m-link" href="wei-water-exercise-institute.html">WEI™</a>
@@ -1090,10 +1189,10 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">Equipment<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
-      <a href="#">Overview</a>
-      <a href="#">Alinker</a>
-      <a href="#">Game Ready System</a>
-      <a href="#">Normatec Compression System</a>
+      <a href="index.html#">Overview</a>
+      <a href="index.html#">Alinker</a>
+      <a href="index.html#">Game Ready System</a>
+      <a href="index.html#">Normatec Compression System</a>
     </div>
   </div>
   <div class="m-group">
@@ -1103,8 +1202,8 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <a href="faq.html">FAQ</a>
       <a href="team.html">Team</a>
       <a href="facility.html">Facility</a>
-      <a href="#">Partners</a>
-      <a href="#">Success Stories</a>
+      <a href="index.html#">Partners</a>
+      <a href="index.html#">Success Stories</a>
     </div>
   </div>
   <a class="m-link" href="contact.html">Contact</a>
@@ -1117,53 +1216,104 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   </div>
 </div>
 
-<section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260910_135234_5b613c4e-e3e0-4ac7-ae4f-4e3030981aa6.png" alt="A person following a virtual therapy session at home"></div>
-  <div class="hero-scrim" aria-hidden="true"></div>
+<!-- ===================== HERO ===================== -->
+<section class="hero" style="min-height:clamp(440px,58vh,620px);">
+  <div class="hero-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/0878092f-f9c1-b8bf-a2c6-3ae50828fb0e" alt="" loading="eager"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="wrap" style="position:relative;z-index:2;padding-block:clamp(3.4rem,9vw,6rem);">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">The Hub</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a href="#">About</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <strong>Facility</strong>
+    </nav>
+    <span class="eyebrow on-dark" style="margin-top:1.2rem;">About &middot; Facility</span>
+    <h1>Two Locations, Five Minutes Apart.</h1>
+    <p class="sub">LiquidGym works across two sites. Land-based assessment, treatment and training take place at the clinic on Robertson Road. Aquatic sessions take place in the pool at the Hyatt Hotel on Moodie Drive, five minutes away.</p>
+    <p class="sub" style="margin-top:1rem;">Your first appointment is always at the clinic. If aquatic therapy becomes part of your plan of care, your therapist will confirm which of your sessions take place at the pool.</p>
+  </div>
+</section>
+
+<!-- ===================== THE CLINIC ===================== -->
+<section class="fac-section" id="clinic">
   <div class="wrap">
-    <div class="hero-lede">
-      <div class="rv">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">The Hub</a><span>/</span><span>Services</span><span>/</span><b style="color:#fff">Virtual Appointments</b></nav>
-        <span class="eyebrow on-dark">Services &amp; Delivery Modes · Virtual Appointments</span>
-        <h1>Your Appointment, From Wherever You Are</h1>
-        <p class="sub">Virtual appointments use video calls to deliver therapy remotely. You connect with one of our therapists for a one-to-one session from anywhere in Ontario.</p>
-        <div class="btn-row"><a class="btn btn-light" href="#book">Book a Virtual Appointment</a></div>
+    <div class="fac-split">
+      <div class="fac-media rv"><img src="https://cdn.katalyst-crm.com/a/ab221ccb-9777-08c8-745b-6d7e593c1579" alt="The LiquidGym clinic on Robertson Road, Ottawa" loading="lazy"></div>
+      <div class="fac-body rv">
+        <span class="eyebrow">The Clinic</span>
+        <h2>Robertson Road</h2>
+        <p class="addr">2039 Robertson Road, Suite 501<br>Bell Mews Plaza, Ottawa</p>
+        <div class="fac-sub">
+          <h3>Getting Here</h3>
+          <ul class="fac-list">
+            <li>Six minutes from the Queensway Carleton Hospital</li>
+            <li>Seven minutes from the Bayshore and Holly Acres exits off the 417</li>
+            <li>Five minutes from the Moodie exit</li>
+            <li>Closest main intersection: Robertson Road and Moodie Drive</li>
+          </ul>
+        </div>
+        <div class="fac-sub">
+          <h3>Parking &amp; Access</h3>
+          <p>There is a large parking lot at the rear of the building, with a ramp, an accessible entry door and a lift to the clinic floor.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="sec"><div class="wrap">
-  <div class="mt-split">
-    <div class="rv">
-      <span class="eyebrow">How It Works</span>
-      <h2>How a Virtual Session Works.</h2>
-      <p style="margin-top:1.1rem;color:var(--body)">You connect online for a video session in real time, using a computer, tablet or smartphone.</p>
-      <div class="vsteps">
-        <div class="vstep"><p>You receive an email 60 minutes before your appointment.</p></div>
-        <div class="vstep"><p>The email contains a <strong>"begin your online appointment"</strong> button. Click it to enter the virtual waiting room any time in the hour before your appointment.</p></div>
-        <div class="vstep"><p>Your device may ask permission to access your microphone and camera. Say yes.</p></div>
-        <div class="vstep"><p>Your therapist connects with you at your scheduled appointment time.</p></div>
-      </div>
-      <p style="margin-top:1.3rem;color:var(--body)">If a virtual appointment would suit you, call us and speak to one of our staff.</p>
-      <div class="btn-row" style="margin-top:1.2rem"><a class="btn btn-primary" href="tel:6138208228">Talk to Our Team</a></div>
-    </div>
-    <div class="mt-media rv"><img src="https://cdn.katalyst-crm.com/a/61132e3b-589b-cb6d-cf12-82d60fe3ee8e" alt="A therapist on a video call consultation"></div>
-  </div>
-</div></section>
-
-<section class="sec band final has-video" id="book" style="background:linear-gradient(140deg,#0B1C47,#163474)">
-  <video class="cta-bg" autoplay muted loop playsinline preload="metadata" poster="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_194126_9fb469d4-80ac-41c1-a2db-f3ac0778025c.png" aria-hidden="true" tabindex="-1"><source src="https://cdn.katalyst-crm.com/t1/GettyImages-664999036%20(1).mp4" type="video/mp4"></video>
-  <span class="orb" style="width:300px;height:300px;top:-70px;left:-50px;"></span>
-  <span class="orb" style="width:260px;height:260px;bottom:-90px;right:-40px;"></span>
+<!-- ===================== THE POOL ===================== -->
+<section class="fac-section alt" id="pool">
   <div class="wrap">
-    <div class="narrow rv" style="text-align:center;margin-inline:auto">
-      <h2 style="color:#fff">Book a Virtual Appointment.</h2>
-      <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85);margin-inline:auto;max-width:62ch">Call LiquidGym at 613-820-8228 to book, or to ask whether a virtual appointment suits what you need.</p>
-      <div class="btn-row" style="justify-content:center;margin-top:1.6rem">
-        <a class="btn btn-light" href="#book">Book Your Appointment</a>
-        <a class="btn btn-outline-nav" href="tel:6138208228">Call 613-820-8228</a>
+    <div class="fac-split flip">
+      <div class="fac-media rv"><img src="https://cdn.katalyst-crm.com/a/a002bf8f-2986-07f8-47eb-5afbd0cac30e" alt="The LiquidGym therapy pool at Moodie Drive, Ottawa" loading="lazy"></div>
+      <div class="fac-body rv">
+        <span class="eyebrow">The Pool</span>
+        <h2>Moodie Drive</h2>
+        <p class="addr">Hyatt Hotel, 300 Moodie Drive<br>Parking close to the main entrance</p>
+        <div class="fac-sub">
+          <h3>What the Water is Like</h3>
+          <div class="water-stats">
+            <div class="stat-chip"><div class="num">49&Prime;</div><div class="lab">Deep throughout</div></div>
+            <div class="stat-chip"><div class="num">31&deg;</div><div class="lab">Held constant</div></div>
+            <div class="stat-chip"><div class="num">0</div><div class="lab">Shallow or deep end</div></div>
+          </div>
+          <p>The water is 49 inches deep throughout and held at 31 degrees. There is no shallow end and no deep end, so you can stand anywhere in it.</p>
+        </div>
+        <div class="fac-sub">
+          <h3>Getting In</h3>
+          <p>Entry is by water steps or pool lift, whichever suits you.</p>
+        </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHAT TO EXPECT ===================== -->
+<section class="fac-section" id="first-session">
+  <div class="wrap">
+    <div class="expect-grid">
+      <div class="expect-body rv">
+        <span class="eyebrow">Your First Session in the Water</span>
+        <h2 style="color:var(--navy);margin:.4rem 0 1.2rem;">What to Expect</h2>
+        <p>Bring swim clothes and a towel. There are no lockers, so a bag kept on the pool deck stays with you through the session.</p>
+        <p>There is a shower on the pool deck, two fully accessible washrooms, and separate men&rsquo;s and women&rsquo;s washrooms for changing.</p>
+        <p>The pool is shared with the hotel, and our sessions are scheduled at its quietest times. Pool exercise equipment is provided.</p>
+      </div>
+      <div class="expect-media rv"><img src="https://cdn.katalyst-crm.com/a/ae42ae6d-fd6a-3ce1-1812-ce943db3f06e" alt="Your first aquatic therapy session in the pool" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="cta-band">
+  <video class="cta-bg" autoplay muted loop playsinline preload="metadata" poster="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_194126_9fb469d4-80ac-41c1-a2db-f3ac0778025c.png" aria-hidden="true" tabindex="-1"><source src="https://cdn.katalyst-crm.com/t1/GettyImages-664999036%20(1).mp4" type="video/mp4"></video>
+  <div class="wrap">
+    <span class="eyebrow">Come and See It</span>
+    <h2>Come and See It.</h2>
+    <p>Call LiquidGym at <a href="tel:6138208228" style="color:var(--blue);font-weight:500;">613-820-8228</a> with any questions about either location, or to book your first appointment.</p>
+    <div class="btn-row" style="justify-content:center;">
+      <a href="index.html#invitation" class="btn btn-primary">Book Your First Appointment</a>
     </div>
   </div>
 </section>
@@ -1216,36 +1366,25 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
 </footer>
+
 <script>
 (function(){
-  var burger=document.getElementById('burger'), mm=document.getElementById('mobileMenu');
-  function setOpen(o){ if(!mm) return; mm.classList.toggle('open',o); if(burger){burger.classList.toggle('is-open',o);burger.setAttribute('aria-expanded',o);} document.body.style.overflow=o?'hidden':''; }
-  if(burger){ burger.addEventListener('click',function(){ setOpen(!mm.classList.contains('open')); }); }
-  if(mm){ mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ if(a.closest('.m-sub')||a.classList.contains('m-link')||a.closest('.m-cta')) setOpen(false); });}); }
-  window.addEventListener('resize',function(){ if(window.innerWidth>=1200) setOpen(false); });
-  /* mobile accordion */
-  document.querySelectorAll('.m-acc').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var sub=btn.nextElementSibling, open=sub.classList.toggle('open');
-      btn.setAttribute('aria-expanded',open);
-    });
-  });
-  /* desktop dropdown: click to toggle on touch, aria on hover handled by CSS */
-  document.querySelectorAll('.nav-trigger').forEach(function(t){
-    t.addEventListener('click',function(e){
-      e.preventDefault();
-      var item=t.closest('.nav-item'), panel=item.querySelector('.nav-panel');
-      var isOpen=item.classList.toggle('force-open');
-      t.setAttribute('aria-expanded',isOpen);
-      document.querySelectorAll('.nav-item.force-open').forEach(function(o){ if(o!==item){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');} });
-    });
-  });
-  document.addEventListener('click',function(e){
-    if(!e.target.closest('.nav-item')){ document.querySelectorAll('.nav-item.force-open').forEach(function(o){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');}); }
-  });
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(entries,obs){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');obs.unobserve(en.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:0.05});
+  els.forEach(function(e){io.observe(e);});
+  setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(e){var r=e.getBoundingClientRect();if(r.top<window.innerHeight){e.classList.add('in');}});},1200);
+})();
+(function(){
+  var burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
+  function setOpen(o){if(!mm)return;mm.classList.toggle('open',o);if(burger){burger.classList.toggle('is-open',o);burger.setAttribute('aria-expanded',o);}document.body.style.overflow=o?'hidden':'';}
+  if(burger){burger.addEventListener('click',function(){setOpen(!mm.classList.contains('open'));});}
+  if(mm){mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(a.closest('.m-sub')||a.classList.contains('m-link')||a.closest('.m-cta'))setOpen(false);});});
+    mm.querySelectorAll('.m-acc').forEach(function(btn){btn.addEventListener('click',function(){var sub=btn.nextElementSibling,open=sub.classList.toggle('open');btn.setAttribute('aria-expanded',open);});});}
+  document.querySelectorAll('.nav-trigger').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var item=btn.closest('.nav-item'),isOpen=item.classList.toggle('force-open');btn.setAttribute('aria-expanded',isOpen);document.querySelectorAll('.nav-item.force-open').forEach(function(o){if(o!==item){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');}});});});
+  document.addEventListener('click',function(e){if(!e.target.closest('.nav-item')){document.querySelectorAll('.nav-item.force-open').forEach(function(o){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');});}});
 })();
 </script>
-<script>(function(){var els=document.querySelectorAll(".rv");if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in");});return;}var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});els.forEach(function(e){io.observe(e);});})();</script>
-<script>(function(){document.querySelectorAll(".cta-bg").forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
+<script>(function(){document.querySelectorAll('.cta-bg').forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
 </body>
 </html>

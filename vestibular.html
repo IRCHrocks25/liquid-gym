@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Frequently Asked Questions &mdash; LiquidGym | Aquatic Physical Therapy, Ottawa</title>
-<meta name="description" content="Answers to the questions we're asked most often, before your first appointment at LiquidGym.">
+<title>Vestibular Conditions &mdash; LiquidGym | Aquatic Physical Therapy, Ottawa</title>
+<meta name="description" content="Dizziness and balance problems can improve with vestibular rehabilitation. Assessment and individualized programmes at LiquidGym, Ottawa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -132,9 +132,9 @@ a{color:inherit;text-decoration:none;}
 
 @media (min-width:940px){}
 
-.hero h1{color:#fff;max-width:22ch;}
+.hero h1{color:#fff;max-width:30ch;}
 
-.hero .sub{color:rgba(255,255,255,.86);font-size:clamp(1.05rem,1.6vw,1.25rem);margin-top:1.3rem;max-width:44ch;}
+.hero .sub{color:rgba(255,255,255,.86);font-size:clamp(1.05rem,1.6vw,1.25rem);margin-top:1.3rem;max-width:62ch;}
 
 .hero-trust{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin-top:1.8rem;font-family:var(--display);font-size:.86rem;color:rgba(255,255,255,.8);}
 
@@ -874,15 +874,6 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   .nav-cta{font-size:.76rem;padding:.48rem .8rem;}
 }
 
-/* secondary logo in nav (right of buttons) */
-.logo-secondary{display:inline-flex;align-items:center;padding-left:.85rem;margin-left:.25rem;border-left:1px solid rgba(255,255,255,.18);}
-.logo-secondary img{height:27px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.92;transition:opacity .18s ease;}
-.logo-secondary:hover img{opacity:1;}
-@media (min-width:1200px) and (max-width:1360px){
-  .logo-secondary img{height:24px;}
-  .logo-secondary{padding-left:.7rem;}
-}
-
 /* ---- mobile menu: accordion groups ---- */
 .mobile-menu .m-group{border-bottom:1px solid rgba(255,255,255,.10);}
 .m-acc{
@@ -1010,59 +1001,72 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .cta-band .cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
 .cta-band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(120deg,rgba(11,28,71,.86) 0%,rgba(11,28,71,.66) 55%,rgba(22,52,116,.5) 100%);}
 .cta-band .wrap{position:relative;z-index:2;}
-.cta-band h2{color:#fff;}
-.cta-band p,.cta-band .eyebrow{color:rgba(255,255,255,.9);}
+.cta-band h2{color:#fff;margin-bottom:.6rem;}
+.cta-band p{color:rgba(255,255,255,.9);max-width:44ch;margin-inline:auto;}
+.cta-band .eyebrow{color:var(--light);}
 .cta-band p a{color:#fff!important;}
 .cta-band h2,.cta-band p,.cta-band .eyebrow,.cta-band .btn{text-shadow:0 2px 18px rgba(11,28,71,.5);}
 @media (prefers-reduced-motion:reduce){.cta-band .cta-bg{display:none;}}
-.cta-band h2{color:#fff;margin-bottom:.6rem;}
-.cta-band p{color:rgba(255,255,255,.9);max-width:44ch;margin-inline:auto;}
 
 
 
-/* ===== FAQ PAGE ===== */
-.faq-section{padding-block:var(--sec);}
-.faq-section.alt{background:var(--soft);}
-.faq-head{max-width:60rem;margin-bottom:clamp(1.6rem,3vw,2.4rem);}
-.faq-head .eyebrow{margin-bottom:.9rem;}
-.faq-head h2{color:var(--navy);margin:0;}
-.faq-wrap{max-width:60rem;}
-.faq-item{border-bottom:1px solid var(--line);}
-.faq-section.alt .faq-item{border-bottom:1px solid #dbe7f6;}
-/* dark-blue FAQ section */
-.faq-section.dark{background:linear-gradient(155deg,#0B1C47 0%,#163474 60%,#2E5EAC 130%);}
-.faq-section.dark .faq-head h2{color:#fff;}
-.faq-section.dark .eyebrow{color:var(--light);}
-.faq-section.dark .faq-item{border-bottom:1px solid rgba(255,255,255,.14);}
-.faq-section.dark .faq-q{color:#fff;}
-.faq-section.dark .faq-q:hover{color:var(--light);}
-.faq-section.dark .faq-q .ic{border-color:rgba(255,255,255,.4);color:var(--light);}
-.faq-section.dark .faq-q[aria-expanded="true"] .ic{background:#fff;border-color:#fff;color:var(--navy);}
-.faq-section.dark .faq-a-inner{color:rgba(255,255,255,.82);}
-.faq-section.dark .faq-a-inner strong{color:#fff;}
+/* ===== CONDITION PAGE (vestibular) ===== */
+.cond-section{padding-block:var(--sec);}
+.cond-section.alt{background:var(--soft);}
+.cond-split{display:grid;gap:2rem;align-items:center;}
+@media(min-width:900px){.cond-split{grid-template-columns:1.05fr .95fr;gap:clamp(2.4rem,4.5vw,4rem);}.cond-split.flip .cond-media{order:2;}}
+.cond-media{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);}
+.cond-media img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform 8s ease;}
+.cond-media:hover img{transform:scale(1.04);}
+.cond-body .eyebrow{margin-bottom:.9rem;}
+.cond-body h2{color:var(--navy);margin:0 0 1rem;}
+.cond-body p{color:var(--body);line-height:1.75;margin:0 0 1rem;}
+.cond-sub{margin-top:1.6rem;}
+.cond-sub h3{font-family:var(--display);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bright);margin:0 0 .6rem;}
+.cond-narrow{max-width:64rem;}
+.cond-narrow .eyebrow{margin-bottom:.9rem;}
+.cond-narrow h2{color:var(--navy);margin:0 0 1.2rem;}
+.cond-narrow p{color:var(--body);line-height:1.75;margin:0 0 1rem;max-width:68ch;}
+/* checklist */
+.cond-checklist{list-style:none;margin:1rem 0 0;padding:0;max-width:60rem;}
+.cond-checklist li{position:relative;padding:.55rem 0 .55rem 2.2rem;color:var(--ink);line-height:1.55;border-bottom:1px solid var(--line);}
+.cond-checklist li:last-child{border-bottom:none;}
+.cond-checklist li::before{content:"";position:absolute;left:0;top:.7em;width:20px;height:20px;border-radius:50%;background:var(--soft);border:1.5px solid var(--bright);}
+.cond-checklist li::after{content:"";position:absolute;left:7px;top:1.05em;width:5px;height:9px;border:solid var(--blue);border-width:0 2px 2px 0;transform:rotate(45deg);}
+/* highlight callout */
+.cond-highlight{background:var(--soft);border-left:3px solid var(--bright);border-radius:0 var(--r) var(--r) 0;padding:1.3rem 1.6rem;margin:1.4rem 0 0;max-width:60rem;}
+.cond-highlight p{margin:0;color:var(--navy);font-family:var(--display);font-size:1.08rem;font-weight:500;line-height:1.5;}
+/* two-up info cards */
+.cond-acc{margin-top:clamp(2rem,4vw,3rem);max-width:64rem;}
+.programme-grid{display:grid;gap:2rem;align-items:start;}
+@media(min-width:900px){.programme-grid{grid-template-columns:1fr 1fr;gap:clamp(2.4rem,4.5vw,4rem);}}
+.programme-grid .cond-narrow{max-width:none;}
+.programme-grid .cond-acc{margin-top:0;max-width:none;}
 
-.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;
-  display:flex;align-items:center;justify-content:space-between;gap:1.2rem;
-  padding:1.35rem 0;font-family:var(--display);font-size:clamp(1.02rem,1.6vw,1.18rem);
-  font-weight:500;color:var(--navy);line-height:1.4;}
-.faq-q:hover{color:var(--blue);}
-.faq-q .ic{flex:0 0 auto;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);
-  display:inline-flex;align-items:center;justify-content:center;color:var(--mid);transition:transform .3s ease,background .3s ease,border-color .3s ease;}
-.faq-q[aria-expanded="true"] .ic{transform:rotate(45deg);background:var(--navy);border-color:var(--navy);color:#fff;}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.22,.7,.2,1);}
-.faq-a-inner{padding:0 0 1.4rem;color:var(--body);line-height:1.72;font-size:.98rem;max-width:60ch;}
-.faq-a-inner strong{color:var(--ink);font-weight:600;}
-/* featured media band inside pool section */
-.faq-media{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);margin-bottom:clamp(2rem,4vw,3rem);max-width:60rem;}
-.faq-media img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;}
-.faq-grid{display:grid;gap:clamp(2rem,4vw,3.4rem);align-items:start;}
-@media(min-width:900px){.faq-grid.with-media{grid-template-columns:1fr 340px;}}
-.faq-grid.with-media .faq-side{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);position:sticky;top:100px;}
-.faq-grid.with-media .faq-side img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;}
-@media(max-width:899px){.faq-grid.with-media .faq-side{display:none;}}
+.ca-item{border:1px solid var(--line);border-radius:var(--r);background:#fff;box-shadow:var(--shadow-sm);margin-bottom:1rem;overflow:hidden;transition:box-shadow .24s ease;}
+.ca-item:last-child{margin-bottom:0;}
+.ca-item.open{box-shadow:var(--shadow-md);}
+.ca-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:1.2rem;padding:1.35rem clamp(1.3rem,2.5vw,1.9rem);}
+.ca-q .ca-cat{display:block;font-family:var(--display);font-size:.68rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bright);margin-bottom:.3rem;}
+.ca-q .ca-name{display:block;font-family:var(--display);font-size:clamp(1.12rem,1.9vw,1.34rem);font-weight:600;color:var(--navy);line-height:1.25;}
+.ca-q .ic{flex:0 0 auto;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);display:inline-flex;align-items:center;justify-content:center;color:var(--mid);transition:transform .3s ease,background .3s ease,border-color .3s ease;}
+.ca-q[aria-expanded="true"] .ic{transform:rotate(45deg);background:var(--navy);border-color:var(--navy);color:#fff;}
+.ca-a{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.22,.7,.2,1);}
+.ca-a-inner{padding:0 clamp(1.3rem,2.5vw,1.9rem) 1.5rem;}
+.ca-a-inner p{color:var(--body);line-height:1.72;margin:0 0 1rem;font-size:.98rem;}
+.ca-a-inner p:last-child{margin-bottom:0;}
+.cond-section.alt .cond-card{background:#fff;}
+.cond-card .eyebrow{margin-bottom:.8rem;}
+.cond-card h3{font-family:var(--display);font-size:clamp(1.2rem,2vw,1.4rem);font-weight:600;color:var(--navy);margin:0 0 .8rem;}
+.cond-card p{color:var(--body);line-height:1.72;margin:0 0 1rem;font-size:.97rem;}
+.cond-card p:last-child{margin-bottom:0;}
+/* treated-by card */
+.treat-card{background:linear-gradient(155deg,#fff,#f7fbff);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.9rem,3vw,2.6rem);box-shadow:var(--shadow-sm);max-width:60rem;margin-top:clamp(1.6rem,3vw,2.2rem);}
+.treat-card h3{font-family:var(--display);font-size:1.25rem;font-weight:600;color:var(--blue);margin:0 0 .7rem;}
+.treat-card p{color:var(--body);line-height:1.7;margin:0;}
 
 </style>
-<noscript><style>.rv{opacity:1!important;transform:none!important;}.faq-a{max-height:none!important;}</style></noscript>
+<noscript><style>.rv{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
 <body>
 <div class="siteheader">
@@ -1117,10 +1121,10 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Equipment<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
-          <a class="nav-sub" href="index.html#">Overview</a>
-          <a class="nav-sub" href="index.html#">Alinker</a>
-          <a class="nav-sub" href="index.html#">Game Ready System</a>
-          <a class="nav-sub" href="index.html#">Normatec Compression System</a>
+          <a class="nav-sub" href="#">Overview</a>
+          <a class="nav-sub" href="#">Alinker</a>
+          <a class="nav-sub" href="#">Game Ready System</a>
+          <a class="nav-sub" href="#">Normatec Compression System</a>
         </div>
       </div>
       <div class="nav-item has-drop">
@@ -1130,7 +1134,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <a class="nav-sub" href="faq.html">FAQ</a>
           <a class="nav-sub" href="team.html">Team</a>
           <a class="nav-sub" href="facility.html">Facility</a>
-          <a class="nav-sub" href="index.html#">Partners</a>
+          <a class="nav-sub" href="#">Partners</a>
           <a class="nav-sub" href="success-stories.html">Success Stories</a>
         </div>
       </div>
@@ -1197,10 +1201,10 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">Equipment<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
-      <a href="index.html#">Overview</a>
-      <a href="index.html#">Alinker</a>
-      <a href="index.html#">Game Ready System</a>
-      <a href="index.html#">Normatec Compression System</a>
+      <a href="#">Overview</a>
+      <a href="#">Alinker</a>
+      <a href="#">Game Ready System</a>
+      <a href="#">Normatec Compression System</a>
     </div>
   </div>
   <div class="m-group">
@@ -1210,7 +1214,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <a href="faq.html">FAQ</a>
       <a href="team.html">Team</a>
       <a href="facility.html">Facility</a>
-      <a href="index.html#">Partners</a>
+      <a href="#">Partners</a>
       <a href="success-stories.html">Success Stories</a>
     </div>
   </div>
@@ -1225,284 +1229,116 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </div>
 
 <!-- ===================== HERO ===================== -->
-<section class="hero" style="min-height:clamp(420px,56vh,600px);">
-  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260918_131934_03ae8859-865f-4b28-b9f2-a51471f86443.png" alt="" loading="eager"></div>
+<section class="hero" style="min-height:clamp(460px,60vh,640px);">
+  <div class="hero-bg" aria-hidden="true"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260921_142415_16250bd8-2450-4944-bd5c-706e7624730b.png" alt="" loading="eager"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="wrap" style="position:relative;z-index:2;padding-block:clamp(3.4rem,9vw,6rem);">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="index.html">The Hub</a>
       <span class="sep" aria-hidden="true">/</span>
-      <strong>FAQ</strong>
+      <a href="#">Conditions</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <strong>Vestibular</strong>
     </nav>
-    <span class="eyebrow on-dark" style="margin-top:1.2rem;">Frequently Asked Questions</span>
-    <h1>Before Your First Appointment.</h1>
-    <p class="sub">The questions we are asked most often. If yours is not here, call us at <a href="tel:6138208228" style="color:#fff;font-weight:500;">613-820-8228</a>.</p>
+    <span class="eyebrow on-dark" style="margin-top:1.2rem;">Conditions We Treat &middot; Vestibular</span>
+    <h1>When the Room Will Not Stay Still.</h1>
+    <p class="sub">Many people experience very real symptoms of dizziness and disturbed balance because of how the balance system is functioning, rather than because of a structural vestibular or neurological disease.</p>
+    <p class="sub" style="margin-top:1rem;">These symptoms go by many names and are often described as functional disorders. They can improve with vestibular rehabilitation.</p>
+    <div class="btn-row">
+      <a href="index.html#invitation" class="btn btn-primary">Book an Assessment</a>
+    </div>
   </div>
 </section>
 
-<section class="faq-section" id="getting-started">
+<!-- ===================== WHAT IT IS ===================== -->
+<section class="cond-section" id="what-it-is">
   <div class="wrap">
-    <div class="faq-head rv">
-      <span class="eyebrow">Getting Started</span>
-      <h2>Getting Started</h2>
-    </div>
-    <div class="faq-wrap">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Do I need a physician&rsquo;s referral?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>No. Physiotherapists are primary health care practitioners, so you can book directly. Some extended health insurance plans do require a referral &mdash; check your plan if you are unsure.</p>
-          </div>
+    <div class="cond-split">
+      <div class="cond-media rv"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260921_142415_10da3b37-3b7a-4bb9-b9b4-5318a4d6e810.png" alt="A physiotherapist guiding a vestibular assessment" loading="lazy"></div>
+      <div class="cond-body rv">
+        <span class="eyebrow">What It Is</span>
+        <h2>What Is Vestibular Rehabilitation?</h2>
+        <p>Vestibular rehabilitation is a programme of exercises to treat dizziness and balance problems. It is a well established and widely accepted intervention for people with balance and inner ear disorders.</p>
+        <div class="cond-sub">
+          <h3>Who It Can Help</h3>
+          <p>People with inner ear disorders and with central, or brain, disorders can both be helped by vestibular rehabilitation. There is evidence that an individualized exercise programme works better than a generic one.</p>
         </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>How do I prepare for my first appointment?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>Complete your online assessment form before you arrive. Your first appointment is a land appointment, so shorts and a t-shirt or tank top are appropriate. Bring any relevant medical history, any reports or test results such as x-rays, ultrasound scans, or MRI reports, and your physician&rsquo;s referral if you have one.</p>
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>What will I be asked?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>Your personal and family medical history, major illnesses, surgeries, current medications, your level of activity at work and in leisure, and your sleeping habits.</p>
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>What does the examination involve?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>It may include blood pressure, pulse and breathing, reflexes, muscle strength, flexibility, range of motion, coordination, posture analysis, movement analysis, and a review of any x-rays.</p>
-          </div>
+        <div class="btn-row" style="margin-top:1.4rem;">
+          <a href="tel:6138208228" class="btn btn-outline-blue">Talk to Our Team</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="faq-section dark" id="locations">
+<!-- ===================== WHAT TO EXPECT ===================== -->
+<section class="cond-section alt" id="assessment">
   <div class="wrap">
-    <div class="faq-head rv">
-      <span class="eyebrow">Locations</span>
-      <h2>Locations</h2>
-    </div>
-    <div class="faq-wrap">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Are the clinic and the pool in the same place?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>No. The clinic is at 2039 Robertson Road, Suite 501, in the Bell Mews Plaza. The pool is at the Hyatt Hotel, 300 Moodie Drive, about five minutes away.</p>
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Where is my first appointment?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>Always at the clinic on Robertson Road. If aquatic therapy becomes part of your plan of care, your therapist will confirm which sessions take place at the pool.</p>
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Is the clinic accessible?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>Yes. There is a large parking lot at the rear of the building, with a ramp, an accessible entry door, and a lift to the clinic floor.</p>
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Is the pool accessible?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>Yes. There is parking close to the main entrance, and entry to the water is by water steps or pool lift.</p>
-          </div>
-        </div>
-      </div>
+    <div class="cond-narrow rv">
+      <span class="eyebrow">What to Expect</span>
+      <h2>What Happens at Your Assessment</h2>
+      <p>Your physiotherapist will begin by:</p>
+      <ul class="cond-checklist">
+        <li>Asking questions to build a thorough history, including how your symptoms started and how they have developed</li>
+        <li>Evaluating eye and head movements</li>
+        <li>Screening for benign paroxysmal positional vertigo, or BPPV</li>
+      </ul>
+      <p style="margin-top:1.3rem;">A comprehensive assessment of your standing and walking balance follows.</p>
     </div>
   </div>
 </section>
 
-<section class="faq-section" id="in-the-pool">
+<!-- ===================== YOUR PROGRAMME + HOW LONG ===================== -->
+<section class="cond-section" id="programme">
   <div class="wrap">
-    <div class="faq-head rv">
-      <span class="eyebrow">In the Pool</span>
-      <h2>In the Pool</h2>
+    <div class="programme-grid">
+    <div class="cond-narrow rv">
+      <span class="eyebrow">Your Programme</span>
+      <h2>What Happens Next</h2>
+      <p>Based on what the assessment finds, your goals and expectations for treatment are agreed, and a home exercise programme is developed. The number of visits and the time needed to improve both vary.</p>
+      <div class="cond-highlight"><p>Most of the improvement comes from the home exercise programme.</p></div>
+      <p style="margin-top:1.3rem;">At follow-up visits your physiotherapist may update that programme based on your symptoms and your progress.</p>
     </div>
-    <div class="faq-grid with-media">
-      <div class="faq-wrap" style="max-width:none;">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>How deep is the pool?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
+
+    <div class="cond-acc rv">
+      <div class="ca-item open">
+        <button class="ca-q" aria-expanded="true" onclick="toggleCa(this)">
+          <span><span class="ca-cat">How Long It Takes</span><span class="ca-name">How Long Does It Take to Improve?</span></span>
+          <span class="ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
         </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>49 inches throughout, with no shallow end and no deep end, so you can stand anywhere in it. The water is held at 31 degrees.</p>
-          </div>
-        </div>
+        <div class="ca-a"><div class="ca-a-inner">
+          <p>The frequency of visits varies, and vestibular rehabilitation can last from one or two weeks to several months. Appointments usually run between 30 minutes and one hour, and your symptoms largely dictate how long the exercises last.</p>
+          <p>You may experience an increase in dizziness if the exercises prescribed are too advanced, which is why the programme is worked through with your physiotherapist and matched to your condition and stage of recovery.</p>
+        </div></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Do I need to be able to swim?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
+      <div class="ca-item">
+        <button class="ca-q" aria-expanded="false" onclick="toggleCa(this)">
+          <span><span class="ca-cat">What Affects Your Progress</span><span class="ca-name">What Affects How Much You Improve</span></span>
+          <span class="ic" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
         </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>No. You can stand anywhere in the pool, and your therapist works with you throughout the session.</p>
-          </div>
-        </div>
+        <div class="ca-a"><div class="ca-a-inner">
+          <p>Your diagnosis, medication use, other health problems, motivation, family support and other psychological factors all play a part.</p>
+        </div></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>What should I bring?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>Swim clothes and a towel. There are no lockers, so bring a bag for your clothes to keep on the pool deck during your session.</p>
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Are there change rooms and showers?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>There is a shower on the pool deck, two fully accessible washrooms, and separate men&rsquo;s and women&rsquo;s washrooms for changing.</p>
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Will I be in the pool on my own?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>The pool is shared with the hotel, and our sessions are scheduled at its quietest times.</p>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class="faq-side"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260918_131933_0e1985b8-429b-4c65-8c22-9e9673517ac4.png" alt="A LiquidGym aquatic therapy session in the pool" loading="lazy"></div>
+    </div>
     </div>
   </div>
 </section>
 
-<section class="faq-section alt" id="insurance">
+<!-- ===================== TREATED HERE ===================== -->
+<section class="cond-section alt" id="treated">
   <div class="wrap">
-    <div class="faq-head rv">
-      <span class="eyebrow">Insurance &amp; Payment</span>
-      <h2>Insurance &amp; Payment</h2>
-    </div>
-    <div class="faq-wrap">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Can you bill my insurance company directly?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>Some extended health insurance companies accept direct billing. Ask us and we can tell you whether yours does.</p>
-          </div>
+    <div class="cond-split">
+      <div class="cond-body rv">
+        <span class="eyebrow">How Vestibular Conditions Are Treated Here</span>
+        <h2>Treated Through Physiotherapy</h2>
+        <p>At LiquidGym our physiotherapists and healthcare team work together through your recovery.</p>
+        <div class="treat-card" style="margin-top:1.4rem;">
+          <h3>Physiotherapy</h3>
+          <p>Vestibular assessment including BPPV screening, balance evaluation, and an individualized home exercise programme reviewed at follow-up.</p>
         </div>
       </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Do you direct bill for Veterans Affairs, RCMP, and Canadian Forces?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>Yes. If you have Blue Cross coverage through Veterans Affairs, the RCMP or the Canadian Forces, we can bill Blue Cross directly. We will need your ID number and, if applicable, your case manager&rsquo;s contact information.</p>
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Does OHIP cover my treatment?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>No. LiquidGym is not an OHIP-designated clinic.</p>
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Do you accept Motor Vehicle Accident claims?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>No. We do not accept motor vehicle accident claims.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="faq-section" id="appointments">
-  <div class="wrap">
-    <div class="faq-head rv">
-      <span class="eyebrow">Appointments</span>
-      <h2>Appointments</h2>
-    </div>
-    <div class="faq-wrap">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>What is your cancellation policy?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>Appointments cancelled within 24 hours of the scheduled time are subject to a $50 cancellation fee per 30 minutes of missed appointment time. Reminder emails are sent 24 hours in advance.</p>
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
-          <span>Do you offer virtual appointments?</span>
-          <span class="ic" aria-hidden="true"><svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3v10M3 8h10"/></svg></span>
-        </button>
-        <div class="faq-a">
-          <div class="faq-a-inner">
-          <p>Yes, through physiotherapy. You connect with your therapist by video for a one-to-one session, and you will receive an email with a link an hour before your appointment.</p>
-          </div>
-        </div>
-      </div>
+      <div class="cond-media rv"><img src="https://cdn.katalyst-crm.com/a/2004f37e-f64c-5b00-f253-e6038e465348" alt="Vestibular physiotherapy at LiquidGym" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -1511,11 +1347,11 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 <section class="cta-band">
   <video class="cta-bg" autoplay muted loop playsinline preload="metadata" poster="https://d8j0ntlcm91z4.cloudfront.net/user_35NBuSfIPglHIOMZxxqoxDRFcyj/hf_20260723_194126_9fb469d4-80ac-41c1-a2db-f3ac0778025c.png" aria-hidden="true" tabindex="-1"><source src="https://cdn.katalyst-crm.com/t1/GettyImages-664999036%20(1).mp4" type="video/mp4"></video>
   <div class="wrap">
-    <span class="eyebrow">We&rsquo;re Here to Help</span>
-    <h2>Still Have a Question?</h2>
-    <p>Call LiquidGym at <a href="tel:6138208228" style="color:var(--blue);font-weight:500;">613-820-8228</a>, and we will answer it.</p>
+    <span class="eyebrow">Ready When You Are</span>
+    <h2>Book Your Initial Assessment.</h2>
+    <p>Call LiquidGym at <a href="tel:6138208228" style="color:var(--blue);font-weight:500;">613-820-8228</a> to book your initial assessment.</p>
     <div class="btn-row" style="justify-content:center;">
-      <a href="index.html#invitation" class="btn btn-primary">Book an Appointment</a>
+      <a href="index.html#invitation" class="btn btn-primary">Book Your Assessment</a>
     </div>
   </div>
 </section>
@@ -1570,11 +1406,6 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </footer>
 
 <script>
-function toggleFaq(btn){
-  var a=btn.nextElementSibling, open=btn.getAttribute('aria-expanded')==='true';
-  if(open){ a.style.maxHeight='0'; btn.setAttribute('aria-expanded','false'); }
-  else{ a.style.maxHeight=a.scrollHeight+'px'; btn.setAttribute('aria-expanded','true'); }
-}
 (function(){
   var els=document.querySelectorAll('.rv');
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
@@ -1593,7 +1424,13 @@ function toggleFaq(btn){
   document.querySelectorAll('.nav-trigger').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var item=btn.closest('.nav-item'),isOpen=item.classList.toggle('force-open');btn.setAttribute('aria-expanded',isOpen);document.querySelectorAll('.nav-item.force-open').forEach(function(o){if(o!==item){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');}});});});
   document.addEventListener('click',function(e){if(!e.target.closest('.nav-item')){document.querySelectorAll('.nav-item.force-open').forEach(function(o){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');});}});
 })();
+function toggleCa(btn){
+  var item=btn.closest('.ca-item'), a=btn.nextElementSibling, open=btn.getAttribute('aria-expanded')==='true';
+  if(open){a.style.maxHeight='0';btn.setAttribute('aria-expanded','false');item.classList.remove('open');}
+  else{a.style.maxHeight=a.scrollHeight+'px';btn.setAttribute('aria-expanded','true');item.classList.add('open');}
+}
+window.addEventListener('load',function(){var f=document.querySelector('.ca-item.open .ca-a');if(f){f.style.maxHeight=f.scrollHeight+'px';}});
+(function(){document.querySelectorAll('.cta-bg').forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();
 </script>
-<script>(function(){document.querySelectorAll('.cta-bg').forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
 </body>
 </html>

@@ -106,9 +106,7 @@ a{color:inherit;text-decoration:none;}
   .nav-links .btn{width:auto;min-height:44px;padding:.6rem 1.15rem;font-size:.9rem;margin-left:.4rem;}
 }
 
-@media (min-width:900px){.burger{display:none;}}
 
-@media (min-width:900px){.mobile-menu{display:none;}}
 
 
 /* footer */
@@ -637,14 +635,14 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 
 
 .mobile-menu{
-  position:fixed;inset:88px 0 0;z-index:55;background:#fff;padding:1.5rem var(--gut) 2.5rem;
+  position:fixed;inset:76px 0 0;z-index:55;background:var(--navy);color:#fff;padding:1.5rem var(--gut) 2.5rem;
   transform:translateY(-14px);opacity:0;visibility:hidden;
   transition:opacity .22s ease,transform .22s ease,visibility .22s;overflow-y:auto;
 }
 
 .mobile-menu.open{opacity:1;transform:none;visibility:visible;}
 
-.mobile-menu a.m-link{display:flex;align-items:center;justify-content:space-between;min-height:52px;font-family:var(--display);font-weight:600;color:var(--ink);border-bottom:1px solid var(--line);}
+.mobile-menu a.m-link{display:flex;align-items:center;justify-content:space-between;min-height:52px;font-family:var(--display);font-weight:600;color:#fff;border-bottom:1px solid rgba(255,255,255,.14);}
 
 .mobile-menu .btn{margin-top:1.4rem;}
 
@@ -658,7 +656,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
   .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:1px;background:#fff;transition:right .22s ease;}
   .nav-links a:hover::after,.nav-links a.active::after{right:0;}
   .nav-cta{display:inline-flex;}
-  .burger,.mobile-menu{display:none;}
+  .burger{display:none;}
   .nav-inner{min-height:108px;}
 }
 
@@ -825,7 +823,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .nav-inner{display:flex;align-items:center;gap:1rem;min-height:76px;flex-wrap:nowrap;}
 .nav-links{display:none;}
 .nav-actions{display:none;margin-left:auto;gap:.6rem;align-items:center;}
-.burger{display:inline-flex;}
+.burger{display:grid;align-content:center;}
 @media (min-width:1200px){
   .nav-links{display:flex;align-items:center;gap:.35rem;margin-left:auto;}
   .nav-actions{display:flex;}
@@ -1027,33 +1025,33 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
         <button class="nav-top nav-trigger" aria-expanded="false">Therapies<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
           <a class="nav-sub" href="physiotherapy.html">Physiotherapy</a>
-          <a class="nav-sub" href="index.html#">Massage Therapy</a>
+          <a class="nav-sub" href="massage-therapy.html">Massage Therapy</a>
           <a class="nav-sub" href="kinesiology.html">Kinesiology</a>
-          <a class="nav-sub" href="index.html#">Why Aquatic Therapy</a>
+          <a class="nav-sub" href="why-aquatic-therapy.html">Why Aquatic Therapy</a>
         </div>
       </div>
       <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Conditions<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel is-mega">
           <a class="nav-sub" href="arthritis.html">Arthritis</a>
-          <a class="nav-sub" href="index.html#">Sprains, Strains & Fractures</a>
-          <a class="nav-sub" href="index.html#">Sports Injuries</a>
-          <a class="nav-sub" href="index.html#">Cardiovascular Impairments</a>
-          <a class="nav-sub" href="index.html#">Long COVID</a>
-          <a class="nav-sub" href="index.html#">Plantar Fasciitis</a>
-          <a class="nav-sub" href="index.html#">Neurological Conditions</a>
-          <a class="nav-sub" href="index.html#">Chronic Pain</a>
-          <a class="nav-sub" href="index.html#">Vestibular</a>
+          <a class="nav-sub" href="sprains-strains-fractures.html">Sprains, Strains & Fractures</a>
+          <a class="nav-sub" href="sports-injuries.html">Sports Injuries</a>
+          <a class="nav-sub" href="cardiovascular.html">Cardiovascular Impairments</a>
+          <a class="nav-sub" href="long-covid.html">Long COVID</a>
+          <a class="nav-sub" href="plantar-fasciitis.html">Plantar Fasciitis</a>
+          <a class="nav-sub" href="neurological.html">Neurological Conditions</a>
+          <a class="nav-sub" href="chronic-pain.html">Chronic Pain</a>
+          <a class="nav-sub" href="vestibular.html">Vestibular</a>
         </div>
       </div>
       <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Services<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel">
-          <a class="nav-sub" href="index.html#">Pre-Op & Post-Op</a>
-          <a class="nav-sub" href="index.html#">Veterans Affairs — Physiotherapy</a>
-          <a class="nav-sub" href="index.html#">Veterans Affairs — Kinesiology</a>
-          <a class="nav-sub" href="index.html#">Personal Training</a>
-          <a class="nav-sub" href="index.html#">Virtual</a>
+          <a class="nav-sub" href="pre-op-post-op.html">Pre-Op & Post-Op</a>
+          <a class="nav-sub" href="veterans-affairs-physiotherapy.html">Veterans Affairs — Physiotherapy</a>
+          <a class="nav-sub" href="veterans-affairs-kinesiology.html">Veterans Affairs — Kinesiology</a>
+          <a class="nav-sub" href="personal-training.html">Personal Training</a>
+          <a class="nav-sub" href="virtual.html">Virtual</a>
         </div>
       </div>
       <div class="nav-item"><a class="nav-top" href="wei-water-exercise-institute.html">WEI™</a></div>
@@ -1107,33 +1105,33 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     <button class="m-acc" aria-expanded="false">Therapies<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
       <a href="physiotherapy.html">Physiotherapy</a>
-      <a href="index.html#">Massage Therapy</a>
+      <a href="massage-therapy.html">Massage Therapy</a>
       <a href="kinesiology.html">Kinesiology</a>
-      <a href="index.html#">Why Aquatic Therapy</a>
+      <a href="why-aquatic-therapy.html">Why Aquatic Therapy</a>
     </div>
   </div>
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">Conditions<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
       <a href="arthritis.html">Arthritis</a>
-      <a href="index.html#">Sprains, Strains & Fractures</a>
-      <a href="index.html#">Sports Injuries</a>
-      <a href="index.html#">Cardiovascular Impairments</a>
-      <a href="index.html#">Long COVID</a>
-      <a href="index.html#">Plantar Fasciitis</a>
-      <a href="index.html#">Neurological Conditions</a>
-      <a href="index.html#">Chronic Pain</a>
-      <a href="index.html#">Vestibular</a>
+      <a href="sprains-strains-fractures.html">Sprains, Strains & Fractures</a>
+      <a href="sports-injuries.html">Sports Injuries</a>
+      <a href="cardiovascular.html">Cardiovascular Impairments</a>
+      <a href="long-covid.html">Long COVID</a>
+      <a href="plantar-fasciitis.html">Plantar Fasciitis</a>
+      <a href="neurological.html">Neurological Conditions</a>
+      <a href="chronic-pain.html">Chronic Pain</a>
+      <a href="vestibular.html">Vestibular</a>
     </div>
   </div>
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">Services<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
-      <a href="index.html#">Pre-Op & Post-Op</a>
-      <a href="index.html#">Veterans Affairs — Physiotherapy</a>
-      <a href="index.html#">Veterans Affairs — Kinesiology</a>
-      <a href="index.html#">Personal Training</a>
-      <a href="index.html#">Virtual</a>
+      <a href="pre-op-post-op.html">Pre-Op & Post-Op</a>
+      <a href="veterans-affairs-physiotherapy.html">Veterans Affairs — Physiotherapy</a>
+      <a href="veterans-affairs-kinesiology.html">Veterans Affairs — Kinesiology</a>
+      <a href="personal-training.html">Personal Training</a>
+      <a href="virtual.html">Virtual</a>
     </div>
   </div>
   <a class="m-link" href="wei-water-exercise-institute.html">WEI™</a>
@@ -1466,6 +1464,8 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   var burger=document.getElementById('burger'), mm=document.getElementById('mobileMenu');
   function setOpen(o){ if(!mm) return; mm.classList.toggle('open',o); if(burger){burger.classList.toggle('is-open',o);burger.setAttribute('aria-expanded',o);} document.body.style.overflow=o?'hidden':''; }
   if(burger){ burger.addEventListener('click',function(){ setOpen(!mm.classList.contains('open')); }); }
+  document.addEventListener('click',function(e){ if(mm && mm.classList.contains('open') && !mm.contains(e.target) && burger && !burger.contains(e.target)) setOpen(false); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') setOpen(false); });
   if(mm){ mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ if(a.closest('.m-sub')||a.classList.contains('m-link')||a.closest('.m-cta')) setOpen(false); });}); }
   window.addEventListener('resize',function(){ if(window.innerWidth>=1200) setOpen(false); });
   /* mobile accordion */

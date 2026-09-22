@@ -905,6 +905,10 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .mt-media img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform 8s ease;}
 .mt-media:hover img{transform:scale(1.04);}
 .mt-media.wide img{aspect-ratio:16/10;}
+/* video in a media slot: same frame as the photos, controls only on hover/focus.
+   The frame is capped at the clip's own 320x568 so it is never upscaled or cropped. */
+.mt-media-video{max-width:320px;margin-inline:auto;}
+.mt-media video{width:100%;aspect-ratio:320/568;object-fit:cover;display:block;background:var(--navy);}
 
 /* veterans callout */
 .vet-card{background:linear-gradient(150deg,#0B1C47,#163474);color:#fff;border-radius:var(--r);padding:clamp(1.8rem,3.5vw,2.8rem);box-shadow:var(--shadow-lg);}
@@ -1140,7 +1144,13 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <p style="margin-top:1.2rem;color:var(--body)">Your therapist builds a structured, client-centred exercise programme designed around your individual training goals.</p>
       <div class="btn-row" style="margin-top:1.4rem"><a class="btn btn-primary" href="tel:6138208228">Talk to Our Team</a></div>
     </div>
-    <div class="mt-media rv"><img src="https://cdn.katalyst-crm.com/a/cdd9c357-e14c-9b6d-657a-92b45f3a811f" alt="A kinesiologist assessing a client's movement"></div>
+    <div class="mt-media mt-media-video rv">
+      <video id="assessmentVideo" autoplay muted loop playsinline preload="metadata"
+             poster="https://cdn.katalyst-crm.com/a/67b4535c-7887-6406-7683-dd24bef11d38"
+             aria-label="Strength training at the LiquidGym clinic">
+        <source src="https://cdn.katalyst-crm.com/a/3087aaee-5077-bc3a-c303-1ed30ebddbf9/g/f6eed928-931c-faa6-b851-620a2f2d14c4/original" type="video/mp4">
+      </video>
+    </div>
   </div>
 </div></section>
 
@@ -1264,5 +1274,18 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </script>
 <script>(function(){var els=document.querySelectorAll(".rv");if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in");});return;}var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});els.forEach(function(e){io.observe(e);});})();</script>
 <script>(function(){document.querySelectorAll(".cta-bg").forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
+<script>(function(){
+  var v=document.getElementById('assessmentVideo'); if(!v) return;
+  /* controls appear on hover or keyboard focus, and stay while the video is paused */
+  function show(){ v.setAttribute('controls',''); }
+  function hide(){ if(!v.paused) v.removeAttribute('controls'); }
+  v.addEventListener('mouseenter',show); v.addEventListener('focus',show);
+  v.addEventListener('mouseleave',hide); v.addEventListener('blur',hide);
+  v.addEventListener('pause',show); v.addEventListener('play',function(){ if(!v.matches(':hover')) v.removeAttribute('controls'); });
+  v.tabIndex=0;
+  /* touch devices have no hover, so leave the controls in place there */
+  if(!window.matchMedia('(hover: hover)').matches) show();
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ v.removeAttribute('autoplay'); v.pause(); show(); }
+})();</script>
 </body>
 </html>

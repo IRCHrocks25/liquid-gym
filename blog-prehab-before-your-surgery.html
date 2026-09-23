@@ -1139,10 +1139,17 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   .post-side{position:static;}
 }
 
-/* references list and byline used by the posts below */
+/* references, byline and the video grids used by the posts */
 .post-body-col ul.refs{font-size:.9rem;color:var(--muted);}
 .post-body-col ul.refs li{margin-bottom:.5rem;}
 .post-body-col .byline{margin-top:2rem;font-size:.9rem;color:var(--muted);font-style:italic;}
+.vidgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:.7rem;margin:1.3rem 0;}
+.vidgrid a{position:relative;display:block;border-radius:10px;overflow:hidden;box-shadow:var(--shadow-sm);}
+.vidgrid img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:transform .3s ease;}
+.vidgrid a:hover img{transform:scale(1.04);}
+.vidgrid .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;
+  background:rgba(11,28,71,.82);display:grid;place-items:center;pointer-events:none;}
+.vidgrid .play svg{width:15px;height:15px;fill:#fff;margin-left:2px;}
 </style>
 
 </head>
@@ -1383,9 +1390,8 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
         <h2>The benefits that are not physical</h2>
         <p>Exercise brings obvious physical gains, but there are emotional ones too. A supportive environment takes the edge off the anxiety around an operation. It also gives you time to arrange any equipment you will need, learn about the procedure, and build a clear picture of what recovery will involve.</p>
         <figure class="fig rv"><img src="https://cdn.katalyst-crm.com/a/d46dcbed-1632-77c0-4a38-9ea0aa0231a3" alt="Suspended exercise in the therapy pool" loading="lazy"></figure>
-
         <div class="pull">
-          <p>If you have a date booked, there is still time to prepare for it. Call LiquidGym at <a href="tel:6138208228">613-820-8228</a> to arrange an assessment.</p>
+          <p>If you have a date booked, there is still time to prepare for it. Call LiquidGym at <a href="tel:6138208228">613-820-8228</a>.</p>
         </div>
 
         <h2>References</h2>
@@ -1427,7 +1433,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
             <time datetime="2025-10-10">October 10, 2025</time>
           </div>
         </a>
-        <a class="mini" href="https://www.liquidgym.ca/2025/10/09/raking-those-leaves-again-3/" target="_blank" rel="noopener noreferrer">
+        <a class="mini" href="blog-raking-leaves-safely.html">
           <img src="https://cdn.katalyst-crm.com/a/bd96b166-3153-7247-48a5-ffa3c6491002" alt="Raking Those Leaves&hellip; Again!" loading="lazy">
           <div class="mini-txt">
             <span class="mini-cat blog">Blog</span>
@@ -1435,7 +1441,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
             <time datetime="2025-10-09">October 9, 2025</time>
           </div>
         </a>
-        <a class="mini" href="https://www.liquidgym.ca/2025/09/23/have-you-considered-vision-therapy-at-liquidgym-4/" target="_blank" rel="noopener noreferrer">
+        <a class="mini" href="blog-vision-therapy.html">
           <img src="https://cdn.katalyst-crm.com/a/e09f0dac-a5c1-8f51-2865-0f835f091033" alt="Have You Considered Vision Therapy at LiquidGym?" loading="lazy">
           <div class="mini-txt">
             <span class="mini-cat blog">Blog</span>

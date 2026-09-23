@@ -1150,6 +1150,8 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .vidgrid .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:42px;height:42px;border-radius:50%;
   background:rgba(11,28,71,.82);display:grid;place-items:center;pointer-events:none;}
 .vidgrid .play svg{width:15px;height:15px;fill:#fff;margin-left:2px;}
+.photogrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.7rem;margin:1.3rem 0;}
+.photogrid img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;border-radius:10px;box-shadow:var(--shadow-sm);}
 </style>
 
 </head>

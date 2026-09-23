@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cardiovascular Impairments · Conditions We Treat · LiquidGym</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ten Ways to Stay Physically Active This Winter | LiquidGym</title>
+<meta name="description" content="News, events and patient education from LiquidGym Therapy &amp; Training Centre in Ottawa.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
+
 :root{
   --navy:#0B1C47; --blue:#163474; --mid:#2E5EAC; --bright:#4288DD; --light:#ADD4F5;
   --ink:#163474; --body:#5C6B88; --line:#E3EDF9; --soft:#F3F8FD;
@@ -104,6 +107,7 @@ a{color:inherit;text-decoration:none;}
   .nav-links .btn{width:auto;min-height:44px;padding:.6rem 1.15rem;font-size:.9rem;margin-left:.4rem;}
 }
 
+@media (min-width:900px){.burger{display:none;}}
 
 
 
@@ -324,6 +328,7 @@ a{color:inherit;text-decoration:none;}
 .hero{position:relative;isolation:isolate;min-height:clamp(520px,74vh,760px);min-height:clamp(520px,74svh,760px);display:flex;align-items:center;}
 
 .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(120deg,rgba(11,28,71,.82) 0%,rgba(11,28,71,.6) 55%,rgba(22,52,116,.42) 100%);}
 
 .hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);animation:heroDrift 22s ease-in-out infinite alternate;}
 
@@ -870,15 +875,6 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   .nav-cta{font-size:.76rem;padding:.48rem .8rem;}
 }
 
-/* secondary logo in nav (right of buttons) */
-.logo-secondary{display:inline-flex;align-items:center;padding-left:.85rem;margin-left:.25rem;border-left:1px solid rgba(255,255,255,.18);}
-.logo-secondary img{height:27px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.92;transition:opacity .18s ease;}
-.logo-secondary:hover img{opacity:1;}
-@media (min-width:1200px) and (max-width:1360px){
-  .logo-secondary img{height:24px;}
-  .logo-secondary{padding-left:.7rem;}
-}
-
 /* ---- mobile menu: accordion groups ---- */
 .mobile-menu .m-group{border-bottom:1px solid rgba(255,255,255,.10);}
 .m-acc{
@@ -902,86 +898,251 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .nav-top{color:rgba(255,255,255,.9)!important;}
 .nav-item.is-active > .nav-top,.nav-top:hover{color:#fff!important;}
 
-/* buoyancy stat cards — redesigned */
-.buoy2{display:grid;gap:1.1rem;margin-top:1.6rem;}
-@media(min-width:560px){.buoy2{grid-template-columns:1fr 1fr;}}
-.buoy2-card{background:linear-gradient(155deg,var(--soft),#fff);border:1px solid var(--line);border-radius:16px;padding:1.5rem 1.6rem;transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;}
-.buoy2-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--light);}
-.buoy2-num{font-family:var(--display);font-size:clamp(1.4rem,2.6vw,1.9rem);font-weight:300;color:var(--body);line-height:1;letter-spacing:-.02em;display:flex;align-items:center;gap:.4rem;}
-.buoy2-num b{font-weight:500;color:var(--bright);font-size:clamp(2.1rem,4vw,3rem);}
-.buoy2-num .unit{font-size:1.1rem;color:var(--body);font-weight:400;align-self:flex-end;margin-bottom:.35rem;}
-.buoy2-bar{margin:1rem 0 .9rem;height:8px;border-radius:999px;background:var(--line);overflow:hidden;}
-.buoy2-bar span{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--mid),var(--bright));}
-.buoy2-card p{font-size:.92rem;line-height:1.6;color:var(--body);margin:0;}
+/* closing band background video (matches homepage invitation) */
+.final.has-video{position:relative;overflow:hidden;}
+.final.has-video .cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+.final.has-video::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(118deg,rgba(11,28,71,.55) 0%,rgba(11,28,71,.45) 46%,rgba(11,28,71,.34) 100%);}
+.final.has-video .wrap{position:relative;z-index:2;}
+.final.has-video .orb{z-index:1;}
+@media (prefers-reduced-motion:reduce){.final.has-video .cta-bg{display:none;}}
+
+/* Veterans card — background image with scrim */
+.vet-card.has-bg{position:relative;overflow:hidden;background:linear-gradient(150deg,#0B1C47,#163474);}
+.vet-card.has-bg::before{content:"";position:absolute;inset:0;z-index:0;background-image:linear-gradient(120deg,rgba(11,28,71,.86) 0%,rgba(11,28,71,.66) 55%,rgba(11,28,71,.5) 100%),url('https://cdn.katalyst-crm.com/a/808f84fc-e48f-928f-c6ef-ba9a7c6f6732');background-size:cover;background-position:center;}
+.vet-card.has-bg > *{position:relative;z-index:1;}
+
+
+/* 2-column bullet list */
+.mt-list.two-col{max-width:none;}
+@media(min-width:620px){.mt-list.two-col{grid-template-columns:1fr 1fr;column-gap:2.4rem;}}
+
+
+/* Land/Water icon chips (replacing images) */
+.lw-ico{display:grid;place-items:center;height:120px;background:linear-gradient(150deg,var(--soft),#fff);color:var(--bright);border-bottom:1px solid var(--line);}
+.lw-card:hover .lw-ico{color:var(--blue);}
+.lw-ico svg{width:44px;height:44px;transition:transform .3s ease;}
+.lw-card:hover .lw-ico svg{transform:scale(1.08);}
+
+
+/* Compact Land/Water cards */
+.lw2{display:grid;gap:1.2rem;margin-top:1.8rem;}
+@media(min-width:860px){.lw2{grid-template-columns:1fr 1fr;}}
+.lw2-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.7rem 1.6rem;box-shadow:var(--shadow-sm);transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;}
+.lw2-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--light);}
+.lw2-head{display:flex;align-items:center;gap:.85rem;margin-bottom:1rem;}
+.lw2-ico{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:12px;background:var(--soft);color:var(--bright);border:1px solid var(--line);transition:background .24s,color .24s,transform .24s;}
+.lw2-card:hover .lw2-ico{background:var(--bright);color:#fff;transform:scale(1.06);}
+.lw2-head h3{font-family:var(--display);font-size:1.2rem;font-weight:500;color:var(--blue);margin:0;line-height:1.25;}
+.lw2-card p{color:var(--body);line-height:1.6;margin:0 0 .8rem;font-size:.95rem;}
+.lw2-card p:last-of-type{margin-bottom:0;}
+.lw2-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
+.lw2-chips span{font-family:var(--display);font-size:.8rem;font-weight:500;color:var(--blue);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:.4rem .85rem;transition:background .18s,color .18s,border-color .18s;}
+.lw2-card:hover .lw2-chips span{border-color:var(--light);}
+.lw2-chips span:hover{background:var(--bright);color:#fff;border-color:var(--bright);}
+
+
+/* Land & Water heading — wider */
+.lw-head{max-width:none!important;}
+.lw-head h2{max-width:26ch;margin-inline:auto;}
+.lw-head .lede{max-width:72ch;margin-inline:auto;}
+.lw-head > p{max-width:72ch;margin-inline:auto;}
+
+
+
+/* ===== TEAM PAGE ===== */
+.team-section{padding-block:var(--sec);}
+.team-section + .team-section{border-top:1px solid var(--line);}
+.dept-label{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:2rem;}
+.dept-label::before{content:"";width:22px;height:2px;background:var(--bright);}
+.team-grid{display:grid;gap:0;}
+@media(min-width:760px){.team-grid{grid-template-columns:1fr;gap:0;}}
+.member{display:flex;flex-direction:column;gap:0;padding-block:2.6rem;border-bottom:1px solid var(--line);}
+.team-grid .member:last-child{border-bottom:none;}
+@media(min-width:680px){.member{flex-direction:row;align-items:flex-start;gap:2.4rem;}}
+@media(min-width:680px){.member.flip{flex-direction:row-reverse;}}
+.member-photo{width:100%;max-width:420px;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);margin-bottom:1.4rem;}
+@media(min-width:680px){.member-photo{flex:0 0 360px;width:360px;margin-bottom:0;}}
+.member-body{flex:1;min-width:0;}
+.member-media{width:100%;max-width:420px;}
+@media(min-width:680px){.member-media{flex:0 0 360px;width:360px;}}
+.dog-snaps{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:.7rem;margin-top:1.2rem;}
+.snap{margin:0;width:46%;background:#fff;padding:.4rem .4rem .55rem;border-radius:10px;box-shadow:var(--shadow-md);transition:transform .35s cubic-bezier(.22,.7,.2,1);}
+.snap img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;display:block;}
+.snap-a{transform:rotate(-4deg);}
+.snap-b{transform:rotate(4deg);margin-top:.6rem;}
+.snap:hover{transform:rotate(0) scale(1.06);position:relative;z-index:3;box-shadow:var(--shadow-lg);}
+.snap-cap{flex:0 0 100%;text-align:center;margin:.4rem 0 0;font-family:var(--display);font-size:.82rem;font-weight:500;color:var(--mid);}
+.snap-cap span{font-size:1rem;}
+
+.member-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%);transition:filter .6s ease,transform 6s ease;}
+.member-photo:hover img{filter:grayscale(0);transform:scale(1.03);}
+.member h3{font-family:var(--display);font-size:clamp(1.5rem,2.4vw,2rem);font-weight:600;color:var(--navy);margin:0 0 .25rem;line-height:1.15;}
+.member .creds{font-family:var(--display);font-size:.88rem;font-weight:400;color:var(--body);margin:0 0 .25rem;}
+.member .role{font-family:var(--display);font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--bright);margin:0 0 1rem;}
+.member .intro{font-size:.95rem;line-height:1.65;color:var(--body);margin:0 0 .6rem;}
+.bio-detail{max-height:none;overflow:visible;opacity:1;}
+.bio-detail-inner{padding-top:.2rem;font-size:.93rem;line-height:1.65;color:var(--body);}
+.bio-gallery{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.3rem;}
+.bio-gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow-sm);display:block;}
+@media(max-width:520px){.bio-gallery{grid-template-columns:1fr;}}
+.bio-detail-inner p{margin:0 0 .8rem;}
+.bio-detail-inner p:last-child{margin-bottom:0;}
+.bio-detail-inner strong{color:var(--ink);font-weight:600;}
+.owners-grid{display:grid;gap:2.8rem;}
+@media(min-width:760px){.owners-grid{grid-template-columns:1fr;gap:0;}}
+.hiring-band{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(155deg,#0B1C47,#163474 60%,#2E5EAC);color:#fff;padding-block:clamp(3.5rem,7vw,6rem);}
+.hiring-band .cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
+.hiring-band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(120deg,rgba(11,28,71,.86) 0%,rgba(11,28,71,.66) 55%,rgba(22,52,116,.5) 100%);}
+.hiring-band .wrap{position:relative;z-index:2;}
+.hiring-band h2,.hiring-band p,.hiring-band .eyebrow,.hiring-band .btn{text-shadow:0 2px 18px rgba(11,28,71,.5);}
+@media (prefers-reduced-motion:reduce){.hiring-band .cta-bg{display:none;}}
+.hiring-band h2{color:#fff;margin-bottom:.8rem;}
+.hiring-band p{color:rgba(255,255,255,.86);max-width:48ch;}
+.cta-band{background:var(--soft);text-align:center;padding-block:clamp(3rem,6vw,5rem);}
+.cta-band h2{color:var(--navy);margin-bottom:.6rem;}
+.cta-band p{color:var(--body);max-width:44ch;margin-inline:auto;}
+
+
+
+/* ===== BLOG INDEX PAGE ===== */
+.blog-section{padding-block:var(--sec);}
+.blog-section.alt{background:var(--soft);}
+/* filter bar */
+.blog-toolbar{display:flex;flex-wrap:wrap;gap:1.4rem;align-items:center;justify-content:space-between;padding-bottom:1.4rem;border-bottom:1px solid var(--line);margin-bottom:clamp(2rem,4vw,2.8rem);}
+.filter-pills{display:flex;flex-wrap:wrap;gap:.55rem;}
+.pill{font-family:var(--display);font-size:.82rem;font-weight:600;letter-spacing:.02em;color:var(--body);background:#fff;border:1px solid var(--line);border-radius:999px;padding:.5rem 1.05rem;cursor:pointer;transition:all .22s ease;}
+.pill:hover{border-color:var(--bright);color:var(--blue);}
+.pill.active{background:var(--navy);border-color:var(--navy);color:#fff;}
+.year-select{font-family:var(--display);font-size:.85rem;font-weight:600;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:.55rem 1rem;cursor:pointer;}
+.result-count{font-family:var(--display);font-size:.85rem;color:var(--body);}
+/* featured post */
+.feat-post{display:grid;gap:0;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm);text-decoration:none;transition:transform .28s ease,box-shadow .28s ease;margin-bottom:clamp(2rem,4vw,3rem);}
+@media(min-width:880px){.feat-post{grid-template-columns:1.15fr .85fr;align-items:stretch;}}
+.feat-post:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.feat-media{overflow:hidden;background:var(--soft);}
+.feat-media img{width:100%;height:100%;min-height:260px;object-fit:cover;display:block;transition:transform .9s ease;}
+.feat-post:hover .feat-media img{transform:scale(1.04);}
+.feat-body{padding:clamp(1.8rem,3.2vw,2.8rem);display:flex;flex-direction:column;justify-content:center;}
+.feat-body h2{font-family:var(--display);font-size:clamp(1.5rem,2.8vw,2.1rem);font-weight:600;color:var(--navy);margin:.9rem 0 .9rem;line-height:1.22;}
+.feat-body p{color:var(--body);line-height:1.7;margin:0 0 1.4rem;font-size:1rem;}
+/* meta row */
+.post-meta{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;}
+.cat-tag{font-family:var(--display);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.34rem .75rem;border-radius:999px;}
+.cat-tag.events{background:#EAF3FE;color:var(--blue);}
+.cat-tag.blog{background:#E8F6F0;color:#1C7A5A;}
+.cat-tag.news{background:#FFF1E6;color:#B4541B;}
+/* placeholder thumb — swap for <img class="post-thumb" src="..."> when artwork is ready */
+.thumb-ph{width:100%;aspect-ratio:16/9;display:block;position:relative;overflow:hidden;
+  background:radial-gradient(120% 95% at 18% 8%,rgba(173,212,245,.92),transparent 58%),
+             radial-gradient(95% 85% at 88% 88%,rgba(66,136,221,.9),transparent 62%),
+             linear-gradient(158deg,#163474 0%,#2E5EAC 52%,#4288DD 100%);}
+.thumb-ph::after{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(96deg,rgba(255,255,255,.13) 0 1px,transparent 1px 42px);opacity:.55;}
+.thumb-ph.alt{background:radial-gradient(110% 90% at 80% 10%,rgba(173,212,245,.8),transparent 60%),
+             linear-gradient(200deg,#0B1C47 0%,#163474 55%,#2E5EAC 100%);}
+.feat-media .thumb-ph{height:100%;min-height:260px;aspect-ratio:auto;}
+.post-card.hide,.feat-post.hide{display:none;}
+.post-date{font-family:var(--display);font-size:.8rem;font-weight:500;color:var(--body);letter-spacing:.02em;}
+.read-link{font-family:var(--display);font-size:.88rem;font-weight:600;color:var(--blue);display:inline-flex;align-items:center;gap:.35rem;margin-top:auto;}
+.read-link .arrow{transition:transform .24s ease;}
+/* post grid */
+.post-grid{display:grid;gap:1.6rem;}
+@media(min-width:680px){.post-grid{grid-template-columns:1fr 1fr;gap:1.8rem;}}
+@media(min-width:1080px){.post-grid{grid-template-columns:repeat(3,1fr);}}
+.post-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;text-decoration:none;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;}
+.post-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--light);}
+.post-card.hide{display:none;}
+.post-thumb{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--soft);transition:transform .8s ease;}
+.post-card:hover .post-thumb{transform:scale(1.05);}
+.post-body{padding:1.5rem 1.45rem 1.6rem;display:flex;flex-direction:column;flex:1;}
+.post-body h3{font-family:var(--display);font-size:1.1rem;font-weight:600;color:var(--navy);margin:.85rem 0 .7rem;line-height:1.35;}
+.post-body p{color:var(--body);line-height:1.65;margin:0 0 1.2rem;font-size:.93rem;}
+.post-card:hover .read-link .arrow{transform:translateX(4px);}
+/* empty state */
+.no-results{display:none;text-align:center;padding:3rem 1rem;color:var(--body);font-family:var(--display);}
+.no-results.show{display:block;}
+/* widen hero */
+.hero h1{max-width:24ch!important;}
+.hero .sub{max-width:56ch!important;}
 
 </style>
-<style>
-/* ===== Massage Therapy page ===== */
-.mt-list{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.7rem;max-width:52ch;}
-.mt-list li{position:relative;padding-left:1.7rem;color:var(--body);line-height:1.6;}
-.mt-list li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:9px;border-radius:50%;background:var(--bright);}
-.mt-split{display:grid;gap:2rem;align-items:center;}
-@media(min-width:900px){.mt-split{grid-template-columns:1.05fr .95fr;gap:clamp(2.4rem,4.5vw,4rem);}}
-.mt-split.flip .mt-media{order:2;}
-.mt-media{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);}
-.mt-media img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform 8s ease;}
-.mt-media:hover img{transform:scale(1.04);}
-.mt-media.wide img{aspect-ratio:16/10;}
-
-/* veterans callout */
-.vet-card{background:linear-gradient(150deg,#0B1C47,#163474);color:#fff;border-radius:var(--r);padding:clamp(1.8rem,3.5vw,2.8rem);box-shadow:var(--shadow-lg);}
-.vet-card .eyebrow{color:var(--light);} .vet-card .eyebrow::before{background:var(--light);}
-.vet-card h2{color:#fff;} .vet-card p{color:rgba(255,255,255,.86);}
-
-/* conditions */
-.cond-grid{columns:2;column-gap:2.4rem;list-style:none;padding:0;margin:2rem 0 0;}
-@media(min-width:760px){.cond-grid{columns:3;}}
-.cond-grid li{break-inside:avoid;padding:.5rem 0 .5rem 1.5rem;position:relative;color:var(--body);font-size:.95rem;line-height:1.4;border-bottom:1px solid var(--line);}
-.cond-grid li::before{content:"";position:absolute;left:0;top:.85em;width:7px;height:7px;border-radius:50%;background:var(--light);}
-
-/* techniques */
-.tech-grid{display:grid;gap:1.1rem;margin-top:2.4rem;grid-template-columns:1fr;}
-@media(min-width:640px){.tech-grid{grid-template-columns:1fr 1fr;}}
-@media(min-width:1040px){.tech-grid{grid-template-columns:1fr 1fr 1fr;}}
-.tech-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.4rem;position:relative;box-shadow:var(--shadow-sm);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;}
-.tech-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:var(--light);}
-.tech-n{font-family:var(--display);font-size:1.2rem;font-weight:300;color:var(--light);letter-spacing:-.02em;}
-.tech-card h3{font-family:var(--display);font-size:1.02rem;font-weight:500;color:var(--blue);margin:.3rem 0 .5rem;line-height:1.3;}
-.tech-card p{font-size:.9rem;line-height:1.55;color:var(--body);margin:0;}
-</style>
+<noscript><style>.rv{opacity:1!important;transform:none!important;}</style></noscript>
 
 <style>
-.breadcrumb{font-family:var(--display);font-size:.8rem;color:rgba(255,255,255,.75);display:flex;gap:.5rem;align-items:center;margin-bottom:1rem;}
-.breadcrumb a{color:rgba(255,255,255,.75);} .breadcrumb a:hover{color:#fff;}
-.routes{display:grid;gap:1.2rem;margin-top:2rem;}
-@media(min-width:820px){.routes{grid-template-columns:1fr 1fr;}}
-.route-card{border-radius:16px;padding:1.9rem 1.7rem;transition:transform .24s ease,box-shadow .24s ease;}
-.route-card.physio{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);}
-.route-card.kin{background:linear-gradient(155deg,#0B1C47,#163474);color:#fff;}
-.route-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
-.route-card h3{font-family:var(--display);font-size:1.3rem;font-weight:500;margin:0 0 .7rem;}
-.route-card.physio h3{color:var(--blue);} .route-card.kin h3{color:#fff;}
-.route-card p{line-height:1.65;margin:0 0 1rem;font-size:.96rem;}
-.route-card.physio p{color:var(--body);} .route-card.kin p{color:rgba(255,255,255,.86);}
-/* checklist */
-.benef{list-style:none;padding:0;margin:1.4rem 0 0;display:grid;gap:.75rem;}
-.benef li{display:flex;align-items:flex-start;gap:.8rem;color:var(--body);line-height:1.6;}
-.benef li::before{content:"";flex:none;margin-top:.2em;width:22px;height:22px;border-radius:50%;background:var(--bright);
-  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/14px no-repeat;
-          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/14px no-repeat;}
-/* Heart Wise badge card */
-.hw-card{background:linear-gradient(150deg,#0B1C47,#163474);color:#fff;border-radius:var(--r);padding:clamp(1.8rem,3.5vw,2.6rem);box-shadow:var(--shadow-lg);}
-.hw-card .eyebrow{color:var(--light);} .hw-card .eyebrow::before{background:var(--light);}
-.hw-card h2{color:#fff;} .hw-card > p{color:rgba(255,255,255,.86);}
-.hw-card .benef li{color:rgba(255,255,255,.9);}
-.hw-card .benef li::before{background:var(--light);}
-.hw-sub{font-family:var(--display);font-weight:500;color:#fff;margin:1.6rem 0 .2rem;font-size:1.02rem;}
-/* closing video */
-.cta-bg{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
-.sec.band.final.has-video{position:relative;overflow:hidden;}
-.sec.band.final.has-video .wrap{position:relative;z-index:2;}
-.sec.band.final.has-video .orb{z-index:1;}
-@media (prefers-reduced-motion:reduce){.cta-bg{display:none;}}
+/* ===== single post — image hero + two column ===== */
+.post-hero{position:relative;overflow:hidden;color:#fff;min-height:clamp(340px,44vh,460px);
+  display:flex;align-items:flex-end;padding-top:clamp(88px,10vw,120px);}
+.post-hero-img{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;}
+.post-hero-veil{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(11,28,71,.42) 0%,rgba(11,28,71,.58) 45%,rgba(11,28,71,.86) 100%),
+             radial-gradient(70% 110% at 12% 0%,rgba(66,136,221,.3),transparent 62%);}
+.post-hero .wrap{position:relative;z-index:2;padding-block:clamp(2.2rem,5vw,3.4rem);}
+.post-hero h1{color:#fff;max-width:20ch;margin:.7rem 0 0;text-shadow:0 2px 22px rgba(11,28,71,.5);}
+.post-hero .breadcrumb a,.post-hero .breadcrumb strong,.post-hero .breadcrumb .sep{color:rgba(255,255,255,.9);}
+.post-kicker{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin-top:1.1rem;}
+.post-kicker time{color:rgba(255,255,255,.85);font-size:.9rem;}
+
+/* layout */
+.post-layout{padding-block:clamp(2.2rem,5vw,3.6rem);}
+.post-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:clamp(2rem,4vw,3.5rem);align-items:start;}
+
+/* article column */
+.post-body-col{min-width:0;}
+.lede-box{font-size:1.1rem;line-height:1.7;font-weight:500;color:var(--ink);
+  border-left:3px solid var(--blue);padding:.9rem 0 .9rem 1.2rem;margin-bottom:2rem;}
+.post-body-col h2{font-size:clamp(1.4rem,2.6vw,1.75rem);margin:2.4rem 0 .9rem;color:var(--navy);}
+.post-body-col h3{font-size:1.12rem;margin:2rem 0 .55rem;color:var(--navy);}
+.post-body-col p{margin-bottom:1.05rem;line-height:1.75;color:var(--body);}
+.post-body-col ul{margin:0 0 1.25rem 1.1rem;}
+.post-body-col li{margin-bottom:.45rem;line-height:1.7;color:var(--body);}
+.post-body-col a{color:var(--mid);text-decoration:underline;text-underline-offset:2px;}
+.fig{margin:1.4rem 0 1.8rem;}
+.fig img{display:block;margin:0;width:100%;height:440px;object-fit:cover;
+  border-radius:14px;box-shadow:var(--sh-1);}
+@media(max-width:640px){.fig img{height:300px;}}
+.pull{background:var(--soft);border-radius:14px;padding:1.3rem 1.45rem;margin:2.1rem 0;}
+.pull p{margin:0;font-weight:500;color:var(--navy);}
+.post-foot{border-top:1px solid var(--line);margin-top:2.6rem;padding-top:1.5rem;
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:center;}
+.back-link{font-weight:600;color:var(--mid);text-decoration:none;}
+.back-link:hover{text-decoration:underline;}
+
+/* sidebar */
+.post-side{position:sticky;top:96px;display:flex;flex-direction:column;gap:1.5rem;}
+.side-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.25rem 1.3rem;box-shadow:var(--sh-1);}
+.side-card h3{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);margin:0 0 1rem;}
+.mini{display:flex;gap:.8rem;align-items:flex-start;text-decoration:none;padding:.65rem 0;border-top:1px solid var(--line);}
+.mini:first-of-type{border-top:0;padding-top:0;}
+.mini img{width:66px;height:52px;object-fit:cover;border-radius:9px;flex:0 0 auto;}
+.mini-txt{min-width:0;}
+.mini h4{font-size:.9rem;line-height:1.35;margin:.25rem 0 .2rem;color:var(--navy);font-weight:600;}
+.mini:hover h4{color:var(--mid);}
+.mini time{font-size:.76rem;color:var(--body);opacity:.75;}
+.mini-cat{display:inline-block;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:700;padding:.15rem .45rem;border-radius:99px;}
+.mini-cat.blog{background:#E8F6F0;color:#1C7A5A;}
+.mini-cat.news{background:#FFF1E6;color:#B4541B;}
+.mini-cat.events{background:#EAF3FE;color:#163474;}
+.cat-list{display:flex;flex-direction:column;gap:.15rem;}
+.cat-list a{display:flex;justify-content:space-between;align-items:center;padding:.5rem 0;
+  text-decoration:none;color:var(--ink);font-weight:500;font-size:.94rem;border-top:1px solid var(--line);}
+.cat-list a:first-child{border-top:0;}
+.cat-list a:hover{color:var(--mid);}
+.cat-list span{font-size:.8rem;color:var(--body);opacity:.7;}
+.side-cta{background:linear-gradient(140deg,#0B1C47,#2E5EAC);color:#fff;border:0;}
+.side-cta h3{color:rgba(255,255,255,.75);}
+.side-cta p{font-size:.92rem;line-height:1.6;color:rgba(255,255,255,.92);margin:0 0 1rem;}
+.side-cta .btn{width:100%;justify-content:center;}
+
+@media(max-width:1000px){
+  .post-grid{grid-template-columns:1fr;}
+  .post-side{position:static;}
+}
+
+/* references list and byline used by the posts below */
+.post-body-col ul.refs{font-size:.9rem;color:var(--muted);}
+.post-body-col ul.refs li{margin-bottom:.5rem;}
+.post-body-col .byline{margin-top:2rem;font-size:.9rem;color:var(--muted);font-style:italic;}
 </style>
 
 </head>
@@ -989,7 +1150,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 <div class="siteheader">
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="logo" href="index.html">
+    <a class="logo" href="#top">
       <img class="logo-img" src="https://cdn.katalyst-crm.com/t1/LiquidGym-Logo-80h.png" alt="LiquidGym">
     </a>
 
@@ -1003,7 +1164,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <a class="nav-sub" href="why-aquatic-therapy.html">Why Aquatic Therapy</a>
         </div>
       </div>
-      <div class="nav-item has-drop is-active">
+      <div class="nav-item has-drop">
         <button class="nav-top nav-trigger" aria-expanded="false">Conditions<svg class="caret" width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
         <div class="nav-panel is-mega">
           <a class="nav-sub" href="conditions.html">Overview</a>
@@ -1075,7 +1236,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </div>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a class="m-link" href="index.html">Home</a>
+  <a class="m-link" href="#top">Home</a>
   <div class="m-group">
     <button class="m-acc" aria-expanded="false">Therapies<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l4 4 4-4"/></svg></button>
     <div class="m-sub">
@@ -1149,118 +1310,158 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   </div>
 </div>
 
-<section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/3ebe8800-605c-f1f3-974f-3abb4971ced4" alt="An older adult doing guided aerobic exercise in a therapy pool"></div>
-  <div class="hero-scrim" aria-hidden="true"></div>
+<!-- ===================== POST HERO ===================== -->
+<section class="post-hero">
+  <img class="post-hero-img" src="https://cdn.katalyst-crm.com/a/5c55493d-2fdb-0296-1a65-8655803ad965" alt="" aria-hidden="true">
+  <div class="post-hero-veil" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="hero-lede">
-      <div class="rv">
-        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">The Hub</a><span>/</span><a href="conditions.html">Conditions</a><span>/</span><b style="color:#fff">Cardiovascular Impairments</b></nav>
-        <span class="eyebrow on-dark">Conditions We Treat · Cardiovascular Impairments</span>
-        <h1>After Cardiac Rehab, What Comes Next?</h1>
-        <p class="sub">Have you been diagnosed with heart disease, or been told you are at risk of it? Have you graduated from cardiac rehabilitation at the Heart Institute and are wondering what to do next?</p>
-        <p class="sub" style="margin-top:.8rem">One of our therapists can help.</p>
-        <div class="btn-row"><a class="btn btn-light" href="#book">Book an Assessment</a></div>
-      </div>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">The Hub</a>
+      <span class="sep" aria-hidden="true">/</span>
+      <a href="blog.html">Blog &amp; Events</a>
+    </nav>
+    <h1>Ten Ways to Stay Physically Active This Winter</h1>
+    <div class="post-kicker">
+      <span class="cat-tag blog">Blog</span>
+      <time datetime="2025-12-05">December 5, 2025</time>
     </div>
   </div>
 </section>
 
-<section class="sec"><div class="wrap">
-  <div class="hw-card rv">
-    <span class="eyebrow">Heart Wise Certification</span>
-    <h2>Heart Wise Exercise Certified.</h2>
-    <p style="margin-top:1.1rem">LiquidGym is a Heart Wise Exercise designated clinic. Our therapists are Heart Wise-certified, a programme run with the University of Ottawa Heart Institute.</p>
-    <p class="hw-sub">What a clinic has to do to hold Heart Wise certification</p>
-    <ul class="benef">
-      <li>Encourage regular aerobic exercise</li>
-      <li>Encourage and incorporate warm-up and cool-down, with self-monitoring through all exercise sessions</li>
-      <li>Allow participants to exercise at a safe level, with options to modify intensity</li>
-      <li>Include participants with chronic health conditions; approval from your physician may be needed</li>
-      <li>Offer health screening</li>
-      <li>Maintain a documented emergency plan known to all staff, including current CPR certification, phone access to local paramedic services, and a defibrillator on site</li>
-    </ul>
-  </div>
-</div></section>
-
-<section class="sec soft-bg"><div class="wrap">
-  <div class="mt-split">
-    <div class="rv">
-      <span class="eyebrow">Why Water May Be an Option</span>
-      <h2>What the Water Makes Possible.</h2>
-      <p style="margin-top:1.1rem;color:var(--body)">Water immersion allows patients to perform movements they may be unable to perform on land. Exercises can be performed with greater ease and less pain because of the buoyancy the water creates.</p>
-      <p style="margin-top:1rem;color:var(--body)">The upward force of buoyancy counterbalances the downward effects of gravity and greatly decreases the impact forces your body is subjected to in traditional land therapy.</p>
-      <div class="buoy2">
-        <div class="buoy2-card">
-          <div class="buoy2-num">up to <b>80%</b></div>
-          <div class="buoy2-bar" aria-hidden="true"><span style="width:80%"></span></div>
-          <p>Standing chest-deep in water, your body weight can be reduced by up to 80 percent.</p>
-        </div>
-        <div class="buoy2-card">
-          <div class="buoy2-num"><b>200</b> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;opacity:.6"><path d="M5 12h14M13 6l6 6-6 6"/></svg> <b>40</b> <span class="unit">lb</span></div>
-          <p>Someone weighing 200 pounds on land may weigh as little as 40 pounds in the water, which is what makes it possible to safely perform exercise therapy that land would not allow.</p>
-        </div>
-      </div>
-      <div class="btn-row" style="margin-top:1.4rem"><a class="btn btn-primary" href="tel:6138208228">Talk to Our Team</a></div>
-    </div>
-    <div class="mt-media rv"><img src="https://cdn.katalyst-crm.com/a/07dfe98d-667b-3c5d-7ea5-50cdcf76fd07" alt="Gentle aerobic movement chest-deep in a therapy pool"></div>
-  </div>
-</div></section>
-
-<section class="sec"><div class="wrap">
-  <div class="mt-split athletes-swap">
-    <div class="mt-media rv"><img src="https://cdn.katalyst-crm.com/a/a709b882-2dc6-0015-6e41-70a194f2616b" alt="A therapist monitoring exercise intensity safely"></div>
-    <div class="rv">
-      <span class="eyebrow">Before and After Surgery</span>
-      <h2>Preparing for Surgery, and Recovering From It.</h2>
-      <p style="margin-top:1.1rem;color:var(--body)">Whether you are going in for cardiovascular surgery, a prehab programme may help with your recovery and post-surgical outcomes.</p>
-      <p style="margin-top:1rem;color:var(--body)">It is never too early to start pre-op therapy, also known as prehab, but starting at least 4 to 6 weeks prior to your scheduled surgery is recommended.</p>
-      <p style="margin-top:1rem;color:var(--body)">Post-op therapy through hydrotherapy can generally begin once the incision has healed, which can be between 15 and 30 days depending on the surgery. Ask your doctor when they would like you to start.</p>
-    </div>
-  </div>
-</div></section>
-
-<section class="sec soft-bg"><div class="wrap">
-  <div class="narrow rv">
-    <span class="eyebrow">How Cardiovascular Conditions Are Treated Here</span>
-    <h2>Two Ways In, Depending on Where You Are Starting.</h2>
-    <p class="lede" style="margin-top:1.1rem">Cardiovascular conditions are treated across two of our therapies. Which one is right for you depends on your diagnosis, your stage of recovery, and what your physician has advised.</p>
-  </div>
-  <div class="routes rv">
-    <div class="route-card physio">
-      <h3>Physiotherapy</h3>
-      <p>Assessment and a plan of care built around your diagnosis and your physician's guidance, with monitored progression.</p>
-      <a class="btn btn-outline" href="physiotherapy.html">Explore Physiotherapy &rarr;</a>
-    </div>
-    <div class="route-card kin">
-      <h3>Kinesiology</h3>
-      <p>A progressive exercise programme building aerobic capacity and confidence at a safe intensity, in water, on land, or both.</p>
-      <a class="btn btn-light" href="kinesiology.html">Explore Kinesiology &rarr;</a>
-    </div>
-  </div>
-</div></section>
-
-<section class="sec band final has-video" id="book" style="background:linear-gradient(140deg,#0B1C47,#163474)">
-  <video class="cta-bg" autoplay muted loop playsinline preload="metadata" poster="https://cdn.katalyst-crm.com/a/608fc552-d7c7-0d47-21e8-7d16cc749317" aria-hidden="true" tabindex="-1"><source src="https://cdn.katalyst-crm.com/a/b1ba9750-2911-3251-bedc-66335b77f177" type="video/mp4"></video>
-  <span class="orb" style="width:300px;height:300px;top:-70px;left:-50px;"></span>
-  <span class="orb" style="width:260px;height:260px;bottom:-90px;right:-40px;"></span>
+<!-- ===================== ARTICLE + SIDEBAR ===================== -->
+<section class="post-layout">
   <div class="wrap">
-    <div class="narrow rv" style="text-align:center;margin-inline:auto">
-      <h2 style="color:#fff">Start With an Assessment.</h2>
-      <p class="lede" style="margin-top:1.1rem;color:rgba(255,255,255,.85);margin-inline:auto;max-width:62ch">For an assessment and a detailed plan of care, call LiquidGym at 613-820-8228 to book an appointment with one of our therapists.</p>
-      <div class="btn-row" style="justify-content:center;margin-top:1.6rem">
-        <a class="btn btn-light" href="#book">Book Your Assessment</a>
-        <a class="btn btn-outline-nav" href="tel:6138208228">Call 613-820-8228</a>
-      </div>
+    <div class="post-grid">
+
+      <article class="post-body-col">
+        <p class="lede-box">Winter is here. So what can you be doing to keep active and enjoy each and every winter day? Let&rsquo;s explore what you can be doing for 30 minutes, 5 days a week &mdash; Ottawa has so much to offer.</p>
+
+        <h2>Ten ways to stay physically active this winter</h2>
+
+        <h3>1. Get outside for a walk</h3>
+        <p>Bundle up with plenty of layers and head out while the sun is shining for a beautiful winter walk. You can keep it simple and go around your neighbourhood, or explore different trails around the city. Ottawa has some excellent walking trails that come with wintery scenery. Here are a few to try:</p>
+        <figure class="fig rv"><img src="https://cdn.katalyst-crm.com/a/674df758-2bdd-f098-7201-b6255f0ae5fe" alt="Walking outside on a winter trail" loading="lazy"></figure>
+        <ul>
+          <li>Old Quarry Trail (1.9 km or 2.7 km)</li>
+          <li>Jack Pine Trail (about 3.1 km)</li>
+          <li>Mer Bleue (many different trails)</li>
+          <li>Beaver Pond Trail (2.0 km)</li>
+          <li>Gatineau Park has four winter trails: Capital Pathway (1.6 km), Pioneers Trail (1.3 km), Laurialt Trail (4.5 km) and Sugarbush Trail (3 km)</li>
+        </ul>
+        <p>Check the <a href="https://ncc-ccn.gc.ca/places/gatineau-park-visitor-information" target="_blank" rel="noopener noreferrer">Gatineau Park visitor information</a> for more on which winter trails are open.</p>
+
+        <h3>2. Snowshoeing</h3>
+        <p>With the large amounts of snow we get here, snowshoeing can be an excellent alternative to walking. Head out with a friend even if it&rsquo;s just a quick half hour &mdash; we&rsquo;d highly recommend going in the morning after a big snowfall. If you tend to lose your balance, try using a pair of poles.</p>
+        <figure class="fig rv"><img src="https://cdn.katalyst-crm.com/a/c89a69fd-c1e5-ba92-57c2-b2a450eb266b" alt="Snowshoeing near Ottawa" loading="lazy"></figure>
+
+        <h3>3. Go to a mall or a museum and get those steps in</h3>
+        <p>If it&rsquo;s a little too cold out, or ice is covering the sidewalks, head to your local mall or a museum. Walking through the mall can absolutely get your steps in &mdash; although you may want to leave the wallet at home. A museum is another great option: find one that interests you and try to go through the whole thing. Most Ottawa museums are free to enter on Thursday evenings after 5pm.</p>
+
+        <h3>4. Cross-country skiing</h3>
+        <p>If you&rsquo;re really looking for a good workout, try cross-country skiing. There are plenty of beautiful trails around Ottawa. Start slow and go with a friend. You can even rent a pair of skis at Mooney&rsquo;s Bay.</p>
+        <figure class="fig rv"><img src="https://cdn.katalyst-crm.com/a/069769ea-a891-1eb0-1f8d-ff9796c99272" alt="Cross-country skier on an Ottawa trail" loading="lazy"></figure>
+
+        <h3>5. Find an indoor pool</h3>
+        <p>Check out the City of Ottawa public pools and try an open or lane swim. Or if you&rsquo;re interested, give us a call at LiquidGym and try one of our rehab and training programs here.</p>
+
+        <h3>6. Skating along the canal or the Rink of Dreams</h3>
+        <p>The Rideau Canal Skateway runs directly through the centre of Ottawa and creates a 7.8 km skating rink. This winter you could set a goal to skate the entire length by the end of the season. The Rink of Dreams is another great option, right by City Hall &mdash; nice and smooth, with a BeaverTails truck usually nearby for a post-skate treat.</p>
+        <figure class="fig rv"><img src="https://cdn.katalyst-crm.com/a/33e4d7e7-6f1c-e503-402e-ec02e449984b" alt="Skating on the Rideau Canal" loading="lazy"></figure>
+
+        <h3>7. Walk along the canal</h3>
+        <p>If you&rsquo;re not a big fan of skating, there are always plenty of people enjoying a beautiful walk along the side of the canal.</p>
+
+        <h3>8. Build a snowman</h3>
+        <p>This gives your legs and arms a good workout, plus you get a festive reward after. Just make sure to keep an upright posture and lift from your legs.</p>
+        <figure class="fig rv"><img src="https://cdn.katalyst-crm.com/a/c2251509-49cf-66bd-79ee-3efbfb6f6664" alt="Building a snowman" loading="lazy"></figure>
+
+        <h3>9. Shovel your driveway</h3>
+        <p>Another one that works the legs and arms. Keep an upright posture, lift from your legs rather than your back, and push the snow rather than carrying it wherever you can.</p>
+
+        <h3>10. Sign up for community online workouts and activities</h3>
+        <p>If it&rsquo;s too cold, or being outdoors in the winter isn&rsquo;t for you, try an online workout or a virtual session with a therapist at LiquidGym to get your body moving from home.</p>
+        <figure class="fig rv"><img src="https://cdn.katalyst-crm.com/a/8df9f6fc-6aef-c086-a840-5f654f9d2da2" alt="Virtual rehab session at LiquidGym" loading="lazy"></figure>
+
+        <div class="pull">
+          <p>Stay active and beat the winter blues. If you&rsquo;d like help building a routine that works for your body, call LiquidGym at <a href="tel:6138208228">613-820-8228</a>.</p>
+        </div>
+
+        <div class="post-foot">
+          <a class="back-link" href="blog.html">&larr; Back to Blog &amp; Events</a>
+          <a class="btn btn-primary" href="tel:6138208228">Call 613-820-8228</a>
+        </div>
+      </article>
+
+      <aside class="post-side">
+        <div class="side-card">
+          <h3>Recent Posts</h3>
+        <a class="mini" href="blog-three-tips-when-shoveling-snow.html">
+          <img src="https://cdn.katalyst-crm.com/a/51221b7c-09de-cf81-f21d-b9fbf14dee38" alt="Snowy Day in Ottawa &mdash; 3 Simple Tips When Shoveling Snow" loading="lazy">
+          <div class="mini-txt">
+            <span class="mini-cat blog">Blog</span>
+            <h4>Snowy Day in Ottawa &mdash; 3 Simple Tips When Shoveling Snow</h4>
+            <time datetime="2025-11-20">November 20, 2025</time>
+          </div>
+        </a>
+        <a class="mini" href="blog-prehab-before-your-surgery.html">
+          <img src="https://cdn.katalyst-crm.com/a/4b80db56-4ba8-e4c0-9971-24276f024a12" alt="Do Your Prehab at LiquidGym While Waiting for Surgery" loading="lazy">
+          <div class="mini-txt">
+            <span class="mini-cat blog">Blog</span>
+            <h4>Do Your Prehab at LiquidGym While Waiting for Surgery</h4>
+            <time datetime="2025-10-20">October 20, 2025</time>
+          </div>
+        </a>
+        <a class="mini" href="blog-veterans-training-and-rehab.html">
+          <img src="https://cdn.katalyst-crm.com/a/2c27b715-4b89-01cf-d5f5-94431abefc27" alt="Are You a Veteran? Come to LiquidGym for Training and Rehab" loading="lazy">
+          <div class="mini-txt">
+            <span class="mini-cat blog">Blog</span>
+            <h4>Are You a Veteran? Come to LiquidGym for Training and Rehab</h4>
+            <time datetime="2025-10-10">October 10, 2025</time>
+          </div>
+        </a>
+        <a class="mini" href="https://www.liquidgym.ca/2025/10/09/raking-those-leaves-again-3/" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.katalyst-crm.com/a/bd96b166-3153-7247-48a5-ffa3c6491002" alt="Raking Those Leaves&hellip; Again!" loading="lazy">
+          <div class="mini-txt">
+            <span class="mini-cat blog">Blog</span>
+            <h4>Raking Those Leaves&hellip; Again!</h4>
+            <time datetime="2025-10-09">October 9, 2025</time>
+          </div>
+        </a>
+        <a class="mini" href="https://www.liquidgym.ca/2025/09/23/have-you-considered-vision-therapy-at-liquidgym-4/" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.katalyst-crm.com/a/e09f0dac-a5c1-8f51-2865-0f835f091033" alt="Have You Considered Vision Therapy at LiquidGym?" loading="lazy">
+          <div class="mini-txt">
+            <span class="mini-cat blog">Blog</span>
+            <h4>Have You Considered Vision Therapy at LiquidGym?</h4>
+            <time datetime="2025-09-23">September 23, 2025</time>
+          </div>
+        </a>
+        </div>
+
+        <div class="side-card">
+          <h3>Browse by Category</h3>
+          <nav class="cat-list">
+            <a href="blog.html#posts">All Posts <span>63</span></a>
+            <a href="blog.html#posts">Blog <span>20</span></a>
+            <a href="blog.html#posts">Events <span>21</span></a>
+            <a href="blog.html#posts">News <span>22</span></a>
+          </nav>
+        </div>
+
+        <div class="side-card side-cta">
+          <h3>Book a Session</h3>
+          <p>Aquatic therapy, physiotherapy and training at Bells Corners &mdash; built around what your body needs.</p>
+          <a href="tel:6138208228" class="btn btn-primary">Call 613-820-8228</a>
+        </div>
+      </aside>
+
     </div>
   </div>
 </section>
-
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="logo" href="index.html#top">
+        <a class="logo" href="#top">
           <img class="logo-img" src="https://cdn.katalyst-crm.com/t1/LiquidGym-Logo-80h.png" alt="LiquidGym">
           <span class="logo-sub">The Hub</span>
         </a>
@@ -1278,7 +1479,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <div>
         <h4>Paths</h4>
         <ul>
-          <li><a href="index.html#rebuild">For Patients</a></li>
+          <li><a href="#rebuild">For Patients</a></li>
           <li><a href="ati-360.html">Aquatic Therapy Innovations — Overview</a></li>
           <li><a href="ati-360.html">ATI 360™ — Build Your Program</a></li>
           <li><a href="ati-education-certification.html">ATI Certification — Get Certified</a></li>
@@ -1303,38 +1504,65 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
 </footer>
+
 <script>
+/* category + year filter */
 (function(){
-  var burger=document.getElementById('burger'), mm=document.getElementById('mobileMenu');
-  function setOpen(o){ if(!mm) return; mm.classList.toggle('open',o); if(burger){burger.classList.toggle('is-open',o);burger.setAttribute('aria-expanded',o);} document.body.style.overflow=o?'hidden':''; }
-  if(burger){ burger.addEventListener('click',function(){ setOpen(!mm.classList.contains('open')); }); }
-  if(mm){ mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){ if(a.closest('.m-sub')||a.classList.contains('m-link')||a.closest('.m-cta')) setOpen(false); });}); }
-  document.addEventListener('click',function(e){ if(mm && mm.classList.contains('open') && !mm.contains(e.target) && burger && !burger.contains(e.target)) setOpen(false); });
-  document.addEventListener('keydown',function(e){ if(e.key==='Escape') setOpen(false); });
-  window.addEventListener('resize',function(){ if(window.innerWidth>=1200) setOpen(false); });
-  /* mobile accordion */
-  document.querySelectorAll('.m-acc').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      var sub=btn.nextElementSibling, open=sub.classList.toggle('open');
-      btn.setAttribute('aria-expanded',open);
+  var pills = document.querySelectorAll('.pill'),
+      yearSel = document.getElementById('yearSelect'),
+      cards = Array.prototype.slice.call(document.querySelectorAll('.post-card')),
+      feat  = document.querySelector('.feat-post'),
+      none  = document.getElementById('noResults'),
+      cat = 'all', yr = 'all';
+
+  function apply(){
+    var shown = 0;
+    if(feat){
+      var fok = (cat === 'all' || feat.dataset.cat === cat) &&
+                (yr === 'all' || feat.dataset.year === yr);
+      feat.classList.toggle('hide', !fok);
+      if(fok) shown++;
+    }
+    cards.forEach(function(c){
+      var ok = (cat === 'all' || c.dataset.cat === cat) &&
+               (yr === 'all' || c.dataset.year === yr);
+      c.classList.toggle('hide', !ok);
+      if(ok) shown++;
+    });
+    if(none) none.classList.toggle('show', shown === 0);
+  }
+
+  pills.forEach(function(p){
+    p.addEventListener('click', function(){
+      pills.forEach(function(x){ x.classList.remove('active'); });
+      p.classList.add('active');
+      cat = p.dataset.filter;
+      apply();
     });
   });
-  /* desktop dropdown: click to toggle on touch, aria on hover handled by CSS */
-  document.querySelectorAll('.nav-trigger').forEach(function(t){
-    t.addEventListener('click',function(e){
-      e.preventDefault();
-      var item=t.closest('.nav-item'), panel=item.querySelector('.nav-panel');
-      var isOpen=item.classList.toggle('force-open');
-      t.setAttribute('aria-expanded',isOpen);
-      document.querySelectorAll('.nav-item.force-open').forEach(function(o){ if(o!==item){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');} });
-    });
-  });
-  document.addEventListener('click',function(e){
-    if(!e.target.closest('.nav-item')){ document.querySelectorAll('.nav-item.force-open').forEach(function(o){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');}); }
-  });
+  if(yearSel){
+    yearSel.addEventListener('change', function(){ yr = yearSel.value; apply(); });
+  }
+  apply();
+})();
+/* reveal */
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
+  var io=new IntersectionObserver(function(entries,obs){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');obs.unobserve(en.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:0.05});
+  els.forEach(function(e){io.observe(e);});
+  setTimeout(function(){document.querySelectorAll('.rv:not(.in)').forEach(function(e){var r=e.getBoundingClientRect();if(r.top<window.innerHeight){e.classList.add('in');}});},1200);
+})();
+(function(){document.querySelectorAll('.cta-bg').forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();
+(function(){
+  var burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
+  function setOpen(o){if(!mm)return;mm.classList.toggle('open',o);if(burger){burger.classList.toggle('is-open',o);burger.setAttribute('aria-expanded',o);}document.body.style.overflow=o?'hidden':'';}
+  if(burger){burger.addEventListener('click',function(){setOpen(!mm.classList.contains('open'));});}
+  if(mm){mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){if(a.closest('.m-sub')||a.classList.contains('m-link')||a.closest('.m-cta'))setOpen(false);});});
+    mm.querySelectorAll('.m-acc').forEach(function(btn){btn.addEventListener('click',function(){var sub=btn.nextElementSibling,open=sub.classList.toggle('open');btn.setAttribute('aria-expanded',open);});});}
+  document.querySelectorAll('.nav-trigger').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var item=btn.closest('.nav-item'),isOpen=item.classList.toggle('force-open');btn.setAttribute('aria-expanded',isOpen);document.querySelectorAll('.nav-item.force-open').forEach(function(o){if(o!==item){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');}});});});
+  document.addEventListener('click',function(e){if(!e.target.closest('.nav-item')){document.querySelectorAll('.nav-item.force-open').forEach(function(o){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');});}});
 })();
 </script>
-<script>(function(){var els=document.querySelectorAll(".rv");if(!("IntersectionObserver" in window)){els.forEach(function(e){e.classList.add("in");});return;}var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:.12});els.forEach(function(e){io.observe(e);});})();</script>
-<script>(function(){document.querySelectorAll(".cta-bg").forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
 </body>
 </html>

@@ -1060,6 +1060,17 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .post-card:hover .read-link .arrow{transform:translateX(4px);}
 /* empty state */
 .no-results{display:none;text-align:center;padding:3rem 1rem;color:var(--body);font-family:var(--display);}
+/* the archive loads in batches; with JavaScript off every card stays visible */
+.post-card.beyond{display:none;}
+.load-more{display:none;margin-top:2.4rem;text-align:center;}
+.load-more.show{display:block;}
+.load-more .count{font-family:var(--display);font-size:.85rem;color:var(--body);margin:0 0 1rem;}
+.load-more button{font-family:var(--display);font-weight:500;font-size:.92rem;cursor:pointer;
+  padding:.8rem 1.8rem;border-radius:999px;border:1px solid var(--navy);background:#fff;color:var(--navy);
+  transition:background .2s ease,color .2s ease;}
+.load-more button:hover{background:var(--navy);color:#fff;}
+.load-more button:focus-visible{outline:2px solid var(--bright);outline-offset:3px;}
+#loadSentinel{height:1px;}
 .no-results.show{display:block;}
 /* widen hero */
 .hero h1{max-width:24ch!important;}
@@ -2317,6 +2328,12 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 
     <p class="no-results" id="noResults">No posts in this category yet.</p>
 
+    <div class="load-more" id="loadMore">
+      <p class="count" id="loadCount"></p>
+      <button type="button" id="loadMoreBtn">Load more posts</button>
+    </div>
+    <div id="loadSentinel" aria-hidden="true"></div>
+
   </div>
 </section>
 
@@ -2383,30 +2400,57 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </footer>
 
 <script>
-/* category + year filter */
+/* category + year filter, with the archive revealed a batch at a time */
 (function(){
+  var STEP = 12;
   var pills = document.querySelectorAll('.pill'),
       yearSel = document.getElementById('yearSelect'),
       cards = Array.prototype.slice.call(document.querySelectorAll('.post-card')),
       feat  = document.querySelector('.feat-post'),
       none  = document.getElementById('noResults'),
-      cat = 'all', yr = 'all';
+      more  = document.getElementById('loadMore'),
+      moreBtn = document.getElementById('loadMoreBtn'),
+      countEl = document.getElementById('loadCount'),
+      sentinel = document.getElementById('loadSentinel'),
+      cat = 'all', yr = 'all', shown = STEP;
+
+  function matches(el){
+    return (cat === 'all' || el.dataset.cat === cat) &&
+           (yr === 'all' || el.dataset.year === yr);
+  }
 
   function apply(){
-    var shown = 0;
+    var featShown = 0;
     if(feat){
-      var fok = (cat === 'all' || feat.dataset.cat === cat) &&
-                (yr === 'all' || feat.dataset.year === yr);
+      var fok = matches(feat);
       feat.classList.toggle('hide', !fok);
-      if(fok) shown++;
+      if(fok) featShown = 1;
     }
+    var hits = [];
     cards.forEach(function(c){
-      var ok = (cat === 'all' || c.dataset.cat === cat) &&
-               (yr === 'all' || c.dataset.year === yr);
+      var ok = matches(c);
       c.classList.toggle('hide', !ok);
-      if(ok) shown++;
+      if(ok) hits.push(c);
     });
-    if(none) none.classList.toggle('show', shown === 0);
+    hits.forEach(function(c, idx){
+      var past = idx >= shown;
+      c.classList.toggle('beyond', past);
+      if(!past) c.classList.add('in');   /* no fade-in on a card revealed by scrolling */
+    });
+    var total = hits.length + featShown;
+    var visible = Math.min(shown, hits.length) + featShown;
+    if(none) none.classList.toggle('show', total === 0);
+    if(more){
+      more.classList.toggle('show', hits.length > shown);
+      if(countEl) countEl.textContent = 'Showing ' + visible + ' of ' + total + ' posts';
+    }
+  }
+
+  function revealMore(){
+    var hits = cards.filter(matches);
+    if(shown >= hits.length) return;
+    shown += STEP;
+    apply();
   }
 
   pills.forEach(function(p){
@@ -2414,14 +2458,25 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       pills.forEach(function(x){ x.classList.remove('active'); });
       p.classList.add('active');
       cat = p.dataset.filter;
+      shown = STEP;
       apply();
     });
   });
   if(yearSel){
-    yearSel.addEventListener('change', function(){ yr = yearSel.value; apply(); });
+    yearSel.addEventListener('change', function(){ yr = yearSel.value; shown = STEP; apply(); });
   }
+  if(moreBtn) moreBtn.addEventListener('click', revealMore);
+
   apply();
+
+  /* reaching the bottom pulls in the next batch; the button covers the rest */
+  if(sentinel && 'IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting) revealMore(); });
+    }, {rootMargin: '400px 0px'}).observe(sentinel);
+  }
 })();
+
 /* reveal */
 (function(){
   var els=document.querySelectorAll('.rv');

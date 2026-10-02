@@ -1037,6 +1037,17 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .gr-step .num{flex:0 0 auto;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--display);font-weight:600;font-size:.9rem;display:inline-flex;align-items:center;justify-content:center;}
 .gr-step p{color:var(--body);line-height:1.6;margin:0;font-size:.96rem;}
 
+.gr-row2{margin-top:clamp(2.5rem,6vw,4.5rem);}
+.gr-media.gr-chart{box-shadow:none;border:1px solid var(--line);background:#fff;max-width:440px;width:100%;margin-inline:auto;}
+.gr-media.gr-chart img{aspect-ratio:auto;object-fit:contain;}
+.gr-media.gr-chart:hover img{transform:none;}
+.gr-video-block{margin-top:clamp(2.5rem,6vw,4.5rem);text-align:center;}
+.gr-video-block h2{color:var(--navy);margin:0 auto 1.4rem;max-width:26ch;}
+.gr-video{position:relative;display:block;max-width:820px;margin-inline:auto;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);aspect-ratio:16/9;background:#0B1C47;}
+.gr-video img,.gr-video iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;display:block;}
+.gr-play{position:absolute;left:50%;top:50%;width:78px;height:78px;margin:-39px 0 0 -39px;border-radius:50%;background:rgba(11,28,71,.82);box-shadow:0 10px 30px rgba(11,28,71,.4);transition:transform .2s ease,background .2s ease;}
+.gr-play::after{content:"";position:absolute;left:31px;top:23px;border-style:solid;border-width:16px 0 16px 25px;border-color:transparent transparent transparent #fff;}
+.gr-video:hover .gr-play{transform:scale(1.07);background:var(--bright);}
 </style>
 <noscript><style>.rv{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
@@ -1234,8 +1245,21 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
         <span class="eyebrow">How It Works</span>
         <h2>Cold Plus Compression</h2>
         <p>Anatomic wraps surround the injured or surgical area and conform to the body using pneumatic compression. Better surface contact means more effective cooling than a static ice pack.</p>
+      </div>
+    </div>
+    <div class="gr-split gr-row2">
+      <div class="gr-body rv">
+        <h2>How It Is Different</h2>
         <p class="gr-note">According to the manufacturer, the GRPro 2.1 cold and compression system is clinically shown to decrease pain, reduce muscle spasm, minimise swelling and improve physical therapy milestones, without the use of narcotics. The manufacturer also states that head-to-head infrared thermal imagery shows Game Ready providing faster, deeper and longer-lasting therapy than other products.</p>
       </div>
+      <div class="gr-media gr-chart rv"><img src="https://cdn.katalyst-crm.com/a/b56d28a9-c3a2-b949-9f78-e095f589378d" alt="Infrared thermal images comparing the GRPro 2.1, a Cryo/Cuff and a gel pack immediately, 10 minutes and 30 minutes after treatment" loading="lazy"></div>
+    </div>
+    <div class="gr-video-block rv">
+      <h2>See How the Game Ready Can Help You Through Your Rehab!</h2>
+      <a class="gr-video" href="https://www.youtube.com/watch?v=581RrwGVkpw" target="_blank" rel="noopener" data-yt="581RrwGVkpw" aria-label="Play video: Game Ready System Demonstration Video">
+        <img src="https://i.ytimg.com/vi/581RrwGVkpw/maxresdefault.jpg" alt="Game Ready System Demonstration Video" loading="lazy">
+        <span class="gr-play" aria-hidden="true"></span>
+      </a>
     </div>
   </div>
 </section>
@@ -1265,7 +1289,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <div class="gr-step"><span class="num">2</span><p>A prepaid return label is included &mdash; return shipping costs nothing extra.</p></div>
         </div>
         <div class="btn-row" style="margin-top:1.4rem;">
-          <a href="tel:6138208228" class="btn btn-outline-blue">Ask About Availability</a>
+          <a href="tel:6138208228" class="btn btn-primary">Call to Book Your Game Ready System</a>
         </div>
       </div>
     </div>
@@ -1281,7 +1305,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   <div class="wrap" style="position:relative;z-index:2;">
     <span class="eyebrow on-dark" style="justify-content:center;">Ready When You Are</span>
     <h2 style="color:#fff;margin-bottom:.6rem;">Book Your Game Ready Rental.</h2>
-    <p style="color:#fff;max-width:44ch;margin-inline:auto;text-shadow:0 2px 18px rgba(11,28,71,.55);">Call LiquidGym at <a href="tel:6138208228" style="color:#fff;font-weight:500;">613-820-8228</a> to check availability and arrange delivery.</p>
+    <p style="color:#fff;max-width:44ch;margin-inline:auto;text-shadow:0 2px 18px rgba(11,28,71,.55);">Call LiquidGym at <a href="tel:6138208228" style="color:#fff;font-weight:500;">613-820-8228</a> to arrange delivery.</p>
     <div class="btn-row" style="justify-content:center;margin-top:1.4rem;">
       <a href="tel:6138208228" class="btn btn-primary">Book Your Rental</a>
     </div>
@@ -1356,6 +1380,9 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   document.querySelectorAll('.nav-trigger').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var item=btn.closest('.nav-item'),isOpen=item.classList.toggle('force-open');btn.setAttribute('aria-expanded',isOpen);document.querySelectorAll('.nav-item.force-open').forEach(function(o){if(o!==item){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');}});});});
   document.addEventListener('click',function(e){if(!e.target.closest('.nav-item')){document.querySelectorAll('.nav-item.force-open').forEach(function(o){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');});}});
 })();
+</script>
+<script>
+document.querySelectorAll(".gr-video[data-yt]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/"+a.dataset.yt+"?autoplay=1&rel=0&modestbranding=1";f.title="Game Ready System Demonstration Video";f.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";f.allowFullscreen=true;f.referrerPolicy="strict-origin-when-cross-origin";var d=document.createElement("div");d.className="gr-video";d.appendChild(f);a.replaceWith(d);});});
 </script>
 </body>
 </html>

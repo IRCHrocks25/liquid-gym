@@ -1048,6 +1048,35 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .stories-band p{color:rgba(255,255,255,.88);max-width:52ch;margin:1rem auto 0;}
 .stories-band h2,.stories-band p{text-shadow:0 2px 18px rgba(11,28,71,.5);}
 
+/* ---------- story media + viewer ---------- */
+.stories-section .wrap{max-width:1400px;}
+.story-media{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.2rem 0 1.2rem;}
+.sm-item{position:relative;display:block;flex:0 0 auto;height:128px;border-radius:10px;overflow:hidden;background:var(--soft);box-shadow:var(--shadow-sm);cursor:zoom-in;}
+.sm-item img{height:100%;width:auto;max-width:none;display:block;transition:transform .5s ease;}
+.sm-item:hover img{transform:scale(1.06);}
+.sm-item:focus-visible{outline:2px solid var(--bright);outline-offset:2px;}
+.sm-item.sm-tall{aspect-ratio:3/4;}
+.sm-item.sm-tall img{width:100%;object-fit:cover;object-position:top;}
+.sm-video{aspect-ratio:16/9;cursor:pointer;}
+.sm-video img{width:100%;object-fit:cover;}
+.sm-play{position:absolute;left:50%;top:50%;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:rgba(11,28,71,.82);box-shadow:0 6px 18px rgba(11,28,71,.4);transition:transform .2s ease,background .2s ease;}
+.sm-play::after{content:"";position:absolute;left:16px;top:12px;border-style:solid;border-width:8px 0 8px 13px;border-color:transparent transparent transparent #fff;}
+.sm-video:hover .sm-play{transform:scale(1.08);background:var(--bright);}
+@media(max-width:560px){.sm-item{height:92px;}}
+.lb{position:fixed;inset:0;z-index:2000;display:none;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;padding:clamp(3.4rem,6vw,4rem) clamp(.8rem,5vw,4.5rem) clamp(1rem,3vw,2rem);background:rgba(7,16,40,.94);}
+.lb.open{display:flex;}
+.lb-stage{display:flex;align-items:center;justify-content:center;max-width:100%;min-height:0;}
+.lb-stage img{display:block;max-width:100%;max-height:calc(100vh - 9rem);max-height:calc(100dvh - 9rem);width:auto;height:auto;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+.lb-frame{width:min(1000px,calc(100vw - 1.6rem));max-width:calc((100vh - 9rem) * 16 / 9);aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:#000;box-shadow:0 20px 60px rgba(0,0,0,.5);}
+.lb-frame iframe{width:100%;height:100%;border:0;display:block;}
+.lb-cap{color:rgba(255,255,255,.86);font-size:.92rem;line-height:1.5;text-align:center;max-width:70ch;margin:0;}
+.lb button{position:absolute;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(11,28,71,.6);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;transition:background .2s ease;}
+.lb button:hover{background:var(--bright);}
+.lb button[hidden]{display:none;}
+.lb-close{top:.8rem;right:.8rem;}
+.lb-prev{left:.8rem;top:50%;margin-top:-23px;}
+.lb-next{right:.8rem;top:50%;margin-top:-23px;}
+@media(max-width:560px){.lb-prev,.lb-next{top:auto;bottom:.8rem;margin-top:0;}.lb{padding-bottom:4.4rem;}}
 </style>
 <noscript><style>.rv{opacity:1!important;transform:none!important;}.story-full{max-height:none!important;}</style></noscript>
 </head>
@@ -1247,6 +1276,9 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>On initial examination she had reduced range of motion through her hips and low back, poor motor control of her left hip, low back and core, and increased tone and guarding through the low back, glutes and hamstrings. She could not perform a full squat or lunge.</p>
           <p>The first goals were to reduce her pain and restore mobility. Once those were met, we could rebuild strength and function. Treatment combined hydrotherapy, gym-based exercise and manual therapy.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/7f85e6f7-88b1-b87d-d5ff-7a57eaa4a72a"><img src="https://cdn.katalyst-crm.com/a/7f85e6f7-88b1-b87d-d5ff-7a57eaa4a72a" alt="Rana back out kayaking on open water" width="600" height="800" loading="lazy"></a>
+        </div>
         <p class="story-attr"><strong>Rana</strong> &middot; Physiotherapy patient</p>
       </article>
       <article class="story rv">
@@ -1262,6 +1294,12 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>We are off to Mexico next week and I can’t wait to swim and snorkel and walk my butt off.</p>
           <blockquote>Lindsay, thank you for everything you did. I know it’s technically your job, but it didn’t feel that way. For me personally motivation is a big hurdle and you nailed it. That is skill and an empathetic personality trait, not a paid service. You listened, challenged and pushed in perfect harmony. It is not an exaggeration to say I really couldn’t have done this without you.</blockquote>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/31b8d547-4db9-ab1f-f3db-b0ecf42f2112"><img src="https://cdn.katalyst-crm.com/a/31b8d547-4db9-ab1f-f3db-b0ecf42f2112" alt="Nancy riding her bike" width="400" height="533" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/0dd8578b-fb77-e499-ee2c-e489f8448d28"><img src="https://cdn.katalyst-crm.com/a/0dd8578b-fb77-e499-ee2c-e489f8448d28" alt="Nancy in the sea with her snorkelling gear" width="400" height="533" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/246c8a51-c6c4-c5f9-7631-588e853f9644"><img src="https://cdn.katalyst-crm.com/a/246c8a51-c6c4-c5f9-7631-588e853f9644" alt="Nancy planting boxwoods" width="400" height="533" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/6f08f535-135f-47d6-1b2e-ea854b2020e4"><img src="https://cdn.katalyst-crm.com/a/6f08f535-135f-47d6-1b2e-ea854b2020e4" alt="Nancy out on a bike ride" width="400" height="533" loading="lazy"></a>
+        </div>
         <p class="story-attr"><strong>Nancy</strong> &middot; Physiotherapy patient</p>
       </article>
       <article class="story rv">
@@ -1274,6 +1312,12 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
         <div class="story-full"><div class="story-full-inner">
           <p>Her sessions combine one-to-one work with her Kinesiologist at LiquidGym and a client-centred exercise programme at home. Her dedication and hard work have paid off.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=zmbreJW9NAA" target="_blank" rel="noopener" data-yt="zmbreJW9NAA" data-title="Bryna&#x27;s interview" aria-label="Play video: Bryna&#x27;s interview"><img src="https://i.ytimg.com/vi/zmbreJW9NAA/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=qsF_Q61uSuU" target="_blank" rel="noopener" data-yt="qsF_Q61uSuU" data-title="Side stepping" aria-label="Play video: Side stepping"><img src="https://i.ytimg.com/vi/qsF_Q61uSuU/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=lyIlzvjhyIA" target="_blank" rel="noopener" data-yt="lyIlzvjhyIA" data-title="Single leg step up" aria-label="Play video: Single leg step up"><img src="https://i.ytimg.com/vi/lyIlzvjhyIA/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=1aBicntTr2E" target="_blank" rel="noopener" data-yt="1aBicntTr2E" data-title="Barbell pull down" aria-label="Play video: Barbell pull down"><img src="https://i.ytimg.com/vi/1aBicntTr2E/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+        </div>
         <p class="story-attr"><strong>Bryna</strong> &middot; Kinesiology client</p>
       </article>
       <article class="story rv">
@@ -1291,6 +1335,11 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>Andrew took part in Ottawa Race Weekend alongside 50 other riders in 2018 and 2019.</p>
           <blockquote>Despite a continual decline in my disability and mobility, I keep coming to LiquidGym because they are my friends and help with my desire to keep moving the best I can. The team are professional, innovative, and create an environment that is conducive to doing and being your best.</blockquote>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/c2e77924-dcc8-e73d-f7b4-12713f7a9201"><img src="https://cdn.katalyst-crm.com/a/c2e77924-dcc8-e73d-f7b4-12713f7a9201" alt="Andrew on the AlterG treadmill with his therapist" width="400" height="522" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/282b32f8-5a4b-06c6-f392-7479b4eea66e"><img src="https://cdn.katalyst-crm.com/a/282b32f8-5a4b-06c6-f392-7479b4eea66e" alt="Andrew swimming in the pool" width="400" height="522" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/73990ce1-376c-a3a2-1849-7788ec9e99be"><img src="https://cdn.katalyst-crm.com/a/73990ce1-376c-a3a2-1849-7788ec9e99be" alt="Andrew on an Alinker walking bike" width="400" height="522" loading="lazy"></a>
+        </div>
         <p class="story-attr"><strong>Andrew</strong> &middot; Physiotherapy patient</p>
       </article>
       <article class="story rv">
@@ -1304,6 +1353,12 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>She had spent three months at the rehabilitation centre at the Ottawa General Hospital and was recovering well. At her initial assessment she had reduced sensation and proprioception in her legs, significant weakness through her core and lower limbs, could not balance on one leg for more than a second on either side, and could not use stairs.</p>
           <p>Her treatment was mainly water based. By her third session she was using the stairs in and out of the pool instead of the lift she had needed for her first two. After that there was no holding her back — she attended weekly 60-minute pool sessions for four months and progressed at every visit.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=uG-6y3QbYdQ" target="_blank" rel="noopener" data-yt="uG-6y3QbYdQ" data-title="Spinal rehab" aria-label="Play video: Spinal rehab"><img src="https://i.ytimg.com/vi/uG-6y3QbYdQ/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=JazdtBozFJU" target="_blank" rel="noopener" data-yt="JazdtBozFJU" data-title="Walking on the underwater treadmill" aria-label="Play video: Walking on the underwater treadmill"><img src="https://i.ytimg.com/vi/JazdtBozFJU/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=qWzy7leCZmQ" target="_blank" rel="noopener" data-yt="qWzy7leCZmQ" data-title="Balance lunges" aria-label="Play video: Balance lunges"><img src="https://i.ytimg.com/vi/qWzy7leCZmQ/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=ed3HivNywdE" target="_blank" rel="noopener" data-yt="ed3HivNywdE" data-title="Upper body exercises in the water" aria-label="Play video: Upper body exercises in the water"><img src="https://i.ytimg.com/vi/ed3HivNywdE/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+        </div>
         <p class="story-attr"><strong>Patricia</strong> &middot; Physiotherapy patient</p>
       </article>
       <article class="story rv">
@@ -1318,6 +1373,13 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>On examination after lockdown he had markedly reduced balance, required bilateral crutches to walk, and had an unsteady gait. He set a goal to walk with more control and balance within ten sessions.</p>
           <p>Each session combined strengthening, balance and mobility work with endurance and gait training. His balance has improved significantly, he can hold a single leg stance in the water for a minute, and he can walk on land without crutches for short distances. He reports feeling steadier and more confident moving around his home.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=vWA-8mLT8ao" target="_blank" rel="noopener" data-yt="vWA-8mLT8ao" data-title="Keith&#x27;s story: learning to walk again at LiquidGym" aria-label="Play video: Keith&#x27;s story: learning to walk again at LiquidGym"><img src="https://i.ytimg.com/vi/vWA-8mLT8ao/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=XBOuSsf3YKU" target="_blank" rel="noopener" data-yt="XBOuSsf3YKU" data-title="Keith walking at LiquidGym" aria-label="Play video: Keith walking at LiquidGym"><img src="https://i.ytimg.com/vi/XBOuSsf3YKU/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=5GlcjDoK6hM" target="_blank" rel="noopener" data-yt="5GlcjDoK6hM" data-title="Upper body strength exercise" aria-label="Play video: Upper body strength exercise"><img src="https://i.ytimg.com/vi/5GlcjDoK6hM/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=tSMh1KsmmOM" target="_blank" rel="noopener" data-yt="tSMh1KsmmOM" data-title="Balance ring exercise" aria-label="Play video: Balance ring exercise"><img src="https://i.ytimg.com/vi/tSMh1KsmmOM/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=eNrdBxtWH50" target="_blank" rel="noopener" data-yt="eNrdBxtWH50" data-title="Walking on the underwater treadmill" aria-label="Play video: Walking on the underwater treadmill"><img src="https://i.ytimg.com/vi/eNrdBxtWH50/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+        </div>
         <p class="story-attr"><strong>Keith</strong> &middot; Physiotherapy patient and gym member</p>
       </article>
       <article class="story rv">
@@ -1333,6 +1395,10 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>Guided physiotherapy and exercise in the water and on dry land have helped me strengthen my leg and mitigate knee pain. While I am not hiking the hills like I used to, I rarely even take a Tylenol. My plan is to put off having a knee replacement as long as possible, and perhaps even avoid it altogether.</p>
           <p>At present, I engage in weekly personal training sessions with Dan. He tells me, “We’re going to do…”, then describes and assigns the exercise, and stands back and watches. The “we” is “me”, of course, and I cheerfully do the assigned exercises under Dan’s watchful eye, fuelled by his jokes and stories. Dan seems to understand just how much to ask for; I never worry about getting injured or overdoing it. And I’m amazed by how great I feel afterward.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/9ae1282f-9c37-7267-d946-0efd67ac1090"><img src="https://cdn.katalyst-crm.com/a/9ae1282f-9c37-7267-d946-0efd67ac1090" alt="Mary with her horse" width="251" height="252" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/cfe3b357-cb1f-cc8b-e800-588ae823e063"><img src="https://cdn.katalyst-crm.com/a/cfe3b357-cb1f-cc8b-e800-588ae823e063" alt="Mary training in the pool with her therapist" width="253" height="252" loading="lazy"></a>
+        </div>
         <p class="story-attr"><strong>Mary</strong> &middot; Personal training client</p>
       </article>
       <article class="story rv">
@@ -1348,6 +1414,12 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>She wears an ACL brace for protection and reports no knee pain, and has a maintenance programme to keep up her strength and agility.</p>
           <blockquote>I want to thank LiquidGym for being paramount in helping me reach my very high goal. Having been an avid skier all my life, skiing is not only what I do in the winter, it’s who I am.</blockquote>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item sm-tall" href="https://cdn.katalyst-crm.com/a/c994b047-9dd0-ee67-3051-dbdeffe9498e"><img src="https://cdn.katalyst-crm.com/a/c994b047-9dd0-ee67-3051-dbdeffe9498e" alt="Audrey in the therapy pool in October 2020 and back on skis in December 2021" width="269" height="720" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/b94b3921-e24f-571d-e04c-89ef3445c89c"><img src="https://cdn.katalyst-crm.com/a/b94b3921-e24f-571d-e04c-89ef3445c89c" alt="Audrey walking on the underwater treadmill" width="400" height="533" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/9dd0bae0-e31b-8902-6b55-947ae814bbbc"><img src="https://cdn.katalyst-crm.com/a/9dd0bae0-e31b-8902-6b55-947ae814bbbc" alt="Audrey on the leg press with her physiotherapist" width="400" height="533" loading="lazy"></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=ZQDYL0nSEcM" target="_blank" rel="noopener" data-yt="ZQDYL0nSEcM" data-title="Audrey on the AlterG treadmill" aria-label="Play video: Audrey on the AlterG treadmill"><img src="https://i.ytimg.com/vi/ZQDYL0nSEcM/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+        </div>
         <p class="story-attr"><strong>Audrey</strong> &middot; Physiotherapy patient</p>
       </article>
       <article class="story rv">
@@ -1362,6 +1434,11 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>When she first attended LiquidGym her gait was unsteady with short, shuffled strides, she had reduced strength through her lower limbs, restricted right hip range of motion, and 6 out of 10 pain. Treatment combined manual mobilisations, hydrotherapy and a daily home programme.</p>
           <p>Her pain is down to 1–2 out of 10, her hip range of motion is within normal limits, and she manages stairs fluidly with no aids. Susan continues at LiquidGym, and is looking forward to travelling again without worrying about her hip.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=eV9TvqmtYUE" target="_blank" rel="noopener" data-yt="eV9TvqmtYUE" data-title="Hip fracture hydrotherapy: large step ups" aria-label="Play video: Hip fracture hydrotherapy: large step ups"><img src="https://i.ytimg.com/vi/eV9TvqmtYUE/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=qnuQfygfgi4" target="_blank" rel="noopener" data-yt="qnuQfygfgi4" data-title="Hip fracture hydrotherapy: deep knee squat" aria-label="Play video: Hip fracture hydrotherapy: deep knee squat"><img src="https://i.ytimg.com/vi/qnuQfygfgi4/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=P_kYbEVXziU" target="_blank" rel="noopener" data-yt="P_kYbEVXziU" data-title="Hip fracture hydrotherapy: rapid stepping" aria-label="Play video: Hip fracture hydrotherapy: rapid stepping"><img src="https://i.ytimg.com/vi/P_kYbEVXziU/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+        </div>
         <p class="story-attr"><strong>Susan</strong> &middot; Physiotherapy patient</p>
       </article>
       <article class="story rv">
@@ -1389,6 +1466,11 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <blockquote>I landed in the LiquidGym lobby in 2019 after a lifetime struggle with weight and heart health issues. I had just received the fifth stent in my heart and needed to take action. It has been almost two years now, minus a few months lost to COVID, and I have gained momentum since August 2020. Thanks to customised care in my exercises, my physical endurance and strength have come a long way.</blockquote>
           <p>I’m grateful to LiquidGym, to Karen, to my therapist and to all of the staff who helped make these results achievable for me. The squat bar is 105 lbs and the dead weight is now 75 lbs. And I weigh 145 lbs.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/b3ad8c86-20dd-ec20-a7de-377343d7179e"><img src="https://cdn.katalyst-crm.com/a/b3ad8c86-20dd-ec20-a7de-377343d7179e" alt="Fatos doing a deadlift" width="400" height="533" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/8c2c88cc-1490-9571-fc30-127f68ce9f3a"><img src="https://cdn.katalyst-crm.com/a/8c2c88cc-1490-9571-fc30-127f68ce9f3a" alt="Fatos doing a barbell squat" width="400" height="533" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/ea7cf163-6970-5ae4-45b6-a24d3451409a"><img src="https://cdn.katalyst-crm.com/a/ea7cf163-6970-5ae4-45b6-a24d3451409a" alt="Fatos doing a dumbbell chest fly on an exercise ball" width="400" height="533" loading="lazy"></a>
+        </div>
         <p class="story-attr"><strong>Fatos</strong> &middot; LiquidGym patient</p>
       </article>
       <article class="story rv">
@@ -1402,6 +1484,12 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>She had swelling, a gait deviation and was limited in her daily function. Treatment combined hydrotherapy including range of motion and strengthening work, soft tissue mobilisation and scar massage, gait training on the underwater treadmill, water jets for soft tissue release and pain relief, and a home exercise programme.</p>
           <p>Carol no longer reports knee pain, has significantly less swelling and improved walking, and continues to improve.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/446a7c3c-0ada-c76c-8c76-e6b8cbc43c81"><img src="https://cdn.katalyst-crm.com/a/446a7c3c-0ada-c76c-8c76-e6b8cbc43c81" alt="Carol using the balance ring in the pool, side view" width="320" height="427" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/23525136-9b88-193c-5255-15ace78e7a6d"><img src="https://cdn.katalyst-crm.com/a/23525136-9b88-193c-5255-15ace78e7a6d" alt="Carol using the balance ring in the pool, back view" width="320" height="427" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/f7663066-7a78-229b-a001-84c2cc736564"><img src="https://cdn.katalyst-crm.com/a/f7663066-7a78-229b-a001-84c2cc736564" alt="Carol working with her therapist in the pool" width="320" height="427" loading="lazy"></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=NksVFUFL2Eg" target="_blank" rel="noopener" data-yt="NksVFUFL2Eg" data-title="Knee flexion" aria-label="Play video: Knee flexion"><img src="https://i.ytimg.com/vi/NksVFUFL2Eg/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+        </div>
         <p class="story-attr"><strong>Carol</strong> &middot; Physiotherapy patient</p>
       </article>
     </div>
@@ -1431,6 +1519,13 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>Her recovery includes physiotherapy at LiquidGym — joint mobilisations, soft tissue work and proprioceptive neuromuscular facilitation to progress her range of motion, strength and balance — alongside massage therapy to release the spasms in the areas that tightened up through months of bracing and reduced movement.</p>
           <p>Her surgeon also recommended the Game Ready ice and compression system to reduce inflammation and joint swelling, which has helped considerably as part of her post-surgical recovery. This combined approach has helped Irene regain range of motion and overall movement.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/478c1e88-2496-6bfd-58ef-ad28e431b258"><img src="https://cdn.katalyst-crm.com/a/478c1e88-2496-6bfd-58ef-ad28e431b258" alt="Irene using the Game Ready compression system" width="400" height="533" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/b334ee4b-6725-2a6e-ca80-286113e56562"><img src="https://cdn.katalyst-crm.com/a/b334ee4b-6725-2a6e-ca80-286113e56562" alt="Irene doing a sit-to-stand exercise with her therapist" width="400" height="533" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/fc801f06-8a1b-ef1b-0b3e-459c88d0b1e6"><img src="https://cdn.katalyst-crm.com/a/fc801f06-8a1b-ef1b-0b3e-459c88d0b1e6" alt="A therapist treating Irene&#x27;s leg" width="400" height="533" loading="lazy"></a>
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/faafbca3-672b-4257-d126-3454985b429a"><img src="https://cdn.katalyst-crm.com/a/faafbca3-672b-4257-d126-3454985b429a" alt="Irene doing a hamstring exercise with her therapist" width="400" height="533" loading="lazy"></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=fioNHmVNgis" target="_blank" rel="noopener" data-yt="fioNHmVNgis" data-title="Sit to stand exercise" aria-label="Play video: Sit to stand exercise"><img src="https://i.ytimg.com/vi/fioNHmVNgis/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+        </div>
         <p class="story-attr"><strong>Irene</strong> &middot; Physiotherapy and massage therapy patient</p>
       </article>
       <article class="story rv">
@@ -1444,6 +1539,9 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>She had tried other therapies with some success only to have the pain return. The first sessions focused on improving pelvic mobility, lengthening the hip flexors on the right, strengthening the glutes with a stronger focus on the left, improving core strength and correcting her running mechanics.</p>
           <p>The difficulty was then increased with a goal of building the muscular endurance needed for longer runs. Six months after starting, Christine reported no pain running long distances or during any other activity. She continues to attend monthly for progression and reassessment.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/404f0178-4557-00c4-333c-4d489c8c8273"><img src="https://cdn.katalyst-crm.com/a/404f0178-4557-00c4-333c-4d489c8c8273" alt="Christine running on the underwater treadmill" width="400" height="533" loading="lazy"></a>
+        </div>
         <p class="story-attr"><strong>Christine</strong> &middot; LiquidGym patient</p>
       </article>
       <article class="story rv">
@@ -1458,6 +1556,12 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>His first physiotherapist gave him an exercise to do. He said “I can’t do that.” She said “Let’s try it, as opposed to talking about it.”</p>
           <p>He learned that when he said “I can’t”, it was because he was thinking of his pre-crash self, thinking of his challenges, and assuming. His physiotherapist helped him understand the difference between “I can’t” and “I won’t”. Robert soon learned that whatever his physio asked him to do could improve his post-crash body. He has taken on the mantra “I can”.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=UtY6GLq2ZiY" target="_blank" rel="noopener" data-yt="UtY6GLq2ZiY" data-title="Water ring pull-ups" aria-label="Play video: Water ring pull-ups"><img src="https://i.ytimg.com/vi/UtY6GLq2ZiY/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=MNmXCVLsNjo" target="_blank" rel="noopener" data-yt="MNmXCVLsNjo" data-title="TRX exercise" aria-label="Play video: TRX exercise"><img src="https://i.ytimg.com/vi/MNmXCVLsNjo/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=rdOryNBKTxA" target="_blank" rel="noopener" data-yt="rdOryNBKTxA" data-title="Hydrobell exercise in the pool" aria-label="Play video: Hydrobell exercise in the pool"><img src="https://i.ytimg.com/vi/rdOryNBKTxA/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=Qjh0nftxCKs" target="_blank" rel="noopener" data-yt="Qjh0nftxCKs" data-title="Swimming in the endless pool" aria-label="Play video: Swimming in the endless pool"><img src="https://i.ytimg.com/vi/Qjh0nftxCKs/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+        </div>
         <p class="story-attr"><strong>Robert</strong> &middot; Physiotherapy patient</p>
       </article>
       <article class="story rv">
@@ -1473,6 +1577,10 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>She continues to exceed expectations, and is aiming to get back to snowboarding.</p>
           <blockquote>For the first time since before the accident, I feel like I have a normal leg.</blockquote>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=lZw_86MxwuE" target="_blank" rel="noopener" data-yt="lZw_86MxwuE" data-title="Running on the treadmill" aria-label="Play video: Running on the treadmill"><img src="https://i.ytimg.com/vi/lZw_86MxwuE/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+          <a class="sm-item sm-video" href="https://www.youtube.com/watch?v=ogqZZS39uTE" target="_blank" rel="noopener" data-yt="ogqZZS39uTE" data-title="TRX exercise" aria-label="Play video: TRX exercise"><img src="https://i.ytimg.com/vi/ogqZZS39uTE/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><span class="sm-play" aria-hidden="true"></span></a>
+        </div>
         <p class="story-attr"><strong>Name withheld</strong> &middot; Physiotherapy patient</p>
       </article>
       <article class="story rv">
@@ -1487,6 +1595,9 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>His programme began by developing the smaller stabilising muscles around the hips and knees to create better stability and alignment through functional movement. It then focused on eccentric strength of the quadriceps to build tensile strength in the repaired tendon and muscle. Once a good base was established, we progressed into plyometric training for the explosive movements tennis demands.</p>
           <p>Twelve weeks into the programme he returned to the tennis court to hit some balls, with success. We continue to work toward new goals.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/c010ed20-9bcf-0ea2-1c79-2515046a0f90"><img src="https://cdn.katalyst-crm.com/a/c010ed20-9bcf-0ea2-1c79-2515046a0f90" alt="Emeka doing a plyo box jump" width="400" height="533" loading="lazy"></a>
+        </div>
         <p class="story-attr"><strong>Emeka</strong> &middot; LiquidGym patient</p>
       </article>
       <article class="story rv">
@@ -1515,6 +1626,9 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>LiquidGym has helped me with my knee issues tremendously. Gavin, the physiotherapist who works with me, gently guides me through various strengthening exercises.</p>
           <p>Due to the buoyancy of the warm water, I can run on the treadmill and move freely. I highly recommend LiquidGym to anyone suffering from mobility and pain issues. I am very grateful that we have such a facility here in Ottawa.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/5bc9ab67-987b-375e-4eb3-2690d8317481"><img src="https://cdn.katalyst-crm.com/a/5bc9ab67-987b-375e-4eb3-2690d8317481" alt="Halia running on the underwater treadmill" width="400" height="533" loading="lazy"></a>
+        </div>
         <p class="story-attr"><strong>Halia</strong> &middot; Physiotherapy patient</p>
       </article>
       <article class="story rv">
@@ -1528,6 +1642,9 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           <p>She is 28, and also had intermittent pain through both thighs. The pain was worse in the mornings, with bending, lifting and twisting, and with prolonged sitting. She had significant loss of spinal range of motion.</p>
           <p>Rima was given a home exercise programme at her assessment, which she performed daily, along with education on posture. She continues weekly appointments to build her core strength and develop a home programme to reduce the chance of recurrence.</p>
         </div></div>
+        <div class="story-media" aria-label="Photos and videos from this story">
+          <a class="sm-item" href="https://cdn.katalyst-crm.com/a/a2de3cde-5e3b-fedf-59dc-56c45ccfd0fd"><img src="https://cdn.katalyst-crm.com/a/a2de3cde-5e3b-fedf-59dc-56c45ccfd0fd" alt="Rima" width="500" height="582" loading="lazy"></a>
+        </div>
         <p class="story-attr"><strong>Rima</strong> &middot; Physiotherapy patient</p>
       </article>
       <article class="story rv">
@@ -1655,5 +1772,42 @@ function toggleStory(btn){
 })();
 </script>
 <script>(function(){document.querySelectorAll('.cta-bg').forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.story-media .sm-item'));
+  if(!items.length) return;
+  var lb=document.createElement('div');
+  lb.className='lb'; lb.setAttribute('role','dialog'); lb.setAttribute('aria-modal','true'); lb.setAttribute('aria-label','Photo and video viewer');
+  lb.innerHTML='<button type="button" class="lb-close" aria-label="Close">&times;</button><button type="button" class="lb-prev" aria-label="Previous">&#8249;</button><div class="lb-stage"></div><p class="lb-cap"></p><button type="button" class="lb-next" aria-label="Next">&#8250;</button>';
+  document.body.appendChild(lb);
+  var stage=lb.querySelector('.lb-stage'), cap=lb.querySelector('.lb-cap'), prev=lb.querySelector('.lb-prev'), next=lb.querySelector('.lb-next'), group=[], idx=0, last=null;
+  function show(i){
+    idx=(i+group.length)%group.length; var a=group[idx]; stage.innerHTML='';
+    if(a.dataset.yt){
+      var w=document.createElement('div'); w.className='lb-frame';
+      var f=document.createElement('iframe');
+      f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&rel=0&modestbranding=1';
+      f.title=a.dataset.title||'Video'; f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      f.allowFullscreen=true; f.referrerPolicy='strict-origin-when-cross-origin';
+      w.appendChild(f); stage.appendChild(w); cap.textContent=a.dataset.title||'';
+    }else{
+      var im=document.createElement('img'); im.src=a.href; im.alt=a.querySelector('img').alt;
+      stage.appendChild(im); cap.textContent=im.alt;
+    }
+    prev.hidden=next.hidden=group.length<2;
+  }
+  function open(a){ last=a; group=[].slice.call(a.parentNode.querySelectorAll('.sm-item')); lb.classList.add('open'); document.body.style.overflow='hidden'; show(group.indexOf(a)); lb.querySelector('.lb-close').focus(); }
+  function close(){ lb.classList.remove('open'); stage.innerHTML=''; document.body.style.overflow=''; if(last) last.focus(); }
+  items.forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); open(a); }); });
+  lb.addEventListener('click',function(e){
+    if(e.target===prev) show(idx-1); else if(e.target===next) show(idx+1);
+    else if(e.target===lb||e.target===stage||e.target.classList.contains('lb-close')) close();
+  });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') close(); else if(e.key==='ArrowLeft') show(idx-1); else if(e.key==='ArrowRight') show(idx+1);
+  });
+})();
+</script>
 </body>
 </html>

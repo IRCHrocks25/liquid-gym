@@ -1216,6 +1216,20 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .nav-panel .nav-sub:hover{color:var(--bright)!important;background:var(--soft)!important;}
 .nav-top{color:rgba(255,255,255,.9)!important;}
 .nav-item.is-active > .nav-top,.nav-top:hover{color:#fff!important;}
+/* ---------- Physical Therapy CEUs ---------- */
+.ceu{max-width:60rem;}
+.ceu h2{margin:0 0 1.4rem;}
+.ceu p{color:var(--body);line-height:1.7;margin:0 0 1rem;}
+.ceu p a{color:var(--blue);font-weight:500;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere;}
+.ceu-scroll{overflow-x:auto;margin:0 0 1.6rem;border:1px solid var(--line);border-radius:var(--r);background:#fff;box-shadow:var(--shadow-sm);}
+.ceu-table{width:100%;border-collapse:collapse;font-size:.95rem;min-width:560px;}
+.ceu-table th,.ceu-table td{padding:.75rem 1rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);line-height:1.5;}
+.ceu-table thead th{font-family:var(--display);font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:var(--soft);}
+.ceu-table tbody th{font-family:var(--display);font-weight:600;color:var(--navy);white-space:nowrap;}
+.ceu-table td{color:var(--body);}
+.ceu-table td:nth-child(2){white-space:nowrap;}
+.ceu-table tbody tr:last-child th,.ceu-table tbody tr:last-child td{border-bottom:0;}
+.ceu-codes{font-family:var(--display);font-weight:500;color:var(--navy);letter-spacing:.05em;line-height:1.9;word-spacing:.15em;background:var(--soft);border-radius:12px;padding:.9rem 1.1rem;}
 </style>
 </head>
 <body>
@@ -1483,7 +1497,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     <article class="level"><span class="k">Level 2 Advanced Certification</span><h3>Advanced</h3><p>Aquatic assessment, clinical reasoning, and treatment progression for the complex cases Level 1 does not prepare you for.</p></article>
   </div>
   <div class="callout rv"><p>Before certification is issued, you submit video of yourself working with a real patient in the water. This is reviewed and credited individually.</p></div>
-  <div class="btn-row rv" id="certify"><a class="btn btn-primary" href="#">Start Your Certification</a></div>
+  <div class="btn-row rv"><a class="btn btn-primary" href="#certify">Start Your Certification</a></div>
 </div></section>
 
 
@@ -1543,7 +1557,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6l4 4 4-4"/></svg>
       </button>
 
-      <div class="btn-row"><a class="btn btn-primary" href="#">Start Your Certification</a></div>
+      <div class="btn-row"><a class="btn btn-primary" href="#certify">Start Your Certification</a></div>
     </div>
   </div>
 </div></section>
@@ -1555,12 +1569,12 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   </div>
   <div class="faq rv">
     <details open><summary>What if I have zero aquatic therapy experience going in?<span class="sign" aria-hidden="true">&minus;</span></summary><div class="fbody"><p>Level 1 starts at the foundation, the role of water, its properties, safety, and screening, before a single technique is introduced. Nobody is expected to arrive already knowing this.</p></div></details>
-    <details><summary>What if my state has not approved CEU credit yet?<span class="sign" aria-hidden="true">+</span></summary><div class="fbody"><p>Aquatic Therapy Innovations Clinical Training Level 1 program has been approved in 49 of the 50 US states. Currently we are applying for Aquatic Therapy Innovations Clinical Training Level 2 for CE approval.</p></div></details>
+    <details><summary>What if my state has not approved CEU credit yet?<span class="sign" aria-hidden="true">+</span></summary><div class="fbody"><p>Aquatic Therapy Innovations Clinical Training Level 1 program has been approved in many US states. Currently we are applying for Aquatic Therapy Innovations Clinical Training Level 2 for CE approval. The certification, the methodology, and the credential are yours either way.</p></div></details>
     <details><summary>What if I do not pass the practical video submission on the first try?<span class="sign" aria-hidden="true">+</span></summary><div class="fbody"><p>A clinician reviews every submission individually, not against a pass or fail line. If something needs adjustment, you revise and resubmit, not get rejected outright.</p></div></details>
   </div>
 </div></section>
 
-<section class="sec closing-video" style="background:linear-gradient(140deg,#0B1C47,#163474);color:#fff">
+<section class="sec closing-video" id="certify" style="background:linear-gradient(140deg,#0B1C47,#163474);color:#fff">
   <video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="https://cdn.katalyst-crm.com/a/608fc552-d7c7-0d47-21e8-7d16cc749317" aria-hidden="true" tabindex="-1"><source src="https://cdn.katalyst-crm.com/a/2cf20ef4-9ac1-4dee-a267-ef6c486cc065" type="video/mp4"></video>
   <div class="wrap">
   <div class="rv dual-head">
@@ -1580,6 +1594,40 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
 </div></section>
+
+<section class="sec" id="ceu"><div class="wrap">
+  <div class="ceu rv">
+    <span class="eyebrow">Continuing Education Credit</span>
+    <h2>Physical Therapy CEUs</h2>
+    <div class="ceu-scroll">
+      <table class="ceu-table">
+        <thead><tr><th scope="col">State</th><th scope="col">Approved for</th><th scope="col">Approved by</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">California</th><td>9 hours</td><td>CEUApproval.com, a recognized approval agency of the Physical Therapy Board of CA &mdash; for Physical Therapists and Physical Therapist Assistants in California (CA)</td></tr>
+          <tr><th scope="row">Florida</th><td>9 hours</td><td>Florida Board of Physical Therapy Practice</td></tr>
+          <tr><th scope="row">Louisiana</th><td>9 hours</td><td>Louisiana Board of Physical Therapy</td></tr>
+          <tr><th scope="row">Minnesota</th><td>7.75 hours</td><td>Minnesota Board of Physical Therapy</td></tr>
+          <tr><th scope="row">New Jersey</th><td>9 hours</td><td>New Jersey Board of Physical Therapy Examiners</td></tr>
+          <tr><th scope="row">New York</th><td>10.8 hours</td><td>APTA New York</td></tr>
+          <tr><th scope="row">Nevada</th><td>9 hours</td><td>Nevada Physical Therapy Board</td></tr>
+          <tr><th scope="row">Ohio</th><td>9 hours</td><td>Ohio Physical Therapy Association</td></tr>
+          <tr><th scope="row">Oklahoma</th><td>9 hours</td><td>Oklahoma Board of Medical Licensure and Supervision &ndash; Physical Therapy</td></tr>
+          <tr><th scope="row">Tennessee</th><td>9 hours</td><td>APTA Tennessee</td></tr>
+          <tr><th scope="row">Texas</th><td>9 hours</td><td>Texas Physical Therapy Association</td></tr>
+          <tr><th scope="row">West Virginia</th><td>9 hours</td><td>West Virginia Board of Physical Therapy</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Courses approved by other state boards in the following jurisdictions are likely accepted for licensure credit based on the state regulation:</p>
+    <p class="ceu-codes">AL | AK | AR | CO | CT | DE | GA | HI | ID | IN | IA | KS | KY | ME | MA | MI | MO | MT | NE | NH | NC | ND | OR | PA | RI | SC | SD | UT | VT | VA | VI | WA | WI | WY</p>
+    <p>Courses approved by other APTA chapters in the following jurisdictions are likely accepted for licensure credit based on the state regulation:</p>
+    <p class="ceu-codes">AZ | DC | MD | MS | NM</p>
+    <p>Please reach out to your state licensing board to confirm the currency and accuracy of this information. If you have a specific question about CEU approval for this course in your state, please direct your inquiry to <a href="mailto:info@ceuapproval.com">info@ceuapproval.com</a>.</p>
+    <p>The following states are not pre-approved: <strong>IL</strong></p>
+    <p>Participants licensed in states not pre-approved may file for individual approval using the instructions on <a href="https://docs.google.com/document/d/1uINVSr-O7xE95OLRA5FjLYeAB3BjwxfS/edit?rtpof=true&amp;sd=true&amp;tab=t.0" target="_blank" rel="noopener">this document</a>.</p>
+  </div>
+</div></section>
+
 
 <footer>
   <div class="wrap">

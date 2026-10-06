@@ -1046,6 +1046,50 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .partner-card p{color:var(--body);line-height:1.65;margin:0 0 .7rem;font-size:.95rem;}
 .partner-card p:last-child{margin-bottom:0;}
 
+/* ---------- partners: hero caption, entries, viewer ---------- */
+.hero-row{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:2rem 3rem;}
+.hero-main{flex:1 1 34rem;min-width:0;}
+.hero-plaque{flex:0 0 auto;max-width:21rem;text-align:center;color:#fff;font-family:var(--display);line-height:1.35;text-shadow:0 2px 20px rgba(11,28,71,.65);padding-bottom:.4rem;}
+.hero-plaque p{margin:0;}
+.hero-plaque .hp-top{font-size:.95rem;font-weight:500;letter-spacing:.02em;}
+.hero-plaque .hp-title{font-size:1.5rem;font-weight:600;}
+.hero-plaque .hp-sub{font-size:.9rem;color:rgba(255,255,255,.9);}
+.hero-plaque .hp-names{font-size:1.02rem;font-weight:500;}
+.hero-plaque .hp-dot{display:block;width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.75);margin:.7rem auto;}
+@media(max-width:899px){.hero-plaque{text-align:left;max-width:none;}.hero-plaque .hp-dot{margin-inline:0;}}
+.pt-group{margin-bottom:.4rem;}
+.pt-entries{display:grid;}
+.pt-entry{display:grid;gap:1.6rem 2rem;align-items:center;padding-block:clamp(1.8rem,3.5vw,2.6rem);border-top:1px solid var(--line);}
+.pt-entry:first-child{border-top:0;}
+.partners-section.alt .pt-entry{border-top-color:#dbe7f6;}
+@media(min-width:900px){.pt-entry{grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.6rem);}.pt-entry:nth-child(even) .pt-gallery{order:-1;}.pt-entry.text-only{grid-template-columns:1fr;}}
+.pt-entry.text-only .pt-entry-body{max-width:60rem;}
+.pt-entry-logo{display:block;max-height:65px;width:auto;max-width:200px;object-fit:contain;margin-bottom:1rem;}
+.pt-entry-body h3{font-family:var(--display);font-size:clamp(1.2rem,2.1vw,1.5rem);font-weight:600;color:var(--navy);margin:0 0 .8rem;line-height:1.25;}
+.pt-entry-body p{color:var(--body);line-height:1.7;margin:0 0 .8rem;}
+.pt-entry-body p:last-child{margin-bottom:0;}
+.pt-gallery{display:grid;gap:1rem;align-items:start;}
+.pt-gallery.n2{grid-template-columns:1fr 1fr;}
+.pt-gallery.n1{max-width:540px;}
+.pt-pic{display:block;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-md);background:#fff;}
+a.pt-pic{cursor:zoom-in;}
+a.pt-pic:focus-visible{outline:2px solid var(--bright);outline-offset:2px;}
+.pt-pic img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .6s ease;}
+.pt-pic.poster img{aspect-ratio:auto;object-fit:contain;background:#f3f7fc;}
+.pt-pic.logo-only img{object-fit:contain;padding:clamp(1.2rem,3vw,2.2rem);box-sizing:border-box;}
+a.pt-pic:hover img{transform:scale(1.03);}
+.lb{position:fixed;inset:0;z-index:2000;display:none;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;padding:clamp(3.4rem,6vw,4rem) clamp(.8rem,5vw,4.5rem) clamp(1rem,3vw,2rem);background:rgba(7,16,40,.94);}
+.lb.open{display:flex;}
+.lb-stage{display:flex;align-items:center;justify-content:center;max-width:100%;min-height:0;}
+.lb-stage img{display:block;max-width:100%;max-height:calc(100vh - 9rem);max-height:calc(100dvh - 9rem);width:auto;height:auto;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff;}
+.lb-cap{color:rgba(255,255,255,.86);font-size:.92rem;line-height:1.5;text-align:center;max-width:70ch;margin:0;}
+.lb button{position:absolute;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:rgba(11,28,71,.6);color:#fff;font-size:1.5rem;line-height:1;cursor:pointer;transition:background .2s ease;}
+.lb button:hover{background:var(--bright);}
+.lb button[hidden]{display:none;}
+.lb-close{top:.8rem;right:.8rem;}
+.lb-prev{left:.8rem;top:50%;margin-top:-23px;}
+.lb-next{right:.8rem;top:50%;margin-top:-23px;}
+@media(max-width:560px){.lb-prev,.lb-next{top:auto;bottom:.8rem;margin-top:0;}.lb{padding-bottom:4.4rem;}}
 </style>
 <noscript><style>.rv{opacity:1!important;transform:none!important;}</style></noscript>
 </head>
@@ -1215,9 +1259,11 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" style="min-height:clamp(420px,56vh,600px);">
-  <div class="hero-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/78ed6e4c-347d-9782-efb5-260820ff75ed" alt="" loading="eager"></div>
+  <div class="hero-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/8f7b6780-7712-b513-c66f-63c07691e741" alt="" loading="eager" style="object-position:58% 50%;"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="wrap" style="position:relative;z-index:2;padding-block:clamp(3.4rem,9vw,6rem);">
+    <div class="hero-row">
+    <div class="hero-main">
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="index.html">The Hub</a>
       <span class="sep" aria-hidden="true">/</span>
@@ -1228,15 +1274,32 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     <span class="eyebrow on-dark" style="margin-top:1.2rem;">About &middot; Partners</span>
     <h1>Who We Work With.</h1>
     <p class="sub">LiquidGym has worked alongside health organisations, charities and community groups across Ottawa &mdash; hosting events, providing space, and building programmes together.</p>
+    </div>
+    <aside class="hero-plaque" aria-label="THE RIDE recognition plaque">
+      <p class="hp-top">&mdash; LiquidGym &ndash; Sponsor</p>
+      <span class="hp-dot" aria-hidden="true"></span>
+      <p class="hp-title">&ldquo;THE RIDE&rdquo;</p>
+      <p class="hp-sub">fundraiser for<br>The Ottawa Hospital Foundation</p>
+      <span class="hp-dot" aria-hidden="true"></span>
+      <p class="hp-sub">Recognition Plaque</p>
+      <span class="hp-dot" aria-hidden="true"></span>
+      <p class="hp-names">Dr. Jack Kitts<br>Karen Snyder</p>
+    </aside>
+    </div>
   </div>
 </section>
 
 
-<!-- ===================== PARTNER LOGOS ===================== -->
-<section class="partners-section" style="padding-block:clamp(2.4rem,5vw,3.8rem);border-bottom:1px solid var(--line);">
-  <div class="wrap" style="text-align:center;">
-    <span class="eyebrow" style="justify-content:center;margin-bottom:1.4rem;">Over the Years, Involved With Many Organisations Such As</span>
-    <div class="logo-rail" style="justify-content:center;max-width:1100px;margin-inline:auto;gap:clamp(1.2rem,2.5vw,2rem);row-gap:1.2rem;">
+<!-- ===================== HEALTH ORGANISATIONS ===================== -->
+<section class="partners-section" id="health">
+  <div class="wrap">
+    <div class="section-head rv" style="max-width:none;text-align:center;">
+      <h2 style="margin-inline:auto;">Building Better Care, Together.</h2>
+      <p style="margin-inline:auto;">From designated exercise programmes to shared clinic space and joint education events, LiquidGym works closely with leading health organisations across the region.</p>
+    </div>
+    <div class="rv" style="text-align:center;margin-bottom:clamp(2.4rem,5vw,3.6rem);">
+      <span class="eyebrow" style="justify-content:center;margin-bottom:1.4rem;">Over the Years, Involved With Many Organisations Such As</span>
+      <div class="logo-rail" style="justify-content:center;max-width:1100px;margin-inline:auto;gap:clamp(1.2rem,2.5vw,2rem);row-gap:1.2rem;">
         <span class="logo-chip"><img src="https://cdn.katalyst-crm.com/a/0f0818e8-0534-b854-dbd2-cc38b1a00e0d" alt="Heart Wise Exercise" loading="lazy"></span>
         <span class="logo-chip"><img src="https://cdn.katalyst-crm.com/a/0cf00347-5255-3fff-12c0-309c0cf63279" alt="The Arthritis Society" loading="lazy"></span>
         <span class="logo-chip"><img src="https://cdn.katalyst-crm.com/a/fed7b5af-e852-be13-c0a3-65b28c1ef22b" alt="Heart and Stroke Foundation" loading="lazy"></span>
@@ -1248,52 +1311,79 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
         <span class="logo-chip"><img src="https://cdn.katalyst-crm.com/a/e6c3defa-cf23-df5f-2e18-466e3e11ebe3" alt="March of Dimes Canada" loading="lazy"></span>
         <span class="logo-chip"><img src="https://cdn.katalyst-crm.com/a/faaa307f-6ce4-78b9-31f5-bff2f4f0fedd" alt="Alinker" loading="lazy"></span>
     </div>
+    </div>
+    <span class="eyebrow pt-group">Health Organisations</span>
+    <div class="pt-entries">
+<article class="pt-entry rv" id="heart-wise">
+  <div class="pt-entry-body">
+    <h3>University of Ottawa Heart Institute &middot; Heart Wise Exercise</h3>
+    <p>LiquidGym is a Heart Wise Exercise designated facility.</p>
   </div>
-</section>
-<!-- ===================== HEALTH ORGANISATIONS ===================== -->
-<section class="partners-section" id="health">
-  <div class="wrap">
-    <div class="section-head rv">
-      <span class="eyebrow">Health Organisations</span>
-      <h2>Building Better Care, Together.</h2>
-      <p>From designated exercise programmes to shared clinic space and joint education events, LiquidGym works closely with leading health organisations across the region.</p>
-    </div>
-    <div class="pt-split">
-      <div class="pt-media rv"><img src="https://cdn.katalyst-crm.com/a/ed10f157-0dcc-ddec-7a1f-17fb9a6a88ef" alt="Health-organisation partners at LiquidGym" loading="lazy"></div>
-      <div class="pt-body rv">
-        <span class="eyebrow">Health Organisations</span>
-        <h3>University of Ottawa Heart Institute &middot; Heart Wise Exercise</h3>
-        <p>LiquidGym is a Heart Wise Exercise designated facility.</p>
-        <p>LiquidGym provided space to the Arthritis Society as a satellite clinic location, delivering therapy services to residents in the west end of Ottawa. Over the years we have run a number of events with them, both fundraising and educational.</p>
-      </div>
-    </div>
-    <div class="partner-list">
-      <div class="partner-card rv">
-        <img class="partner-card-logo" src="https://cdn.katalyst-crm.com/a/fed7b5af-e852-be13-c0a3-65b28c1ef22b" alt="Heart and Stroke Foundation" loading="lazy">
-        <h3>Heart and Stroke Foundation</h3>
-        <p>In partnership with the Heart and Stroke Foundation, LiquidGym hosted Canada&rsquo;s first underwater duathlon, which included running on underwater treadmills and underwater bikes.</p>
-      </div>
-      <div class="partner-card rv">
-        <img class="partner-card-logo" src="https://cdn.katalyst-crm.com/a/f656e903-5aa3-f1df-7d0f-a8c8ab9dc930" alt="Parkinson Canada" loading="lazy" style="max-height:78px;max-width:240px;">
-        <h3>Parkinson Canada</h3>
-        <p>LiquidGym hosted an open house for Parkinson Canada introducing water and land-based exercise programmes for neurological conditions, and has taken part in education seminars and on-site Alinker demonstrations. Team LiquidGym was involved in numerous Lap The Gats fundraising events in the Gatineau Park.</p>
-      </div>
-      <div class="partner-card rv">
-        <img class="partner-card-logo" src="https://cdn.katalyst-crm.com/a/1c710032-4cad-ebcd-4c0d-b674b1ab2d85" alt="Diabetes Canada" loading="lazy">
-        <h3>Diabetes Canada</h3>
-        <p>LiquidGym has worked with Diabetes Canada on workshops and seminars, both at the clinic and at various expos.</p>
-      </div>
-      <div class="partner-card rv">
-        <img class="partner-card-logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc1IiBoZWlnaHQ9IjI2IiB2aWV3Qm94PSIwIDAgMTc1IDI2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNjguMTcgMjUuNjc1QzY1LjcgMjUuNjc1IDYzLjU0IDI1LjEzNSA2MS42OSAyNC4wNTVDNTkuODQgMjIuOTc1IDU4LjQyIDIxLjQ3NSA1Ny40MyAxOS41NTVDNTYuNDQgMTcuNjM1IDU1Ljk0IDE1LjQ1NSA1NS45NCAxMi45OTVDNTUuOTQgMTAuNTM1IDU2LjQzIDguMzc0OTUgNTcuNDEgNi40NTQ5NUM1OC4zOSA0LjUzNDk1IDU5Ljc5IDMuMDM0OTUgNjEuNjIgMS45NDQ5NUM2My40NCAwLjg2NDk1MSA2NS41OSAwLjMyNDk1MSA2OC4wNSAwLjMyNDk1MUM3MC4wOCAwLjMyNDk1MSA3MS44OSAwLjcxNDk1MSA3My40NyAxLjQ4NDk1Qzc1LjA2IDIuMjU0OTUgNzYuMzUgMy4zNDQ5NSA3Ny4zNCA0Ljc1NDk1Qzc4LjMzIDYuMTY0OTUgNzguOTcgNy44MDQ5NSA3OS4yNSA5LjY3NDk1SDczLjU3QzczLjM3IDguNzQ0OTUgNzMuMDMgNy45NDQ5NSA3Mi41NSA3LjI4NDk1QzcyLjA3IDYuNjI0OTUgNzEuNDYgNi4xMDQ5NSA3MC43MSA1Ljc0NDk1QzY5Ljk2IDUuMzg0OTUgNjkuMDkgNS4yMDQ5NSA2OC4xMSA1LjIwNDk1QzY2LjgxIDUuMjA0OTUgNjUuNjggNS41NTQ5NSA2NC43MyA2LjI0NDk1QzYzLjc4IDYuOTM0OTUgNjMuMDUgNy44NzQ5NSA2Mi41NSA5LjA1NDk1QzYyLjA1IDEwLjIzNSA2MS44IDExLjU1NSA2MS44IDEzLjAwNUM2MS44IDE0LjU4NSA2Mi4wNSAxNS45NTUgNjIuNTUgMTcuMTE1QzYzLjA1IDE4LjI4NSA2My43NyAxOS4xODUgNjQuNzMgMTkuODI1QzY1LjY4IDIwLjQ2NSA2Ni44MiAyMC43ODUgNjguMTUgMjAuNzg1QzY5LjEyIDIwLjc4NSA3MCAyMC41OTUgNzAuNzcgMjAuMjI1QzcxLjU0IDE5Ljg1NDkgNzIuMTcgMTkuMzE1IDcyLjY2IDE4LjYyNUM3My4xNSAxNy45MzQ5IDczLjQ3IDE3LjExNSA3My42MyAxNi4xNzVINzkuMzNDNzkuMTQgMTguMDM1IDc4LjU2IDE5LjY4NSA3Ny42IDIxLjExNUM3Ni42NCAyMi41NDUgNzUuMzUgMjMuNjY1IDczLjc0IDI0LjQ2NUM3Mi4xMyAyNS4yNjQ5IDcwLjI4IDI1LjY2NSA2OC4xOCAyNS42NjVMNjguMTcgMjUuNjc1WiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTg2LjE3IDI1LjU1NUM4NC45OSAyNS41NTUgODMuOTggMjUuMzM1IDgzLjEzIDI0Ljg4NUM4Mi4yOCAyNC40MzQ5IDgxLjY0IDIzLjgxNSA4MS4yIDIzLjAzNUM4MC43NiAyMi4yNDQ5IDgwLjU1IDIxLjM0NSA4MC41NSAyMC4zMjVDODAuNTUgMTguNjc1IDgxLjA5IDE3LjM5NSA4Mi4xNiAxNi40OTVDODMuMjMgMTUuNTk1IDg0LjcxIDE0Ljk4NSA4Ni41OSAxNC42NjVMOTAuNDMgMTQuMDU1QzkwLjc1IDE0LjAwNSA5MS4wMSAxMy45NDUgOTEuMiAxMy44NTVDOTEuNCAxMy43NjUgOTEuNTUgMTMuNjU1IDkxLjY1IDEzLjQ5NUM5MS43NSAxMy4zMzUgOTEuOCAxMy4xNTUgOTEuOCAxMi45MjVDOTEuOCAxMi40NzUgOTEuNjkgMTIuMDc1IDkxLjQ4IDExLjcyNUM5MS4yNiAxMS4zNzUgOTAuOTUgMTEuMTE1IDkwLjUzIDEwLjkxNUM5MC4xMSAxMC43MjUgODkuNjEgMTAuNjI1IDg5LjAyIDEwLjYyNUM4OC40MyAxMC42MjUgODcuOTcgMTAuNzI1IDg3LjU2IDEwLjkxNUM4Ny4xNSAxMS4xMDUgODYuODMgMTEuMzc1IDg2LjU5IDExLjcxNUM4Ni4zNSAxMi4wNTUgODYuMiAxMi40NjUgODYuMTMgMTIuOTM1SDgwLjk4QzgxLjEyIDExLjYyNSA4MS41MiAxMC40ODUgODIuMiA5LjUzNDk1QzgyLjg4IDguNTg0OTUgODMuODEgNy44NTQ5NSA4NC45OCA3LjM0NDk1Qzg2LjE1IDYuODM0OTUgODcuNTIgNi41NzQ5NSA4OS4wOSA2LjU3NDk1QzkwLjY2IDYuNTc0OTUgOTIuMDYgNi44MTQ5NSA5My4yNSA3LjMwNDk1Qzk0LjQzIDcuNzk0OTUgOTUuMzYgOC41MTQ5NSA5Ni4wMiA5LjQ2NDk1Qzk2LjY4IDEwLjQxNSA5Ny4wMSAxMS41NzUgOTcuMDEgMTIuOTM1VjI1LjI2NUg5MS44MVYyMi43MTVIOTEuNzJDOTEuMTYgMjMuNjQ1IDkwLjQxIDI0LjM1NSA4OS40NCAyNC44MzVDODguNDggMjUuMzE1IDg3LjM5IDI1LjU1NSA4Ni4xOCAyNS41NTVIODYuMTdaTTg3Ljk5IDIxLjYxNUM4OC43NSAyMS42MTUgODkuNDIgMjEuNDM1IDkwIDIxLjA2NUM5MC41OCAyMC42OTUgOTEuMDIgMjAuMjA1IDkxLjMzIDE5LjU3NUM5MS42NCAxOC45NTUgOTEuOCAxOC4yNjUgOTEuOCAxNy41MTVWMTYuODU1QzkxLjY0IDE2Ljk0NSA5MS40NCAxNy4wMjUgOTEuMiAxNy4wOTVDOTAuOTYgMTcuMTY1IDkwLjY4IDE3LjIyNSA5MC4zOCAxNy4yODVMODcuNjMgMTcuNzQ1Qzg3LjA3IDE3Ljg0NSA4Ni42MiAxOC4wNTUgODYuMjcgMTguMzU1Qzg1LjkyIDE4LjY2NSA4NS43NCAxOS4xMDUgODUuNzQgMTkuNjk1Qzg1Ljc0IDIwLjA2NSA4NS44MyAyMC40MDUgODYgMjAuNjg1Qzg2LjE4IDIwLjk3NSA4Ni40NCAyMS4yMDUgODYuNzggMjEuMzY1Qzg3LjEzIDIxLjUyNSA4Ny41MyAyMS42MTUgODggMjEuNjE1SDg3Ljk5WiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTk5Ljc3IDI1LjI2NVY2Ljk3NDk1SDEwNS4xM1Y5LjQ0NDk1SDEwNS4yQzEwNS43OCA4LjUzNDk1IDEwNi41MiA3LjgzNDk1IDEwNy40MiA3LjMzNDk1QzEwOC4zMiA2LjgzNDk1IDEwOS4zOCA2LjU4NDk1IDExMC41OSA2LjU4NDk1QzExMS45MiA2LjU4NDk1IDExMy4wNSA2Ljg2NDk1IDExNCA3LjQzNDk1QzExNC45NSA4LjAwNDk1IDExNS42NyA4LjgyNDk1IDExNi4xNiA5LjkxNDk1QzExNi42NSAxMS4wMDUgMTE2LjkgMTIuMzI1IDExNi45IDEzLjg3NVYyNS4yNjVIMTExLjU0VjE0LjYyNUMxMTEuNTQgMTMuNTM1IDExMS4yOCAxMi42ODUgMTEwLjc1IDEyLjA4NUMxMTAuMjIgMTEuNDc1IDEwOS40OCAxMS4xNzUgMTA4LjUxIDExLjE3NUMxMDcuODIgMTEuMTc1IDEwNy4yMiAxMS4zMjUgMTA2LjcxIDExLjYzNUMxMDYuMiAxMS45NDUgMTA1LjgxIDEyLjM2NSAxMDUuNTQgMTIuOTE1QzEwNS4yNyAxMy40NjUgMTA1LjEzIDE0LjA5NSAxMDUuMTMgMTQuNzk1VjI1LjI2NUg5OS43N1oiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xMjQuNDcgMjUuNTU1QzEyMy4yOSAyNS41NTUgMTIyLjI4IDI1LjMzNSAxMjEuNDMgMjQuODg1QzEyMC41OCAyNC40MzQ5IDExOS45NCAyMy44MTUgMTE5LjUgMjMuMDM1QzExOS4wNiAyMi4yNDQ5IDExOC44NSAyMS4zNDUgMTE4Ljg1IDIwLjMyNUMxMTguODUgMTguNjc1IDExOS4zOSAxNy4zOTUgMTIwLjQ2IDE2LjQ5NUMxMjEuNTMgMTUuNTk1IDEyMy4wMSAxNC45ODUgMTI0Ljg5IDE0LjY2NUwxMjguNzMgMTQuMDU1QzEyOS4wNSAxNC4wMDUgMTI5LjMxIDEzLjk0NSAxMjkuNSAxMy44NTVDMTI5LjcgMTMuNzY1IDEyOS44NSAxMy42NTUgMTI5Ljk1IDEzLjQ5NUMxMzAuMDUgMTMuMzM1IDEzMC4xIDEzLjE1NSAxMzAuMSAxMi45MjVDMTMwLjEgMTIuNDc1IDEyOS45OSAxMi4wNzUgMTI5Ljc4IDExLjcyNUMxMjkuNTYgMTEuMzc1IDEyOS4yNSAxMS4xMTUgMTI4LjgzIDEwLjkxNUMxMjguNDEgMTAuNzI1IDEyNy45MSAxMC42MjUgMTI3LjMyIDEwLjYyNUMxMjYuNzMgMTAuNjI1IDEyNi4yNyAxMC43MjUgMTI1Ljg2IDEwLjkxNUMxMjUuNDUgMTEuMTA1IDEyNS4xMyAxMS4zNzUgMTI0Ljg5IDExLjcxNUMxMjQuNjUgMTIuMDU1IDEyNC41IDEyLjQ2NSAxMjQuNDMgMTIuOTM1SDExOS4yOEMxMTkuNDIgMTEuNjI1IDExOS44MiAxMC40ODUgMTIwLjUgOS41MzQ5NUMxMjEuMTggOC41ODQ5NSAxMjIuMTEgNy44NTQ5NSAxMjMuMjggNy4zNDQ5NUMxMjQuNDUgNi44MzQ5NSAxMjUuODIgNi41NzQ5NSAxMjcuMzkgNi41NzQ5NUMxMjguOTYgNi41NzQ5NSAxMzAuMzYgNi44MTQ5NSAxMzEuNTUgNy4zMDQ5NUMxMzIuNzMgNy43OTQ5NSAxMzMuNjYgOC41MTQ5NSAxMzQuMzIgOS40NjQ5NUMxMzQuOTggMTAuNDE1IDEzNS4zMSAxMS41NzUgMTM1LjMxIDEyLjkzNVYyNS4yNjVIMTMwLjExVjIyLjcxNUgxMzAuMDJDMTI5LjQ2IDIzLjY0NSAxMjguNzEgMjQuMzU1IDEyNy43NCAyNC44MzVDMTI2Ljc4IDI1LjMxNSAxMjUuNjkgMjUuNTU1IDEyNC40OCAyNS41NTVIMTI0LjQ3Wk0xMjYuMjkgMjEuNjE1QzEyNy4wNSAyMS42MTUgMTI3LjcyIDIxLjQzNSAxMjguMyAyMS4wNjVDMTI4Ljg4IDIwLjY5NSAxMjkuMzIgMjAuMjA1IDEyOS42MyAxOS41NzVDMTI5Ljk0IDE4Ljk1NSAxMzAuMSAxOC4yNjUgMTMwLjEgMTcuNTE1VjE2Ljg1NUMxMjkuOTQgMTYuOTQ1IDEyOS43NCAxNy4wMjUgMTI5LjUgMTcuMDk1QzEyOS4yNiAxNy4xNjUgMTI4Ljk4IDE3LjIyNSAxMjguNjggMTcuMjg1TDEyNS45MyAxNy43NDVDMTI1LjM3IDE3Ljg0NSAxMjQuOTIgMTguMDU1IDEyNC41NyAxOC4zNTVDMTI0LjIyIDE4LjY2NSAxMjQuMDQgMTkuMTA1IDEyNC4wNCAxOS42OTVDMTI0LjA0IDIwLjA2NSAxMjQuMTMgMjAuNDA1IDEyNC4zIDIwLjY4NUMxMjQuNDggMjAuOTc1IDEyNC43NCAyMS4yMDUgMTI1LjA4IDIxLjM2NUMxMjUuNDMgMjEuNTI1IDEyNS44MyAyMS42MTUgMTI2LjMgMjEuNjE1SDEyNi4yOVoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xNDQuOTkgMjUuNjc1QzE0My41MiAyNS42NzUgMTQyLjIgMjUuMjk1IDE0MS4wNSAyNC41NDVDMTM5Ljg5IDIzLjc5NSAxMzguOTkgMjIuNjk1IDEzOC4zMyAyMS4yNjVDMTM3LjY3IDE5LjgzNSAxMzcuMzQgMTguMTM1IDEzNy4zNCAxNi4xNzVDMTM3LjM0IDE0LjIxNSAxMzcuNjYgMTIuNTk1IDEzOC4yOSAxMS4xNDVDMTM4LjkyIDkuNjk0OTUgMTM5LjgyIDguNTc0OTUgMTQwLjk4IDcuNzc0OTVDMTQyLjE0IDYuOTg0OTUgMTQzLjQ5IDYuNTg0OTUgMTQ1LjAyIDYuNTg0OTVDMTQ1LjgyIDYuNTg0OTUgMTQ2LjU3IDYuNjk0OTUgMTQ3LjI2IDYuOTE0OTVDMTQ3Ljk1IDcuMTM0OTUgMTQ4LjU3IDcuNDQ0OTUgMTQ5LjEzIDcuODU0OTVDMTQ5LjY5IDguMjU0OTUgMTUwLjE2IDguNzQ0OTUgMTUwLjU2IDkuMzI0OTVIMTUwLjYxVjAuNjE0OTUxSDE1NS45N1YyNS4yNjVIMTUwLjYxVjIyLjk1NUgxNTAuNTZDMTUwLjE1IDIzLjU0NSAxNDkuNjYgMjQuMDQ1IDE0OS4wOSAyNC40NDVDMTQ4LjUyIDI0Ljg0NSAxNDcuODggMjUuMTU1IDE0Ny4xOSAyNS4zNjVDMTQ2LjQ5IDI1LjU3NSAxNDUuNzYgMjUuNjc1IDE0NC45OSAyNS42NzVaTTE0Ni43NiAyMS4xNTVDMTQ3LjU2IDIxLjE1NSAxNDguMjYgMjAuOTU1IDE0OC44NiAyMC41NTVDMTQ5LjQ2IDIwLjE1NSAxNDkuOTEgMTkuNTc1IDE1MC4yMyAxOC44MjVDMTUwLjU1IDE4LjA3NSAxNTAuNzEgMTcuMTk1IDE1MC43MSAxNi4xODVDMTUwLjcxIDE1LjE3NSAxNTAuNTUgMTQuMjc1IDE1MC4yMyAxMy41MjVDMTQ5LjkxIDEyLjc3NSAxNDkuNDYgMTIuMTg1IDE0OC44NiAxMS43NzVDMTQ4LjI2IDExLjM2NSAxNDcuNTYgMTEuMTU1IDE0Ni43NCAxMS4xNTVDMTQ1LjkyIDExLjE1NSAxNDUuMjMgMTEuMzU1IDE0NC42MyAxMS43NTVDMTQ0LjAzIDEyLjE1NSAxNDMuNTcgMTIuNzM1IDE0My4yNCAxMy40ODVDMTQyLjkyIDE0LjIzNSAxNDIuNzYgMTUuMTM1IDE0Mi43NiAxNi4xNjVDMTQyLjc2IDE3LjE5NSAxNDIuOTIgMTguMDg1IDE0My4yNSAxOC44MzVDMTQzLjU4IDE5LjU4NSAxNDQuMDQgMjAuMTU1IDE0NC42NCAyMC41NjVDMTQ1LjI0IDIwLjk2NSAxNDUuOTQgMjEuMTY1IDE0Ni43NSAyMS4xNjVMMTQ2Ljc2IDIxLjE1NVoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xNjMuNTYgMjUuNTU1QzE2Mi4zOCAyNS41NTUgMTYxLjM3IDI1LjMzNSAxNjAuNTIgMjQuODg1QzE1OS42NyAyNC40MzQ5IDE1OS4wMyAyMy44MTUgMTU4LjU5IDIzLjAzNUMxNTguMTUgMjIuMjQ0OSAxNTcuOTQgMjEuMzQ1IDE1Ny45NCAyMC4zMjVDMTU3Ljk0IDE4LjY3NSAxNTguNDggMTcuMzk1IDE1OS41NSAxNi40OTVDMTYwLjYyIDE1LjU5NSAxNjIuMSAxNC45ODUgMTYzLjk4IDE0LjY2NUwxNjcuODIgMTQuMDU1QzE2OC4xNCAxNC4wMDUgMTY4LjQgMTMuOTQ1IDE2OC41OSAxMy44NTVDMTY4Ljc5IDEzLjc2NSAxNjguOTQgMTMuNjU1IDE2OS4wNCAxMy40OTVDMTY5LjE0IDEzLjMzNSAxNjkuMTkgMTMuMTU1IDE2OS4xOSAxMi45MjVDMTY5LjE5IDEyLjQ3NSAxNjkuMDggMTIuMDc1IDE2OC44NyAxMS43MjVDMTY4LjY1IDExLjM3NSAxNjguMzQgMTEuMTE1IDE2Ny45MiAxMC45MTVDMTY3LjUgMTAuNzI1IDE2NyAxMC42MjUgMTY2LjQxIDEwLjYyNUMxNjUuODIgMTAuNjI1IDE2NS4zNiAxMC43MjUgMTY0Ljk1IDEwLjkxNUMxNjQuNTQgMTEuMTA1IDE2NC4yMiAxMS4zNzUgMTYzLjk4IDExLjcxNUMxNjMuNzQgMTIuMDU1IDE2My41OSAxMi40NjUgMTYzLjUyIDEyLjkzNUgxNTguMzdDMTU4LjUxIDExLjYyNSAxNTguOTEgMTAuNDg1IDE1OS41OSA5LjUzNDk1QzE2MC4yNyA4LjU4NDk1IDE2MS4yIDcuODU0OTUgMTYyLjM3IDcuMzQ0OTVDMTYzLjU0IDYuODM0OTUgMTY0LjkxIDYuNTc0OTUgMTY2LjQ4IDYuNTc0OTVDMTY4LjA1IDYuNTc0OTUgMTY5LjQ1IDYuODE0OTUgMTcwLjY0IDcuMzA0OTVDMTcxLjgyIDcuNzk0OTUgMTcyLjc1IDguNTE0OTUgMTczLjQxIDkuNDY0OTVDMTc0LjA3IDEwLjQxNSAxNzQuNCAxMS41NzUgMTc0LjQgMTIuOTM1VjI1LjI2NUgxNjkuMlYyMi43MTVIMTY5LjExQzE2OC41NSAyMy42NDUgMTY3LjggMjQuMzU1IDE2Ni44MyAyNC44MzVDMTY1Ljg3IDI1LjMxNSAxNjQuNzggMjUuNTU1IDE2My41NyAyNS41NTVIMTYzLjU2Wk0xNjUuMzggMjEuNjE1QzE2Ni4xNCAyMS42MTUgMTY2LjgxIDIxLjQzNSAxNjcuMzkgMjEuMDY1QzE2Ny45NyAyMC42OTUgMTY4LjQxIDIwLjIwNSAxNjguNzIgMTkuNTc1QzE2OS4wMyAxOC45NTUgMTY5LjE5IDE4LjI2NSAxNjkuMTkgMTcuNTE1VjE2Ljg1NUMxNjkuMDMgMTYuOTQ1IDE2OC44MyAxNy4wMjUgMTY4LjU5IDE3LjA5NUMxNjguMzUgMTcuMTY1IDE2OC4wNyAxNy4yMjUgMTY3Ljc3IDE3LjI4NUwxNjUuMDIgMTcuNzQ1QzE2NC40NiAxNy44NDUgMTY0LjAxIDE4LjA1NSAxNjMuNjYgMTguMzU1QzE2My4zMSAxOC42NjUgMTYzLjEzIDE5LjEwNSAxNjMuMTMgMTkuNjk1QzE2My4xMyAyMC4wNjUgMTYzLjIyIDIwLjQwNSAxNjMuMzkgMjAuNjg1QzE2My41NyAyMC45NzUgMTYzLjgzIDIxLjIwNSAxNjQuMTcgMjEuMzY1QzE2NC41MiAyMS41MjUgMTY0LjkyIDIxLjYxNSAxNjUuMzkgMjEuNjE1SDE2NS4zOFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0wIDEwLjgzNVYyNS4yNjVINS4zNlYxNS40MDVMMCAxMC44MzVaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMjQuMyAyNS4yNjVMMjQuMzIgMC42MTQ5NTFMMTIuMTkgMTEuMTY1TDAgMC42MTQ5NTFWNy44MzQ5NUwxMi4xOSAxOC4yMzVMMTguOTUgMTIuNDY1VjI1LjI2NUgyNC4zWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTMxLjQ4IDE0LjI0NUMzMS45NSAxNC40MzUgMzIuNDcgMTQuNjE1IDMzLjA0IDE0Ljc4NUwzOC4wNyAxMC40ODVDMzcuNzcgMTAuNDI1IDM3LjQ2IDEwLjM2NSAzNy4xNCAxMC4zMTVDMzYuMSAxMC4xMjUgMzUuMjkgOS45MTQ5NSAzNC43MSA5LjY4NDk1QzM0LjEzIDkuNDU0OTUgMzMuNzIgOS4xNzQ5NSAzMy40NyA4Ljg0NDk1QzMzLjIyIDguNTE0OTUgMzMuMSA4LjA3NDk1IDMzLjEgNy41NDQ5NUMzMy4xIDcuMDE0OTUgMzMuMjQgNi41MDQ5NSAzMy41MyA2LjA4NDk1QzMzLjgyIDUuNjY0OTUgMzQuMjMgNS4zNDQ5NSAzNC43NSA1LjEzNDk1QzM1LjI4IDQuOTE0OTUgMzUuOSA0LjgxNDk1IDM2LjYxIDQuODE0OTVDMzcuMzggNC44MTQ5NSAzOC4wNSA0Ljk1NDk1IDM4LjYxIDUuMjM0OTVDMzkuMTcgNS41MTQ5NSAzOS42IDUuOTA0OTUgMzkuOTEgNi40MjQ5NUM0MC4yMiA2Ljk0NDk1IDQwLjM5IDcuNTU0OTUgNDAuNDIgOC4yNjQ5NUg0Ni4zQzQ2LjE2IDYuNTU0OTUgNDUuNzEgNS4xMDQ5NSA0NC45MyAzLjkyNDk1QzQ0LjE1IDIuNzQ0OTUgNDMuMDcgMS44NTQ5NSA0MS42OSAxLjI1NDk1QzQwLjMxIDAuNjU0OTUxIDM4LjY2IDAuMzU0OTUxIDM2Ljc0IDAuMzU0OTUxQzM0LjgyIDAuMzU0OTUxIDMzLjA2IDAuNjc0OTUxIDMxLjY2IDEuMzA0OTVDMzAuMjYgMS45MzQ5NSAyOS4yIDIuODU0OTUgMjguNDcgNC4wNDQ5NUMyNy43NCA1LjIzNDk1IDI3LjM4IDYuNjY0OTUgMjcuMzggOC4zMjQ5NUMyNy4zOCA5Ljg0NDk1IDI3LjczIDExLjA3NSAyOC40NCAxMi4wMzVDMjkuMTUgMTIuOTg1IDMwLjE1IDEzLjcyNSAzMS40NSAxNC4yNTVMMzEuNDggMTQuMjQ1WiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTQ1LjQ2IDEzLjk2NUM0NC43MyAxMi45NzUgNDMuNjkgMTIuMjE1IDQyLjM2IDExLjY3NUM0MS44OSAxMS40ODUgNDEuMzggMTEuMzE1IDQwLjgyIDExLjE0NUwzNS44MiAxNS40MTVDMzYuMDQgMTUuNDU1IDM2LjI1IDE1LjQ5NSAzNi40OCAxNS41MjVDMzcuNTIgMTUuNzA1IDM4LjM0IDE1LjkxNSAzOC45NCAxNi4xNTVDMzkuNTQgMTYuMzk1IDM5Ljk3IDE2LjcwNSA0MC4yNSAxNy4wOTVDNDAuNTMgMTcuNDg1IDQwLjY3IDE3Ljk2NSA0MC42NyAxOC41NTVDNDAuNjcgMTkuMTQ1IDQwLjUxIDE5LjYyNSA0MC4yIDIwLjAyNUMzOS44OSAyMC40MjUgMzkuNDUgMjAuNzM1IDM4Ljg5IDIwLjkzNUMzOC4zMyAyMS4xMzUgMzcuNjUgMjEuMjQ1IDM2Ljg2IDIxLjI0NUMzNS45MyAyMS4yNDUgMzUuMTUgMjEuMDg1IDM0LjUxIDIwLjc3NUMzMy44OCAyMC40NjUgMzMuMzkgMjAuMDI1IDMzLjA2IDE5LjQ2NUMzMi43MyAxOC45MDUgMzIuNTQgMTguMjU1IDMyLjUxIDE3LjUxNUgyNi42MUMyNi43MSAxOS4yNzUgMjcuMTcgMjAuNzU1IDI3Ljk5IDIxLjk3NUMyOC44MSAyMy4xOTUgMjkuOTUgMjQuMTE1IDMxLjQzIDI0LjczNUMzMi45MSAyNS4zNTUgMzQuNzEgMjUuNjc1IDM2LjgzIDI1LjY3NUMzOC45NSAyNS42NzUgNDAuNjMgMjUuMzg1IDQyLjA4IDI0LjgwNUM0My41MyAyNC4yMjUgNDQuNjQgMjMuMzU1IDQ1LjQxIDIyLjE5NUM0Ni4xOCAyMS4wMzUgNDYuNTcgMTkuNTk1IDQ2LjU3IDE3Ljg2NUM0Ni41NyAxNi4yNDUgNDYuMiAxNC45NDUgNDUuNDcgMTMuOTU1TDQ1LjQ2IDEzLjk2NVoiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=" alt="MS Canada" loading="lazy">
-        <h3>MS Canada</h3>
-        <p>LiquidGym was involved in educational expos hosted by MS Canada at their location, providing an opportunity to connect with the MS community and share information about exercise, movement, and the role of physical activity in supporting health and mobility.</p>
-      </div>
-      <div class="partner-card rv">
-        <img class="partner-card-logo" src="https://cdn.katalyst-crm.com/a/b46d9787-fd24-4620-5399-278ae28b72a2" alt="Exercise is Medicine Canada" loading="lazy">
-        <h3>Exercise is Medicine Canada</h3>
-        <p>Exercise is Medicine Canada encourages primary care physicians and other healthcare providers to include physical activity in treatment plans, and to refer patients to credentialed exercise and health fitness professionals.</p>
-        <p>LiquidGym has hosted a continuing education training event for physicians on the benefits of exercise and aquatic therapy.</p>
-      </div>
+  <div class="pt-gallery n1"><div class="pt-pic logo-only"><img src="https://cdn.katalyst-crm.com/a/0d22fe4b-bfc0-099e-70ba-43ac1ae3ae3a" alt="Heart Wise Exercise – University of Ottawa Heart Institute" loading="lazy"></div></div>
+</article>
+<article class="pt-entry rv" id="parkinson">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/f656e903-5aa3-f1df-7d0f-a8c8ab9dc930" alt="Parkinson Canada" loading="lazy" style="max-height:78px;max-width:240px;">
+    <h3>Parkinson Canada</h3>
+    <p>LiquidGym hosted an open house for Parkinson Canada introducing water and land-based exercise programmes for neurological conditions, and has taken part in education seminars and on-site Alinker demonstrations. Team LiquidGym was involved in numerous Lap The Gats fundraising events in the Gatineau Park.</p>
+  </div>
+  <div class="pt-gallery n1">
+    <a class="pt-pic" href="https://cdn.katalyst-crm.com/a/12f7a6a0-3f16-1bbd-bb9d-f514d7db360b"><img src="https://cdn.katalyst-crm.com/a/12f7a6a0-3f16-1bbd-bb9d-f514d7db360b" alt="The LiquidGym and Parkinson Canada cake at the open house" loading="lazy"></a>
+  </div>
+</article>
+<article class="pt-entry text-only rv" id="diabetes">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/1c710032-4cad-ebcd-4c0d-b674b1ab2d85" alt="Diabetes Canada" loading="lazy">
+    <h3>Diabetes Canada</h3>
+    <p>LiquidGym has worked with Diabetes Canada on workshops and seminars, both at the clinic and at various expos.</p>
+  </div>
+</article>
+<article class="pt-entry rv" id="heart-stroke">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/fed7b5af-e852-be13-c0a3-65b28c1ef22b" alt="Heart and Stroke Foundation" loading="lazy">
+    <h3>Heart and Stroke Foundation</h3>
+    <p>In partnership with the Heart and Stroke Foundation, LiquidGym hosted Canada&rsquo;s first underwater duathlon, which included running on underwater treadmills and underwater bikes.</p>
+  </div>
+  <div class="pt-gallery n1">
+    <a class="pt-pic poster" href="https://cdn.katalyst-crm.com/a/1975467e-cfa9-43b9-caf7-91d570b9de78"><img src="https://cdn.katalyst-crm.com/a/1975467e-cfa9-43b9-caf7-91d570b9de78" alt="Poster for Canada&#x27;s first underwater duathlon at LiquidGym" loading="lazy"></a>
+  </div>
+</article>
+<article class="pt-entry rv" id="the-ride">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/232f0f4c-bfbd-67ef-72cf-4ef0a8282d7b" alt="THE RIDE" loading="lazy">
+    <h3>The Ottawa Hospital Foundation &middot; THE RIDE</h3>
+    <p>LiquidGym has been the therapy tent for THE RIDE participants from 2014 to 2023, supporting their on-site therapy needs. At the 2019 event LiquidGym introduced a one-kilometre Alinker route, with 50 Alinkers taking part.</p>
+  </div>
+  <div class="pt-gallery n1">
+    <a class="pt-pic" href="https://cdn.katalyst-crm.com/a/805aedb8-72ed-8674-dca1-cc110d31e7e4"><img src="https://cdn.katalyst-crm.com/a/805aedb8-72ed-8674-dca1-cc110d31e7e4" alt="Dr. Jack Kitts presenting Karen Snyder with the THE RIDE sponsor recognition plaque" loading="lazy"></a>
+  </div>
+</article>
+<article class="pt-entry rv" id="arthritis">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/3cb60624-c3e0-0639-38a5-e922c2f51399" alt="Arthritis Society Canada" loading="lazy">
+    <h3>Arthritis Society</h3>
+    <p>LiquidGym provided space to the Arthritis Society as a satellite clinic location, delivering therapy services to residents in the west end of Ottawa. Over the years we have run a number of events with them, both fundraising and educational.</p>
+  </div>
+  <div class="pt-gallery n2">
+    <a class="pt-pic poster" href="https://cdn.katalyst-crm.com/a/a0d4176b-c194-d8bd-0b97-9047bda76ecb"><img src="https://cdn.katalyst-crm.com/a/a0d4176b-c194-d8bd-0b97-9047bda76ecb" alt="Arthritis Education Day at LiquidGym, September 28th 2016" loading="lazy"></a>
+    <a class="pt-pic poster" href="https://cdn.katalyst-crm.com/a/736fa90a-8166-0bc0-63c7-b870d3fdb778"><img src="https://cdn.katalyst-crm.com/a/736fa90a-8166-0bc0-63c7-b870d3fdb778" alt="The 2015 Walk to Fight Arthritis open house at LiquidGym" loading="lazy"></a>
+  </div>
+</article>
+<article class="pt-entry text-only rv" id="ms-canada">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTc1IiBoZWlnaHQ9IjI2IiB2aWV3Qm94PSIwIDAgMTc1IDI2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNjguMTcgMjUuNjc1QzY1LjcgMjUuNjc1IDYzLjU0IDI1LjEzNSA2MS42OSAyNC4wNTVDNTkuODQgMjIuOTc1IDU4LjQyIDIxLjQ3NSA1Ny40MyAxOS41NTVDNTYuNDQgMTcuNjM1IDU1Ljk0IDE1LjQ1NSA1NS45NCAxMi45OTVDNTUuOTQgMTAuNTM1IDU2LjQzIDguMzc0OTUgNTcuNDEgNi40NTQ5NUM1OC4zOSA0LjUzNDk1IDU5Ljc5IDMuMDM0OTUgNjEuNjIgMS45NDQ5NUM2My40NCAwLjg2NDk1MSA2NS41OSAwLjMyNDk1MSA2OC4wNSAwLjMyNDk1MUM3MC4wOCAwLjMyNDk1MSA3MS44OSAwLjcxNDk1MSA3My40NyAxLjQ4NDk1Qzc1LjA2IDIuMjU0OTUgNzYuMzUgMy4zNDQ5NSA3Ny4zNCA0Ljc1NDk1Qzc4LjMzIDYuMTY0OTUgNzguOTcgNy44MDQ5NSA3OS4yNSA5LjY3NDk1SDczLjU3QzczLjM3IDguNzQ0OTUgNzMuMDMgNy45NDQ5NSA3Mi41NSA3LjI4NDk1QzcyLjA3IDYuNjI0OTUgNzEuNDYgNi4xMDQ5NSA3MC43MSA1Ljc0NDk1QzY5Ljk2IDUuMzg0OTUgNjkuMDkgNS4yMDQ5NSA2OC4xMSA1LjIwNDk1QzY2LjgxIDUuMjA0OTUgNjUuNjggNS41NTQ5NSA2NC43MyA2LjI0NDk1QzYzLjc4IDYuOTM0OTUgNjMuMDUgNy44NzQ5NSA2Mi41NSA5LjA1NDk1QzYyLjA1IDEwLjIzNSA2MS44IDExLjU1NSA2MS44IDEzLjAwNUM2MS44IDE0LjU4NSA2Mi4wNSAxNS45NTUgNjIuNTUgMTcuMTE1QzYzLjA1IDE4LjI4NSA2My43NyAxOS4xODUgNjQuNzMgMTkuODI1QzY1LjY4IDIwLjQ2NSA2Ni44MiAyMC43ODUgNjguMTUgMjAuNzg1QzY5LjEyIDIwLjc4NSA3MCAyMC41OTUgNzAuNzcgMjAuMjI1QzcxLjU0IDE5Ljg1NDkgNzIuMTcgMTkuMzE1IDcyLjY2IDE4LjYyNUM3My4xNSAxNy45MzQ5IDczLjQ3IDE3LjExNSA3My42MyAxNi4xNzVINzkuMzNDNzkuMTQgMTguMDM1IDc4LjU2IDE5LjY4NSA3Ny42IDIxLjExNUM3Ni42NCAyMi41NDUgNzUuMzUgMjMuNjY1IDczLjc0IDI0LjQ2NUM3Mi4xMyAyNS4yNjQ5IDcwLjI4IDI1LjY2NSA2OC4xOCAyNS42NjVMNjguMTcgMjUuNjc1WiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTg2LjE3IDI1LjU1NUM4NC45OSAyNS41NTUgODMuOTggMjUuMzM1IDgzLjEzIDI0Ljg4NUM4Mi4yOCAyNC40MzQ5IDgxLjY0IDIzLjgxNSA4MS4yIDIzLjAzNUM4MC43NiAyMi4yNDQ5IDgwLjU1IDIxLjM0NSA4MC41NSAyMC4zMjVDODAuNTUgMTguNjc1IDgxLjA5IDE3LjM5NSA4Mi4xNiAxNi40OTVDODMuMjMgMTUuNTk1IDg0LjcxIDE0Ljk4NSA4Ni41OSAxNC42NjVMOTAuNDMgMTQuMDU1QzkwLjc1IDE0LjAwNSA5MS4wMSAxMy45NDUgOTEuMiAxMy44NTVDOTEuNCAxMy43NjUgOTEuNTUgMTMuNjU1IDkxLjY1IDEzLjQ5NUM5MS43NSAxMy4zMzUgOTEuOCAxMy4xNTUgOTEuOCAxMi45MjVDOTEuOCAxMi40NzUgOTEuNjkgMTIuMDc1IDkxLjQ4IDExLjcyNUM5MS4yNiAxMS4zNzUgOTAuOTUgMTEuMTE1IDkwLjUzIDEwLjkxNUM5MC4xMSAxMC43MjUgODkuNjEgMTAuNjI1IDg5LjAyIDEwLjYyNUM4OC40MyAxMC42MjUgODcuOTcgMTAuNzI1IDg3LjU2IDEwLjkxNUM4Ny4xNSAxMS4xMDUgODYuODMgMTEuMzc1IDg2LjU5IDExLjcxNUM4Ni4zNSAxMi4wNTUgODYuMiAxMi40NjUgODYuMTMgMTIuOTM1SDgwLjk4QzgxLjEyIDExLjYyNSA4MS41MiAxMC40ODUgODIuMiA5LjUzNDk1QzgyLjg4IDguNTg0OTUgODMuODEgNy44NTQ5NSA4NC45OCA3LjM0NDk1Qzg2LjE1IDYuODM0OTUgODcuNTIgNi41NzQ5NSA4OS4wOSA2LjU3NDk1QzkwLjY2IDYuNTc0OTUgOTIuMDYgNi44MTQ5NSA5My4yNSA3LjMwNDk1Qzk0LjQzIDcuNzk0OTUgOTUuMzYgOC41MTQ5NSA5Ni4wMiA5LjQ2NDk1Qzk2LjY4IDEwLjQxNSA5Ny4wMSAxMS41NzUgOTcuMDEgMTIuOTM1VjI1LjI2NUg5MS44MVYyMi43MTVIOTEuNzJDOTEuMTYgMjMuNjQ1IDkwLjQxIDI0LjM1NSA4OS40NCAyNC44MzVDODguNDggMjUuMzE1IDg3LjM5IDI1LjU1NSA4Ni4xOCAyNS41NTVIODYuMTdaTTg3Ljk5IDIxLjYxNUM4OC43NSAyMS42MTUgODkuNDIgMjEuNDM1IDkwIDIxLjA2NUM5MC41OCAyMC42OTUgOTEuMDIgMjAuMjA1IDkxLjMzIDE5LjU3NUM5MS42NCAxOC45NTUgOTEuOCAxOC4yNjUgOTEuOCAxNy41MTVWMTYuODU1QzkxLjY0IDE2Ljk0NSA5MS40NCAxNy4wMjUgOTEuMiAxNy4wOTVDOTAuOTYgMTcuMTY1IDkwLjY4IDE3LjIyNSA5MC4zOCAxNy4yODVMODcuNjMgMTcuNzQ1Qzg3LjA3IDE3Ljg0NSA4Ni42MiAxOC4wNTUgODYuMjcgMTguMzU1Qzg1LjkyIDE4LjY2NSA4NS43NCAxOS4xMDUgODUuNzQgMTkuNjk1Qzg1Ljc0IDIwLjA2NSA4NS44MyAyMC40MDUgODYgMjAuNjg1Qzg2LjE4IDIwLjk3NSA4Ni40NCAyMS4yMDUgODYuNzggMjEuMzY1Qzg3LjEzIDIxLjUyNSA4Ny41MyAyMS42MTUgODggMjEuNjE1SDg3Ljk5WiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTk5Ljc3IDI1LjI2NVY2Ljk3NDk1SDEwNS4xM1Y5LjQ0NDk1SDEwNS4yQzEwNS43OCA4LjUzNDk1IDEwNi41MiA3LjgzNDk1IDEwNy40MiA3LjMzNDk1QzEwOC4zMiA2LjgzNDk1IDEwOS4zOCA2LjU4NDk1IDExMC41OSA2LjU4NDk1QzExMS45MiA2LjU4NDk1IDExMy4wNSA2Ljg2NDk1IDExNCA3LjQzNDk1QzExNC45NSA4LjAwNDk1IDExNS42NyA4LjgyNDk1IDExNi4xNiA5LjkxNDk1QzExNi42NSAxMS4wMDUgMTE2LjkgMTIuMzI1IDExNi45IDEzLjg3NVYyNS4yNjVIMTExLjU0VjE0LjYyNUMxMTEuNTQgMTMuNTM1IDExMS4yOCAxMi42ODUgMTEwLjc1IDEyLjA4NUMxMTAuMjIgMTEuNDc1IDEwOS40OCAxMS4xNzUgMTA4LjUxIDExLjE3NUMxMDcuODIgMTEuMTc1IDEwNy4yMiAxMS4zMjUgMTA2LjcxIDExLjYzNUMxMDYuMiAxMS45NDUgMTA1LjgxIDEyLjM2NSAxMDUuNTQgMTIuOTE1QzEwNS4yNyAxMy40NjUgMTA1LjEzIDE0LjA5NSAxMDUuMTMgMTQuNzk1VjI1LjI2NUg5OS43N1oiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xMjQuNDcgMjUuNTU1QzEyMy4yOSAyNS41NTUgMTIyLjI4IDI1LjMzNSAxMjEuNDMgMjQuODg1QzEyMC41OCAyNC40MzQ5IDExOS45NCAyMy44MTUgMTE5LjUgMjMuMDM1QzExOS4wNiAyMi4yNDQ5IDExOC44NSAyMS4zNDUgMTE4Ljg1IDIwLjMyNUMxMTguODUgMTguNjc1IDExOS4zOSAxNy4zOTUgMTIwLjQ2IDE2LjQ5NUMxMjEuNTMgMTUuNTk1IDEyMy4wMSAxNC45ODUgMTI0Ljg5IDE0LjY2NUwxMjguNzMgMTQuMDU1QzEyOS4wNSAxNC4wMDUgMTI5LjMxIDEzLjk0NSAxMjkuNSAxMy44NTVDMTI5LjcgMTMuNzY1IDEyOS44NSAxMy42NTUgMTI5Ljk1IDEzLjQ5NUMxMzAuMDUgMTMuMzM1IDEzMC4xIDEzLjE1NSAxMzAuMSAxMi45MjVDMTMwLjEgMTIuNDc1IDEyOS45OSAxMi4wNzUgMTI5Ljc4IDExLjcyNUMxMjkuNTYgMTEuMzc1IDEyOS4yNSAxMS4xMTUgMTI4LjgzIDEwLjkxNUMxMjguNDEgMTAuNzI1IDEyNy45MSAxMC42MjUgMTI3LjMyIDEwLjYyNUMxMjYuNzMgMTAuNjI1IDEyNi4yNyAxMC43MjUgMTI1Ljg2IDEwLjkxNUMxMjUuNDUgMTEuMTA1IDEyNS4xMyAxMS4zNzUgMTI0Ljg5IDExLjcxNUMxMjQuNjUgMTIuMDU1IDEyNC41IDEyLjQ2NSAxMjQuNDMgMTIuOTM1SDExOS4yOEMxMTkuNDIgMTEuNjI1IDExOS44MiAxMC40ODUgMTIwLjUgOS41MzQ5NUMxMjEuMTggOC41ODQ5NSAxMjIuMTEgNy44NTQ5NSAxMjMuMjggNy4zNDQ5NUMxMjQuNDUgNi44MzQ5NSAxMjUuODIgNi41NzQ5NSAxMjcuMzkgNi41NzQ5NUMxMjguOTYgNi41NzQ5NSAxMzAuMzYgNi44MTQ5NSAxMzEuNTUgNy4zMDQ5NUMxMzIuNzMgNy43OTQ5NSAxMzMuNjYgOC41MTQ5NSAxMzQuMzIgOS40NjQ5NUMxMzQuOTggMTAuNDE1IDEzNS4zMSAxMS41NzUgMTM1LjMxIDEyLjkzNVYyNS4yNjVIMTMwLjExVjIyLjcxNUgxMzAuMDJDMTI5LjQ2IDIzLjY0NSAxMjguNzEgMjQuMzU1IDEyNy43NCAyNC44MzVDMTI2Ljc4IDI1LjMxNSAxMjUuNjkgMjUuNTU1IDEyNC40OCAyNS41NTVIMTI0LjQ3Wk0xMjYuMjkgMjEuNjE1QzEyNy4wNSAyMS42MTUgMTI3LjcyIDIxLjQzNSAxMjguMyAyMS4wNjVDMTI4Ljg4IDIwLjY5NSAxMjkuMzIgMjAuMjA1IDEyOS42MyAxOS41NzVDMTI5Ljk0IDE4Ljk1NSAxMzAuMSAxOC4yNjUgMTMwLjEgMTcuNTE1VjE2Ljg1NUMxMjkuOTQgMTYuOTQ1IDEyOS43NCAxNy4wMjUgMTI5LjUgMTcuMDk1QzEyOS4yNiAxNy4xNjUgMTI4Ljk4IDE3LjIyNSAxMjguNjggMTcuMjg1TDEyNS45MyAxNy43NDVDMTI1LjM3IDE3Ljg0NSAxMjQuOTIgMTguMDU1IDEyNC41NyAxOC4zNTVDMTI0LjIyIDE4LjY2NSAxMjQuMDQgMTkuMTA1IDEyNC4wNCAxOS42OTVDMTI0LjA0IDIwLjA2NSAxMjQuMTMgMjAuNDA1IDEyNC4zIDIwLjY4NUMxMjQuNDggMjAuOTc1IDEyNC43NCAyMS4yMDUgMTI1LjA4IDIxLjM2NUMxMjUuNDMgMjEuNTI1IDEyNS44MyAyMS42MTUgMTI2LjMgMjEuNjE1SDEyNi4yOVoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xNDQuOTkgMjUuNjc1QzE0My41MiAyNS42NzUgMTQyLjIgMjUuMjk1IDE0MS4wNSAyNC41NDVDMTM5Ljg5IDIzLjc5NSAxMzguOTkgMjIuNjk1IDEzOC4zMyAyMS4yNjVDMTM3LjY3IDE5LjgzNSAxMzcuMzQgMTguMTM1IDEzNy4zNCAxNi4xNzVDMTM3LjM0IDE0LjIxNSAxMzcuNjYgMTIuNTk1IDEzOC4yOSAxMS4xNDVDMTM4LjkyIDkuNjk0OTUgMTM5LjgyIDguNTc0OTUgMTQwLjk4IDcuNzc0OTVDMTQyLjE0IDYuOTg0OTUgMTQzLjQ5IDYuNTg0OTUgMTQ1LjAyIDYuNTg0OTVDMTQ1LjgyIDYuNTg0OTUgMTQ2LjU3IDYuNjk0OTUgMTQ3LjI2IDYuOTE0OTVDMTQ3Ljk1IDcuMTM0OTUgMTQ4LjU3IDcuNDQ0OTUgMTQ5LjEzIDcuODU0OTVDMTQ5LjY5IDguMjU0OTUgMTUwLjE2IDguNzQ0OTUgMTUwLjU2IDkuMzI0OTVIMTUwLjYxVjAuNjE0OTUxSDE1NS45N1YyNS4yNjVIMTUwLjYxVjIyLjk1NUgxNTAuNTZDMTUwLjE1IDIzLjU0NSAxNDkuNjYgMjQuMDQ1IDE0OS4wOSAyNC40NDVDMTQ4LjUyIDI0Ljg0NSAxNDcuODggMjUuMTU1IDE0Ny4xOSAyNS4zNjVDMTQ2LjQ5IDI1LjU3NSAxNDUuNzYgMjUuNjc1IDE0NC45OSAyNS42NzVaTTE0Ni43NiAyMS4xNTVDMTQ3LjU2IDIxLjE1NSAxNDguMjYgMjAuOTU1IDE0OC44NiAyMC41NTVDMTQ5LjQ2IDIwLjE1NSAxNDkuOTEgMTkuNTc1IDE1MC4yMyAxOC44MjVDMTUwLjU1IDE4LjA3NSAxNTAuNzEgMTcuMTk1IDE1MC43MSAxNi4xODVDMTUwLjcxIDE1LjE3NSAxNTAuNTUgMTQuMjc1IDE1MC4yMyAxMy41MjVDMTQ5LjkxIDEyLjc3NSAxNDkuNDYgMTIuMTg1IDE0OC44NiAxMS43NzVDMTQ4LjI2IDExLjM2NSAxNDcuNTYgMTEuMTU1IDE0Ni43NCAxMS4xNTVDMTQ1LjkyIDExLjE1NSAxNDUuMjMgMTEuMzU1IDE0NC42MyAxMS43NTVDMTQ0LjAzIDEyLjE1NSAxNDMuNTcgMTIuNzM1IDE0My4yNCAxMy40ODVDMTQyLjkyIDE0LjIzNSAxNDIuNzYgMTUuMTM1IDE0Mi43NiAxNi4xNjVDMTQyLjc2IDE3LjE5NSAxNDIuOTIgMTguMDg1IDE0My4yNSAxOC44MzVDMTQzLjU4IDE5LjU4NSAxNDQuMDQgMjAuMTU1IDE0NC42NCAyMC41NjVDMTQ1LjI0IDIwLjk2NSAxNDUuOTQgMjEuMTY1IDE0Ni43NSAyMS4xNjVMMTQ2Ljc2IDIxLjE1NVoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xNjMuNTYgMjUuNTU1QzE2Mi4zOCAyNS41NTUgMTYxLjM3IDI1LjMzNSAxNjAuNTIgMjQuODg1QzE1OS42NyAyNC40MzQ5IDE1OS4wMyAyMy44MTUgMTU4LjU5IDIzLjAzNUMxNTguMTUgMjIuMjQ0OSAxNTcuOTQgMjEuMzQ1IDE1Ny45NCAyMC4zMjVDMTU3Ljk0IDE4LjY3NSAxNTguNDggMTcuMzk1IDE1OS41NSAxNi40OTVDMTYwLjYyIDE1LjU5NSAxNjIuMSAxNC45ODUgMTYzLjk4IDE0LjY2NUwxNjcuODIgMTQuMDU1QzE2OC4xNCAxNC4wMDUgMTY4LjQgMTMuOTQ1IDE2OC41OSAxMy44NTVDMTY4Ljc5IDEzLjc2NSAxNjguOTQgMTMuNjU1IDE2OS4wNCAxMy40OTVDMTY5LjE0IDEzLjMzNSAxNjkuMTkgMTMuMTU1IDE2OS4xOSAxMi45MjVDMTY5LjE5IDEyLjQ3NSAxNjkuMDggMTIuMDc1IDE2OC44NyAxMS43MjVDMTY4LjY1IDExLjM3NSAxNjguMzQgMTEuMTE1IDE2Ny45MiAxMC45MTVDMTY3LjUgMTAuNzI1IDE2NyAxMC42MjUgMTY2LjQxIDEwLjYyNUMxNjUuODIgMTAuNjI1IDE2NS4zNiAxMC43MjUgMTY0Ljk1IDEwLjkxNUMxNjQuNTQgMTEuMTA1IDE2NC4yMiAxMS4zNzUgMTYzLjk4IDExLjcxNUMxNjMuNzQgMTIuMDU1IDE2My41OSAxMi40NjUgMTYzLjUyIDEyLjkzNUgxNTguMzdDMTU4LjUxIDExLjYyNSAxNTguOTEgMTAuNDg1IDE1OS41OSA5LjUzNDk1QzE2MC4yNyA4LjU4NDk1IDE2MS4yIDcuODU0OTUgMTYyLjM3IDcuMzQ0OTVDMTYzLjU0IDYuODM0OTUgMTY0LjkxIDYuNTc0OTUgMTY2LjQ4IDYuNTc0OTVDMTY4LjA1IDYuNTc0OTUgMTY5LjQ1IDYuODE0OTUgMTcwLjY0IDcuMzA0OTVDMTcxLjgyIDcuNzk0OTUgMTcyLjc1IDguNTE0OTUgMTczLjQxIDkuNDY0OTVDMTc0LjA3IDEwLjQxNSAxNzQuNCAxMS41NzUgMTc0LjQgMTIuOTM1VjI1LjI2NUgxNjkuMlYyMi43MTVIMTY5LjExQzE2OC41NSAyMy42NDUgMTY3LjggMjQuMzU1IDE2Ni44MyAyNC44MzVDMTY1Ljg3IDI1LjMxNSAxNjQuNzggMjUuNTU1IDE2My41NyAyNS41NTVIMTYzLjU2Wk0xNjUuMzggMjEuNjE1QzE2Ni4xNCAyMS42MTUgMTY2LjgxIDIxLjQzNSAxNjcuMzkgMjEuMDY1QzE2Ny45NyAyMC42OTUgMTY4LjQxIDIwLjIwNSAxNjguNzIgMTkuNTc1QzE2OS4wMyAxOC45NTUgMTY5LjE5IDE4LjI2NSAxNjkuMTkgMTcuNTE1VjE2Ljg1NUMxNjkuMDMgMTYuOTQ1IDE2OC44MyAxNy4wMjUgMTY4LjU5IDE3LjA5NUMxNjguMzUgMTcuMTY1IDE2OC4wNyAxNy4yMjUgMTY3Ljc3IDE3LjI4NUwxNjUuMDIgMTcuNzQ1QzE2NC40NiAxNy44NDUgMTY0LjAxIDE4LjA1NSAxNjMuNjYgMTguMzU1QzE2My4zMSAxOC42NjUgMTYzLjEzIDE5LjEwNSAxNjMuMTMgMTkuNjk1QzE2My4xMyAyMC4wNjUgMTYzLjIyIDIwLjQwNSAxNjMuMzkgMjAuNjg1QzE2My41NyAyMC45NzUgMTYzLjgzIDIxLjIwNSAxNjQuMTcgMjEuMzY1QzE2NC41MiAyMS41MjUgMTY0LjkyIDIxLjYxNSAxNjUuMzkgMjEuNjE1SDE2NS4zOFoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0wIDEwLjgzNVYyNS4yNjVINS4zNlYxNS40MDVMMCAxMC44MzVaIiBmaWxsPSJibGFjayIvPgo8cGF0aCBkPSJNMjQuMyAyNS4yNjVMMjQuMzIgMC42MTQ5NTFMMTIuMTkgMTEuMTY1TDAgMC42MTQ5NTFWNy44MzQ5NUwxMi4xOSAxOC4yMzVMMTguOTUgMTIuNDY1VjI1LjI2NUgyNC4zWiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTMxLjQ4IDE0LjI0NUMzMS45NSAxNC40MzUgMzIuNDcgMTQuNjE1IDMzLjA0IDE0Ljc4NUwzOC4wNyAxMC40ODVDMzcuNzcgMTAuNDI1IDM3LjQ2IDEwLjM2NSAzNy4xNCAxMC4zMTVDMzYuMSAxMC4xMjUgMzUuMjkgOS45MTQ5NSAzNC43MSA5LjY4NDk1QzM0LjEzIDkuNDU0OTUgMzMuNzIgOS4xNzQ5NSAzMy40NyA4Ljg0NDk1QzMzLjIyIDguNTE0OTUgMzMuMSA4LjA3NDk1IDMzLjEgNy41NDQ5NUMzMy4xIDcuMDE0OTUgMzMuMjQgNi41MDQ5NSAzMy41MyA2LjA4NDk1QzMzLjgyIDUuNjY0OTUgMzQuMjMgNS4zNDQ5NSAzNC43NSA1LjEzNDk1QzM1LjI4IDQuOTE0OTUgMzUuOSA0LjgxNDk1IDM2LjYxIDQuODE0OTVDMzcuMzggNC44MTQ5NSAzOC4wNSA0Ljk1NDk1IDM4LjYxIDUuMjM0OTVDMzkuMTcgNS41MTQ5NSAzOS42IDUuOTA0OTUgMzkuOTEgNi40MjQ5NUM0MC4yMiA2Ljk0NDk1IDQwLjM5IDcuNTU0OTUgNDAuNDIgOC4yNjQ5NUg0Ni4zQzQ2LjE2IDYuNTU0OTUgNDUuNzEgNS4xMDQ5NSA0NC45MyAzLjkyNDk1QzQ0LjE1IDIuNzQ0OTUgNDMuMDcgMS44NTQ5NSA0MS42OSAxLjI1NDk1QzQwLjMxIDAuNjU0OTUxIDM4LjY2IDAuMzU0OTUxIDM2Ljc0IDAuMzU0OTUxQzM0LjgyIDAuMzU0OTUxIDMzLjA2IDAuNjc0OTUxIDMxLjY2IDEuMzA0OTVDMzAuMjYgMS45MzQ5NSAyOS4yIDIuODU0OTUgMjguNDcgNC4wNDQ5NUMyNy43NCA1LjIzNDk1IDI3LjM4IDYuNjY0OTUgMjcuMzggOC4zMjQ5NUMyNy4zOCA5Ljg0NDk1IDI3LjczIDExLjA3NSAyOC40NCAxMi4wMzVDMjkuMTUgMTIuOTg1IDMwLjE1IDEzLjcyNSAzMS40NSAxNC4yNTVMMzEuNDggMTQuMjQ1WiIgZmlsbD0iYmxhY2siLz4KPHBhdGggZD0iTTQ1LjQ2IDEzLjk2NUM0NC43MyAxMi45NzUgNDMuNjkgMTIuMjE1IDQyLjM2IDExLjY3NUM0MS44OSAxMS40ODUgNDEuMzggMTEuMzE1IDQwLjgyIDExLjE0NUwzNS44MiAxNS40MTVDMzYuMDQgMTUuNDU1IDM2LjI1IDE1LjQ5NSAzNi40OCAxNS41MjVDMzcuNTIgMTUuNzA1IDM4LjM0IDE1LjkxNSAzOC45NCAxNi4xNTVDMzkuNTQgMTYuMzk1IDM5Ljk3IDE2LjcwNSA0MC4yNSAxNy4wOTVDNDAuNTMgMTcuNDg1IDQwLjY3IDE3Ljk2NSA0MC42NyAxOC41NTVDNDAuNjcgMTkuMTQ1IDQwLjUxIDE5LjYyNSA0MC4yIDIwLjAyNUMzOS44OSAyMC40MjUgMzkuNDUgMjAuNzM1IDM4Ljg5IDIwLjkzNUMzOC4zMyAyMS4xMzUgMzcuNjUgMjEuMjQ1IDM2Ljg2IDIxLjI0NUMzNS45MyAyMS4yNDUgMzUuMTUgMjEuMDg1IDM0LjUxIDIwLjc3NUMzMy44OCAyMC40NjUgMzMuMzkgMjAuMDI1IDMzLjA2IDE5LjQ2NUMzMi43MyAxOC45MDUgMzIuNTQgMTguMjU1IDMyLjUxIDE3LjUxNUgyNi42MUMyNi43MSAxOS4yNzUgMjcuMTcgMjAuNzU1IDI3Ljk5IDIxLjk3NUMyOC44MSAyMy4xOTUgMjkuOTUgMjQuMTE1IDMxLjQzIDI0LjczNUMzMi45MSAyNS4zNTUgMzQuNzEgMjUuNjc1IDM2LjgzIDI1LjY3NUMzOC45NSAyNS42NzUgNDAuNjMgMjUuMzg1IDQyLjA4IDI0LjgwNUM0My41MyAyNC4yMjUgNDQuNjQgMjMuMzU1IDQ1LjQxIDIyLjE5NUM0Ni4xOCAyMS4wMzUgNDYuNTcgMTkuNTk1IDQ2LjU3IDE3Ljg2NUM0Ni41NyAxNi4yNDUgNDYuMiAxNC45NDUgNDUuNDcgMTMuOTU1TDQ1LjQ2IDEzLjk2NVoiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=" alt="MS Canada" loading="lazy">
+    <h3>MS Canada</h3>
+    <p>LiquidGym was involved in educational expos hosted by MS Canada at their location, providing an opportunity to connect with the MS community and share information about exercise, movement, and the role of physical activity in supporting health and mobility.</p>
+  </div>
+</article>
+<article class="pt-entry text-only rv" id="exercise-is-medicine">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/b46d9787-fd24-4620-5399-278ae28b72a2" alt="Exercise is Medicine Canada" loading="lazy">
+    <h3>Exercise is Medicine Canada</h3>
+    <p>Exercise is Medicine Canada encourages primary care physicians and other healthcare providers to include physical activity in treatment plans, and to refer patients to credentialed exercise and health fitness professionals.</p>
+    <p>LiquidGym has hosted a continuing education training event for physicians on the benefits of exercise and aquatic therapy.</p>
+  </div>
+</article>
     </div>
   </div>
 </section>
@@ -1306,31 +1396,81 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <h2>In the Community, Year After Year.</h2>
       <p>LiquidGym shows up for its community &mdash; at charity rides, accessibility events, fundraisers and open houses across Ottawa and the Gatineau.</p>
     </div>
-    <div class="pt-split flip">
-      <div class="pt-media rv"><img src="https://cdn.katalyst-crm.com/a/a9d27923-285e-73cf-7fa9-e27187c951c9" alt="LiquidGym community and charity events" loading="lazy"></div>
-      <div class="pt-body rv">
-        <span class="eyebrow">Community</span>
-        <h3>Alinker Walking Bikes</h3>
-        <p>LiquidGym was one of the first companies in Canada to bring the Alinker three-wheeled walking bike to Ottawa, offering training, Alinker events and sales.</p>
-        <p>Over the years, LiquidGym also participated in the Tamarack Ottawa Race Weekend 2&nbsp;km event with a team of 50 Alinker bikers and developed the online video series Alinker Academy, which is now the primary fitness and training resource under Alinker Canada.</p>
-      </div>
-    </div>
-    <div class="partner-list">
-      <div class="partner-card rv">
-        <img class="partner-card-logo" src="https://cdn.katalyst-crm.com/a/5306a19e-93b8-6b3a-8d90-ad72e1b4c869" alt="Royal Canadian Legion" loading="lazy">
-        <h3>Royal Canadian Legion &amp; South Nepean Satellite Community Health Centre</h3>
-        <p>LiquidGym partnered with the Royal Canadian Legion and the South Nepean Satellite Community Health Centre on the Bells Corners Winter-Fit Project.</p>
-      </div>
-      <div class="partner-card rv">
-        <img class="partner-card-logo" src="https://cdn.katalyst-crm.com/a/232f0f4c-bfbd-67ef-72cf-4ef0a8282d7b" alt="The Ottawa Hospital Foundation / THE RIDE" loading="lazy">
-        <h3>The Ottawa Hospital Foundation &middot; THE RIDE</h3>
-        <p>LiquidGym has been the therapy tent for THE RIDE participants from 2014 to 2023, supporting their on-site therapy needs. At the 2019 event LiquidGym introduced a one-kilometre Alinker route, with 50 Alinkers taking part.</p>
-      </div>
-      <div class="partner-card rv">
-        <img class="partner-card-logo" src="https://cdn.katalyst-crm.com/a/e6c3defa-cf23-df5f-2e18-466e3e11ebe3" alt="March of Dimes Canada" loading="lazy">
-        <h3>March of Dimes Canada</h3>
-        <p>LiquidGym takes part in March of Dimes Open Doors events in Ottawa, and hosts an open house to launch their fundraising initiatives.</p>
-      </div>
+    <div class="pt-entries">
+<article class="pt-entry rv" id="march-of-dimes">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/e6c3defa-cf23-df5f-2e18-466e3e11ebe3" alt="March of Dimes Canada" loading="lazy">
+    <h3>March of Dimes Canada</h3>
+    <p>LiquidGym takes part in March of Dimes Open Doors events in Ottawa, and hosts an open house to launch their fundraising initiatives.</p>
+    <p>March of Dimes held their Community Canvas Campaign &ldquo;Kick Off&rdquo; event at LiquidGym.</p>
+  </div>
+  <div class="pt-gallery n2">
+    <a class="pt-pic" href="https://cdn.katalyst-crm.com/a/5047dc13-9c60-d432-695f-4da3b2e26dfc"><img src="https://cdn.katalyst-crm.com/a/5047dc13-9c60-d432-695f-4da3b2e26dfc" alt="The March of Dimes Community Canvas at LiquidGym" loading="lazy"></a>
+    <a class="pt-pic poster" href="https://cdn.katalyst-crm.com/a/0f8dea86-ac97-a3a3-cbb5-9c4de9488729"><img src="https://cdn.katalyst-crm.com/a/0f8dea86-ac97-a3a3-cbb5-9c4de9488729" alt="Kick and Ride: the March of Dimes Community Canvas Campaign kick-off at LiquidGym" loading="lazy"></a>
+  </div>
+</article>
+<article class="pt-entry rv" id="blood-services">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/908266aa-60f7-8227-007c-ebd1acc5138c" alt="Canadian Blood Services" loading="lazy">
+    <h3>Canadian Blood Services</h3>
+    <p>LiquidGym was a partner at the Bells Corners Community Blood Drive on June 22, 2023.</p>
+  </div>
+  <div class="pt-gallery n1">
+    <a class="pt-pic" href="https://cdn.katalyst-crm.com/a/5ab8b82f-60ef-61ce-422e-6d9d007359fe"><img src="https://cdn.katalyst-crm.com/a/5ab8b82f-60ef-61ce-422e-6d9d007359fe" alt="Donate blood, save lives: the Bells Corners Community Blood Drive" loading="lazy"></a>
+  </div>
+</article>
+<article class="pt-entry rv" id="tamarack">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/eb12ce8f-fb22-fcef-6121-48c56c3318ae" alt="Tamarack Ottawa Race Weekend" loading="lazy" style="max-width:260px;">
+    <h3>Tamarack Ottawa Race Weekend</h3>
+    <p>Be part of something magical: LiquidGym took part in the Tamarack Ottawa Race Weekend 2&nbsp;km event, Saturday May 26 at 3pm, with a team of 50 Alinker riders.</p>
+  </div>
+  <div class="pt-gallery n2">
+    <a class="pt-pic poster" href="https://cdn.katalyst-crm.com/a/6ea7d517-1754-badd-421e-26cccca27d5d"><img src="https://cdn.katalyst-crm.com/a/6ea7d517-1754-badd-421e-26cccca27d5d" alt="Join the LiquidGym team at the Tamarack Ottawa Race Weekend 2 km event" loading="lazy"></a>
+    <a class="pt-pic" href="https://cdn.katalyst-crm.com/a/fc3737c7-5156-4c23-3eea-e159aed92039"><img src="https://cdn.katalyst-crm.com/a/fc3737c7-5156-4c23-3eea-e159aed92039" alt="The LiquidGym Alinker team at the Tamarack Ottawa Race Weekend" loading="lazy"></a>
+  </div>
+</article>
+<article class="pt-entry rv" id="legion">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/5306a19e-93b8-6b3a-8d90-ad72e1b4c869" alt="Royal Canadian Legion" loading="lazy">
+    <h3>Royal Canadian Legion &amp; South Nepean Satellite Community Health Centre</h3>
+    <p>LiquidGym partnered with the Royal Canadian Legion and the South Nepean Satellite Community Health Centre on the Bells Corners Winter-Fit Project.</p>
+  </div>
+  <div class="pt-gallery n1">
+    <a class="pt-pic poster" href="https://cdn.katalyst-crm.com/a/30124142-02af-ea29-b3ac-0ff3d5dbf08d"><img src="https://cdn.katalyst-crm.com/a/30124142-02af-ea29-b3ac-0ff3d5dbf08d" alt="The Royal Canadian Legion and South Nepean Satellite Community Health Centre at LiquidGym for the Winter-Fit Project" loading="lazy"></a>
+  </div>
+</article>
+<article class="pt-entry rv" id="lap-the-gats">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/f656e903-5aa3-f1df-7d0f-a8c8ab9dc930" alt="Parkinson Canada" loading="lazy" style="max-height:78px;max-width:240px;">
+    <h3>Parkinson Canada &middot; Lap the Gats</h3>
+    <p>Team LiquidGym was involved in numerous Lap The Gats fundraising events in the Gatineau Park.</p>
+  </div>
+  <div class="pt-gallery n1">
+    <a class="pt-pic poster" href="https://cdn.katalyst-crm.com/a/d6a75a87-83db-0047-a5f6-b0c23224e491"><img src="https://cdn.katalyst-crm.com/a/d6a75a87-83db-0047-a5f6-b0c23224e491" alt="Lap the Gats, Sunday June 24, 2018: a great ride for a great cause" loading="lazy"></a>
+  </div>
+</article>
+<article class="pt-entry rv" id="big-bike">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/fed7b5af-e852-be13-c0a3-65b28c1ef22b" alt="Heart and Stroke Foundation" loading="lazy">
+    <h3>Heart and Stroke Foundation &middot; The Big Bike</h3>
+    <p>LiquidGym and The Heart &amp; Stroke Foundation joined Melissa Lamb of CTV Ottawa Morning Live to discuss the Big Bike fundraising event.</p>
+  </div>
+  <div class="pt-gallery n1">
+    <a class="pt-pic poster" href="https://cdn.katalyst-crm.com/a/90716fd6-8821-7af5-564e-8f3884d6bfc3"><img src="https://cdn.katalyst-crm.com/a/90716fd6-8821-7af5-564e-8f3884d6bfc3" alt="The LiquidGym team on the Heart and Stroke Foundation&#x27;s Big Bike, August 19th 2016, and on CTV Ottawa Morning Live" loading="lazy"></a>
+  </div>
+</article>
+<article class="pt-entry rv" id="alinker">
+  <div class="pt-entry-body">
+    <img class="pt-entry-logo" src="https://cdn.katalyst-crm.com/a/faaa307f-6ce4-78b9-31f5-bff2f4f0fedd" alt="Alinker" loading="lazy">
+    <h3>Alinker Walking Bikes</h3>
+    <p>LiquidGym was one of the first companies in Canada to bring the Alinker three-wheeled walking bike to Ottawa, offering training, Alinker events and sales.</p>
+    <p>Over the years, LiquidGym also participated in the Tamarack Ottawa Race Weekend 2&nbsp;km event with a team of 50 Alinker bikers and developed the online video series Alinker Academy, which is now the primary fitness and training resource under Alinker Canada.</p>
+  </div>
+  <div class="pt-gallery n1">
+    <a class="pt-pic poster" href="https://cdn.katalyst-crm.com/a/59650e98-0430-6887-f0fc-5ed033f6f210"><img src="https://cdn.katalyst-crm.com/a/59650e98-0430-6887-f0fc-5ed033f6f210" alt="Alinker Academy: the online video series filmed at the RA Centre" loading="lazy"></a>
+  </div>
+</article>
     </div>
   </div>
 </section>
@@ -1417,5 +1557,32 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 })();
 </script>
 <script>(function(){document.querySelectorAll('.cta-bg').forEach(function(v){var io=new IntersectionObserver(function(e){e.forEach(function(x){x.isIntersecting?v.play().catch(function(){}):v.pause();});},{threshold:0.05});io.observe(v);});})();</script>
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('a.pt-pic'));
+  if(!items.length) return;
+  var lb=document.createElement('div');
+  lb.className='lb'; lb.setAttribute('role','dialog'); lb.setAttribute('aria-modal','true'); lb.setAttribute('aria-label','Photo viewer');
+  lb.innerHTML='<button type="button" class="lb-close" aria-label="Close">&times;</button><button type="button" class="lb-prev" aria-label="Previous">&#8249;</button><div class="lb-stage"></div><p class="lb-cap"></p><button type="button" class="lb-next" aria-label="Next">&#8250;</button>';
+  document.body.appendChild(lb);
+  var stage=lb.querySelector('.lb-stage'), cap=lb.querySelector('.lb-cap'), prev=lb.querySelector('.lb-prev'), next=lb.querySelector('.lb-next'), group=[], idx=0, last=null;
+  function show(i){
+    idx=(i+group.length)%group.length; var a=group[idx]; stage.innerHTML='';
+    var im=document.createElement('img'); im.src=a.href; im.alt=a.querySelector('img').alt; stage.appendChild(im); cap.textContent=im.alt;
+    prev.hidden=next.hidden=group.length<2;
+  }
+  function open(a){ last=a; group=[].slice.call(a.parentNode.querySelectorAll('a.pt-pic')); lb.classList.add('open'); document.body.style.overflow='hidden'; show(group.indexOf(a)); lb.querySelector('.lb-close').focus(); }
+  function close(){ lb.classList.remove('open'); stage.innerHTML=''; document.body.style.overflow=''; if(last) last.focus(); }
+  items.forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault(); open(a); }); });
+  lb.addEventListener('click',function(e){
+    if(e.target===prev) show(idx-1); else if(e.target===next) show(idx+1);
+    else if(e.target===lb||e.target===stage||e.target.classList.contains('lb-close')) close();
+  });
+  document.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') close(); else if(e.key==='ArrowLeft') show(idx-1); else if(e.key==='ArrowRight') show(idx+1);
+  });
+})();
+</script>
 </body>
 </html>

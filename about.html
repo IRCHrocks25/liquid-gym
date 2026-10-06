@@ -922,6 +922,14 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .nav-panel .nav-sub:hover{color:var(--bright)!important;background:var(--soft)!important;}
 .nav-top{color:rgba(255,255,255,.9)!important;}
 .nav-item.is-active > .nav-top,.nav-top:hover{color:#fff!important;}
+.ch-media.ch-media-video{background:#0B1C47;}
+.ch-media.ch-media-video img{object-fit:contain;transform:none!important;}
+.ch-video{position:absolute;inset:0;display:block;cursor:pointer;}
+.ch-media .ch-video img{position:absolute!important;inset:0;width:100%;height:100%;}
+.ch-play{position:absolute;left:50%;top:50%;width:78px;height:78px;margin:-39px 0 0 -39px;border-radius:50%;background:rgba(11,28,71,.82);box-shadow:0 10px 30px rgba(11,28,71,.4);transition:transform .2s ease,background .2s ease;}
+.ch-play::after{content:"";position:absolute;left:31px;top:23px;border-style:solid;border-width:16px 0 16px 25px;border-color:transparent transparent transparent #fff;}
+.ch-video:hover .ch-play{transform:scale(1.07);background:var(--bright);}
+.ch-media iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;}
 </style>
 
 </head>
@@ -1090,7 +1098,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </div>
 
 <section class="about-hero" id="top">
-  <div class="about-hero-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/60b90d3c-dc2e-c957-ed3d-67432c29c5f0" alt=""></div>
+  <div class="about-hero-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/e942e3c2-6f73-6b62-279b-a0a6776d37fe" alt=""></div>
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">The Hub</a><span>/</span><b>About</b></nav>
     <span class="eyebrow on-dark">Our Story</span>
@@ -1114,7 +1122,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
   <div class="ch-col ch-media">
-    <img src="https://cdn.katalyst-crm.com/a/60b90d3c-dc2e-c957-ed3d-67432c29c5f0" alt="The Catalyst" loading="lazy">
+    <img src="https://cdn.katalyst-crm.com/a/d9815f43-94c8-7fc1-4612-5746ba963832" alt="The Catalyst: a leg in a knee brace after injury" loading="lazy">
   </div>
 </section>
 
@@ -1134,7 +1142,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
   <div class="ch-col ch-media">
-    <img src="https://cdn.katalyst-crm.com/a/277bf23f-0688-6855-e71f-ef1de67771aa" alt="The Epiphany" loading="lazy">
+    <img src="https://cdn.katalyst-crm.com/a/522b4342-57cc-9f06-492e-bebc10c33393" alt="The Epiphany: the LiquidGym aquatic therapy pools" loading="lazy">
   </div>
 </section>
 
@@ -1154,7 +1162,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
   <div class="ch-col ch-media">
-    <img src="https://cdn.katalyst-crm.com/a/ef872285-a704-6947-dd30-cdbf7b38a4a0" alt="The Deep Legacy" loading="lazy">
+    <img src="https://cdn.katalyst-crm.com/a/d84b94b0-bc02-8645-5a26-1409bc0eb60c" alt="The Deep Legacy: from the start of the aquatic journey in 1980 to LiquidGym in 2013" loading="lazy">
   </div>
 </section>
 
@@ -1172,7 +1180,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
   <div class="ch-col ch-media">
-    <img src="https://cdn.katalyst-crm.com/a/9950081e-c235-39c5-081e-d1d198922b3c" alt="The LiquidGym Era" loading="lazy">
+    <img src="https://cdn.katalyst-crm.com/a/127674b3-3cf1-52c3-9dd9-bcfb65981926" style="object-position:30% 50%" alt="The LiquidGym Era: the clinic, the pools, the antigravity treadmill and the Nepean Business Achievement Award" loading="lazy">
   </div>
 </section>
 
@@ -1192,7 +1200,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
   <div class="ch-col ch-media">
-    <img src="https://cdn.katalyst-crm.com/a/bdb279c3-e1a9-e50e-8ced-846a562c8ed3" alt="The Pivot" loading="lazy">
+    <img src="https://cdn.katalyst-crm.com/a/92298176-614d-24bf-eda2-4367f523b970" alt="The Pivot: flood damage at the Bells Corners clinic" loading="lazy">
   </div>
 </section>
 
@@ -1214,7 +1222,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
   <div class="ch-col ch-media">
-    <img src="https://cdn.katalyst-crm.com/a/1eae11b6-ec76-c9aa-8eef-9913c56d827f" alt="The Standard, Now Global" loading="lazy">
+    <img src="https://cdn.katalyst-crm.com/a/380b1166-3987-99af-7d2c-58ba27021961" alt="The Standard, Now Global: patients and clinicians in LiquidGym aquatic therapy sessions" loading="lazy">
   </div>
 </section>
 
@@ -1233,8 +1241,8 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       </div>
     </div>
   </div>
-  <div class="ch-col ch-media">
-    <img src="https://cdn.katalyst-crm.com/a/401abee5-b5e4-12f9-5fec-d74b2055a916" alt="The Invitation" loading="lazy">
+  <div class="ch-col ch-media ch-media-video">
+    <a class="ch-video" href="https://www.youtube.com/watch?v=vWA-8mLT8ao" target="_blank" rel="noopener" data-yt="vWA-8mLT8ao" aria-label="Keith's story: learning to walk again at LiquidGym"><img src="https://i.ytimg.com/vi/vWA-8mLT8ao/maxresdefault.jpg" alt="Keith's story: learning to walk again at LiquidGym" loading="lazy"><span class="ch-play" aria-hidden="true"></span></a>
   </div>
 </section>
 
@@ -1255,7 +1263,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
           </span>
         </div>
-        <span class="epath-media"><img src="https://cdn.katalyst-crm.com/a/e79b4e17-e5ef-c8b8-6f7d-a36bee191314" alt="A patient following a guided WEI session at their own pool" loading="lazy"></span>
+        <span class="epath-media"><img src="https://cdn.katalyst-crm.com/a/353569ab-eaea-e050-cb37-74ac9bace5fc" style="object-position:50% 38%" alt="Following a guided WEI session at the poolside" loading="lazy"></span>
         <span class="epath-cta"><span class="epath-brand">Water Exercise Institute (WEI&trade;)</span><span class="epath-go">Start Moving <span aria-hidden="true">&rarr;</span></span></span>
       </a>
 
@@ -1268,7 +1276,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
           </span>
         </div>
-        <span class="epath-media"><img src="https://cdn.katalyst-crm.com/a/dcee2d87-5184-f121-6e30-69f8f58f83d2" alt="A clinician applying FMAT technique in the therapy pool" loading="lazy"></span>
+        <span class="epath-media"><img src="https://cdn.katalyst-crm.com/a/e5d6fe84-9ccd-b926-be9d-77aaad5c5877" style="object-position:20% 22%" alt="A clinician guiding a patient through an exercise in the therapy pool" loading="lazy"></span>
         <span class="epath-cta"><span class="epath-brand">ATI Education &amp; Certification</span><span class="epath-go">Get Certified <span aria-hidden="true">&rarr;</span></span></span>
       </a>
 
@@ -1281,7 +1289,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
           </span>
         </div>
-        <span class="epath-media"><img src="https://cdn.katalyst-crm.com/a/340632f3-ea76-c33d-a923-7d7f8caf4002" alt="A clinic owner planning an aquatic service at a community pool" loading="lazy"></span>
+        <span class="epath-media"><img src="https://cdn.katalyst-crm.com/a/522b4342-57cc-9f06-492e-bebc10c33393" alt="The aquatic therapy pools at LiquidGym" loading="lazy"></span>
         <span class="epath-cta"><span class="epath-brand">ATI 360&trade;</span><span class="epath-go">Build Your Program <span aria-hidden="true">&rarr;</span></span></span>
       </a>
 
@@ -1387,6 +1395,9 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     if(!e.target.closest('.nav-item')){ document.querySelectorAll('.nav-item.force-open').forEach(function(o){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');}); }
   });
 })();
+</script>
+<script>
+document.querySelectorAll(".ch-video[data-yt]").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var f=document.createElement("iframe");f.src="https://www.youtube-nocookie.com/embed/"+a.dataset.yt+"?autoplay=1&rel=0&modestbranding=1";f.title=a.getAttribute("aria-label")||"Video";f.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";f.allowFullscreen=true;f.referrerPolicy="strict-origin-when-cross-origin";a.replaceWith(f);});});
 </script>
 </body>
 </html>

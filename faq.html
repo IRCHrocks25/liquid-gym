@@ -1061,6 +1061,10 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .faq-grid.with-media .faq-side img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;}
 @media(max-width:899px){.faq-grid.with-media .faq-side{display:none;}}
 
+.faq-grid.with-media .faq-side.land img{aspect-ratio:4/3;}
+.faq-grid.with-media .faq-side.stack{display:grid;gap:1rem;box-shadow:none;border-radius:0;overflow:visible;}
+.faq-grid.with-media .faq-side.stack img{border-radius:var(--r);box-shadow:var(--shadow-md);}
+.faq-grid.with-media .faq-side.stack img.land{aspect-ratio:4/3;}
 </style>
 <noscript><style>.rv{opacity:1!important;transform:none!important;}.faq-a{max-height:none!important;}</style></noscript>
 </head>
@@ -1230,7 +1234,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 
 <!-- ===================== HERO ===================== -->
 <section class="hero" style="min-height:clamp(420px,56vh,600px);">
-  <div class="hero-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/da5e5e30-64e2-a57f-fe8e-a34507901713" alt="" loading="eager"></div>
+  <div class="hero-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/c7563f30-f36c-0f77-27be-6c4e9175e9dc" alt="" loading="eager"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="wrap" style="position:relative;z-index:2;padding-block:clamp(3.4rem,9vw,6rem);">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -1305,7 +1309,8 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <span class="eyebrow">Locations</span>
       <h2>Locations</h2>
     </div>
-    <div class="faq-wrap">
+    <div class="faq-grid with-media">
+      <div class="faq-wrap" style="max-width:none;">
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
           <span>Are the clinic and the pool in the same place?</span>
@@ -1350,6 +1355,8 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
           </div>
         </div>
       </div>
+      </div>
+      <div class="faq-side stack"><img class="land" src="https://cdn.katalyst-crm.com/a/b712a396-6d80-35f4-9701-f1151d956420" alt="The therapy pool at the Hyatt Hotel on Moodie Drive" loading="lazy"><img src="https://cdn.katalyst-crm.com/a/fb262d17-bf6d-99a8-06da-721c4d155aaf" alt="The pool lift at the therapy pool" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -1418,7 +1425,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
         </div>
       </div>
       </div>
-      <div class="faq-side"><img src="https://cdn.katalyst-crm.com/a/ab9ec77b-fdd8-39a5-75dc-63b4f749c4d0" alt="A LiquidGym aquatic therapy session in the pool" loading="lazy"></div>
+      <div class="faq-side land"><img src="https://cdn.katalyst-crm.com/a/d6067178-19ac-adf5-7bb7-5ec0d67a0d5e" alt="A physiotherapist guiding a patient through aquatic therapy in the pool" loading="lazy"></div>
     </div>
   </div>
 </section>

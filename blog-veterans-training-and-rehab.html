@@ -1065,6 +1065,19 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .hero h1{max-width:24ch!important;}
 .hero .sub{max-width:56ch!important;}
 
+/* ---------- call box: tel: links on desktop ---------- */
+.callbox{position:fixed;inset:0;z-index:2100;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(7,16,40,.55);backdrop-filter:blur(2px);}
+.callbox.open{display:flex;}
+.callbox-card{position:relative;width:min(480px,100%);background:#fff;border-radius:18px;box-shadow:0 30px 80px rgba(7,16,40,.35);padding:2rem 1.8rem 1.6rem;text-align:center;font-family:var(--display);}
+.callbox-card .cb-k{font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--bright);margin:0 0 .6rem;}
+.callbox-card .cb-num{font-size:clamp(1.9rem,6vw,2.4rem);font-weight:600;color:var(--navy);letter-spacing:.02em;margin:0 0 .4rem;user-select:all;}
+.callbox-card .cb-note{font-family:var(--body-font,inherit);font-size:.9rem;color:var(--body);line-height:1.55;margin:0 0 1.3rem;}
+.callbox-card .cb-row{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;}
+.callbox-card .cb-row .btn{width:auto;min-height:48px;padding:.75rem 1.3rem;font-size:.95rem;}
+.callbox-card .cb-copy.done{background:#1C7A5A;}
+.callbox-card .cb-dial{background:#fff;border:1px solid var(--line);color:var(--blue);box-shadow:none;}
+.callbox-card .cb-close{position:absolute;top:.7rem;right:.7rem;width:36px;height:36px;border-radius:50%;border:0;background:var(--soft);color:var(--navy);font-size:1.3rem;line-height:1;cursor:pointer;}
+.callbox-card .cb-close:hover{background:#dbe7f6;}
 </style>
 <noscript><style>.rv{opacity:1!important;transform:none!important;}</style></noscript>
 
@@ -1597,6 +1610,44 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     mm.querySelectorAll('.m-acc').forEach(function(btn){btn.addEventListener('click',function(){var sub=btn.nextElementSibling,open=sub.classList.toggle('open');btn.setAttribute('aria-expanded',open);});});}
   document.querySelectorAll('.nav-trigger').forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();var item=btn.closest('.nav-item'),isOpen=item.classList.toggle('force-open');btn.setAttribute('aria-expanded',isOpen);document.querySelectorAll('.nav-item.force-open').forEach(function(o){if(o!==item){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');}});});});
   document.addEventListener('click',function(e){if(!e.target.closest('.nav-item')){document.querySelectorAll('.nav-item.force-open').forEach(function(o){o.classList.remove('force-open');o.querySelector('.nav-trigger').setAttribute('aria-expanded','false');});}});
+})();
+</script>
+<script>
+/* phone links: dial on phones; on a computer show the number with Copy and 'Call from this computer' */
+(function(){
+  var desktop = window.matchMedia('(hover: hover) and (pointer: fine)');
+  var box = null, last = null;
+  function build(){
+    box = document.createElement('div');
+    box.className = 'callbox'; box.setAttribute('role','dialog'); box.setAttribute('aria-modal','true'); box.setAttribute('aria-labelledby','cbTitle');
+    box.innerHTML = '<div class="callbox-card">' +
+      '<button type="button" class="cb-close" aria-label="Close">&times;</button>' +
+      '<p class="cb-k" id="cbTitle">Call LiquidGym</p>' +
+      '<p class="cb-num">613-820-8228</p>' +
+      '<p class="cb-note">Call from your phone to book your assessment.<br><span style="white-space:nowrap">Mon&ndash;Thu 8.30am&ndash;4.30pm</span> &middot; <span style="white-space:nowrap">Fri 8.30am&ndash;3.00pm</span></p>' +
+      '<div class="cb-row">' +
+        '<button type="button" class="btn btn-primary cb-copy">Copy Number</button>' +
+        '<a class="btn btn-outline cb-dial" href="tel:6138208228">Call From This Computer</a>' +
+      '</div></div>';
+    document.body.appendChild(box);
+    box.addEventListener('click', function(e){
+      if(e.target === box || e.target.classList.contains('cb-close')) close();
+      if(e.target.classList.contains('cb-copy')) copy(e.target);
+    });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && box.classList.contains('open')) close(); });
+  }
+  function copy(btn){
+    var done = function(){ btn.textContent = 'Copied'; btn.classList.add('done'); setTimeout(function(){ btn.textContent = 'Copy Number'; btn.classList.remove('done'); }, 1800); };
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText('613-820-8228').then(done, fallback); } else { fallback(); }
+    function fallback(){ var r = document.createRange(); r.selectNodeContents(box.querySelector('.cb-num')); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); try{ document.execCommand('copy'); done(); }catch(e){} }
+  }
+  function open(a){ if(!box) build(); last = a; box.classList.add('open'); box.querySelector('.cb-copy').focus(); }
+  function close(){ box.classList.remove('open'); if(last) last.focus(); }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+    if(!a || !desktop.matches || (box && box.contains(a))) return;
+    e.preventDefault(); open(a);
+  });
 })();
 </script>
 </body>

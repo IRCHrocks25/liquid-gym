@@ -1230,6 +1230,23 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .ceu-table td:nth-child(2){white-space:nowrap;}
 .ceu-table tbody tr:last-child th,.ceu-table tbody tr:last-child td{border-bottom:0;}
 .ceu-codes{font-family:var(--display);font-weight:500;color:var(--navy);letter-spacing:.05em;line-height:1.9;word-spacing:.15em;background:var(--soft);border-radius:12px;padding:.9rem 1.1rem;}
+/* hero: the course graphic (7 core domains); text sits in the graphic's empty left side */
+.hero-graphic{display:none;margin:0;}
+@media (min-width:1200px){
+  .hero{min-height:0!important;height:calc(100vw * 684 / 1999);padding-top:0!important;}
+  .hero-bg img{animation:none;transform:none;object-fit:cover;object-position:100% 50%;}
+  .hero .wrap{max-width:none;padding-inline:4.5vw;padding-block:clamp(88px,7vw,120px) 2rem;}
+  .hero .inner{max-width:33vw;}
+  .hero h1{font-size:clamp(2rem,2.9vw,3.4rem);max-width:none;}
+  .hero .sub{font-size:clamp(.95rem,1.15vw,1.2rem);max-width:none;}
+  .hero-scrim{background:linear-gradient(90deg,rgba(11,28,71,.82) 0%,rgba(11,28,71,.62) 26%,rgba(11,28,71,.12) 37%,rgba(11,28,71,0) 42%);}
+}
+@media (max-width:1199px){
+  .hero-bg,.hero-scrim{display:none;}
+  .hero{min-height:0!important;}
+  .hero-graphic{display:block;background:#0B1C47;}
+  .hero-graphic img{display:block;width:100%;height:auto;}
+}
 </style>
 </head>
 <body>
@@ -1398,7 +1415,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 
 
 <section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/49b615d9-e918-07aa-3f05-19dbfb499258" alt="A clinician working with a patient in a bright therapy pool"></div>
+  <div class="hero-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/7cc5880c-88f2-e707-393a-12f9557e8ad4" alt="ATI Clinician Certification Level 1: the seven core competency domains"></div>
   <div class="hero-scrim" aria-hidden="true"></div>
 
   <div class="wrap"><div class="inner rv">
@@ -1409,6 +1426,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   </div></div>
   <svg class="wavebg" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 Q 240 20 480 60 T 960 60 T 1440 60" fill="none" stroke="currentColor" stroke-width="1"/><path d="M0 100 Q 240 60 480 100 T 960 100 T 1440 100" fill="none" stroke="currentColor" stroke-width="1"/><path d="M0 140 Q 240 100 480 140 T 960 140 T 1440 140" fill="none" stroke="currentColor" stroke-width="1"/></svg>
 </section>
+<figure class="hero-graphic"><img src="https://cdn.katalyst-crm.com/a/7cc5880c-88f2-e707-393a-12f9557e8ad4" alt="ATI Clinician Certification Level 1: the seven core competency domains" loading="lazy"></figure>
 
 <section class="sec"><div class="wrap">
   <div class="uncert-split">

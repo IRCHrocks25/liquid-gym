@@ -642,3 +642,13 @@
 /category/events /blog 301
 /testimonials-category/video-testinominals/ /success-stories 301
 /testimonials-category/video-testinominals /success-stories 301
+
+# old WordPress sitemaps
+/sitemap_index.xml /sitemap.xml 301
+/post-sitemap.xml /sitemap.xml 301
+/page-sitemap.xml /sitemap.xml 301
+/staff-sitemap.xml /sitemap.xml 301
+/category-sitemap.xml /sitemap.xml 301
+/staff_tag-sitemap.xml /sitemap.xml 301
+/staff_category-sitemap.xml /sitemap.xml 301
+/testimonials_category-sitemap.xml /sitemap.xml 301

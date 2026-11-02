@@ -1121,7 +1121,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 
 /* Structured Syllabus heading: wider container, 2 balanced lines */
 .syllabus-head{max-width:none;}
-.syllabus-head .wide-2{max-width:none;white-space:nowrap;line-height:1.15;}
+.syllabus-head .wide-2{max-width:none;white-space:normal;text-wrap:balance;line-height:1.15;}
 @media (max-width:1100px){.syllabus-head .wide-2{white-space:normal;text-wrap:balance;}}
 
 
@@ -1237,23 +1237,40 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 .ceu-table td:nth-child(2){white-space:nowrap;}
 .ceu-table tbody tr:last-child th,.ceu-table tbody tr:last-child td{border-bottom:0;}
 .ceu-codes{font-family:var(--display);font-weight:500;color:var(--navy);letter-spacing:.05em;line-height:1.9;word-spacing:.15em;background:var(--soft);border-radius:12px;padding:.9rem 1.1rem;}
-/* hero: the course graphic (7 core domains); text sits in the graphic's empty left side */
+/* hero: ATI course banner (Level 1 + Level 2); text sits on the banner's light left side */
 .hero-graphic{display:none;margin:0;}
-@media (min-width:1200px){
-  .hero{min-height:0!important;height:calc(100vw * 684 / 1999);padding-top:0!important;}
+@media (min-width:1280px){
+  .siteheader{position:relative;background:#0B1C47;}
+  .hero{min-height:0!important;height:calc(100vw * 685 / 1999);padding-top:0!important;background:#f3f9fe;}
   .hero-bg img{animation:none;transform:none;object-fit:cover;object-position:100% 50%;}
-  .hero .wrap{max-width:none;padding-inline:4.5vw;padding-block:clamp(88px,7vw,120px) 2rem;}
-  .hero .inner{max-width:33vw;}
-  .hero h1{font-size:clamp(2rem,2.9vw,3.4rem);max-width:none;}
-  .hero .sub{font-size:clamp(.95rem,1.15vw,1.2rem);max-width:none;}
-  .hero-scrim{background:linear-gradient(90deg,rgba(11,28,71,.82) 0%,rgba(11,28,71,.62) 26%,rgba(11,28,71,.12) 37%,rgba(11,28,71,0) 42%);}
+  .hero-scrim,.hero .wavebg{display:none;}
+  .hero .wrap{max-width:none;padding-inline:6.5vw 4.5vw;padding-block:1.5rem;}
+  .hero .inner{max-width:28vw;}
+  .hero .eyebrow{color:var(--blue);}
+  .hero h1{color:var(--navy);font-size:clamp(2rem,2.55vw,3.2rem);max-width:none;}
+  .hero .sub{color:#2c4270;font-size:clamp(.95rem,1.05vw,1.15rem);line-height:1.55;max-width:none;}
+  .hero h1,.hero p,.hero .eyebrow,.hero .sub{text-shadow:none;}
+  .hero .btn-light{background:var(--navy);color:#fff;}
 }
-@media (max-width:1199px){
+@media (max-width:1279px){
   .hero-bg,.hero-scrim{display:none;}
   .hero{min-height:0!important;}
   .hero-graphic{display:block;background:#0B1C47;}
   .hero-graphic img{display:block;width:100%;height:auto;}
 }
+/* section labels: bigger (Oct 23: "titles are very small") */
+.eyebrow{font-size:clamp(.88rem,1.05vw,1.08rem);letter-spacing:.12em;font-weight:600;}
+.hero .eyebrow{font-size:clamp(.95rem,1.2vw,1.25rem);}
+/* FMAT: titled aside + plain list of the six stages */
+.fmat-sub{margin-top:.8rem;font-family:var(--display);font-size:clamp(1.1rem,1.8vw,1.35rem);font-weight:500;color:var(--light);line-height:1.35;}
+.fmat-step{display:flex;align-items:center;gap:1rem;padding:1.15rem 1.35rem;min-height:64px;}
+.fmat-step h3{flex:1;min-width:0;font-size:1.05rem;font-weight:500;color:#fff;line-height:1.3;margin:0;}
+/* level cards: text, "designed for" line, course graphic at the bottom */
+.level{display:flex;flex-direction:column;}
+.level .level-for{margin-top:1rem;font-weight:600;color:var(--blue);}
+.level-img{display:block;margin-top:auto;padding-top:1.4rem;}
+.level-img img{display:block;width:100%;height:auto;border-radius:12px;}
+.faq .fbody p+p{margin-top:.8rem;}
 /* ---------- call box: tel: links on desktop ---------- */
 .callbox{position:fixed;inset:0;z-index:2100;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(7,16,40,.55);backdrop-filter:blur(2px);}
 .callbox.open{display:flex;}
@@ -1440,18 +1457,18 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 
 
 <section class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/7cc5880c-88f2-e707-393a-12f9557e8ad4" alt="ATI Clinician Certification Level 1: the seven core competency domains"></div>
+  <div class="hero-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/40bfca33-6122-0274-0246-4b66aa8fd81d" alt="ATI Clinician Certification: Level 1 Foundations and Level 2 Advanced"></div>
   <div class="hero-scrim" aria-hidden="true"></div>
 
   <div class="wrap"><div class="inner rv">
     <span class="eyebrow on-dark">ATI Education &amp; Certification</span>
-    <h1>Wondering what to do in the Water.</h1>
-    <p class="sub">You trained on land. But now want to move into water, that is the entire reason this certification exists.</p>
+    <h1>Not sure where to start with aquatic therapy?</h1>
+    <p class="sub">You understand rehabilitation on land. Now learn how to apply those skills in the aquatic environment. The ATI Aquatic Therapy Certification gives you the knowledge, practical skills, and clinical reasoning to confidently assess, treat, and progress patients in water.</p>
     <div class="btn-row"><a class="btn btn-light" href="#certify">Start Your Certification</a></div>
   </div></div>
   <svg class="wavebg" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 Q 240 20 480 60 T 960 60 T 1440 60" fill="none" stroke="currentColor" stroke-width="1"/><path d="M0 100 Q 240 60 480 100 T 960 100 T 1440 100" fill="none" stroke="currentColor" stroke-width="1"/><path d="M0 140 Q 240 100 480 140 T 960 140 T 1440 140" fill="none" stroke="currentColor" stroke-width="1"/></svg>
 </section>
-<figure class="hero-graphic"><img src="https://cdn.katalyst-crm.com/a/7cc5880c-88f2-e707-393a-12f9557e8ad4" alt="ATI Clinician Certification Level 1: the seven core competency domains" loading="lazy"></figure>
+<figure class="hero-graphic"><img src="https://cdn.katalyst-crm.com/a/40bfca33-6122-0274-0246-4b66aa8fd81d" alt="ATI Clinician Certification: Level 1 Foundations and Level 2 Advanced" loading="lazy"></figure>
 
 <section class="sec"><div class="wrap">
   <div class="uncert-split">
@@ -1470,61 +1487,19 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 <section class="sec band fmat-hasbg" id="fmat"><div class="fmat-bg" aria-hidden="true"><img src="https://cdn.katalyst-crm.com/a/d6b7f1ac-cdde-bdba-eb32-3891d6b66a39" alt=""></div><span class="orb" style="width:280px;height:280px;top:-60px;right:-40px;"></span><span class="orb" style="width:320px;height:320px;bottom:-90px;left:-50px;"></span><div class="wrap">
   <div class="fmat-split">
     <aside class="fmat-aside rv">
-      <span class="eyebrow on-dark">The FMAT&trade; Methodology</span>
-      <h2 style="color:#fff">Function First. Environment Second.</h2>
-      <p style="margin-top:1.1rem;color:rgba(255,255,255,.85);font-size:1.08rem;line-height:1.62">Some clinicians approach water with hesitation, not because the science is unclear, but because of uncertainty: &ldquo;where do I start.&rdquo;</p>
-      <p style="margin-top:1rem;color:rgba(255,255,255,.85)">FMAT&trade; closes that gap. Six named stages, in order, so you always know exactly where a patient is and exactly what comes next.</p>
-      <p style="margin-top:1.6rem;font-family:var(--display);font-size:clamp(1.05rem,1.9vw,1.25rem);color:#fff;line-height:1.4;max-width:26ch">This is not a theory you adapt to each patient. It is a named, ordered system you apply with every one of them.</p>
+      <h2 style="color:#fff">The FMAT&trade; Methodology</h2>
+      <p class="fmat-sub">A Structured Approach to Clinical Decision-Making</p>
+      <p style="margin-top:1.3rem;color:rgba(255,255,255,.85);font-size:1.08rem;line-height:1.62">Moving into aquatic therapy can raise practical questions: Where do I start? How do I choose the right exercises? And how do I progress treatment effectively?</p>
+      <p style="margin-top:1rem;color:rgba(255,255,255,.85)">The FMAT&trade; methodology provides a structured framework to help clinicians navigate these decisions. Through six stages of progression, clinicians learn to assess movement, select appropriate challenges, and adapt treatment to the individual patient&rsquo;s needs and goals.</p>
+      <p style="margin-top:1.6rem;font-family:var(--display);font-weight:600;font-size:clamp(1.05rem,1.9vw,1.25rem);color:#fff;line-height:1.4;max-width:26ch">A clear framework. Practical application. Individualized care.</p>
     </aside>
     <div class="fmat-tabs rv">
-        <details class="fmat-tab" open>
-          <summary>
-            <span class="ft-no">01</span>
-            <h3>Assisted</h3>
-            <span class="sign" aria-hidden="true">−</span>
-          </summary>
-          <div class="ft-body"><p>The patient moves with full support, building trust in the water before building anything else.</p></div>
-        </details>
-        <details class="fmat-tab">
-          <summary>
-            <span class="ft-no">02</span>
-            <h3>Supported</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="ft-body"><p>Support reduces, function increases, and the patient starts doing more of the work.</p></div>
-        </details>
-        <details class="fmat-tab">
-          <summary>
-            <span class="ft-no">03</span>
-            <h3>Controlled</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="ft-body"><p>Movement becomes deliberate and precise, not just possible.</p></div>
-        </details>
-        <details class="fmat-tab">
-          <summary>
-            <span class="ft-no">04</span>
-            <h3>Resisted</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="ft-body"><p>Water's resistance becomes the training tool itself, not an obstacle to work around.</p></div>
-        </details>
-        <details class="fmat-tab">
-          <summary>
-            <span class="ft-no">05</span>
-            <h3>Independent</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="ft-body"><p>The patient moves through the water on their own, with no support, no assistance.</p></div>
-        </details>
-        <details class="fmat-tab">
-          <summary>
-            <span class="ft-no">06</span>
-            <h3>Transitional to Land</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="ft-body"><p>The final stage, carrying everything gained in water back into land-based function.</p></div>
-        </details>
+        <div class="fmat-tab fmat-step"><span class="ft-no">01</span><h3>Assisted</h3></div>
+        <div class="fmat-tab fmat-step"><span class="ft-no">02</span><h3>Supported</h3></div>
+        <div class="fmat-tab fmat-step"><span class="ft-no">03</span><h3>Controlled</h3></div>
+        <div class="fmat-tab fmat-step"><span class="ft-no">04</span><h3>Resisted</h3></div>
+        <div class="fmat-tab fmat-step"><span class="ft-no">05</span><h3>Independent</h3></div>
+        <div class="fmat-tab fmat-step"><span class="ft-no">06</span><h3>Transitional to Land</h3></div>
     </div>
   </div>
 </div></section>
@@ -1533,13 +1508,11 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   <div class="narrow rv syllabus-head" style="max-width:none">
     <span class="eyebrow">The Certification Pathway</span>
     <h2 class="wide-2">Structured Syllabus &middot; On-Demand Training &middot; Learn on Your Schedule</h2>
-    <p class="lede" style="margin-top:1.1rem">The course runs just over nine hours, structured across seven chapters, each with its own objectives, deliverables, and a quiz before you move forward. Nothing is skimmed.</p>
   </div>
   <div class="levels rv">
-    <article class="level"><span class="k">Level 1 Certification</span><h3>Foundational</h3><p>Foundational principles, the therapeutic role of water, its physical properties, safety considerations, patient screening, and patient suitability, before a single technique is introduced.</p></article>
-    <article class="level"><span class="k">Level 2 Advanced Certification</span><h3>Advanced</h3><p>Aquatic assessment, clinical reasoning, and treatment progression for the complex cases Level 1 does not prepare you for.</p></article>
+    <article class="level"><span class="k">Level 1 Certification</span><h3>Build Your Foundation</h3><p>Develop the knowledge and practical skills needed to confidently begin incorporating aquatic therapy into clinical practice. Explore the therapeutic properties of water, safety and risk management, patient screening and suitability, and foundational aquatic techniques. Learn how to apply these principles to common clinical presentations and how to adapt exercises to meet individual patient needs. Participants must have access to a pool to practice and demonstrate the techniques and concepts covered in the course through a practical video submission.</p><p class="level-for">Designed for clinicians looking to build a strong foundation in aquatic rehabilitation.</p><a class="level-img" href="https://cdn.katalyst-crm.com/a/de6666c0-a8e7-bce4-848c-65053cde19b2" target="_blank" rel="noopener"><img src="https://cdn.katalyst-crm.com/a/de6666c0-a8e7-bce4-848c-65053cde19b2" alt="ATI Clinician Certification Level 1: 7 core competency domains" loading="lazy"></a></article>
+    <article class="level"><span class="k">Level 2 Advanced Certification</span><h3>Advance Your Clinical Reasoning</h3><p>Build on your Level 1 knowledge to manage more complex rehabilitation needs in the aquatic environment. Develop your clinical reasoning skills through aquatic assessment, exercise selection, and strategies for progressing and regressing treatment based on patient presentation, movement quality, and functional goals. Learn to manipulate the properties of water and key exercise variables to create appropriate challenges and guide patients toward meaningful functional outcomes.</p><p class="level-for">Designed for clinicians with aquatic therapy experience who are ready to refine their skills and expand their aquatic therapy practice.</p><a class="level-img" href="https://cdn.katalyst-crm.com/a/1dfbe224-89c9-3f71-9482-84e2c73faa8e" target="_blank" rel="noopener"><img src="https://cdn.katalyst-crm.com/a/1dfbe224-89c9-3f71-9482-84e2c73faa8e" alt="ATI Clinician Certification Level 2: 9 core competency domains" loading="lazy"></a></article>
   </div>
-  <div class="callout rv"><p>Before certification is issued, you submit video of yourself working with a real patient in the water. This is reviewed and credited individually.</p></div>
   <div class="btn-row rv"><a class="btn btn-primary" href="#certify">Start Your Certification</a></div>
 </div></section>
 
@@ -1611,9 +1584,9 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     <h2>The Questions You Are Actually Asking.</h2>
   </div>
   <div class="faq rv">
-    <details open><summary>What if I have zero aquatic therapy experience going in?<span class="sign" aria-hidden="true">&minus;</span></summary><div class="fbody"><p>Level 1 starts at the foundation, the role of water, its properties, safety, and screening, before a single technique is introduced. Nobody is expected to arrive already knowing this.</p></div></details>
-    <details><summary>What if my state has not approved CEU credit yet?<span class="sign" aria-hidden="true">+</span></summary><div class="fbody"><p>Aquatic Therapy Innovations Clinical Training Level 1 program has been approved in many US states. Currently we are applying for Aquatic Therapy Innovations Clinical Training Level 2 for CE approval. The certification, the methodology, and the credential are yours either way.</p></div></details>
-    <details><summary>What if I do not pass the practical video submission on the first try?<span class="sign" aria-hidden="true">+</span></summary><div class="fbody"><p>A clinician reviews every submission individually, not against a pass or fail line. If something needs adjustment, you revise and resubmit, not get rejected outright.</p></div></details>
+    <details open><summary>What if I have no prior experience with aquatic therapy?<span class="sign" aria-hidden="true">&minus;</span></summary><div class="fbody"><p>No prior aquatic therapy experience is needed. Level 1 starts with the fundamentals, including the properties of water, safety and risk management, and clinical screening, before introducing foundational techniques and their application in rehabilitation. The course is designed to help you build your knowledge and skills step by step, so you can develop confidence in applying aquatic therapy in clinical practice.</p></div></details>
+    <details><summary>How do I receive my certificate of completion?<span class="sign" aria-hidden="true">+</span></summary><div class="fbody"><p>Once you have completed all course readings, videos, chapter quizzes, and your practical submission, you will be asked to complete a course evaluation. After submitting your evaluation, your certificate of completion will be emailed directly to you.</p></div></details>
+    <details><summary>Is the course approved for continuing education credits (CEUs)?<span class="sign" aria-hidden="true">+</span></summary><div class="fbody"><p>The Aquatic Therapy Institute Clinician Certification &ndash; Level 1 has been approved for continuing education credits in several U.S. states. Approval requirements vary by state and professional regulatory body, so we recommend checking with your licensing organization to confirm eligibility.</p><p>We are currently pursuing continuing education approval for Level 2.</p></div></details>
   </div>
 </div></section>
 
@@ -1648,6 +1621,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
         <tbody>
           <tr><th scope="row">California</th><td>9 hours</td><td>CEUApproval.com, a recognized approval agency of the Physical Therapy Board of CA &mdash; for Physical Therapists and Physical Therapist Assistants in California (CA)</td></tr>
           <tr><th scope="row">Florida</th><td>9 hours</td><td>Florida Board of Physical Therapy Practice</td></tr>
+          <tr><th scope="row">Illinois</th><td>8.5 hours</td><td>Illinois Physical Therapy Association</td></tr>
           <tr><th scope="row">Louisiana</th><td>9 hours</td><td>Louisiana Board of Physical Therapy</td></tr>
           <tr><th scope="row">Minnesota</th><td>7.75 hours</td><td>Minnesota Board of Physical Therapy</td></tr>
           <tr><th scope="row">New Jersey</th><td>9 hours</td><td>New Jersey Board of Physical Therapy Examiners</td></tr>
@@ -1666,7 +1640,6 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     <p>Courses approved by other APTA chapters in the following jurisdictions are likely accepted for licensure credit based on the state regulation:</p>
     <p class="ceu-codes">AZ | DC | MD | MS | NM</p>
     <p>Please reach out to your state licensing board to confirm the currency and accuracy of this information. If you have a specific question about CEU approval for this course in your state, please direct your inquiry to <a href="mailto:info@ceuapproval.com">info@ceuapproval.com</a>.</p>
-    <p>The following states are not pre-approved: <strong>IL</strong></p>
     <p>Participants licensed in states not pre-approved may file for individual approval using the instructions on <a href="https://docs.google.com/document/d/1uINVSr-O7xE95OLRA5FjLYeAB3BjwxfS/edit?rtpof=true&amp;sd=true&amp;tab=t.0" target="_blank" rel="noopener">this document</a>.</p>
   </div>
 </div></section>

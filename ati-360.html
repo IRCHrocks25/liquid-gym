@@ -969,6 +969,42 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 </style>
 <link rel="icon" type="image/png" href="https://cdn.katalyst-crm.com/a/fa11263c-ba34-0a09-5a55-f51d7d82af7d">
 <link rel="apple-touch-icon" href="https://cdn.katalyst-crm.com/a/fa11263c-ba34-0a09-5a55-f51d7d82af7d">
+<style>
+/* ATI 360 programs (Nov 3): overview banner + three columns, detail list, ecosystem sub-block */
+.prog-banner{background:linear-gradient(160deg,#0B1C47,#163474);color:#fff;border-radius:18px;padding:clamp(1.8rem,4vw,2.6rem) clamp(1.2rem,4vw,2.6rem);text-align:center;}
+.prog-banner .eyebrow{justify-content:center;}
+.prog-banner h2{color:#fff;margin-top:.2rem;}
+.prog-banner p{color:rgba(255,255,255,.86);margin:1rem auto 0;max-width:62ch;font-size:clamp(1rem,1.5vw,1.15rem);line-height:1.6;}
+.prog-cols{display:grid;gap:1.8rem;margin-top:2.4rem;}
+@media (min-width:860px){.prog-cols{grid-template-columns:repeat(3,1fr);}}
+.prog-col{display:flex;flex-direction:column;}
+.prog-pill{display:block;text-align:center;border-radius:12px;padding:.8rem 1rem;font-family:var(--display);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:1.05rem;}
+.prog-pill.ess,.conf-badge.ess{background:#DCF3F5;color:#22616A;}
+.prog-pill.gro,.conf-badge.gro{background:#DCEBFC;color:#163474;}
+.prog-pill.sig,.conf-badge.sig{background:#F8E8AE;color:#6B4E0E;}
+.prog-col h3{margin-top:1.1rem;text-align:center;font-size:1.08rem;font-weight:600;color:var(--navy);}
+.prog-col p{margin-top:.7rem;color:var(--body);line-height:1.65;}
+.prog-col .ideal{margin-top:auto;padding-top:1.1rem;text-align:center;font-size:.9rem;color:#7B879C;}
+.prog-foot{text-align:center;margin-top:2.8rem;}
+.prog-foot h3{color:var(--navy);font-weight:600;}
+.prog-foot p{max-width:70ch;margin:.8rem auto 0;color:var(--body);line-height:1.65;}
+.prog-foot .prog-goal{color:var(--blue);font-weight:600;}
+.prog-foot .btn-row{margin-top:1.8rem;}
+.programs{border-top:1px solid var(--line);}
+.prog-sub{margin-top:.9rem;font-family:var(--display);font-size:clamp(1.15rem,2vw,1.4rem);font-weight:500;color:var(--blue);}
+.prog-list{display:grid;gap:1.2rem;margin:2.6rem auto 0;max-width:900px;}
+.prog-item{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.6rem clamp(1.2rem,3vw,1.8rem);box-shadow:var(--shadow-sm);}
+.prog-item h3{color:var(--blue);font-weight:600;}
+.prog-item p{color:var(--body);margin-top:.6rem;line-height:1.65;}
+.conf{display:flex;align-items:center;gap:1.1rem;margin-top:1.3rem;background:var(--soft);border-radius:14px;padding:.8rem;}
+.conf-badge{flex:none;width:7.5rem;min-height:5.4rem;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;font-family:var(--display);font-weight:600;font-size:.95rem;}
+.conf-txt strong{display:block;font-family:var(--display);font-size:1.12rem;font-weight:600;color:var(--navy);}
+.conf-txt span{display:block;margin-top:.25rem;color:var(--body);line-height:1.5;}
+@media (max-width:560px){.conf{flex-direction:column;align-items:stretch;}.conf-badge{width:auto;min-height:0;flex-direction:row;padding:.6rem;}}
+.eco-strong{color:var(--blue);font-weight:600;}
+.eco-sub{margin-top:3rem;}
+.eco-title{font-size:clamp(1.4rem,2.6vw,1.9rem);color:var(--navy);font-weight:500;}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1152,6 +1188,40 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   <svg class="wavebg" viewBox="0 0 1440 200" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 Q 240 20 480 60 T 960 60 T 1440 60" fill="none" stroke="currentColor" stroke-width="1"/><path d="M0 100 Q 240 60 480 100 T 960 100 T 1440 100" fill="none" stroke="currentColor" stroke-width="1"/><path d="M0 140 Q 240 100 480 140 T 960 140 T 1440 140" fill="none" stroke="currentColor" stroke-width="1"/></svg>
 </section>
 
+<!-- ===================== ATI 360 PROGRAM OPTIONS (overview) ===================== -->
+<section class="sec soft-bg" id="program-options"><div class="wrap">
+  <div class="prog-banner rv">
+    <span class="eyebrow on-dark">Introducing ATI 360&trade; Program Options</span>
+    <h2>Your Aquatic Therapy Journey. Your Choice.</h2>
+    <p>One proven system. Three flexible pathways to introduce, grow, or fully integrate aquatic therapy into your clinic.</p>
+  </div>
+  <div class="prog-cols rv">
+    <div class="prog-col">
+      <span class="prog-pill ess">Essentials</span>
+      <h3>Train. Prepare. Introduce.</h3>
+      <p>Start with the foundations: clinician training, staff readiness, patient education, and the tools to introduce aquatic therapy to your existing patients.</p>
+      <p class="ideal">Ideal for clinics getting started</p>
+    </div>
+    <div class="prog-col">
+      <span class="prog-pill gro">Growth</span>
+      <h3>Expand. Market. Grow.</h3>
+      <p>Build on your foundation with expanded clinician training, external marketing, physician referral development, and growth resources.</p>
+      <p class="ideal">Ideal for clinics ready to expand</p>
+    </div>
+    <div class="prog-col">
+      <span class="prog-pill sig">Signature</span>
+      <h3>Build. Integrate. Scale.</h3>
+      <p>Access the complete ATI 360 system, including business operations, AI readiness, WEI integration, and comprehensive implementation support.</p>
+      <p class="ideal">Ideal for clinics seeking the full system</p>
+    </div>
+  </div>
+  <div class="prog-foot rv">
+    <h3>Start where you are. Grow when you're ready.</h3>
+    <p>Choose the program that fits your clinic today, with the flexibility to move to a more comprehensive program as your aquatic therapy service develops. Or begin with Signature and access the complete system from day one.</p>
+    <div class="btn-row center-btn"><a class="btn btn-primary" href="#programs">Explore Your ATI 360 Options</a></div>
+  </div>
+</div></section>
+
 <section class="sec"><div class="wrap">
   <div class="loss-split">
     <div class="loss-media rv" aria-hidden="true">
@@ -1183,11 +1253,67 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
   </div>
 </div></section>
 
+<!-- ===================== ATI 360 PROGRAMS (detail) ===================== -->
+<section class="sec programs" id="programs"><div class="wrap">
+  <div class="narrow rv center-head">
+    <h2>Introducing ATI 360&trade; &mdash; Three Programs. One Flexible Pathway.</h2>
+    <p class="prog-sub">Your Aquatic Therapy Journey. Your Choice.</p>
+    <p class="body-p" style="margin-top:1.1rem">Every clinic is different. Some are exploring aquatic therapy for the first time, while others are ready to expand an existing service or implement a complete aquatic therapy business system.</p>
+    <p class="body-p">That's why ATI 360&trade; offers three program options designed to meet your clinic where it is today.</p>
+  </div>
+  <div class="prog-list rv">
+    <article class="prog-item">
+      <h3>ATI 360&trade; Essentials &mdash; Train. Prepare. Introduce.</h3>
+      <p>A practical starting point for clinics looking to introduce aquatic therapy without committing to a full-scale implementation.</p>
+      <p>Build your clinical foundation, prepare your team, educate your patients, and introduce aquatic therapy within your existing practice.</p>
+      <div class="conf">
+        <span class="conf-badge ess"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-9"/><path d="M12 12c0-4 3-6 7-6 0 4-3 6-7 6z"/><path d="M12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"/></svg><span>Essentials</span></span>
+        <div class="conf-txt"><strong>Confidence to begin</strong><span>&ldquo;We want to explore aquatic therapy and introduce it to our patients.&rdquo;</span></div>
+      </div>
+    </article>
+    <article class="prog-item">
+      <h3>ATI 360&trade; Growth &mdash; Expand. Market. Grow.</h3>
+      <p>For clinics ready to take aquatic therapy beyond their existing patient base.</p>
+      <p>Expand clinician training, develop physician referral relationships, launch external marketing, and build awareness of your aquatic therapy services in your community.</p>
+      <div class="conf">
+        <span class="conf-badge gro"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><span>Growth</span></span>
+        <div class="conf-txt"><strong>Confidence to expand</strong><span>&ldquo;We're ready to build awareness, attract patients, and develop referrals.&rdquo;</span></div>
+      </div>
+    </article>
+    <article class="prog-item">
+      <h3>ATI 360&trade; Signature &mdash; Build. Integrate. Scale.</h3>
+      <p>The complete aquatic therapy business and clinical implementation system.</p>
+      <p>Bring together advanced clinician education, business operations, marketing, AI readiness, patient continuation through WEI&trade;, and expert implementation support.</p>
+      <div class="conf">
+        <span class="conf-badge sig"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v16"/><path d="M14 10h5a1 1 0 0 1 1 1v10"/><path d="M3 21h18"/><path d="M8 8h2M8 12h2M8 16h2"/></svg><span>Signature</span></span>
+        <div class="conf-txt"><strong>Confidence to scale</strong><span>&ldquo;We want a comprehensive system to implement, manage, and grow our aquatic therapy business.&rdquo;</span></div>
+      </div>
+    </article>
+  </div>
+  <div class="prog-foot rv">
+    <h3>Start Where You Are. Grow When You're Ready.</h3>
+    <p>You don't need to implement everything at once.</p>
+    <p>Start with Essentials to establish your foundation, move into Growth as your service develops, or choose Signature from the beginning for a comprehensive implementation.</p>
+    <p class="prog-goal">Three programs. One goal: helping your clinic successfully introduce, develop, and grow aquatic therapy.</p>
+    <div class="btn-row center-btn"><a class="btn btn-primary" href="https://scheduler.zoom.us/karen-r2z467/ati-30-minute-discovery-call" target="_blank" rel="noopener">Book Your Free 30-Minute Discovery Call Now</a></div>
+  </div>
+</div></section>
+
 <section class="sec soft-bg" id="ecosystem"><div class="wrap">
   <div class="narrow rv center-head">
     <span class="eyebrow">The Eight-Component Ecosystem</span>
     <h2>You Are Not Buying a Course. You Are Buying an Infrastructure.</h2>
-    <p class="body-p" style="margin-top:1.1rem">ATI goes behind clinician certification. ATI 360™ is built as eight separate components, each one solving a piece of the business problem a course alone cannot touch. ATI shows how to price the service, market it, integrate it into existing patient flows, or scale it past one therapist's calendar.</p>
+    <p class="body-p" style="margin-top:1.1rem">ATI 360&trade; is a comprehensive aquatic therapy business and clinical implementation system designed to help clinics introduce, develop, and grow aquatic therapy services.</p>
+    <p class="body-p">Built around education, business systems, marketing, and ongoing patient engagement, ATI 360 brings together the essential components needed to establish and support a successful aquatic therapy program.</p>
+    <p class="body-p"><strong class="eco-strong">Essentials, Growth, and Signature.</strong></p>
+    <p class="body-p">Clinics can choose the level of training, tools, and implementation support that best fits their needs today, with the flexibility to expand as their aquatic therapy services grow.</p>
+    <p class="body-p"><strong class="eco-strong">And when you're ready to upgrade, 100% of your previous program investment is credited toward your next ATI 360 program.</strong></p>
+  </div>
+  <div class="narrow rv center-head eco-sub">
+    <h3 class="eco-title">Explore the ATI 360&trade; System</h3>
+    <p class="body-p" style="margin-top:1rem">ATI 360 brings together eight interconnected components designed to support the clinical, operational, and business aspects of aquatic therapy.</p>
+    <p class="body-p">These components form the foundation of the complete ATI 360 system. Through our Essentials, Growth, and Signature programs, clinics can access different levels of resources and support based on their individual needs and stage of development.</p>
+    <p class="body-p">Explore what's possible with ATI 360 and choose the pathway that's right for your clinic.</p>
   </div>
   <div class="comp2-grid rv">
     <article class="comp2">
@@ -1228,7 +1354,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
         <span class="comp2-n">05</span>
       </div>
       <h3>The ATI Launch Roadmap</h3>
-      <p>A sequenced implementation pathway, covered in full in Section 5, so launch never depends on guesswork.</p>
+      <p>A sequenced implementation pathway, so launch never depends on guesswork.</p>
     </article>
     <article class="comp2">
       <div class="comp2-top">
@@ -1255,7 +1381,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
       <p>A consumer-facing platform that extends your clinic's reach past your walls, your hours, and your physical location.</p>
     </article>
   </div>
-  <div class="btn-row rv center-btn"><a class="btn btn-primary" href="#roi">Reach out to do an Aquatic Therapy Readiness Assessment</a></div>
+  <div class="btn-row rv center-btn"><a class="btn btn-primary" href="https://scheduler.zoom.us/karen-r2z467/ati-30-minute-discovery-call" target="_blank" rel="noopener">Book Your Free 30-Minute Discovery Call Now</a></div>
 </div></section>
 
 <section class="sec band"><div class="wrap">
@@ -1273,100 +1399,6 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     </div>
   </div>
 </div></section>
-
-<section class="sec" id="roadmap"><div class="wrap">
-  <div class="rd-split">
-    <aside class="rd-aside rv">
-      <span class="eyebrow">The Sixty to Ninety Day Launch Roadmap</span>
-      <h2>Sixty to Ninety Days. 10 Phases. No Guessing What Comes Next.</h2>
-      <p class="body-p" style="margin-top:1.1rem">The reason most clinic owners hesitate on a new service line is not the concept. It is the fear of a messy rollout that disrupts everything already working.</p>
-      <p class="body-p" style="margin-top:1.1rem;font-family:var(--display);color:var(--blue);font-size:1.05rem">Ten phases. Each with a defined objective. Nothing left to guesswork.</p>
-    </aside>
-    <div class="rd-scroll rv"><div class="rd-tabs">
-        <details class="rd-tab" open>
-          <summary>
-            <span class="rd-no">01</span>
-            <h3>Phase 1 &mdash; Discovery &amp; Readiness</h3>
-            <span class="sign" aria-hidden="true">−</span>
-          </summary>
-          <div class="rd-body"><p><strong>Objective:</strong> Determine whether the clinic is prepared to implement aquatic therapy and establish a clear implementation strategy.</p></div>
-        </details>
-        <details class="rd-tab">
-          <summary>
-            <span class="rd-no">02</span>
-            <h3>Phase 2 &mdash; ATI Program Orientation &amp; Staff Training</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="rd-body"><p><strong>Objective:</strong> Introduce all staff to ATI before building clinic systems.</p></div>
-        </details>
-        <details class="rd-tab">
-          <summary>
-            <span class="rd-no">03</span>
-            <h3>Phase 3 &mdash; Program Design</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="rd-body"><p><strong>Objective:</strong> Design how the aquatic therapy program will operate within the clinic.</p></div>
-        </details>
-        <details class="rd-tab">
-          <summary>
-            <span class="rd-no">04</span>
-            <h3>Phase 4 &mdash; Business Systems</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="rd-body"><p><strong>Objective:</strong> Build the operational systems that support the program.</p></div>
-        </details>
-        <details class="rd-tab">
-          <summary>
-            <span class="rd-no">05</span>
-            <h3>Phase 5 &mdash; Patient Education &amp; Internal Marketing</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="rd-body"><p><strong>Objective:</strong> Build excitement before launch by educating existing patients and staff.</p></div>
-        </details>
-        <details class="rd-tab">
-          <summary>
-            <span class="rd-no">06</span>
-            <h3>Phase 6 &mdash; Clinical Infrastructure</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="rd-body"><p><strong>Objective:</strong> Finalize the clinical environment required for safe and consistent delivery.</p></div>
-        </details>
-        <details class="rd-tab">
-          <summary>
-            <span class="rd-no">07</span>
-            <h3>Phase 7 &mdash; External Marketing &amp; Referral Development</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="rd-body"><p><strong>Objective:</strong> Launch outreach to referral sources and the community.</p></div>
-        </details>
-        <details class="rd-tab">
-          <summary>
-            <span class="rd-no">08</span>
-            <h3>Phase 8 &mdash; Program Launch</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="rd-body"><p><strong>Objective:</strong> Officially launch the ATI program.</p></div>
-        </details>
-        <details class="rd-tab">
-          <summary>
-            <span class="rd-no">09</span>
-            <h3>Phase 9 &mdash; Optimization</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="rd-body"><p><strong>Objective:</strong> Measure performance and continuously improve.</p></div>
-        </details>
-        <details class="rd-tab">
-          <summary>
-            <span class="rd-no">10</span>
-            <h3>Phase 10 &mdash; Growth &amp; Expansion</h3>
-            <span class="sign" aria-hidden="true">+</span>
-          </summary>
-          <div class="rd-body"><p><strong>Objective:</strong> Expand services after a successful implementation.</p></div>
-        </details>
-    </div></div>
-  </div>
-</div></section>
-
 
 <section class="sec soft-bg"><div class="wrap">
   <div class="op-split">

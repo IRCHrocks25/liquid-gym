@@ -1322,13 +1322,6 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     <form class="rf" id="rentalForm" novalidate>
       <h3 class="rf-sec">Game Ready (Ice &amp; Compression)</h3>
       <label class="rf-field"><span>Wrap<span class="rq" aria-hidden="true">*</span></span><select name="wrap" required><option value="">Select Wrap</option><option value="Straight Leg Knee Wrap">Straight Leg Knee Wrap</option><option value="Left Hip">Left Hip</option><option value="Right Hip">Right Hip</option><option value="Ankle">Ankle</option><option value="Elbow">Elbow</option><option value="Back">Back</option><option value="Left Shoulder">Left Shoulder</option><option value="Right Shoulder">Right Shoulder</option></select></label>
-      <fieldset class="rf-field rf-cond" id="rfSize" hidden>
-        <legend>Client shirt size<span class="rq" aria-hidden="true">*</span></legend>
-        <div class="rf-radios">
-          <label><input type="radio" name="shirt_size" value='Medium (fits chest sizes 33" to 45")'> Medium (fits chest sizes 33" to 45")</label>
-          <label><input type="radio" name="shirt_size" value='Large (fits chest sizes 40" to 55")'> Large (fits chest sizes 40" to 55")</label>
-        </div>
-      </fieldset>
       <fieldset class="rf-field rf-cond" id="rfStrap" hidden>
         <legend>Is an extender strap needed?<span class="rq" aria-hidden="true">*</span></legend>
         <div class="rf-radios">
@@ -1535,12 +1528,11 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
 (function(){
   var form=document.getElementById('rentalForm'); if(!form) return;
   var ENDPOINT='https://liquidgym-rental-form.industryrockstarteam.workers.dev/';
-  var SHOULDER=['Left Shoulder','Right Shoulder'], STRAP=['Left Hip','Right Hip','Left Shoulder','Right Shoulder'];
-  var size=document.getElementById('rfSize'), strap=document.getElementById('rfStrap'), ship=document.getElementById('rfShip');
+  var STRAP=['Left Hip','Right Hip','Left Shoulder','Right Shoulder'];
+  var strap=document.getElementById('rfStrap'), ship=document.getElementById('rfShip');
   function sync(){
     var w=form.wrap.value;
-    size.hidden=SHOULDER.indexOf(w)<0; strap.hidden=STRAP.indexOf(w)<0;
-    form.querySelectorAll('input[name=shirt_size]')[0].required=!size.hidden;
+    strap.hidden=STRAP.indexOf(w)<0;
     form.querySelectorAll('input[name=extender_strap]')[0].required=!strap.hidden;
     ship.hidden=form.ship_different.value!=='Yes';
   }
@@ -1558,7 +1550,7 @@ header.nav,header{position:relative;background:transparent;border-bottom:1px sol
     });
     if(bad.length){ st.textContent='Please fill in the highlighted fields.'; st.classList.add('error'); bad[0].focus(); return; }
     var data={}; new FormData(form).forEach(function(v,k){ data[k]=v; });
-    if(size.hidden) delete data.shirt_size; if(strap.hidden) delete data.extender_strap;
+    if(strap.hidden) delete data.extender_strap;
     var btn=form.querySelector('button[type=submit]'); btn.disabled=true; st.textContent='Sending...';
     fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
       .then(function(r){ return r.json().catch(function(){ return {ok:false}; }); })
